@@ -85,14 +85,16 @@
 
 | 表名 | 存在 | 表注释 | 字段注释 | 主键 | 索引 | 当前结论 |
 |---|---|---|---|---|---|---|
-| `raw_complaint_tickets` | 是 | 是 | 否 | 是 | 是 | 结构可用，字段注释未补 |
+| `raw_complaint_tickets` | 是 | 是 | 否 | 是 | 是 | 结构可用，字段语义已整理到文档，数据库字段注释未回写 |
 
 说明：
 
 - `raw_complaint_tickets` 是业务已有源表，不由当前仓库初始化
 - 当前主键为 `ticket_id`
 - 已存在索引：`raw_complaint_tickets_pkey`、`idx_ticket_process_status`、`idx_ticket_emotion`、`idx_ticket_risk`
-- 本轮没有补这 51 个业务字段的字段注释，原因是字段业务语义需要结合源系统确认，不能机械猜测
+- 已从历史建表代码和 AI 提示词中恢复出该表的参考 DDL、字段分区和核心字段含义，已写入 `docs/db_design.md`
+- 当前数据库里这 51 个字段仍未真正写入 `comment on column ...` 注释
+- 后续如果要把文档定义同步到数据库，建议优先补 5 个系统字段、5 个 AI 特征字段和 6 个核心文本字段
 
 ### 2. 主数据层
 
@@ -192,6 +194,7 @@
 - [x] 所有项目管理表均有主键
 - [x] 所有项目管理表均已补表注释
 - [x] 除 `raw_complaint_tickets` 外，所有项目管理表均已补字段注释
+- [x] `raw_complaint_tickets` 的参考 DDL 与字段语义已补入设计文档
 - [x] 核心唯一约束已齐
 - [x] 核心外键索引已齐
 - [x] 结果表 `updated_at` 与 `evaluation_status` 已齐
@@ -199,7 +202,7 @@
 
 ### 仍待推进
 
-- [ ] `raw_complaint_tickets` 字段注释需结合源系统语义补充
+- [ ] `raw_complaint_tickets` 的字段注释仍需正式回写到数据库
 - [ ] `complaint_category_tag_relation` 首版基线数据需初始化
 - [ ] `complaint_category_rule` 首版规则数据需初始化
 - [ ] `complaint_tag_rule` 首版规则数据需初始化

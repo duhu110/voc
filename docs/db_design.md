@@ -33,6 +33,100 @@
 - 当前仓库 `sql_scripts/` 中没有这张表的建表脚本
 - 这张表是项目已有业务表，不由当前仓库初始化
 - 当前已知主键语义字段为 `ticket_id`
+- 下方 DDL 与字段说明来自历史建表代码和 AI 工作流提示词整理，可作为当前表结构参考
+
+DDL：
+
+```sql
+create table raw_complaint_tickets (
+    ticket_id varchar(100) primary key,                 -- 工单流水号
+    process_status varchar(20) default 'pending',      -- n8n处理状态: pending, processing, success, failed
+    error_message text,                                -- AI处理报错信息
+    created_at timestamp default current_timestamp,    -- 数据入库时间
+    updated_at timestamp default current_timestamp,    -- 最后更新时间
+
+    emotion_level integer,                             -- 客户情绪烈度(1-5)
+    core_appeal_category varchar(100),                 -- AI提取的核心诉求分类
+    escalation_risk varchar(20),                       -- 升级风险，高/中/低
+    is_shirking boolean,                               -- 是否存在内部推诿扯皮
+    ai_features jsonb,                                 -- AI动态特征库
+
+    is_archived varchar(20),                           -- 是否归档
+    ticket_type varchar(100),                          -- 工单类型
+    complaint_source varchar(100),                     -- 投诉来源
+    biz_category varchar(100),                         -- 业务分类
+    line_category varchar(100),                        -- 条线分类
+    appeal_biz_type varchar(100),                      -- 审诉单业务类型
+
+    accept_month varchar(20),                          -- 受理月
+    accept_time varchar(100),                          -- 受理时间
+    feedback_time varchar(100),                        -- 反馈时间
+
+    user_city varchar(50),                             -- 用户地市
+    district varchar(50),                              -- 区县
+    fault_city varchar(50),                            -- 障碍发生地市
+    branch_bureau varchar(100),                        -- 所属支局
+    grid varchar(100),                                 -- 所属网格
+    area varchar(100),                                 -- 所属片区
+    resp_branch_bureau varchar(100),                   -- 责任支局
+    accept_channel varchar(200),                       -- 受理网点/争议渠道
+
+    user_name varchar(100),                            -- 用户姓名
+    customer_group varchar(100),                       -- 客户群
+    customer_star varchar(50),                         -- 客户星级
+    customer_brand varchar(100),                       -- 客户品牌
+    dispute_product_name text,                         -- 争议销售品名称
+
+    is_timeout varchar(20),                            -- 是否超时
+    is_resolved_once varchar(20),                      -- 是否一次解决
+    process_hours numeric(10, 2),                      -- 处理时长(小时)
+    repeat_count integer default 0,                    -- 重复次数
+    urge_count integer default 0,                      -- 催单次数
+    oscillation_count integer default 0,               -- 震荡次数
+    satisfaction_score varchar(50),                    -- 满意度
+
+    process_dept varchar(200),                         -- 处理部门
+    flow_depts text,                                   -- 流经部门
+    creator_id varchar(100),                           -- 建单人工号
+    feedback_id varchar(100),                          -- 反馈工号
+    resp_person varchar(100),                          -- 责任人
+    co_seller_name varchar(100),                       -- 协销人姓名
+
+    complaint_phenomenon text,                         -- 投诉现象
+    biz_content text,                                  -- 业务内容
+    return_reason text,                                -- 回单原因
+    prov_dispatch_desc text,                           -- 省工单班派单描述
+    prov_process_desc text,                            -- 省工单班处理描述
+    city_process_desc text                             -- 地市处理描述
+);
+
+create index if not exists idx_ticket_process_status on raw_complaint_tickets(process_status);
+create index if not exists idx_ticket_emotion on raw_complaint_tickets(emotion_level);
+create index if not exists idx_ticket_risk on raw_complaint_tickets(escalation_risk);
+```
+
+字段分区说明：
+
+- 主键与系统控制字段：`ticket_id`、`process_status`、`error_message`、`created_at`、`updated_at`
+- AI 提取特征区：`emotion_level`、`core_appeal_category`、`escalation_risk`、`is_shirking`、`ai_features`
+- 原始分类与基础字段：`ticket_type`、`complaint_source`、`biz_category`、`line_category`、`appeal_biz_type`
+- 时间字段：`accept_month`、`accept_time`、`feedback_time`
+- 地域与组织字段：`user_city`、`district`、`fault_city`、`branch_bureau`、`grid`、`area`、`resp_branch_bureau`、`accept_channel`
+- 用户与产品字段：`user_name`、`customer_group`、`customer_star`、`customer_brand`、`dispute_product_name`
+- 量化指标字段：`is_timeout`、`is_resolved_once`、`process_hours`、`repeat_count`、`urge_count`、`oscillation_count`、`satisfaction_score`
+- 人员与部门字段：`process_dept`、`flow_depts`、`creator_id`、`feedback_id`、`resp_person`、`co_seller_name`
+- AI 主语料字段：`complaint_phenomenon`、`biz_content`、`return_reason`、`prov_dispatch_desc`、`prov_process_desc`、`city_process_desc`
+
+与 AI 处理流程的关系：
+
+- 历史工作流会把这张表的基础字段和 6 个核心文本字段一起输入 AI
+- AI 输出的结构化结果会回写到 `emotion_level`、`core_appeal_category`、`escalation_risk`、`is_shirking`、`ai_features`
+- 这 6 个核心文本字段也是后续分类、标签、关键词抽取和命中解释的主要语料来源
+
+建议补充到数据库注释的字段范围：
+
+- 优先补系统字段、AI 特征字段和 6 个核心文本字段
+- 其余业务字段建议等源系统口径确认后再补到数据库注释中
 
 ## 2. 主数据层
 
