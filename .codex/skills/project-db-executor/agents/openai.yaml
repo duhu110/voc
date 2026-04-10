@@ -1,0 +1,4 @@
+interface:
+  display_name: "Project DB Executor"
+  short_description: "Project database SQL execution helper"
+  default_prompt: "Use $project-db-executor to inspect the project database config and run SQL safely for this repository."

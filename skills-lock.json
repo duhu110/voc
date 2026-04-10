@@ -1,0 +1,10 @@
+{
+  "version": 1,
+  "skills": {
+    "postgresql-expert": {
+      "source": "personamanagmentlayer/pcl",
+      "sourceType": "github",
+      "computedHash": "716c442b158e393a7b437a70e52764da97bd2a265717c87069d3552e26b9fb5a"
+    }
+  }
+}
