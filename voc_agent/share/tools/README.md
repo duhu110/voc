@@ -12,3 +12,4 @@
 - `fetch_ticket.py`: 按 `ticket_id` 读取原始工单
 - `fetch_enabled_categories.py`: 读取启用中的分类树
 - `fetch_enabled_tags.py`: 读取启用中的标签体系
+- `result_lookup.py`: 将分类编码、标签组编码和标签编码解析为主数据 ID

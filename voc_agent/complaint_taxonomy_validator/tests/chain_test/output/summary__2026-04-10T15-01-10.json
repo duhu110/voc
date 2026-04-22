@@ -1,0 +1,2506 @@
+{
+  "timestamp": "2026-04-10T15:01:10",
+  "sample_size": 20,
+  "model_name": "Qwen3-Max",
+  "ticket_ids": [
+    "2024061809503493744182",
+    "2024030214394239912335",
+    "2024061917251140199067",
+    "2024071911223534110028",
+    "2024042315384188514701",
+    "2024053112324270409290",
+    "2024092416410541520209",
+    "2024100611010078669970",
+    "2024032816315134809173",
+    "2024061609245877234305",
+    "2024052214070887007619",
+    "2024110319382222611987",
+    "2024060416193698334692",
+    "2024091414283735067320",
+    "2024073014144343882769",
+    "2024040112202517251670",
+    "2024082211562487146196",
+    "2024042310155739792112",
+    "2024080509360496221219",
+    "2024071813301405772383"
+  ],
+  "success_count": 20,
+  "failure_count": 0,
+  "success_rate": 1.0,
+  "failures_by_stage": {},
+  "results": [
+    {
+      "ticket_id": "2024061809503493744182",
+      "status": "success",
+      "stage": "chain",
+      "duration_ms": 22984,
+      "timestamp": "2026-04-10T15:01:10",
+      "model_name": "Qwen3-Max",
+      "result": {
+        "summary": "用户15803****62（归属地山西）申请复机，请求归属地协助处理。",
+        "primary_category": {
+          "code": "OPEN_CLOSE_RECOVERY",
+          "full_name": "开通、停用与销户/复机恢复争议",
+          "confidence": 0.95,
+          "reason": "工单明确提及“复机”诉求，属于复机恢复类问题，且biz_category为“办理不及时/不成功”，符合复机恢复争议定义。"
+        },
+        "candidate_categories": [
+          {
+            "code": "OPEN_CLOSE_RECOVERY_DELAY",
+            "full_name": "开通、停用与销户/复机恢复争议/复机不及时",
+            "confidence": 0.85,
+            "reason": "若复机已申请但处理延迟，则可能属于此子类，但当前信息未明确是否已申请或仅初次请求。"
+          },
+          {
+            "code": "OPEN_CLOSE_RECOVERY_FAIL",
+            "full_name": "开通、停用与销户/复机恢复争议/复机失败",
+            "confidence": 0.75,
+            "reason": "若用户此前已尝试复机但失败，则适用，但工单未说明历史操作。"
+          }
+        ],
+        "candidate_tags": [
+          {
+            "group_code": "",
+            "code": "[PRODUCT] [MOBILE]",
+            "name": "移动业务",
+            "confidence": 0.95,
+            "reason": "涉及手机号码复机，属于移动业务范畴。"
+          },
+          {
+            "group_code": "",
+            "code": "[REQUEST] [RESTORE]",
+            "name": "恢复服务",
+            "confidence": 0.98,
+            "reason": "明确请求“复机”，即恢复通信服务。"
+          },
+          {
+            "group_code": "",
+            "code": "[RESPONSIBILITY] [NETWORK_OP]",
+            "name": "网运条线",
+            "confidence": 0.9,
+            "reason": "复机操作通常由网络运营或号卡管理条线负责。"
+          },
+          {
+            "group_code": "",
+            "code": "[CHANNEL] [HALL]",
+            "name": "营业厅",
+            "confidence": 0.6,
+            "reason": "return_reason提到“实体渠道”，但未明确是用户通过营业厅发起，仅作为辅助参考。"
+          }
+        ],
+        "category_keywords": [
+          {
+            "keyword": "复机",
+            "reason": "模型识别为与当前判断有关的关键词",
+            "confidence": 0.7
+          },
+          {
+            "keyword": "办理不及时/不成功",
+            "reason": "模型识别为与当前判断有关的关键词",
+            "confidence": 0.7
+          },
+          {
+            "keyword": "开通及停用类",
+            "reason": "模型识别为与当前判断有关的关键词",
+            "confidence": 0.7
+          }
+        ],
+        "tag_keywords": [
+          {
+            "keyword": "复机",
+            "reason": "模型识别为与当前判断有关的关键词",
+            "confidence": 0.7
+          },
+          {
+            "keyword": "手机号",
+            "reason": "模型识别为与当前判断有关的关键词",
+            "confidence": 0.7
+          },
+          {
+            "keyword": "恢复服务",
+            "reason": "模型识别为与当前判断有关的关键词",
+            "confidence": 0.7
+          },
+          {
+            "keyword": "归属地处理",
+            "reason": "模型识别为与当前判断有关的关键词",
+            "confidence": 0.7
+          }
+        ],
+        "risks": [
+          "工单未说明复机原因（如欠费、风控等），无法判断是否涉及[OPEN_CLOSE_SHUTDOWN_ARREARS]或[OPEN_CLOSE_SHUTDOWN_RISK]等子类。",
+          "未明确用户是否已提交复机申请但未处理，还是首次请求，影响是否归入‘复机不及时’或仅一般复机请求。"
+        ]
+      },
+      "artifact_path": "D:\\project\\FullStack\\voc\\voc_agent\\complaint_taxonomy_validator\\tests\\chain_test\\output\\2024061809503493744182__2026-04-10T15-01-10.json"
+    },
+    {
+      "ticket_id": "2024030214394239912335",
+      "status": "success",
+      "stage": "chain",
+      "duration_ms": 14776,
+      "timestamp": "2026-04-10T15:01:33",
+      "model_name": "Qwen3-Max",
+      "result": {
+        "summary": "用户反映未安装过‘手机低消59元送宽带合约’业务，要求退订但退订不成功，客服安抚无效。",
+        "primary_category": {
+          "code": "SUBSCRIBE_CANCEL_FAIL",
+          "full_name": "订购与退订争议/业务退订争议/退订失败",
+          "confidence": 0.96,
+          "reason": "用户明确要求退订合约业务但系统或流程未能完成退订，符合‘退订失败’子类定义。"
+        },
+        "candidate_categories": [
+          {
+            "code": "SUBSCRIBE_DENY",
+            "full_name": "订购与退订争议/用户否认订购",
+            "confidence": 0.85,
+            "reason": "用户称‘没有安装过此宽带’，隐含否认主动订购该融合合约。"
+          },
+          {
+            "code": "MARKETING_PROCESS_ERROR",
+            "full_name": "营销宣传与销售服务/办理差错与漏受理/业务办理差错",
+            "confidence": 0.75,
+            "reason": "可能存在误办或未经用户确认办理的情况，但主诉焦点在退订失败而非办理过程。"
+          }
+        ],
+        "candidate_tags": [
+          {
+            "group_code": "PRODUCT",
+            "code": "FUSION_PACKAGE",
+            "name": "融合套餐",
+            "confidence": 0.8,
+            "reason": "用户反映未安装过‘手机低消59元送宽带合约’业务，要求退订但退订不成功，客服安抚无效。"
+          },
+          {
+            "group_code": "REQUEST",
+            "code": "CANCEL",
+            "name": "取消业务",
+            "confidence": 0.8,
+            "reason": "用户反映未安装过‘手机低消59元送宽带合约’业务，要求退订但退订不成功，客服安抚无效。"
+          },
+          {
+            "group_code": "ROOT_CAUSE",
+            "code": "DENY_ORDER",
+            "name": "用户否认订购",
+            "confidence": 0.8,
+            "reason": "用户反映未安装过‘手机低消59元送宽带合约’业务，要求退订但退订不成功，客服安抚无效。"
+          },
+          {
+            "group_code": "RESPONSIBILITY",
+            "code": "CHANNEL_MGMT",
+            "name": "渠道管理",
+            "confidence": 0.8,
+            "reason": "用户反映未安装过‘手机低消59元送宽带合约’业务，要求退订但退订不成功，客服安抚无效。"
+          },
+          {
+            "group_code": "EMOTION",
+            "code": "UNSATISFIED",
+            "name": "不满",
+            "confidence": 0.8,
+            "reason": "用户反映未安装过‘手机低消59元送宽带合约’业务，要求退订但退订不成功，客服安抚无效。"
+          }
+        ],
+        "category_keywords": [
+          {
+            "keyword": "退订不成功",
+            "reason": "模型识别为与当前判断有关的关键词",
+            "confidence": 0.7
+          },
+          {
+            "keyword": "没有安装过此宽带",
+            "reason": "模型识别为与当前判断有关的关键词",
+            "confidence": 0.7
+          },
+          {
+            "keyword": "要求退订",
+            "reason": "模型识别为与当前判断有关的关键词",
+            "confidence": 0.7
+          }
+        ],
+        "tag_keywords": [
+          {
+            "keyword": "手机低消59元送宽带合约",
+            "reason": "模型识别为与当前判断有关的关键词",
+            "confidence": 0.7
+          },
+          {
+            "keyword": "退订",
+            "reason": "模型识别为与当前判断有关的关键词",
+            "confidence": 0.7
+          },
+          {
+            "keyword": "否认安装",
+            "reason": "模型识别为与当前判断有关的关键词",
+            "confidence": 0.7
+          },
+          {
+            "keyword": "渠道条线",
+            "reason": "模型识别为与当前判断有关的关键词",
+            "confidence": 0.7
+          },
+          {
+            "keyword": "客服安抚无效",
+            "reason": "模型识别为与当前判断有关的关键词",
+            "confidence": 0.7
+          }
+        ],
+        "risks": []
+      },
+      "artifact_path": "D:\\project\\FullStack\\voc\\voc_agent\\complaint_taxonomy_validator\\tests\\chain_test\\output\\2024030214394239912335__2026-04-10T15-01-33.json"
+    },
+    {
+      "ticket_id": "2024061917251140199067",
+      "status": "success",
+      "stage": "chain",
+      "duration_ms": 20734,
+      "timestamp": "2026-04-10T15:01:48",
+      "model_name": "Qwen3-Max",
+      "result": {
+        "summary": "客户投诉新装宽带业务预约2024-06-19 17:25上门安装，但装维人员未按约定时间履约，要求尽快处理，明确表示不需要赔偿。",
+        "primary_category": {
+          "code": "INSTALL_TIMELINESS_NOT_VISIT_FIRST",
+          "full_name": "装维与交付服务/履约时效问题/预约未上门/首次安装未上门",
+          "confidence": 0.98,
+          "reason": "工单明确描述客户预约新装业务上门时间，但装维未按时履约，属于首次安装未上门场景，与该分类定义完全匹配。"
+        },
+        "candidate_categories": [
+          {
+            "code": "INSTALL_TIMELINESS_NOT_VISIT",
+            "full_name": "装维与交付服务/履约时效问题/预约未上门",
+            "confidence": 0.95,
+            "reason": "上一级分类，也符合主诉，但存在更具体的子类。"
+          },
+          {
+            "code": "INSTALL_TIMELINESS",
+            "full_name": "装维与交付服务/履约时效问题",
+            "confidence": 0.9,
+            "reason": "大类匹配，但不够具体。"
+          }
+        ],
+        "candidate_tags": [
+          {
+            "group_code": "",
+            "code": "[PRODUCT] [BROADBAND]",
+            "name": "[PRODUCT] [BROADBAND]",
+            "confidence": 0.95,
+            "reason": "投诉内容为新装业务，结合上下文及return_reason中'宽带业务'，可判断为宽带安装。"
+          },
+          {
+            "group_code": "",
+            "code": "[ROOT_CAUSE] [DELAYED_FULFILLMENT]",
+            "name": "[ROOT_CAUSE] [DELAYED_FULFILLMENT]",
+            "confidence": 0.98,
+            "reason": "直接对应‘未按预约时间上门’的核心问题。"
+          },
+          {
+            "group_code": "",
+            "code": "[RESPONSIBILITY] [INSTALL_MAINTAIN]",
+            "name": "[RESPONSIBILITY] [INSTALL_MAINTAIN]",
+            "confidence": 0.95,
+            "reason": "涉及装维师傅上门履约，责任归属装维条线。"
+          },
+          {
+            "group_code": "",
+            "code": "[REQUEST] [FAST_PROCESS]",
+            "name": "[REQUEST] [FAST_PROCESS]",
+            "confidence": 0.99,
+            "reason": "客户明确要求‘尽快处理’。"
+          },
+          {
+            "group_code": "",
+            "code": "[EMOTION] [UNSATISFIED]",
+            "name": "[EMOTION] [UNSATISFIED]",
+            "confidence": 0.9,
+            "reason": "客户‘对未能履约表达不满’。"
+          }
+        ],
+        "category_keywords": [
+          {
+            "keyword": "新装业务",
+            "reason": "模型识别为与当前判断有关的关键词",
+            "confidence": 0.7
+          },
+          {
+            "keyword": "预约...时间上门",
+            "reason": "模型识别为与当前判断有关的关键词",
+            "confidence": 0.7
+          },
+          {
+            "keyword": "未按预约时间上门",
+            "reason": "模型识别为与当前判断有关的关键词",
+            "confidence": 0.7
+          },
+          {
+            "keyword": "未能履约",
+            "reason": "模型识别为与当前判断有关的关键词",
+            "confidence": 0.7
+          }
+        ],
+        "tag_keywords": [
+          {
+            "keyword": "宽带业务",
+            "reason": "模型识别为与当前判断有关的关键词",
+            "confidence": 0.7
+          },
+          {
+            "keyword": "装维",
+            "reason": "模型识别为与当前判断有关的关键词",
+            "confidence": 0.7
+          },
+          {
+            "keyword": "尽快处理",
+            "reason": "模型识别为与当前判断有关的关键词",
+            "confidence": 0.7
+          },
+          {
+            "keyword": "不满",
+            "reason": "模型识别为与当前判断有关的关键词",
+            "confidence": 0.7
+          },
+          {
+            "keyword": "不需要赔偿",
+            "reason": "模型识别为与当前判断有关的关键词",
+            "confidence": 0.7
+          }
+        ],
+        "risks": []
+      },
+      "artifact_path": "D:\\project\\FullStack\\voc\\voc_agent\\complaint_taxonomy_validator\\tests\\chain_test\\output\\2024061917251140199067__2026-04-10T15-01-48.json"
+    },
+    {
+      "ticket_id": "2024071911223534110028",
+      "status": "success",
+      "stage": "chain",
+      "duration_ms": 19524,
+      "timestamp": "2026-04-10T15:02:09",
+      "model_name": "Qwen3-Max",
+      "result": {
+        "summary": "用户投诉在营业厅办理融合套餐业务时，工作人员张晓玉将其合同号错误变更，导致原合同号余额无法使用、账户欠费停机，要求恢复原合同号。问题属于业务办理差错。",
+        "primary_category": {
+          "code": "MARKETING_PROCESS_ERROR",
+          "full_name": "营销宣传与销售服务/办理差错与漏受理/业务办理差错",
+          "confidence": 0.96,
+          "reason": "工单明确描述‘对更改合同号业务办理错/漏受理有争议’，且受理渠道为自有营业厅，工作人员办错合同号导致用户服务异常，符合‘办错业务、办错号码信息’的定义。"
+        },
+        "candidate_categories": [
+          {
+            "code": "MARKETING_PROCESS_MISS",
+            "full_name": "营销宣传与销售服务/办理差错与漏受理/漏受理",
+            "confidence": 0.65,
+            "reason": "虽提及‘漏受理’，但实际是‘办错合同号’，属于错误操作而非遗漏，故优先级低于业务办理差错。"
+          },
+          {
+            "code": "OPEN_CLOSE_SHUTDOWN_ARREARS",
+            "full_name": "开通、停用与销户/停机关停争议/欠费停机不认可",
+            "confidence": 0.55,
+            "reason": "用户因账户欠费停机，但根本原因是合同号被错误变更导致余额无法使用，停机是结果而非主因。"
+          }
+        ],
+        "candidate_tags": [
+          {
+            "group_code": "",
+            "code": "[PRODUCT] [FUSION_PACKAGE]",
+            "name": "融合套餐",
+            "confidence": 0.8,
+            "reason": "用户投诉在营业厅办理融合套餐业务时，工作人员张晓玉将其合同号错误变更，导致原合同号余额无法使用、账户欠费停机，要求恢复原合同号。问题属于业务办理差错。"
+          },
+          {
+            "group_code": "",
+            "code": "[CHANNEL] [HALL]",
+            "name": "营业厅",
+            "confidence": 0.8,
+            "reason": "用户投诉在营业厅办理融合套餐业务时，工作人员张晓玉将其合同号错误变更，导致原合同号余额无法使用、账户欠费停机，要求恢复原合同号。问题属于业务办理差错。"
+          },
+          {
+            "group_code": "",
+            "code": "[ROOT_CAUSE] [PROCESS_ERROR]",
+            "name": "办理差错",
+            "confidence": 0.8,
+            "reason": "用户投诉在营业厅办理融合套餐业务时，工作人员张晓玉将其合同号错误变更，导致原合同号余额无法使用、账户欠费停机，要求恢复原合同号。问题属于业务办理差错。"
+          },
+          {
+            "group_code": "",
+            "code": "[REQUEST] [RESTORE]",
+            "name": "恢复服务",
+            "confidence": 0.8,
+            "reason": "用户投诉在营业厅办理融合套餐业务时，工作人员张晓玉将其合同号错误变更，导致原合同号余额无法使用、账户欠费停机，要求恢复原合同号。问题属于业务办理差错。"
+          },
+          {
+            "group_code": "",
+            "code": "[RESPONSIBILITY] [CHANNEL_MGMT]",
+            "name": "渠道管理",
+            "confidence": 0.8,
+            "reason": "用户投诉在营业厅办理融合套餐业务时，工作人员张晓玉将其合同号错误变更，导致原合同号余额无法使用、账户欠费停机，要求恢复原合同号。问题属于业务办理差错。"
+          },
+          {
+            "group_code": "",
+            "code": "[EMOTION] [UNSATISFIED]",
+            "name": "不满",
+            "confidence": 0.8,
+            "reason": "用户投诉在营业厅办理融合套餐业务时，工作人员张晓玉将其合同号错误变更，导致原合同号余额无法使用、账户欠费停机，要求恢复原合同号。问题属于业务办理差错。"
+          }
+        ],
+        "category_keywords": [
+          {
+            "keyword": "办理错",
+            "reason": "模型识别为与当前判断有关的关键词",
+            "confidence": 0.7
+          },
+          {
+            "keyword": "漏受理",
+            "reason": "模型识别为与当前判断有关的关键词",
+            "confidence": 0.7
+          },
+          {
+            "keyword": "更改合同号",
+            "reason": "模型识别为与当前判断有关的关键词",
+            "confidence": 0.7
+          },
+          {
+            "keyword": "业务办理差错",
+            "reason": "模型识别为与当前判断有关的关键词",
+            "confidence": 0.7
+          },
+          {
+            "keyword": "工作人员工号张晓玉",
+            "reason": "模型识别为与当前判断有关的关键词",
+            "confidence": 0.7
+          },
+          {
+            "keyword": "营业厅",
+            "reason": "模型识别为与当前判断有关的关键词",
+            "confidence": 0.7
+          }
+        ],
+        "tag_keywords": [
+          {
+            "keyword": "融合套餐",
+            "reason": "模型识别为与当前判断有关的关键词",
+            "confidence": 0.7
+          },
+          {
+            "keyword": "营业厅",
+            "reason": "模型识别为与当前判断有关的关键词",
+            "confidence": 0.7
+          },
+          {
+            "keyword": "恢复原来的合同号",
+            "reason": "模型识别为与当前判断有关的关键词",
+            "confidence": 0.7
+          },
+          {
+            "keyword": "账户欠费无法使用",
+            "reason": "模型识别为与当前判断有关的关键词",
+            "confidence": 0.7
+          },
+          {
+            "keyword": "原合同号上有余额",
+            "reason": "模型识别为与当前判断有关的关键词",
+            "confidence": 0.7
+          }
+        ],
+        "risks": []
+      },
+      "artifact_path": "D:\\project\\FullStack\\voc\\voc_agent\\complaint_taxonomy_validator\\tests\\chain_test\\output\\2024071911223534110028__2026-04-10T15-02-09.json"
+    },
+    {
+      "ticket_id": "2024042315384188514701",
+      "status": "success",
+      "stage": "chain",
+      "duration_ms": 21411,
+      "timestamp": "2026-04-10T15:02:28",
+      "model_name": "Qwen3-Max",
+      "result": {
+        "summary": "客户对天翼畅享40GB(99元)套餐中的达量降速规则表示争议，认为规则不合理，要求处理但不要求赔偿，客服解释无效。",
+        "primary_category": {
+          "code": "RULE_USAGE_SPEED_LIMIT",
+          "full_name": "规则政策争议/使用规则争议/限速封顶规则争议",
+          "confidence": 0.98,
+          "reason": "工单明确指出客户对“达量降速”规则有争议，且原始分类字段为“达量降速规则争议”，与该分类定义完全匹配。"
+        },
+        "candidate_categories": [
+          {
+            "code": "RULE_USAGE",
+            "full_name": "规则政策争议/使用规则争议",
+            "confidence": 0.85,
+            "reason": "上层分类，涵盖限速规则，但不够具体。"
+          },
+          {
+            "code": "MARKETING_EXPLAIN_UNCLEAR",
+            "full_name": "营销宣传与销售服务/宣传解释与营销误导/解释宣传不清",
+            "confidence": 0.65,
+            "reason": "客服解释无效，可能存在解释不清，但主诉是规则本身不合理，非解释问题。"
+          }
+        ],
+        "candidate_tags": [
+          {
+            "group_code": "",
+            "code": "[PRODUCT] [MOBILE]",
+            "name": "[PRODUCT] [MOBILE]",
+            "confidence": 0.95,
+            "reason": "涉及手机套餐及流量限速，属于移动业务。"
+          },
+          {
+            "group_code": "",
+            "code": "[ROOT_CAUSE] [RULE_DISPUTE]",
+            "name": "[ROOT_CAUSE] [RULE_DISPUTE]",
+            "confidence": 0.92,
+            "reason": "客户明确表示对达量降速规则“不合理”，属于对规则本身的不认可。"
+          },
+          {
+            "group_code": "",
+            "code": "[RESPONSIBILITY] [MARKET]",
+            "name": "[RESPONSIBILITY] [MARKET]",
+            "confidence": 0.9,
+            "reason": "工单中 line_category 为“市场条线”，且达量降速规则属资费政策范畴。"
+          },
+          {
+            "group_code": "",
+            "code": "[REQUEST] [EXPLAIN]",
+            "name": "[REQUEST] [EXPLAIN]",
+            "confidence": 0.75,
+            "reason": "虽客服已解释，但客户仍要求“处理”，隐含希望获得更合理解释或规则调整。"
+          },
+          {
+            "group_code": "",
+            "code": "[EMOTION] [UNSATISFIED]",
+            "name": "[EMOTION] [UNSATISFIED]",
+            "confidence": 0.85,
+            "reason": "客服代表解释无效，客户坚持投诉，表明明显不满。"
+          }
+        ],
+        "category_keywords": [
+          {
+            "keyword": "达量降速",
+            "reason": "模型识别为与当前判断有关的关键词",
+            "confidence": 0.7
+          },
+          {
+            "keyword": "规则争议",
+            "reason": "模型识别为与当前判断有关的关键词",
+            "confidence": 0.7
+          },
+          {
+            "keyword": "限速",
+            "reason": "模型识别为与当前判断有关的关键词",
+            "confidence": 0.7
+          },
+          {
+            "keyword": "不合理",
+            "reason": "模型识别为与当前判断有关的关键词",
+            "confidence": 0.7
+          }
+        ],
+        "tag_keywords": [
+          {
+            "keyword": "天翼畅享40GB",
+            "reason": "模型识别为与当前判断有关的关键词",
+            "confidence": 0.7
+          },
+          {
+            "keyword": "99元套餐",
+            "reason": "模型识别为与当前判断有关的关键词",
+            "confidence": 0.7
+          },
+          {
+            "keyword": "客服解释无效",
+            "reason": "模型识别为与当前判断有关的关键词",
+            "confidence": 0.7
+          },
+          {
+            "keyword": "不需要赔偿",
+            "reason": "模型识别为与当前判断有关的关键词",
+            "confidence": 0.7
+          },
+          {
+            "keyword": "市场条线",
+            "reason": "模型识别为与当前判断有关的关键词",
+            "confidence": 0.7
+          }
+        ],
+        "risks": []
+      },
+      "artifact_path": "D:\\project\\FullStack\\voc\\voc_agent\\complaint_taxonomy_validator\\tests\\chain_test\\output\\2024042315384188514701__2026-04-10T15-02-28.json"
+    },
+    {
+      "ticket_id": "2024053112324270409290",
+      "status": "success",
+      "stage": "chain",
+      "duration_ms": 18467,
+      "timestamp": "2026-04-10T15:02:50",
+      "model_name": "Qwen3-Max",
+      "result": {
+        "summary": "客户办理携号转网业务时，系统提示宽带拆机卡单（工单号：897124053062843839），要求尽快竣工处理。",
+        "primary_category": {
+          "code": "OPEN_CLOSE_CANCEL_DISMANTLE_BROADBAND",
+          "full_name": "开通、停用与销户/拆机销户/拆机销户/宽带拆机不及时",
+          "confidence": 0.95,
+          "reason": "客户因携号转网需拆机宽带，但系统显示拆机卡单未竣工，属于宽带拆机处理不及时问题，直接对应该细分分类。"
+        },
+        "candidate_categories": [
+          {
+            "code": "INSTALL_TIMELINESS_OVERTIME_REMOVE",
+            "full_name": "装维与交付服务/履约时效问题/超时未完成/拆机超时未完成",
+            "confidence": 0.85,
+            "reason": "拆机属于装维履约范畴，若从服务交付角度也可归入此类，但主诉是销户流程中的拆机卡单，更贴近销户拆机分类。"
+          },
+          {
+            "code": "OPEN_CLOSE_CANCEL",
+            "full_name": "开通、停用与销户/拆机销户",
+            "confidence": 0.8,
+            "reason": "上级分类，但存在更具体的子类，应优先选择具体项。"
+          }
+        ],
+        "candidate_tags": [
+          {
+            "group_code": "",
+            "code": "[PRODUCT] [BROADBAND]",
+            "name": "宽带业务",
+            "confidence": 0.8,
+            "reason": "客户办理携号转网业务时，系统提示宽带拆机卡单（工单号：897124053062843839），要求尽快竣工处理。"
+          },
+          {
+            "group_code": "",
+            "code": "[REQUEST] [FAST_PROCESS]",
+            "name": "加快处理",
+            "confidence": 0.8,
+            "reason": "客户办理携号转网业务时，系统提示宽带拆机卡单（工单号：897124053062843839），要求尽快竣工处理。"
+          },
+          {
+            "group_code": "",
+            "code": "[ROOT_CAUSE] [DELAYED_FULFILLMENT]",
+            "name": "履约不及时",
+            "confidence": 0.8,
+            "reason": "客户办理携号转网业务时，系统提示宽带拆机卡单（工单号：897124053062843839），要求尽快竣工处理。"
+          },
+          {
+            "group_code": "",
+            "code": "[RESPONSIBILITY] [INSTALL_MAINTAIN]",
+            "name": "装维条线",
+            "confidence": 0.8,
+            "reason": "客户办理携号转网业务时，系统提示宽带拆机卡单（工单号：897124053062843839），要求尽快竣工处理。"
+          },
+          {
+            "group_code": "",
+            "code": "[PRODUCT] [MOBILE]",
+            "name": "移动业务",
+            "confidence": 0.8,
+            "reason": "客户办理携号转网业务时，系统提示宽带拆机卡单（工单号：897124053062843839），要求尽快竣工处理。"
+          }
+        ],
+        "category_keywords": [
+          {
+            "keyword": "携号转网",
+            "reason": "模型识别为与当前判断有关的关键词",
+            "confidence": 0.7
+          },
+          {
+            "keyword": "宽带拆机",
+            "reason": "模型识别为与当前判断有关的关键词",
+            "confidence": 0.7
+          },
+          {
+            "keyword": "卡单",
+            "reason": "模型识别为与当前判断有关的关键词",
+            "confidence": 0.7
+          },
+          {
+            "keyword": "竣工",
+            "reason": "模型识别为与当前判断有关的关键词",
+            "confidence": 0.7
+          },
+          {
+            "keyword": "拆机不及时",
+            "reason": "模型识别为与当前判断有关的关键词",
+            "confidence": 0.7
+          }
+        ],
+        "tag_keywords": [
+          {
+            "keyword": "宽带",
+            "reason": "模型识别为与当前判断有关的关键词",
+            "confidence": 0.7
+          },
+          {
+            "keyword": "尽快处理",
+            "reason": "模型识别为与当前判断有关的关键词",
+            "confidence": 0.7
+          },
+          {
+            "keyword": "拆机卡单",
+            "reason": "模型识别为与当前判断有关的关键词",
+            "confidence": 0.7
+          },
+          {
+            "keyword": "装维",
+            "reason": "模型识别为与当前判断有关的关键词",
+            "confidence": 0.7
+          },
+          {
+            "keyword": "手机号",
+            "reason": "模型识别为与当前判断有关的关键词",
+            "confidence": 0.7
+          }
+        ],
+        "risks": []
+      },
+      "artifact_path": "D:\\project\\FullStack\\voc\\voc_agent\\complaint_taxonomy_validator\\tests\\chain_test\\output\\2024053112324270409290__2026-04-10T15-02-50.json"
+    },
+    {
+      "ticket_id": "2024092416410541520209",
+      "status": "success",
+      "stage": "chain",
+      "duration_ms": 19721,
+      "timestamp": "2026-04-10T15:03:08",
+      "model_name": "Qwen3-Max",
+      "result": {
+        "summary": "客户因不在归属地无法办理销户业务，对当前处理不满，要求核查处理，客服安抚无效。",
+        "primary_category": {
+          "code": "OPEN_CLOSE_CANCEL",
+          "full_name": "开通、停用与销户/拆机销户",
+          "confidence": 0.95,
+          "reason": "工单明确涉及‘拆机销户’业务，且客户因异地无法办理销户产生投诉，符合该分类定义。"
+        },
+        "candidate_categories": [
+          {
+            "code": "RULE_PROCESS_REMOTE",
+            "full_name": "规则政策争议/办理规则争议/异地办理规则争议",
+            "confidence": 0.85,
+            "reason": "客户因不在归属地无法销户，可能涉及异地办理限制规则。"
+          },
+          {
+            "code": "OPEN_CLOSE_CANCEL_RULE_LOCAL",
+            "full_name": "开通、停用与销户/拆机销户/销户规则争议/必须本地销户规则争议",
+            "confidence": 0.82,
+            "reason": "具体指向‘必须本地销户’的规则限制，与客户情况高度吻合。"
+          }
+        ],
+        "candidate_tags": [
+          {
+            "group_code": "",
+            "code": "[PRODUCT] [MOBILE]",
+            "name": "[PRODUCT] [MOBILE]",
+            "confidence": 0.95,
+            "reason": "投诉对象为手机号销户，属于移动业务。"
+          },
+          {
+            "group_code": "",
+            "code": "[REQUEST] [CANCEL]",
+            "name": "[REQUEST] [CANCEL]",
+            "confidence": 0.98,
+            "reason": "客户明确要求办理销户，即取消业务。"
+          },
+          {
+            "group_code": "",
+            "code": "[EMOTION] [UNSATISFIED]",
+            "name": "[EMOTION] [UNSATISFIED]",
+            "confidence": 0.9,
+            "reason": "工单注明‘客户表达不满意，客服代表安抚无效’。"
+          },
+          {
+            "group_code": "",
+            "code": "[ROOT_CAUSE] [RULE_DISPUTE]",
+            "name": "[ROOT_CAUSE] [RULE_DISPUTE]",
+            "confidence": 0.85,
+            "reason": "客户对异地不能销户的规则不认可。"
+          },
+          {
+            "group_code": "",
+            "code": "[RESPONSIBILITY] [CHANNEL_MGMT]",
+            "name": "[RESPONSIBILITY] [CHANNEL_MGMT]",
+            "confidence": 0.8,
+            "reason": "工单归类为‘渠道条线’，且销户通常需通过实体渠道办理。"
+          }
+        ],
+        "category_keywords": [
+          {
+            "keyword": "拆机销户",
+            "reason": "模型识别为与当前判断有关的关键词",
+            "confidence": 0.7
+          },
+          {
+            "keyword": "销户",
+            "reason": "模型识别为与当前判断有关的关键词",
+            "confidence": 0.7
+          },
+          {
+            "keyword": "不在归属地",
+            "reason": "模型识别为与当前判断有关的关键词",
+            "confidence": 0.7
+          },
+          {
+            "keyword": "办理产品销户业务",
+            "reason": "模型识别为与当前判断有关的关键词",
+            "confidence": 0.7
+          }
+        ],
+        "tag_keywords": [
+          {
+            "keyword": "手机号",
+            "reason": "模型识别为与当前判断有关的关键词",
+            "confidence": 0.7
+          },
+          {
+            "keyword": "销户",
+            "reason": "模型识别为与当前判断有关的关键词",
+            "confidence": 0.7
+          },
+          {
+            "keyword": "不满意",
+            "reason": "模型识别为与当前判断有关的关键词",
+            "confidence": 0.7
+          },
+          {
+            "keyword": "异地",
+            "reason": "模型识别为与当前判断有关的关键词",
+            "confidence": 0.7
+          },
+          {
+            "keyword": "渠道",
+            "reason": "模型识别为与当前判断有关的关键词",
+            "confidence": 0.7
+          }
+        ],
+        "risks": []
+      },
+      "artifact_path": "D:\\project\\FullStack\\voc\\voc_agent\\complaint_taxonomy_validator\\tests\\chain_test\\output\\2024092416410541520209__2026-04-10T15-03-08.json"
+    },
+    {
+      "ticket_id": "2024100611010078669970",
+      "status": "success",
+      "stage": "chain",
+      "duration_ms": 22172,
+      "timestamp": "2026-04-10T15:03:28",
+      "model_name": "Qwen3-Max",
+      "result": {
+        "summary": "客户来电要求办理固话拆机业务，但系统显示状态为“开通中”，导致无法完成拆机操作，需协助处理。",
+        "primary_category": {
+          "code": "OPEN_CLOSE_CANCEL_DISMANTLE",
+          "full_name": "开通、停用与销户/拆机销户/拆机销户",
+          "confidence": 0.95,
+          "reason": "客户明确要求办理固话拆机，属于拆机销户类问题，且系统状态异常阻碍了正常拆机流程。"
+        },
+        "candidate_categories": [
+          {
+            "code": "OPEN_CLOSE_CANCEL",
+            "full_name": "开通、停用与销户/拆机销户",
+            "confidence": 0.85,
+            "reason": "上级分类，涵盖拆机销户，但不如 OPEN_CLOSE_CANCEL_DISMANTLE 具体。"
+          },
+          {
+            "code": "MARKETING_PROCESS_STATUS",
+            "full_name": "营销宣传与销售服务/办理差错与漏受理/受理状态异常",
+            "confidence": 0.75,
+            "reason": "系统状态显示异常（应拆机却显示开通中），可能涉及状态同步问题，但主诉是拆机受阻，核心仍属拆机销户范畴。"
+          }
+        ],
+        "candidate_tags": [
+          {
+            "group_code": "",
+            "code": "[PRODUCT] [BROADBAND]",
+            "name": "[PRODUCT] [BROADBAND]",
+            "confidence": 0.8,
+            "reason": "固话通常与宽带同属家庭固网业务，虽未明说是否融合，但固话拆机常关联宽带/IPTV，归入宽带业务较合理。"
+          },
+          {
+            "group_code": "",
+            "code": "[CHANNEL] [CALL_CENTER]",
+            "name": "[CHANNEL] [CALL_CENTER]",
+            "confidence": 0.9,
+            "reason": "客户通过电话（18997****13）来电办理，属于客服热线渠道。"
+          },
+          {
+            "group_code": "",
+            "code": "[ROOT_CAUSE] [SYSTEM_ERROR]",
+            "name": "[ROOT_CAUSE] [SYSTEM_ERROR]",
+            "confidence": 0.92,
+            "reason": "系统错误地显示“开通中”状态，阻碍拆机，属典型系统状态异常。"
+          },
+          {
+            "group_code": "",
+            "code": "[REQUEST] [CANCEL]",
+            "name": "[REQUEST] [CANCEL]",
+            "confidence": 0.98,
+            "reason": "客户明确要求办理“固话拆机”，即取消固话业务。"
+          },
+          {
+            "group_code": "",
+            "code": "[RESPONSIBILITY] [NETWORK_OP]",
+            "name": "[RESPONSIBILITY] [NETWORK_OP]",
+            "confidence": 0.85,
+            "reason": "固话拆机及状态管理通常由网络运营条线负责。"
+          }
+        ],
+        "category_keywords": [
+          {
+            "keyword": "固话拆机",
+            "reason": "模型识别为与当前判断有关的关键词",
+            "confidence": 0.7
+          },
+          {
+            "keyword": "受理失败",
+            "reason": "模型识别为与当前判断有关的关键词",
+            "confidence": 0.7
+          },
+          {
+            "keyword": "开通中",
+            "reason": "模型识别为与当前判断有关的关键词",
+            "confidence": 0.7
+          },
+          {
+            "keyword": "拆机销户",
+            "reason": "模型识别为与当前判断有关的关键词",
+            "confidence": 0.7
+          }
+        ],
+        "tag_keywords": [
+          {
+            "keyword": "固话",
+            "reason": "模型识别为与当前判断有关的关键词",
+            "confidence": 0.7
+          },
+          {
+            "keyword": "系统提示开通中",
+            "reason": "模型识别为与当前判断有关的关键词",
+            "confidence": 0.7
+          },
+          {
+            "keyword": "来电办理",
+            "reason": "模型识别为与当前判断有关的关键词",
+            "confidence": 0.7
+          },
+          {
+            "keyword": "请协助处理",
+            "reason": "模型识别为与当前判断有关的关键词",
+            "confidence": 0.7
+          }
+        ],
+        "risks": []
+      },
+      "artifact_path": "D:\\project\\FullStack\\voc\\voc_agent\\complaint_taxonomy_validator\\tests\\chain_test\\output\\2024100611010078669970__2026-04-10T15-03-28.json"
+    },
+    {
+      "ticket_id": "2024032816315134809173",
+      "status": "success",
+      "stage": "chain",
+      "duration_ms": 14668,
+      "timestamp": "2026-04-10T15:03:50",
+      "model_name": "Qwen3-Max",
+      "result": {
+        "summary": "用户否认订购‘橙翼包19.9元权益合约’，对3月产生的19.9元费用不认可，要求核查处理；此前已有退费退订回单但未实际退费。",
+        "primary_category": {
+          "code": "SUBSCRIBE_DENY_VALUE_ADDED",
+          "full_name": "订购与退订争议/用户否认订购/否认增值业务订购",
+          "confidence": 0.96,
+          "reason": "用户明确表示‘未订购过’该权益合约，且争议产品为增值类权益包（橙翼包），符合‘否认增值业务订购’的核心特征。"
+        },
+        "candidate_categories": [
+          {
+            "code": "FEE_VALUE_DENY_ORDER",
+            "full_name": "资费与收费争议/增值业务收费争议/用户否认订购收费争议",
+            "confidence": 0.85,
+            "reason": "涉及增值业务收费且用户否认订购，但主诉焦点在于‘是否订购’而非‘收费本身’，故优先归入订购争议。"
+          },
+          {
+            "code": "SUBSCRIBE_DENY",
+            "full_name": "订购与退订争议/用户否认订购",
+            "confidence": 0.82,
+            "reason": "通用否认订购类别，但存在更具体的子类‘否认增值业务订购’，应优先使用细化分类。"
+          }
+        ],
+        "candidate_tags": [
+          {
+            "group_code": "PRODUCT",
+            "code": "VALUE_ADDED",
+            "name": "增值业务",
+            "confidence": 0.8,
+            "reason": "用户否认订购‘橙翼包19.9元权益合约’，对3月产生的19.9元费用不认可，要求核查处理；此前已有退费退订回单但未实际退费。"
+          },
+          {
+            "group_code": "ROOT_CAUSE",
+            "code": "DENY_ORDER",
+            "name": "用户否认订购",
+            "confidence": 0.8,
+            "reason": "用户否认订购‘橙翼包19.9元权益合约’，对3月产生的19.9元费用不认可，要求核查处理；此前已有退费退订回单但未实际退费。"
+          },
+          {
+            "group_code": "REQUEST",
+            "code": "REFUND",
+            "name": "退费",
+            "confidence": 0.8,
+            "reason": "用户否认订购‘橙翼包19.9元权益合约’，对3月产生的19.9元费用不认可，要求核查处理；此前已有退费退订回单但未实际退费。"
+          },
+          {
+            "group_code": "RESPONSIBILITY",
+            "code": "MARKET",
+            "name": "市场条线",
+            "confidence": 0.8,
+            "reason": "用户否认订购‘橙翼包19.9元权益合约’，对3月产生的19.9元费用不认可，要求核查处理；此前已有退费退订回单但未实际退费。"
+          },
+          {
+            "group_code": "RESULT",
+            "code": "NOT_ACCEPTED",
+            "name": "用户不认可",
+            "confidence": 0.8,
+            "reason": "用户否认订购‘橙翼包19.9元权益合约’，对3月产生的19.9元费用不认可，要求核查处理；此前已有退费退订回单但未实际退费。"
+          }
+        ],
+        "category_keywords": [
+          {
+            "keyword": "未订购过",
+            "reason": "模型识别为与当前判断有关的关键词",
+            "confidence": 0.7
+          },
+          {
+            "keyword": "橙翼包19.9元权益合约",
+            "reason": "模型识别为与当前判断有关的关键词",
+            "confidence": 0.7
+          },
+          {
+            "keyword": "小合约费用争议",
+            "reason": "模型识别为与当前判断有关的关键词",
+            "confidence": 0.7
+          },
+          {
+            "keyword": "否认订购",
+            "reason": "模型识别为与当前判断有关的关键词",
+            "confidence": 0.7
+          }
+        ],
+        "tag_keywords": [
+          {
+            "keyword": "增值业务",
+            "reason": "模型识别为与当前判断有关的关键词",
+            "confidence": 0.7
+          },
+          {
+            "keyword": "否认订购",
+            "reason": "模型识别为与当前判断有关的关键词",
+            "confidence": 0.7
+          },
+          {
+            "keyword": "要求退费",
+            "reason": "模型识别为与当前判断有关的关键词",
+            "confidence": 0.7
+          },
+          {
+            "keyword": "市场条线",
+            "reason": "模型识别为与当前判断有关的关键词",
+            "confidence": 0.7
+          },
+          {
+            "keyword": "未退费",
+            "reason": "模型识别为与当前判断有关的关键词",
+            "confidence": 0.7
+          }
+        ],
+        "risks": []
+      },
+      "artifact_path": "D:\\project\\FullStack\\voc\\voc_agent\\complaint_taxonomy_validator\\tests\\chain_test\\output\\2024032816315134809173__2026-04-10T15-03-50.json"
+    },
+    {
+      "ticket_id": "2024061609245877234305",
+      "status": "success",
+      "stage": "chain",
+      "duration_ms": 16520,
+      "timestamp": "2026-04-10T15:04:05",
+      "model_name": "Qwen3-Max",
+      "result": {
+        "summary": "用户在营业厅办理5G畅享79元套餐时，未被告知其关联固话的来电显示功能需额外收费6元，现对这笔费用不认可并要求赔偿。",
+        "primary_category": {
+          "code": "MARKETING_EXPLAIN_UNCLEAR_FEE",
+          "full_name": "营销宣传与销售服务/宣传解释与营销误导/解释宣传不清/资费解释不清",
+          "confidence": 0.95,
+          "reason": "客户明确表示办理套餐时未被告知固话来电显示收费，属于关键资费项目未充分说明，符合‘资费解释不清’子类。"
+        },
+        "candidate_categories": [
+          {
+            "code": "FEE_UNKNOWN_UNUSED_VAS",
+            "full_name": "资费与收费争议/不明收费争议/未使用收费争议/未使用增值服务却计费",
+            "confidence": 0.75,
+            "reason": "用户称未被告知该收费，可能认为未主动使用该增值功能。但核心问题在于办理时未告知，而非是否使用。"
+          },
+          {
+            "code": "MARKETING_PROCESS_ERROR_PACKAGE",
+            "full_name": "营销宣传与销售服务/办理差错与漏受理/业务办理差错/办错套餐",
+            "confidence": 0.65,
+            "reason": "虽涉及套餐办理，但并非办错套餐档位，而是未告知关联收费项，更偏向解释不清而非操作错误。"
+          }
+        ],
+        "candidate_tags": [
+          {
+            "group_code": "PRODUCT",
+            "code": "VALUE_ADDED",
+            "name": "增值业务",
+            "confidence": 0.8,
+            "reason": "用户在营业厅办理5G畅享79元套餐时，未被告知其关联固话的来电显示功能需额外收费6元，现对这笔费用不认可并要求赔偿。"
+          },
+          {
+            "group_code": "CHANNEL",
+            "code": "HALL",
+            "name": "营业厅",
+            "confidence": 0.8,
+            "reason": "用户在营业厅办理5G畅享79元套餐时，未被告知其关联固话的来电显示功能需额外收费6元，现对这笔费用不认可并要求赔偿。"
+          },
+          {
+            "group_code": "ROOT_CAUSE",
+            "code": "NOT_INFORMED",
+            "name": "未充分告知",
+            "confidence": 0.8,
+            "reason": "用户在营业厅办理5G畅享79元套餐时，未被告知其关联固话的来电显示功能需额外收费6元，现对这笔费用不认可并要求赔偿。"
+          },
+          {
+            "group_code": "REQUEST",
+            "code": "REFUND",
+            "name": "退费",
+            "confidence": 0.8,
+            "reason": "用户在营业厅办理5G畅享79元套餐时，未被告知其关联固话的来电显示功能需额外收费6元，现对这笔费用不认可并要求赔偿。"
+          },
+          {
+            "group_code": "REQUEST",
+            "code": "COMPENSATE",
+            "name": "赔偿补偿",
+            "confidence": 0.8,
+            "reason": "用户在营业厅办理5G畅享79元套餐时，未被告知其关联固话的来电显示功能需额外收费6元，现对这笔费用不认可并要求赔偿。"
+          },
+          {
+            "group_code": "RESPONSIBILITY",
+            "code": "CHANNEL_MGMT",
+            "name": "渠道管理",
+            "confidence": 0.8,
+            "reason": "用户在营业厅办理5G畅享79元套餐时，未被告知其关联固话的来电显示功能需额外收费6元，现对这笔费用不认可并要求赔偿。"
+          },
+          {
+            "group_code": "RISK",
+            "code": "COMPLIANCE",
+            "name": "合规风险",
+            "confidence": 0.8,
+            "reason": "用户在营业厅办理5G畅享79元套餐时，未被告知其关联固话的来电显示功能需额外收费6元，现对这笔费用不认可并要求赔偿。"
+          },
+          {
+            "group_code": "EMOTION",
+            "code": "UNSATISFIED",
+            "name": "不满",
+            "confidence": 0.8,
+            "reason": "用户在营业厅办理5G畅享79元套餐时，未被告知其关联固话的来电显示功能需额外收费6元，现对这笔费用不认可并要求赔偿。"
+          }
+        ],
+        "category_keywords": [
+          {
+            "keyword": "办理时并未告知",
+            "reason": "模型识别为与当前判断有关的关键词",
+            "confidence": 0.7
+          },
+          {
+            "keyword": "来电显示需要收费",
+            "reason": "模型识别为与当前判断有关的关键词",
+            "confidence": 0.7
+          },
+          {
+            "keyword": "有争议",
+            "reason": "模型识别为与当前判断有关的关键词",
+            "confidence": 0.7
+          },
+          {
+            "keyword": "解释无效",
+            "reason": "模型识别为与当前判断有关的关键词",
+            "confidence": 0.7
+          }
+        ],
+        "tag_keywords": [
+          {
+            "keyword": "中国电信开元路营业厅",
+            "reason": "模型识别为与当前判断有关的关键词",
+            "confidence": 0.7
+          },
+          {
+            "keyword": "固话来电显示收费",
+            "reason": "模型识别为与当前判断有关的关键词",
+            "confidence": 0.7
+          },
+          {
+            "keyword": "要求赔偿",
+            "reason": "模型识别为与当前判断有关的关键词",
+            "confidence": 0.7
+          },
+          {
+            "keyword": "客服代表解释无效",
+            "reason": "模型识别为与当前判断有关的关键词",
+            "confidence": 0.7
+          }
+        ],
+        "risks": []
+      },
+      "artifact_path": "D:\\project\\FullStack\\voc\\voc_agent\\complaint_taxonomy_validator\\tests\\chain_test\\output\\2024061609245877234305__2026-04-10T15-04-05.json"
+    },
+    {
+      "ticket_id": "2024052214070887007619",
+      "status": "success",
+      "stage": "chain",
+      "duration_ms": 15139,
+      "timestamp": "2026-04-10T15:04:21",
+      "model_name": "Qwen3-Max",
+      "result": {
+        "summary": "用户预约宽带拆机，要求当天处理，但存在处理不及时问题，拆机原因为网速慢。",
+        "primary_category": {
+          "code": "OPEN_CLOSE_CANCEL_DISMANTLE_BROADBAND",
+          "full_name": "开通、停用与销户/拆机销户/拆机销户/宽带拆机不及时",
+          "confidence": 0.95,
+          "reason": "工单明确为宽带预约拆机处理不及时，且属于融合宽带拆机场景，最贴近该细分分类。"
+        },
+        "candidate_categories": [
+          {
+            "code": "INSTALL_TIMELINESS_OVERTIME_REMOVE",
+            "full_name": "装维与交付服务/履约时效问题/超时未完成/拆机超时未完成",
+            "confidence": 0.85,
+            "reason": "也涉及拆机履约时效问题，但主诉是拆机销户流程而非装维服务本身。"
+          },
+          {
+            "code": "OPEN_CLOSE_CANCEL_DISMANTLE_FUSION",
+            "full_name": "开通、停用与销户/拆机销户/拆机销户/融合业务拆机不及时",
+            "confidence": 0.88,
+            "reason": "工单提到‘融合宽带’，可能适用，但具体拆机对象是宽带，优先选宽带专用分类。"
+          }
+        ],
+        "candidate_tags": [
+          {
+            "group_code": "PRODUCT",
+            "code": "BROADBAND",
+            "name": "宽带业务",
+            "confidence": 0.8,
+            "reason": "用户预约宽带拆机，要求当天处理，但存在处理不及时问题，拆机原因为网速慢。"
+          },
+          {
+            "group_code": "PRODUCT",
+            "code": "FUSION_PACKAGE",
+            "name": "融合套餐",
+            "confidence": 0.8,
+            "reason": "用户预约宽带拆机，要求当天处理，但存在处理不及时问题，拆机原因为网速慢。"
+          },
+          {
+            "group_code": "REQUEST",
+            "code": "CANCEL",
+            "name": "取消业务",
+            "confidence": 0.8,
+            "reason": "用户预约宽带拆机，要求当天处理，但存在处理不及时问题，拆机原因为网速慢。"
+          },
+          {
+            "group_code": "REQUEST",
+            "code": "FAST_PROCESS",
+            "name": "加快处理",
+            "confidence": 0.8,
+            "reason": "用户预约宽带拆机，要求当天处理，但存在处理不及时问题，拆机原因为网速慢。"
+          },
+          {
+            "group_code": "ROOT_CAUSE",
+            "code": "DELAYED_FULFILLMENT",
+            "name": "履约不及时",
+            "confidence": 0.8,
+            "reason": "用户预约宽带拆机，要求当天处理，但存在处理不及时问题，拆机原因为网速慢。"
+          },
+          {
+            "group_code": "RESPONSIBILITY",
+            "code": "INSTALL_MAINTAIN",
+            "name": "装维条线",
+            "confidence": 0.8,
+            "reason": "用户预约宽带拆机，要求当天处理，但存在处理不及时问题，拆机原因为网速慢。"
+          }
+        ],
+        "category_keywords": [
+          {
+            "keyword": "宽带预约拆机",
+            "reason": "模型识别为与当前判断有关的关键词",
+            "confidence": 0.7
+          },
+          {
+            "keyword": "处理不及时",
+            "reason": "模型识别为与当前判断有关的关键词",
+            "confidence": 0.7
+          },
+          {
+            "keyword": "全部拆机",
+            "reason": "模型识别为与当前判断有关的关键词",
+            "confidence": 0.7
+          },
+          {
+            "keyword": "融合宽带",
+            "reason": "模型识别为与当前判断有关的关键词",
+            "confidence": 0.7
+          }
+        ],
+        "tag_keywords": [
+          {
+            "keyword": "宽带",
+            "reason": "模型识别为与当前判断有关的关键词",
+            "confidence": 0.7
+          },
+          {
+            "keyword": "融合",
+            "reason": "模型识别为与当前判断有关的关键词",
+            "confidence": 0.7
+          },
+          {
+            "keyword": "要求今天务必处理",
+            "reason": "模型识别为与当前判断有关的关键词",
+            "confidence": 0.7
+          },
+          {
+            "keyword": "拆机",
+            "reason": "模型识别为与当前判断有关的关键词",
+            "confidence": 0.7
+          }
+        ],
+        "risks": []
+      },
+      "artifact_path": "D:\\project\\FullStack\\voc\\voc_agent\\complaint_taxonomy_validator\\tests\\chain_test\\output\\2024052214070887007619__2026-04-10T15-04-21.json"
+    },
+    {
+      "ticket_id": "2024110319382222611987",
+      "status": "success",
+      "stage": "chain",
+      "duration_ms": 21517,
+      "timestamp": "2026-04-10T15:04:36",
+      "model_name": "Qwen3-Max",
+      "result": {
+        "summary": "用户对电信畅享99元融合套餐2019版在2024年10月产生的15元流量超套费用不认可，虽有短信提醒记录且已按规则解释，但用户仍要求退费。",
+        "primary_category": {
+          "code": "FEE_EXTRA_FLOW_DOMESTIC",
+          "full_name": "资费与收费争议/套外费用争议/流量超套收费争议/国内流量超套收费争议",
+          "confidence": 0.96,
+          "reason": "投诉核心为对国内通用流量超套后产生的15元费用不认可，符合该分类定义。"
+        },
+        "candidate_categories": [
+          {
+            "code": "FEE_EXTRA_FLOW",
+            "full_name": "资费与收费争议/套外费用争议/流量超套收费争议",
+            "confidence": 0.92,
+            "reason": "上一级分类，但存在更具体的子类。"
+          },
+          {
+            "code": "FEE_EXTRA",
+            "full_name": "资费与收费争议/套外费用争议",
+            "confidence": 0.85,
+            "reason": "过于宽泛，已有更精准匹配。"
+          }
+        ],
+        "candidate_tags": [
+          {
+            "group_code": "",
+            "code": "[PRODUCT] [MOBILE]",
+            "name": "[PRODUCT] [MOBILE]",
+            "confidence": 0.95,
+            "reason": "涉及手机号码及流量使用。"
+          },
+          {
+            "group_code": "",
+            "code": "[PRODUCT] [FUSION_PACKAGE]",
+            "name": "[PRODUCT] [FUSION_PACKAGE]",
+            "confidence": 0.9,
+            "reason": "用户办理的是融合套餐。"
+          },
+          {
+            "group_code": "",
+            "code": "[ROOT_CAUSE] [RULE_DISPUTE]",
+            "name": "[ROOT_CAUSE] [RULE_DISPUTE]",
+            "confidence": 0.88,
+            "reason": "用户不认可‘首次减免、后期不退’的规则。"
+          },
+          {
+            "group_code": "",
+            "code": "[REQUEST] [REFUND]",
+            "name": "[REQUEST] [REFUND]",
+            "confidence": 0.99,
+            "reason": "明确要求协助退费。"
+          },
+          {
+            "group_code": "",
+            "code": "[RESPONSIBILITY] [MARKET]",
+            "name": "[RESPONSIBILITY] [MARKET]",
+            "confidence": 0.95,
+            "reason": "工单来源为市场条线，涉及资费规则。"
+          },
+          {
+            "group_code": "",
+            "code": "[RESULT] [NOT_ACCEPTED]",
+            "name": "[RESULT] [NOT_ACCEPTED]",
+            "confidence": 0.93,
+            "reason": "用户不认可现有解释和处理结果。"
+          }
+        ],
+        "category_keywords": [
+          {
+            "keyword": "流量",
+            "reason": "模型识别为与当前判断有关的关键词",
+            "confidence": 0.7
+          },
+          {
+            "keyword": "套外费用",
+            "reason": "模型识别为与当前判断有关的关键词",
+            "confidence": 0.7
+          },
+          {
+            "keyword": "超套",
+            "reason": "模型识别为与当前判断有关的关键词",
+            "confidence": 0.7
+          },
+          {
+            "keyword": "15元",
+            "reason": "模型识别为与当前判断有关的关键词",
+            "confidence": 0.7
+          },
+          {
+            "keyword": "退费",
+            "reason": "模型识别为与当前判断有关的关键词",
+            "confidence": 0.7
+          }
+        ],
+        "tag_keywords": [
+          {
+            "keyword": "融合套餐",
+            "reason": "模型识别为与当前判断有关的关键词",
+            "confidence": 0.7
+          },
+          {
+            "keyword": "短信提醒",
+            "reason": "模型识别为与当前判断有关的关键词",
+            "confidence": 0.7
+          },
+          {
+            "keyword": "首次减免",
+            "reason": "模型识别为与当前判断有关的关键词",
+            "confidence": 0.7
+          },
+          {
+            "keyword": "后期不退",
+            "reason": "模型识别为与当前判断有关的关键词",
+            "confidence": 0.7
+          },
+          {
+            "keyword": "不认可",
+            "reason": "模型识别为与当前判断有关的关键词",
+            "confidence": 0.7
+          }
+        ],
+        "risks": []
+      },
+      "artifact_path": "D:\\project\\FullStack\\voc\\voc_agent\\complaint_taxonomy_validator\\tests\\chain_test\\output\\2024110319382222611987__2026-04-10T15-04-36.json"
+    },
+    {
+      "ticket_id": "2024060416193698334692",
+      "status": "success",
+      "stage": "chain",
+      "duration_ms": 23433,
+      "timestamp": "2026-04-10T15:04:58",
+      "model_name": "Qwen3-Max",
+      "result": {
+        "summary": "用户办理移机业务，预约2024-06-04 11:14上门，但未按约履约，且被告知因无端口需15个工作日内安装，用户作为办公用途强烈要求当日完成或明确答复，对履约不及时表示不满。",
+        "primary_category": {
+          "code": "INSTALL_TIMELINESS_NOT_VISIT_MOVE",
+          "full_name": "装维与交付服务/履约时效问题/预约未上门/移机未上门",
+          "confidence": 0.96,
+          "reason": "工单明确描述用户预约移机上门时间但未履约，且biz_category和complaint_phenomenon均指向'履约不及时/超时履约/未履约'，结合移机场景，最精准匹配为'移机未上门'子类。"
+        },
+        "candidate_categories": [
+          {
+            "code": "INSTALL_TIMELINESS_NOT_VISIT",
+            "full_name": "装维与交付服务/履约时效问题/预约未上门",
+            "confidence": 0.92,
+            "reason": "通用预约未上门类别，但不如移机专用子类精准"
+          },
+          {
+            "code": "INSTALL_TIMELINESS",
+            "full_name": "装维与交付服务/履约时效问题",
+            "confidence": 0.85,
+            "reason": "父级分类，覆盖范围过大"
+          }
+        ],
+        "candidate_tags": [
+          {
+            "group_code": "",
+            "code": "[PRODUCT] [BROADBAND]",
+            "name": "宽带业务",
+            "confidence": 0.9,
+            "reason": "移机通常指宽带移机，且return_reason提及'固话业务->网络->资源不足'，属宽带范畴"
+          },
+          {
+            "group_code": "",
+            "code": "[ROOT_CAUSE] [DELAYED_FULFILLMENT]",
+            "name": "履约不及时",
+            "confidence": 0.98,
+            "reason": "直接对应投诉核心原因：未按预约时间上门履约"
+          },
+          {
+            "group_code": "",
+            "code": "[RESPONSIBILITY] [INSTALL_MAINTAIN]",
+            "name": "装维条线",
+            "confidence": 0.95,
+            "reason": "上门安装/移机属装维职责，且line_category为'网运条线'，实际执行为装维"
+          },
+          {
+            "group_code": "",
+            "code": "[REQUEST] [FAST_PROCESS]",
+            "name": "加快处理",
+            "confidence": 0.97,
+            "reason": "用户明确要求'今天必须安装'或'务必今天答复'，属加快处理诉求"
+          },
+          {
+            "group_code": "",
+            "code": "[EMOTION] [UNSATISFIED]",
+            "name": "不满",
+            "confidence": 0.93,
+            "reason": "用户'对此不满'、'表达不满'，情绪明确为不满但未达激动程度"
+          }
+        ],
+        "category_keywords": [
+          {
+            "keyword": "移机",
+            "reason": "模型识别为与当前判断有关的关键词",
+            "confidence": 0.7
+          },
+          {
+            "keyword": "预约未上门",
+            "reason": "模型识别为与当前判断有关的关键词",
+            "confidence": 0.7
+          },
+          {
+            "keyword": "未按预约时间上门",
+            "reason": "模型识别为与当前判断有关的关键词",
+            "confidence": 0.7
+          },
+          {
+            "keyword": "履约不及时",
+            "reason": "模型识别为与当前判断有关的关键词",
+            "confidence": 0.7
+          }
+        ],
+        "tag_keywords": [
+          {
+            "keyword": "宽带",
+            "reason": "模型识别为与当前判断有关的关键词",
+            "confidence": 0.7
+          },
+          {
+            "keyword": "移机",
+            "reason": "模型识别为与当前判断有关的关键词",
+            "confidence": 0.7
+          },
+          {
+            "keyword": "无端口",
+            "reason": "模型识别为与当前判断有关的关键词",
+            "confidence": 0.7
+          },
+          {
+            "keyword": "15个工作日内安装",
+            "reason": "模型识别为与当前判断有关的关键词",
+            "confidence": 0.7
+          },
+          {
+            "keyword": "办公用网络",
+            "reason": "模型识别为与当前判断有关的关键词",
+            "confidence": 0.7
+          },
+          {
+            "keyword": "今天必须安装",
+            "reason": "模型识别为与当前判断有关的关键词",
+            "confidence": 0.7
+          },
+          {
+            "keyword": "尽快处理",
+            "reason": "模型识别为与当前判断有关的关键词",
+            "confidence": 0.7
+          }
+        ],
+        "risks": []
+      },
+      "artifact_path": "D:\\project\\FullStack\\voc\\voc_agent\\complaint_taxonomy_validator\\tests\\chain_test\\output\\2024060416193698334692__2026-04-10T15-04-58.json"
+    },
+    {
+      "ticket_id": "2024091414283735067320",
+      "status": "success",
+      "stage": "chain",
+      "duration_ms": 16262,
+      "timestamp": "2026-04-10T15:05:21",
+      "model_name": "Qwen3-Max",
+      "result": {
+        "summary": "用户投诉宽带网速慢，且此前已报修并约定次日上门处理，但装维人员未履约联系或上门，要求尽快预约上门维修。",
+        "primary_category": {
+          "code": "INSTALL_TIMELINESS_NOT_VISIT",
+          "full_name": "装维与交付服务/履约时效问题/预约未上门",
+          "confidence": 0.95,
+          "reason": "用户明确表示已与装维人员约定12号次日（13号）上门处理宽带网速慢问题，但截至工单提交时（14号）仍未联系或上门，核心诉求是履约未兑现，属于典型的预约未上门问题。虽然存在网速慢现象，但当前主要矛盾已从网络质量转向装维服务履约失效。"
+        },
+        "candidate_categories": [
+          {
+            "code": "NETWORK_SPEED_BROADBAND",
+            "full_name": "网络与通信质量/网速质量问题/宽带网速慢",
+            "confidence": 0.75,
+            "reason": "原始现象为宽带网速慢，但用户已自行尝试开关终端等操作无效，且重点在于后续装维未履约，故非主因。"
+          },
+          {
+            "code": "INSTALL_TIMELINESS",
+            "full_name": "装维与交付服务/履约时效问题",
+            "confidence": 0.85,
+            "reason": "上级分类正确，但存在更具体的子类 'INSTALL_TIMELINESS_NOT_VISIT' 可用。"
+          }
+        ],
+        "candidate_tags": [
+          {
+            "group_code": "PRODUCT",
+            "code": "BROADBAND",
+            "name": "宽带业务",
+            "confidence": 0.8,
+            "reason": "用户投诉宽带网速慢，且此前已报修并约定次日上门处理，但装维人员未履约联系或上门，要求尽快预约上门维修。"
+          },
+          {
+            "group_code": "CHANNEL",
+            "code": "DOOR_SERVICE",
+            "name": "上门服务",
+            "confidence": 0.8,
+            "reason": "用户投诉宽带网速慢，且此前已报修并约定次日上门处理，但装维人员未履约联系或上门，要求尽快预约上门维修。"
+          },
+          {
+            "group_code": "ROOT_CAUSE",
+            "code": "DELAYED_FULFILLMENT",
+            "name": "履约不及时",
+            "confidence": 0.8,
+            "reason": "用户投诉宽带网速慢，且此前已报修并约定次日上门处理，但装维人员未履约联系或上门，要求尽快预约上门维修。"
+          },
+          {
+            "group_code": "RESPONSIBILITY",
+            "code": "INSTALL_MAINTAIN",
+            "name": "装维条线",
+            "confidence": 0.8,
+            "reason": "用户投诉宽带网速慢，且此前已报修并约定次日上门处理，但装维人员未履约联系或上门，要求尽快预约上门维修。"
+          },
+          {
+            "group_code": "REQUEST",
+            "code": "FAST_PROCESS",
+            "name": "加快处理",
+            "confidence": 0.8,
+            "reason": "用户投诉宽带网速慢，且此前已报修并约定次日上门处理，但装维人员未履约联系或上门，要求尽快预约上门维修。"
+          },
+          {
+            "group_code": "EMOTION",
+            "code": "UNSATISFIED",
+            "name": "不满",
+            "confidence": 0.8,
+            "reason": "用户投诉宽带网速慢，且此前已报修并约定次日上门处理，但装维人员未履约联系或上门，要求尽快预约上门维修。"
+          }
+        ],
+        "category_keywords": [
+          {
+            "keyword": "约好第二天上门",
+            "reason": "模型识别为与当前判断有关的关键词",
+            "confidence": 0.7
+          },
+          {
+            "keyword": "到现在都没有再联系用户",
+            "reason": "模型识别为与当前判断有关的关键词",
+            "confidence": 0.7
+          },
+          {
+            "keyword": "要求尽快联系预约上门维修",
+            "reason": "模型识别为与当前判断有关的关键词",
+            "confidence": 0.7
+          },
+          {
+            "keyword": "12号报修",
+            "reason": "模型识别为与当前判断有关的关键词",
+            "confidence": 0.7
+          }
+        ],
+        "tag_keywords": [
+          {
+            "keyword": "宽带",
+            "reason": "模型识别为与当前判断有关的关键词",
+            "confidence": 0.7
+          },
+          {
+            "keyword": "装维人员",
+            "reason": "模型识别为与当前判断有关的关键词",
+            "confidence": 0.7
+          },
+          {
+            "keyword": "上门维修",
+            "reason": "模型识别为与当前判断有关的关键词",
+            "confidence": 0.7
+          },
+          {
+            "keyword": "未联系",
+            "reason": "模型识别为与当前判断有关的关键词",
+            "confidence": 0.7
+          },
+          {
+            "keyword": "尽快处理",
+            "reason": "模型识别为与当前判断有关的关键词",
+            "confidence": 0.7
+          }
+        ],
+        "risks": []
+      },
+      "artifact_path": "D:\\project\\FullStack\\voc\\voc_agent\\complaint_taxonomy_validator\\tests\\chain_test\\output\\2024091414283735067320__2026-04-10T15-05-21.json"
+    },
+    {
+      "ticket_id": "2024073014144343882769",
+      "status": "success",
+      "stage": "chain",
+      "duration_ms": 13557,
+      "timestamp": "2026-04-10T15:05:37",
+      "model_name": "Qwen3-Max",
+      "result": {
+        "summary": "客户举报多个号码（16770830081、16727927958）发送涉黄垃圾短信，要求核实处理。",
+        "primary_category": {
+          "code": "SERVICE_OTHER_REPORT",
+          "full_name": "服务投诉与其他/举报建议表扬/举报建议表扬",
+          "confidence": 0.98,
+          "reason": "工单明确为‘举报不良信息（本网）’，内容为用户举报涉黄垃圾短信，属于典型的举报类事项，对应分类 SERVICE_OTHER_REPORT 最为准确。"
+        },
+        "candidate_categories": [
+          {
+            "code": "SERVICE_OTHER_REPORT",
+            "full_name": "服务投诉与其他/举报建议表扬/举报建议表扬",
+            "confidence": 0.98,
+            "reason": "工单明确为‘举报不良信息（本网）’，内容为用户举报涉黄垃圾短信，属于典型的举报类事项，对应分类 SERVICE_OTHER_REPORT 最为准确。"
+          }
+        ],
+        "candidate_tags": [
+          {
+            "group_code": "",
+            "code": "[PRODUCT] [MOBILE]",
+            "name": "移动业务",
+            "confidence": 0.8,
+            "reason": "客户举报多个号码（16770830081、16727927958）发送涉黄垃圾短信，要求核实处理。"
+          },
+          {
+            "group_code": "",
+            "code": "[REQUEST] [FAST_PROCESS]",
+            "name": "加快处理",
+            "confidence": 0.8,
+            "reason": "客户举报多个号码（16770830081、16727927958）发送涉黄垃圾短信，要求核实处理。"
+          },
+          {
+            "group_code": "",
+            "code": "[RESPONSIBILITY] [NETWORK_OP]",
+            "name": "网运条线",
+            "confidence": 0.8,
+            "reason": "客户举报多个号码（16770830081、16727927958）发送涉黄垃圾短信，要求核实处理。"
+          }
+        ],
+        "category_keywords": [
+          {
+            "keyword": "举报",
+            "reason": "模型识别为与当前判断有关的关键词",
+            "confidence": 0.7
+          },
+          {
+            "keyword": "不良信息",
+            "reason": "模型识别为与当前判断有关的关键词",
+            "confidence": 0.7
+          },
+          {
+            "keyword": "垃圾短信",
+            "reason": "模型识别为与当前判断有关的关键词",
+            "confidence": 0.7
+          },
+          {
+            "keyword": "涉黄短信",
+            "reason": "模型识别为与当前判断有关的关键词",
+            "confidence": 0.7
+          }
+        ],
+        "tag_keywords": [
+          {
+            "keyword": "16770830081",
+            "reason": "模型识别为与当前判断有关的关键词",
+            "confidence": 0.7
+          },
+          {
+            "keyword": "16727927958",
+            "reason": "模型识别为与当前判断有关的关键词",
+            "confidence": 0.7
+          },
+          {
+            "keyword": "多个不同号码",
+            "reason": "模型识别为与当前判断有关的关键词",
+            "confidence": 0.7
+          },
+          {
+            "keyword": "要求核实处理",
+            "reason": "模型识别为与当前判断有关的关键词",
+            "confidence": 0.7
+          }
+        ],
+        "risks": []
+      },
+      "artifact_path": "D:\\project\\FullStack\\voc\\voc_agent\\complaint_taxonomy_validator\\tests\\chain_test\\output\\2024073014144343882769__2026-04-10T15-05-37.json"
+    },
+    {
+      "ticket_id": "2024040112202517251670",
+      "status": "success",
+      "stage": "chain",
+      "duration_ms": 17025,
+      "timestamp": "2026-04-10T15:05:51",
+      "model_name": "Qwen3-Max",
+      "result": {
+        "summary": "客户在营业厅办理50元手机直降礼包，被告知自付110元，实际支付137元，且本月权益金无法领取，投诉资费解释不清及权益未兑现。",
+        "primary_category": {
+          "code": "MARKETING_EXPLAIN_UNCLEAR_FEE",
+          "full_name": "营销宣传与销售服务/宣传解释与营销误导/解释宣传不清/资费解释不清",
+          "confidence": 0.96,
+          "reason": "客户明确表示营业员告知自付110元，但实际需支付137元，属于资费说明不清；同时涉及权益金无法领取，但主诉焦点是办理时的费用解释不一致，符合‘资费解释不清’子类。"
+        },
+        "candidate_categories": [
+          {
+            "code": "MARKETING_PROMISE_GIFT",
+            "full_name": "营销宣传与销售服务/承诺未兑现/赠品权益未兑现",
+            "confidence": 0.85,
+            "reason": "客户提到‘本月权益金无法领取’，可能涉及承诺权益未兑现，但主因仍是前期资费说明不清导致误解。"
+          },
+          {
+            "code": "FEE_WINGPAY_RIGHTS_UNCLEAR",
+            "full_name": "资费与收费争议/翼支付及权益争议/翼支付权益金争议/权益金收费未充分说明",
+            "confidence": 0.78,
+            "reason": "若该礼包通过翼支付发放权益金，则可能适用，但工单未明确提及翼支付，且问题核心在于营业厅解释不清而非权益金本身收费。"
+          }
+        ],
+        "candidate_tags": [
+          {
+            "group_code": "PRODUCT",
+            "code": "MOBILE",
+            "name": "移动业务",
+            "confidence": 0.8,
+            "reason": "客户在营业厅办理50元手机直降礼包，被告知自付110元，实际支付137元，且本月权益金无法领取，投诉资费解释不清及权益未兑现。"
+          },
+          {
+            "group_code": "CHANNEL",
+            "code": "HALL",
+            "name": "营业厅",
+            "confidence": 0.8,
+            "reason": "客户在营业厅办理50元手机直降礼包，被告知自付110元，实际支付137元，且本月权益金无法领取，投诉资费解释不清及权益未兑现。"
+          },
+          {
+            "group_code": "ROOT_CAUSE",
+            "code": "UNCLEAR_EXPLANATION",
+            "name": "解释不清",
+            "confidence": 0.8,
+            "reason": "客户在营业厅办理50元手机直降礼包，被告知自付110元，实际支付137元，且本月权益金无法领取，投诉资费解释不清及权益未兑现。"
+          },
+          {
+            "group_code": "RESPONSIBILITY",
+            "code": "CHANNEL_MGMT",
+            "name": "渠道管理",
+            "confidence": 0.8,
+            "reason": "客户在营业厅办理50元手机直降礼包，被告知自付110元，实际支付137元，且本月权益金无法领取，投诉资费解释不清及权益未兑现。"
+          },
+          {
+            "group_code": "REQUEST",
+            "code": "EXPLAIN",
+            "name": "解释说明",
+            "confidence": 0.8,
+            "reason": "客户在营业厅办理50元手机直降礼包，被告知自付110元，实际支付137元，且本月权益金无法领取，投诉资费解释不清及权益未兑现。"
+          }
+        ],
+        "category_keywords": [
+          {
+            "keyword": "营业员告知",
+            "reason": "模型识别为与当前判断有关的关键词",
+            "confidence": 0.7
+          },
+          {
+            "keyword": "自己交110元",
+            "reason": "模型识别为与当前判断有关的关键词",
+            "confidence": 0.7
+          },
+          {
+            "keyword": "现查看要交137元",
+            "reason": "模型识别为与当前判断有关的关键词",
+            "confidence": 0.7
+          },
+          {
+            "keyword": "资费告知不清",
+            "reason": "模型识别为与当前判断有关的关键词",
+            "confidence": 0.7
+          },
+          {
+            "keyword": "解释、说明、宣传不清晰",
+            "reason": "模型识别为与当前判断有关的关键词",
+            "confidence": 0.7
+          }
+        ],
+        "tag_keywords": [
+          {
+            "keyword": "中国电信大通营业厅",
+            "reason": "模型识别为与当前判断有关的关键词",
+            "confidence": 0.7
+          },
+          {
+            "keyword": "50元手机直降礼包",
+            "reason": "模型识别为与当前判断有关的关键词",
+            "confidence": 0.7
+          },
+          {
+            "keyword": "权益金无法领取",
+            "reason": "模型识别为与当前判断有关的关键词",
+            "confidence": 0.7
+          },
+          {
+            "keyword": "不需要赔偿",
+            "reason": "模型识别为与当前判断有关的关键词",
+            "confidence": 0.7
+          },
+          {
+            "keyword": "客服代表解释无效",
+            "reason": "模型识别为与当前判断有关的关键词",
+            "confidence": 0.7
+          }
+        ],
+        "risks": []
+      },
+      "artifact_path": "D:\\project\\FullStack\\voc\\voc_agent\\complaint_taxonomy_validator\\tests\\chain_test\\output\\2024040112202517251670__2026-04-10T15-05-51.json"
+    },
+    {
+      "ticket_id": "2024082211562487146196",
+      "status": "success",
+      "stage": "chain",
+      "duration_ms": 22407,
+      "timestamp": "2026-04-10T15:06:08",
+      "model_name": "Qwen3-Max",
+      "result": {
+        "summary": "客户对因‘省内涉诈单停’导致的停机不认可，要求复机，后已在营业厅办理复机。",
+        "primary_category": {
+          "code": "OPEN_CLOSE_SHUTDOWN_RISK_FRAUD",
+          "full_name": "开通、停用与销户/停机关停争议/风险关停不认可/反诈治理关停争议",
+          "confidence": 0.96,
+          "reason": "工单明确指出停机类型为‘省内涉诈单停’，属于反诈治理措施下的风险关停，客户对此不认可，符合该分类定义。"
+        },
+        "candidate_categories": [
+          {
+            "code": "OPEN_CLOSE_SHUTDOWN_RISK",
+            "full_name": "开通、停用与销户/停机关停争议/风险关停不认可",
+            "confidence": 0.92,
+            "reason": "上一级分类，涵盖所有风险类关停，但不如子类精准。"
+          },
+          {
+            "code": "OPEN_CLOSE_SHUTDOWN",
+            "full_name": "开通、停用与销户/停机关停争议",
+            "confidence": 0.85,
+            "reason": "更宽泛的停机关停争议，未体现‘反诈’这一关键原因。"
+          }
+        ],
+        "candidate_tags": [
+          {
+            "group_code": "",
+            "code": "[PRODUCT] [MOBILE]",
+            "name": "移动业务",
+            "confidence": 0.98,
+            "reason": "涉及手机号码18935****70的停复机问题。"
+          },
+          {
+            "group_code": "",
+            "code": "[CHANNEL] [HALL]",
+            "name": "营业厅",
+            "confidence": 0.95,
+            "reason": "用户通过古城台营业厅办理复机。"
+          },
+          {
+            "group_code": "",
+            "code": "[REQUEST] [RESTORE]",
+            "name": "恢复服务",
+            "confidence": 0.97,
+            "reason": "用户主诉为要求尽快复机。"
+          },
+          {
+            "group_code": "",
+            "code": "[RESULT] [RESTORED]",
+            "name": "已恢复",
+            "confidence": 0.99,
+            "reason": "备注明确说明已办理复机。"
+          },
+          {
+            "group_code": "",
+            "code": "[RESPONSIBILITY] [NETWORK_OP]",
+            "name": "网运条线",
+            "confidence": 0.9,
+            "reason": "停复机操作通常由网络运营或信安条线执行，工单中‘网信安条线’佐证。"
+          },
+          {
+            "group_code": "",
+            "code": "[ROOT_CAUSE] [RULE_DISPUTE]",
+            "name": "规则不认可",
+            "confidence": 0.88,
+            "reason": "客户不认可基于反诈规则的关停决定。"
+          }
+        ],
+        "category_keywords": [
+          {
+            "keyword": "停机不认可",
+            "reason": "模型识别为与当前判断有关的关键词",
+            "confidence": 0.7
+          },
+          {
+            "keyword": "省内涉诈单停",
+            "reason": "模型识别为与当前判断有关的关键词",
+            "confidence": 0.7
+          },
+          {
+            "keyword": "复机",
+            "reason": "模型识别为与当前判断有关的关键词",
+            "confidence": 0.7
+          },
+          {
+            "keyword": "关停",
+            "reason": "模型识别为与当前判断有关的关键词",
+            "confidence": 0.7
+          }
+        ],
+        "tag_keywords": [
+          {
+            "keyword": "18935****70",
+            "reason": "模型识别为与当前判断有关的关键词",
+            "confidence": 0.7
+          },
+          {
+            "keyword": "古城台营业厅",
+            "reason": "模型识别为与当前判断有关的关键词",
+            "confidence": 0.7
+          },
+          {
+            "keyword": "王雪颖",
+            "reason": "模型识别为与当前判断有关的关键词",
+            "confidence": 0.7
+          },
+          {
+            "keyword": "复机",
+            "reason": "模型识别为与当前判断有关的关键词",
+            "confidence": 0.7
+          },
+          {
+            "keyword": "网信安条线",
+            "reason": "模型识别为与当前判断有关的关键词",
+            "confidence": 0.7
+          }
+        ],
+        "risks": []
+      },
+      "artifact_path": "D:\\project\\FullStack\\voc\\voc_agent\\complaint_taxonomy_validator\\tests\\chain_test\\output\\2024082211562487146196__2026-04-10T15-06-08.json"
+    },
+    {
+      "ticket_id": "2024042310155739792112",
+      "status": "success",
+      "stage": "chain",
+      "duration_ms": 15649,
+      "timestamp": "2026-04-10T15:06:30",
+      "model_name": "Qwen3-Max",
+      "result": {
+        "summary": "用户因欠费被拆机，不认可处理结果，要求复机恢复服务。",
+        "primary_category": {
+          "code": "OPEN_CLOSE_RECOVERY",
+          "full_name": "开通、停用与销户/复机恢复争议",
+          "confidence": 0.95,
+          "reason": "工单核心诉求是‘要求复机’，且背景为‘欠费拆机’后用户不认可，属于复机恢复类争议。"
+        },
+        "candidate_categories": [
+          {
+            "code": "OPEN_CLOSE_CANCEL",
+            "full_name": "开通、停用与销户/拆机销户",
+            "confidence": 0.7,
+            "reason": "涉及拆机事实，但用户主诉是要求复机而非质疑拆机本身。"
+          },
+          {
+            "code": "OPEN_CLOSE_SHUTDOWN_ARREARS",
+            "full_name": "开通、停用与销户/停机关停争议/欠费停机不认可",
+            "confidence": 0.7,
+            "reason": "用户对欠费停机（拆机）不认可，但最终诉求明确指向复机，故次之。"
+          }
+        ],
+        "candidate_tags": [
+          {
+            "group_code": "",
+            "code": "[PRODUCT] [MOBILE]",
+            "name": "移动业务",
+            "confidence": 0.8,
+            "reason": "用户因欠费被拆机，不认可处理结果，要求复机恢复服务。"
+          },
+          {
+            "group_code": "",
+            "code": "[REQUEST] [RESTORE]",
+            "name": "恢复服务",
+            "confidence": 0.8,
+            "reason": "用户因欠费被拆机，不认可处理结果，要求复机恢复服务。"
+          },
+          {
+            "group_code": "",
+            "code": "[ROOT_CAUSE] [RULE_DISPUTE]",
+            "name": "规则不认可",
+            "confidence": 0.8,
+            "reason": "用户因欠费被拆机，不认可处理结果，要求复机恢复服务。"
+          },
+          {
+            "group_code": "",
+            "code": "[RESPONSIBILITY] [NETWORK_OP]",
+            "name": "网运条线",
+            "confidence": 0.8,
+            "reason": "用户因欠费被拆机，不认可处理结果，要求复机恢复服务。"
+          },
+          {
+            "group_code": "",
+            "code": "[RESULT] [NOT_ACCEPTED]",
+            "name": "用户不认可",
+            "confidence": 0.8,
+            "reason": "用户因欠费被拆机，不认可处理结果，要求复机恢复服务。"
+          },
+          {
+            "group_code": "",
+            "code": "[EMOTION] [UNSATISFIED]",
+            "name": "不满",
+            "confidence": 0.8,
+            "reason": "用户因欠费被拆机，不认可处理结果，要求复机恢复服务。"
+          }
+        ],
+        "category_keywords": [
+          {
+            "keyword": "欠费拆机",
+            "reason": "模型识别为与当前判断有关的关键词",
+            "confidence": 0.7
+          },
+          {
+            "keyword": "要求复机",
+            "reason": "模型识别为与当前判断有关的关键词",
+            "confidence": 0.7
+          },
+          {
+            "keyword": "不认可",
+            "reason": "模型识别为与当前判断有关的关键词",
+            "confidence": 0.7
+          }
+        ],
+        "tag_keywords": [
+          {
+            "keyword": "本机",
+            "reason": "模型识别为与当前判断有关的关键词",
+            "confidence": 0.7
+          },
+          {
+            "keyword": "复机",
+            "reason": "模型识别为与当前判断有关的关键词",
+            "confidence": 0.7
+          },
+          {
+            "keyword": "已向用户解释，用户不认可",
+            "reason": "模型识别为与当前判断有关的关键词",
+            "confidence": 0.7
+          }
+        ],
+        "risks": []
+      },
+      "artifact_path": "D:\\project\\FullStack\\voc\\voc_agent\\complaint_taxonomy_validator\\tests\\chain_test\\output\\2024042310155739792112__2026-04-10T15-06-30.json"
+    },
+    {
+      "ticket_id": "2024080509360496221219",
+      "status": "success",
+      "stage": "chain",
+      "duration_ms": 16075,
+      "timestamp": "2026-04-10T15:06:46",
+      "model_name": "Qwen3-Max",
+      "result": {
+        "summary": "用户投诉畅享59元融合套餐202406中承诺的110G流量（含60G主套餐+50G西宁大通0元合约流量）未准确生效，认为规则不合理，要求处理但不要求赔偿。",
+        "primary_category": {
+          "code": "RULE_EFFECTIVE_PACKAGE",
+          "full_name": "规则政策争议/生效失效规则争议/套餐生效时间争议",
+          "confidence": 0.92,
+          "reason": "用户核心争议点在于套餐内流量（特别是附加合约流量）未按预期生效，属于业务生效规则问题，且原始工单已明确归类为'业务生效/失效规则争议'。"
+        },
+        "candidate_categories": [
+          {
+            "code": "RULE_USAGE_FLOW_SCOPE",
+            "full_name": "规则政策争议/使用规则争议/流量使用范围争议",
+            "confidence": 0.75,
+            "reason": "涉及50G区域合约流量是否应计入总流量，可能存在使用范围理解差异。"
+          },
+          {
+            "code": "MARKETING_EXPLAIN_UNCLEAR_FEE",
+            "full_name": "营销宣传与销售服务/宣传解释与营销误导/解释宣传不清/资费解释不清",
+            "confidence": 0.7,
+            "reason": "用户称办理时工作人员告知总流量110G，可能存在解释不清或承诺不一致。"
+          }
+        ],
+        "candidate_tags": [
+          {
+            "group_code": "PRODUCT",
+            "code": "FUSION_PACKAGE",
+            "name": "融合套餐",
+            "confidence": 0.8,
+            "reason": "用户投诉畅享59元融合套餐202406中承诺的110G流量（含60G主套餐+50G西宁大通0元合约流量）未准确生效，认为规则不合理，要求处理但不要求赔偿。"
+          },
+          {
+            "group_code": "PRODUCT",
+            "code": "MOBILE",
+            "name": "移动业务",
+            "confidence": 0.8,
+            "reason": "用户投诉畅享59元融合套餐202406中承诺的110G流量（含60G主套餐+50G西宁大通0元合约流量）未准确生效，认为规则不合理，要求处理但不要求赔偿。"
+          },
+          {
+            "group_code": "ROOT_CAUSE",
+            "code": "UNCLEAR_EXPLANATION",
+            "name": "解释不清",
+            "confidence": 0.8,
+            "reason": "用户投诉畅享59元融合套餐202406中承诺的110G流量（含60G主套餐+50G西宁大通0元合约流量）未准确生效，认为规则不合理，要求处理但不要求赔偿。"
+          },
+          {
+            "group_code": "REQUEST",
+            "code": "EXPLAIN",
+            "name": "解释说明",
+            "confidence": 0.8,
+            "reason": "用户投诉畅享59元融合套餐202406中承诺的110G流量（含60G主套餐+50G西宁大通0元合约流量）未准确生效，认为规则不合理，要求处理但不要求赔偿。"
+          },
+          {
+            "group_code": "RESPONSIBILITY",
+            "code": "MARKET",
+            "name": "市场条线",
+            "confidence": 0.8,
+            "reason": "用户投诉畅享59元融合套餐202406中承诺的110G流量（含60G主套餐+50G西宁大通0元合约流量）未准确生效，认为规则不合理，要求处理但不要求赔偿。"
+          },
+          {
+            "group_code": "EMOTION",
+            "code": "UNSATISFIED",
+            "name": "不满",
+            "confidence": 0.8,
+            "reason": "用户投诉畅享59元融合套餐202406中承诺的110G流量（含60G主套餐+50G西宁大通0元合约流量）未准确生效，认为规则不合理，要求处理但不要求赔偿。"
+          }
+        ],
+        "category_keywords": [
+          {
+            "keyword": "业务生效有争议",
+            "reason": "模型识别为与当前判断有关的关键词",
+            "confidence": 0.7
+          },
+          {
+            "keyword": "流量未准确生效",
+            "reason": "模型识别为与当前判断有关的关键词",
+            "confidence": 0.7
+          },
+          {
+            "keyword": "规则不合理",
+            "reason": "模型识别为与当前判断有关的关键词",
+            "confidence": 0.7
+          },
+          {
+            "keyword": "畅享59元融合套餐202406",
+            "reason": "模型识别为与当前判断有关的关键词",
+            "confidence": 0.7
+          },
+          {
+            "keyword": "西宁大通0元50GB流量合约",
+            "reason": "模型识别为与当前判断有关的关键词",
+            "confidence": 0.7
+          }
+        ],
+        "tag_keywords": [
+          {
+            "keyword": "融合套餐",
+            "reason": "模型识别为与当前判断有关的关键词",
+            "confidence": 0.7
+          },
+          {
+            "keyword": "流量",
+            "reason": "模型识别为与当前判断有关的关键词",
+            "confidence": 0.7
+          },
+          {
+            "keyword": "工作人员告知",
+            "reason": "模型识别为与当前判断有关的关键词",
+            "confidence": 0.7
+          },
+          {
+            "keyword": "客服代表解释无效",
+            "reason": "模型识别为与当前判断有关的关键词",
+            "confidence": 0.7
+          },
+          {
+            "keyword": "市场条线",
+            "reason": "模型识别为与当前判断有关的关键词",
+            "confidence": 0.7
+          }
+        ],
+        "risks": []
+      },
+      "artifact_path": "D:\\project\\FullStack\\voc\\voc_agent\\complaint_taxonomy_validator\\tests\\chain_test\\output\\2024080509360496221219__2026-04-10T15-06-46.json"
+    },
+    {
+      "ticket_id": "2024071813301405772383",
+      "status": "success",
+      "stage": "chain",
+      "duration_ms": 23261,
+      "timestamp": "2026-04-10T15:07:02",
+      "model_name": "Qwen3-Max",
+      "result": {
+        "summary": "用户于2024-07-14通过大通营业厅预约宽带拆机，但至今无人联系处理，现紧急催促尽快完成拆机。",
+        "primary_category": {
+          "code": "OPEN_CLOSE_CANCEL_DISMANTLE_FUSION",
+          "full_name": "开通、停用与销户/拆机销户/拆机销户/融合业务拆机不及时",
+          "confidence": 0.96,
+          "reason": "工单明确描述为‘宽带预约拆机处理不及时’，涉及融合宽带（含ITV），且用户已预约但未被联系处理，符合‘融合业务拆机不及时’的定义。"
+        },
+        "candidate_categories": [
+          {
+            "code": "INSTALL_TIMELINESS_OVERTIME_REMOVE",
+            "full_name": "装维与交付服务/履约时效问题/超时未完成/拆机超时未完成",
+            "confidence": 0.85,
+            "reason": "拆机属于装维履约范畴，也可归入履约时效问题，但主诉是‘拆机销户’流程未启动，而非装维执行阶段超时，故优先级低于拆机销户类。"
+          },
+          {
+            "code": "OPEN_CLOSE_CANCEL_DISMANTLE_BROADBAND",
+            "full_name": "开通、停用与销户/拆机销户/拆机销户/宽带拆机不及时",
+            "confidence": 0.88,
+            "reason": "虽涉及宽带拆机，但工单明确包含ITV（09712****40itv）和融合宽带，属于融合业务，因此‘融合业务拆机不及时’更精准。"
+          }
+        ],
+        "candidate_tags": [
+          {
+            "group_code": "",
+            "code": "[PRODUCT] [FUSION_PACKAGE]",
+            "name": "融合套餐",
+            "confidence": 0.8,
+            "reason": "用户于2024-07-14通过大通营业厅预约宽带拆机，但至今无人联系处理，现紧急催促尽快完成拆机。"
+          },
+          {
+            "group_code": "",
+            "code": "[PRODUCT] [BROADBAND]",
+            "name": "宽带业务",
+            "confidence": 0.8,
+            "reason": "用户于2024-07-14通过大通营业厅预约宽带拆机，但至今无人联系处理，现紧急催促尽快完成拆机。"
+          },
+          {
+            "group_code": "",
+            "code": "[PRODUCT] [IPTV]",
+            "name": "IPTV业务",
+            "confidence": 0.8,
+            "reason": "用户于2024-07-14通过大通营业厅预约宽带拆机，但至今无人联系处理，现紧急催促尽快完成拆机。"
+          },
+          {
+            "group_code": "",
+            "code": "[CHANNEL] [HALL]",
+            "name": "营业厅",
+            "confidence": 0.8,
+            "reason": "用户于2024-07-14通过大通营业厅预约宽带拆机，但至今无人联系处理，现紧急催促尽快完成拆机。"
+          },
+          {
+            "group_code": "",
+            "code": "[ROOT_CAUSE] [DELAYED_FULFILLMENT]",
+            "name": "履约不及时",
+            "confidence": 0.8,
+            "reason": "用户于2024-07-14通过大通营业厅预约宽带拆机，但至今无人联系处理，现紧急催促尽快完成拆机。"
+          },
+          {
+            "group_code": "",
+            "code": "[REQUEST] [FAST_PROCESS]",
+            "name": "加快处理",
+            "confidence": 0.8,
+            "reason": "用户于2024-07-14通过大通营业厅预约宽带拆机，但至今无人联系处理，现紧急催促尽快完成拆机。"
+          },
+          {
+            "group_code": "",
+            "code": "[REQUEST] [CANCEL]",
+            "name": "取消业务",
+            "confidence": 0.8,
+            "reason": "用户于2024-07-14通过大通营业厅预约宽带拆机，但至今无人联系处理，现紧急催促尽快完成拆机。"
+          },
+          {
+            "group_code": "",
+            "code": "[RESPONSIBILITY] [INSTALL_MAINTAIN]",
+            "name": "装维条线",
+            "confidence": 0.8,
+            "reason": "用户于2024-07-14通过大通营业厅预约宽带拆机，但至今无人联系处理，现紧急催促尽快完成拆机。"
+          },
+          {
+            "group_code": "",
+            "code": "[EMOTION] [UNSATISFIED]",
+            "name": "不满",
+            "confidence": 0.8,
+            "reason": "用户于2024-07-14通过大通营业厅预约宽带拆机，但至今无人联系处理，现紧急催促尽快完成拆机。"
+          }
+        ],
+        "category_keywords": [
+          {
+            "keyword": "预约拆机",
+            "reason": "模型识别为与当前判断有关的关键词",
+            "confidence": 0.7
+          },
+          {
+            "keyword": "无人联系",
+            "reason": "模型识别为与当前判断有关的关键词",
+            "confidence": 0.7
+          },
+          {
+            "keyword": "处理不及时",
+            "reason": "模型识别为与当前判断有关的关键词",
+            "confidence": 0.7
+          },
+          {
+            "keyword": "融合宽带",
+            "reason": "模型识别为与当前判断有关的关键词",
+            "confidence": 0.7
+          },
+          {
+            "keyword": "部分拆机",
+            "reason": "模型识别为与当前判断有关的关键词",
+            "confidence": 0.7
+          }
+        ],
+        "tag_keywords": [
+          {
+            "keyword": "大通营业厅",
+            "reason": "模型识别为与当前判断有关的关键词",
+            "confidence": 0.7
+          },
+          {
+            "keyword": "急催",
+            "reason": "模型识别为与当前判断有关的关键词",
+            "confidence": 0.7
+          },
+          {
+            "keyword": "请马上督促处理",
+            "reason": "模型识别为与当前判断有关的关键词",
+            "confidence": 0.7
+          },
+          {
+            "keyword": "家中无人使用",
+            "reason": "模型识别为与当前判断有关的关键词",
+            "confidence": 0.7
+          },
+          {
+            "keyword": "CRM预约拆机单",
+            "reason": "模型识别为与当前判断有关的关键词",
+            "confidence": 0.7
+          }
+        ],
+        "risks": []
+      },
+      "artifact_path": "D:\\project\\FullStack\\voc\\voc_agent\\complaint_taxonomy_validator\\tests\\chain_test\\output\\2024071813301405772383__2026-04-10T15-07-02.json"
+    }
+  ],
+  "result_files": [
+    "D:\\project\\FullStack\\voc\\voc_agent\\complaint_taxonomy_validator\\tests\\chain_test\\output\\2024061809503493744182__2026-04-10T15-01-10.json",
+    "D:\\project\\FullStack\\voc\\voc_agent\\complaint_taxonomy_validator\\tests\\chain_test\\output\\2024030214394239912335__2026-04-10T15-01-33.json",
+    "D:\\project\\FullStack\\voc\\voc_agent\\complaint_taxonomy_validator\\tests\\chain_test\\output\\2024061917251140199067__2026-04-10T15-01-48.json",
+    "D:\\project\\FullStack\\voc\\voc_agent\\complaint_taxonomy_validator\\tests\\chain_test\\output\\2024071911223534110028__2026-04-10T15-02-09.json",
+    "D:\\project\\FullStack\\voc\\voc_agent\\complaint_taxonomy_validator\\tests\\chain_test\\output\\2024042315384188514701__2026-04-10T15-02-28.json",
+    "D:\\project\\FullStack\\voc\\voc_agent\\complaint_taxonomy_validator\\tests\\chain_test\\output\\2024053112324270409290__2026-04-10T15-02-50.json",
+    "D:\\project\\FullStack\\voc\\voc_agent\\complaint_taxonomy_validator\\tests\\chain_test\\output\\2024092416410541520209__2026-04-10T15-03-08.json",
+    "D:\\project\\FullStack\\voc\\voc_agent\\complaint_taxonomy_validator\\tests\\chain_test\\output\\2024100611010078669970__2026-04-10T15-03-28.json",
+    "D:\\project\\FullStack\\voc\\voc_agent\\complaint_taxonomy_validator\\tests\\chain_test\\output\\2024032816315134809173__2026-04-10T15-03-50.json",
+    "D:\\project\\FullStack\\voc\\voc_agent\\complaint_taxonomy_validator\\tests\\chain_test\\output\\2024061609245877234305__2026-04-10T15-04-05.json",
+    "D:\\project\\FullStack\\voc\\voc_agent\\complaint_taxonomy_validator\\tests\\chain_test\\output\\2024052214070887007619__2026-04-10T15-04-21.json",
+    "D:\\project\\FullStack\\voc\\voc_agent\\complaint_taxonomy_validator\\tests\\chain_test\\output\\2024110319382222611987__2026-04-10T15-04-36.json",
+    "D:\\project\\FullStack\\voc\\voc_agent\\complaint_taxonomy_validator\\tests\\chain_test\\output\\2024060416193698334692__2026-04-10T15-04-58.json",
+    "D:\\project\\FullStack\\voc\\voc_agent\\complaint_taxonomy_validator\\tests\\chain_test\\output\\2024091414283735067320__2026-04-10T15-05-21.json",
+    "D:\\project\\FullStack\\voc\\voc_agent\\complaint_taxonomy_validator\\tests\\chain_test\\output\\2024073014144343882769__2026-04-10T15-05-37.json",
+    "D:\\project\\FullStack\\voc\\voc_agent\\complaint_taxonomy_validator\\tests\\chain_test\\output\\2024040112202517251670__2026-04-10T15-05-51.json",
+    "D:\\project\\FullStack\\voc\\voc_agent\\complaint_taxonomy_validator\\tests\\chain_test\\output\\2024082211562487146196__2026-04-10T15-06-08.json",
+    "D:\\project\\FullStack\\voc\\voc_agent\\complaint_taxonomy_validator\\tests\\chain_test\\output\\2024042310155739792112__2026-04-10T15-06-30.json",
+    "D:\\project\\FullStack\\voc\\voc_agent\\complaint_taxonomy_validator\\tests\\chain_test\\output\\2024080509360496221219__2026-04-10T15-06-46.json",
+    "D:\\project\\FullStack\\voc\\voc_agent\\complaint_taxonomy_validator\\tests\\chain_test\\output\\2024071813301405772383__2026-04-10T15-07-02.json"
+  ],
+  "summary_path": "D:\\project\\FullStack\\voc\\voc_agent\\complaint_taxonomy_validator\\tests\\chain_test\\output\\summary__2026-04-10T15-01-10.json",
+  "report_path": "D:\\project\\FullStack\\voc\\voc_agent\\complaint_taxonomy_validator\\tests\\chain_test\\output\\report__2026-04-10T15-01-10.md"
+}

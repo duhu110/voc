@@ -1,0 +1,10 @@
+{
+  "case_name": "network_quality_escalation",
+  "model_name": "bge-reranker-v2-m3",
+  "prompt_path": "D:\\project\\FullStack\\voc\\voc_agent\\complaint_taxonomy_validator\\tests\\model_test\\output\\prompts\\network_quality_escalation.txt",
+  "status": "failed",
+  "error_type": "BadRequestError",
+  "error_message": "Error code: 400 - {'code': 500002, 'detail': '必传的参数 documents 未传', 'message': 'PARAM_ERROR', 'error': {'code': '500002', 'message': '必传的参数 documents 未传', 'type': 'PARAM_ERROR'}}",
+  "duration_ms": 254,
+  "timestamp": "2026-04-10T15:10:13"
+}

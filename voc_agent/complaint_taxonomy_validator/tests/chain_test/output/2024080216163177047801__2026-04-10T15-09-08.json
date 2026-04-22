@@ -1,0 +1,105 @@
+{
+  "ticket_id": "2024080216163177047801",
+  "status": "success",
+  "stage": "chain",
+  "duration_ms": 23608,
+  "timestamp": "2026-04-10T15:09:08",
+  "model_name": "Qwen3-Max",
+  "result": {
+    "summary": "用户为异地办用户（归属地山东枣庄），来电查询话费和套餐，请求归属地协助处理。工单现象归类为“套餐收费疑议”，但实际内容仅为查询类请求，无明确争议或投诉点。",
+    "primary_category": {
+      "code": "FEE_PACKAGE_MONTHLY",
+      "full_name": "资费与收费争议/套餐收费争议/套餐收费疑议",
+      "confidence": 0.65,
+      "reason": "工单biz_category和complaint_phenomenon均指向“套餐收费疑议”，但原始内容仅为查询话费和套餐，并未表达对收费的异议或不认可。分类依据主要来自系统预填字段，而非用户主诉。"
+    },
+    "candidate_categories": [
+      {
+        "code": "PRODUCT_PLATFORM_QUERY",
+        "full_name": "产品功能与平台使用/查询展示异常",
+        "confidence": 0.55,
+        "reason": "用户行为本质是查询话费和套餐，若查询渠道存在异常（如APP查不到），可能属于此类，但工单未说明查询失败或展示异常。"
+      },
+      {
+        "code": "SERVICE_OTHER_PROCESS",
+        "full_name": "服务投诉与其他/投诉处理不满意",
+        "confidence": 0.45,
+        "reason": "若用户此前已多次查询未果而投诉，则可能属于服务处理不满，但当前信息不足。"
+      }
+    ],
+    "candidate_tags": [
+      {
+        "group_code": "",
+        "code": "[PRODUCT] [MOBILE]",
+        "name": "移动业务",
+        "confidence": 0.9,
+        "reason": "涉及手机号19963****51的话费和套餐查询，明显为移动业务。"
+      },
+      {
+        "group_code": "",
+        "code": "[REQUEST] [EXPLAIN]",
+        "name": "解释说明",
+        "confidence": 0.8,
+        "reason": "用户请求查话费、查套餐，隐含希望了解资费构成或使用情况，属于解释类诉求。"
+      },
+      {
+        "group_code": "",
+        "code": "[RESPONSIBILITY] [MARKET]",
+        "name": "市场条线",
+        "confidence": 0.95,
+        "reason": "工单line_category明确为“市场条线”，且套餐资费属市场职责。"
+      },
+      {
+        "group_code": "",
+        "code": "[EMOTION] [CALM]",
+        "name": "平稳",
+        "confidence": 0.85,
+        "reason": "文本语气礼貌（“请”“谢谢”），无情绪化用语，判断为情绪平稳。"
+      }
+    ],
+    "category_keywords": [
+      {
+        "keyword": "查话费",
+        "reason": "模型识别为与当前判断有关的关键词",
+        "confidence": 0.7
+      },
+      {
+        "keyword": "查套餐",
+        "reason": "模型识别为与当前判断有关的关键词",
+        "confidence": 0.7
+      },
+      {
+        "keyword": "套餐收费疑议",
+        "reason": "模型识别为与当前判断有关的关键词",
+        "confidence": 0.7
+      }
+    ],
+    "tag_keywords": [
+      {
+        "keyword": "19963****51",
+        "reason": "模型识别为与当前判断有关的关键词",
+        "confidence": 0.7
+      },
+      {
+        "keyword": "归属地山东枣庄",
+        "reason": "模型识别为与当前判断有关的关键词",
+        "confidence": 0.7
+      },
+      {
+        "keyword": "请归属地协助处理",
+        "reason": "模型识别为与当前判断有关的关键词",
+        "confidence": 0.7
+      },
+      {
+        "keyword": "谢谢",
+        "reason": "模型识别为与当前判断有关的关键词",
+        "confidence": 0.7
+      }
+    ],
+    "risks": [
+      "用户实际未表达对收费的异议，仅提出查询请求，可能不应归类为‘收费争议’，存在分类过度依赖系统预填字段的风险。",
+      "缺乏用户具体不满点或争议事实，难以准确匹配到三级分类，当前分类置信度不高。",
+      "若该工单为转办或留单，真实投诉背景可能在前置环节，当前信息不完整。"
+    ]
+  }
+}

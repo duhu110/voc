@@ -1,0 +1,391 @@
+{
+  "model_name": "Qwen3-Max",
+  "sample_count": 10,
+  "level1_match_count": 7,
+  "level2_match_count": 6,
+  "leaf_match_count": 6,
+  "results": [
+    {
+      "ticket_id": "WeComQH20240826150706758197",
+      "expected": {
+        "ticket_id": "WeComQH20240826150706758197",
+        "expected_level1_code": "INSTALL_DELIVERY",
+        "expected_level2_code": "INSTALL_TIMELINESS",
+        "expected_leaf_name": "履约不及时/未履约",
+        "manual_reason": "用户已办理拆机并被承诺当天上门处理，但始终无人联系，主矛盾是履约未兑现。"
+      },
+      "actual": {
+        "summary": "用户在营业厅办理拆机业务，被告知当天14点会有人联系并完成拆机，但一直无人联系，导致服务未履约。",
+        "level1_code": "INSTALL_DELIVERY",
+        "level2_code": "INSTALL_TIMELINESS",
+        "leaf_name": "履约不及时/未履约",
+        "reason": "工单核心问题是用户已办理拆机销户业务，但运营商未按承诺时间上门或联系完成拆机，属于服务履约未兑现，应归入 INSTALL_DELIVERY / INSTALL_TIMELINESS 下的“履约不及时/未履约”。虽然涉及销户，但争议焦点不是销户规则或退订本身，而是履约过程未执行。"
+      },
+      "comparison": {
+        "level1_match": true,
+        "level2_match": true,
+        "leaf_match": true
+      },
+      "ticket": {
+        "ticket_id": "WeComQH20240826150706758197",
+        "ticket_type": "投诉单",
+        "complaint_source": "最强工单",
+        "biz_category": "拆机销户",
+        "line_category": "渠道条线",
+        "appeal_biz_type": "45.派错单",
+        "repeat_count": 0,
+        "urge_count": 0,
+        "oscillation_count": 0,
+        "satisfaction_score": "满意",
+        "complaint_phenomenon": "服务请求->投诉单->销户退订类->拆机销户",
+        "biz_content": "用户称8月26日早上在开元路营业厅办理了拆机业务，承诺给用户2点拆机，用户一直在家中等待，没有人联系用户，联系电话：18997****86 ",
+        "return_reason": "留单原因->渠道服务->实体渠道->客户原因->",
+        "process_dept": "万号"
+      }
+    },
+    {
+      "ticket_id": "WeComQH20240821175638346862",
+      "expected": {
+        "ticket_id": "WeComQH20240821175638346862",
+        "expected_level1_code": "NETWORK_QUALITY",
+        "expected_level2_code": "NETWORK_QUALITY",
+        "expected_leaf_name": "宽带掉线/网络不稳定",
+        "manual_reason": "宽带昨天报修、今天再次无法连接，核心是网络恢复后仍不稳定，不是单纯装维时效问题。"
+      },
+      "actual": {
+        "summary": "用户昨日报修宽带故障，今日再次出现无法连接问题，要求上门维修。",
+        "level1_code": "INSTALL_DELIVERY",
+        "level2_code": "INSTALL_STANDARD_AND_RESULT",
+        "leaf_name": "安装施工质量问题",
+        "reason": "工单核心问题是宽带在维修后再次出现故障，属于修障不彻底，反映的是安装或维修施工的质量问题，应归入 INSTALL_DELIVERY / INSTALL_STANDARD_AND_RESULT / 安装施工质量问题。"
+      },
+      "comparison": {
+        "level1_match": false,
+        "level2_match": false,
+        "leaf_match": false
+      },
+      "ticket": {
+        "ticket_id": "WeComQH20240821175638346862",
+        "ticket_type": "投诉单",
+        "complaint_source": "省内工单",
+        "biz_category": "修障不彻底",
+        "line_category": "网运条线",
+        "appeal_biz_type": "21.故障申告",
+        "repeat_count": 0,
+        "urge_count": 0,
+        "oscillation_count": 0,
+        "satisfaction_score": "满意",
+        "complaint_phenomenon": "服务请求->投诉单->装维服务类->修障不彻底",
+        "biz_content": "用户称昨日保修的宽带，今日又出现故障无法连接的状态，需要上门维修，联系电话：18997****44",
+        "return_reason": "留单原因->移动网络质量->用户端原因->用户其他原因->",
+        "process_dept": "万号"
+      }
+    },
+    {
+      "ticket_id": "WeComQH20240821174529354782",
+      "expected": {
+        "ticket_id": "WeComQH20240821174529354782",
+        "expected_level1_code": "PRODUCT_PLATFORM",
+        "expected_level2_code": "QUERY_AND_DISPLAY",
+        "expected_leaf_name": "网站/平台/客户端软件问题",
+        "manual_reason": "用户在翼支付 APP 上领取会员权益失败，核心是客户端平台问题。"
+      },
+      "actual": {
+        "summary": "用户在翼支付APP上无法领取会员权益，已尝试重新下载APP仍无效，要求处理。",
+        "level1_code": "PRODUCT_PLATFORM",
+        "level2_code": "APP_AND_ACCOUNT",
+        "leaf_name": "APP/网厅报错或线上办理失败",
+        "reason": "工单核心问题是用户在使用翼支付APP时无法正常领取会员权益，属于APP功能异常或线上办理失败范畴，与费用、订购否认、网络质量等无关，最匹配的叶子分类为“APP/网厅报错或线上办理失败”。"
+      },
+      "comparison": {
+        "level1_match": true,
+        "level2_match": false,
+        "leaf_match": false
+      },
+      "ticket": {
+        "ticket_id": "WeComQH20240821174529354782",
+        "ticket_type": "投诉单",
+        "complaint_source": "省内工单",
+        "biz_category": "网站/平台/客户端软件问题",
+        "line_category": "企信条线",
+        "appeal_biz_type": "23.其它非业务问题",
+        "repeat_count": 0,
+        "urge_count": 0,
+        "oscillation_count": 0,
+        "satisfaction_score": "满意",
+        "complaint_phenomenon": "服务请求->投诉单->业务及平台使用类->网站/平台/客户端软件问题",
+        "biz_content": "用户称在翼支付APP上领取不到会员权益，已引导用户重新下载APP还是无法领取，用户要求处理，联系电话：18097****35",
+        "return_reason": "留单原因->翼支付->营销活动->线上->活动规则咨询->",
+        "process_dept": "万号"
+      }
+    },
+    {
+      "ticket_id": "WeComQH20240810094622989578",
+      "expected": {
+        "ticket_id": "WeComQH20240810094622989578",
+        "expected_level1_code": "FEE_BILLING",
+        "expected_level2_code": "REFUND_PENALTY_RIGHTS",
+        "expected_leaf_name": "翼支付权益/费用争议",
+        "manual_reason": "加油后权益金未返还，属于翼支付权益兑现和费用争议。"
+      },
+      "actual": {
+        "summary": "用户投诉翼支付权益金未按活动规则返还，要求解决无法返还的问题。",
+        "level1_code": "FEE_BILLING",
+        "level2_code": "REFUND_PENALTY_RIGHTS",
+        "leaf_name": "翼支付权益/费用争议",
+        "reason": "工单核心问题是翼支付营销活动中承诺的权益金未到账，属于费用返还类争议，且可选分类中明确包含‘翼支付权益/费用争议’这一叶子节点，与工单内容高度匹配。"
+      },
+      "comparison": {
+        "level1_match": true,
+        "level2_match": true,
+        "leaf_match": true
+      },
+      "ticket": {
+        "ticket_id": "WeComQH20240810094622989578",
+        "ticket_type": "投诉单",
+        "complaint_source": "派单集团",
+        "biz_category": "翼支付权益金争议",
+        "line_category": "市场条线",
+        "appeal_biz_type": "34.翼支付问题",
+        "repeat_count": 1,
+        "urge_count": 0,
+        "oscillation_count": 0,
+        "satisfaction_score": "满意",
+        "complaint_phenomenon": "服务请求->投诉单->费用争议类->翼支付权益金争议",
+        "biz_content": "用户称8月10日加油后并没有返还权益金，用户要求返还权益金，并彻底解决用户无法返还的问题，联系电话：18909****48",
+        "return_reason": "留单原因->翼支付->营销活动->线下->无法参加活动->",
+        "process_dept": "万号",
+        "flow_depts": "服务调度运营班"
+      }
+    },
+    {
+      "ticket_id": "WeComQH20240805160832347809",
+      "expected": {
+        "ticket_id": "WeComQH20240805160832347809",
+        "expected_level1_code": "SERVICE_PROCESS",
+        "expected_level2_code": "COMPLAINT_HANDLING",
+        "expected_leaf_name": "处理结果不认可",
+        "manual_reason": "回单声称已处理且用户认可，但用户明确表示未接到电话，主矛盾是对处理结果和回单内容不认可。"
+      },
+      "actual": {
+        "summary": "用户投诉两次报障后系统显示已处理且用户认可，但用户否认接到回访电话，质疑修障流程真实性。",
+        "level1_code": "SERVICE_PROCESS",
+        "level2_code": "COMPLAINT_HANDLING",
+        "leaf_name": "处理结果不认可",
+        "reason": "工单核心在于用户对故障处理结果（系统记录“用户认可”）不认可，且否认曾被联系确认，属于对投诉处理结果的异议，应归入 SERVICE_PROCESS / COMPLAINT_HANDLING 下的“处理结果不认可”。虽然涉及装维服务，但问题焦点并非安装交付过程本身，而是对处理闭环真实性的质疑。"
+      },
+      "comparison": {
+        "level1_match": true,
+        "level2_match": true,
+        "leaf_match": true
+      },
+      "ticket": {
+        "ticket_id": "WeComQH20240805160832347809",
+        "ticket_type": "投诉单",
+        "complaint_source": "省内工单",
+        "biz_category": "修障不彻底",
+        "line_category": "网运条线",
+        "appeal_biz_type": "21.故障申告",
+        "customer_star": "2星",
+        "repeat_count": 0,
+        "urge_count": 0,
+        "oscillation_count": 0,
+        "satisfaction_score": "回访未接通",
+        "complaint_phenomenon": "服务请求->投诉单->装维服务类->修障不彻底",
+        "biz_content": "18097****04 的用户7月31日和8月2日报了两次宽带故障，回单显示用户认可已处理，但是用户称根本没有打过电话，请协助处理  联系电话15597****18",
+        "return_reason": "留单原因->渠道服务->装维服务->安装维护不及时->",
+        "process_dept": "万号",
+        "flow_depts": "服务调度运营班"
+      }
+    },
+    {
+      "ticket_id": "WeComQH20240803151527459462",
+      "expected": {
+        "ticket_id": "WeComQH20240803151527459462",
+        "expected_level1_code": "MARKETING_SALES",
+        "expected_level2_code": "SALES_PROCESS_AND_ATTITUDE",
+        "expected_leaf_name": "业务办理不畅",
+        "manual_reason": "用户要变更套餐但被 CRM 在途单卡住，核心是办理链路不畅。"
+      },
+      "actual": {
+        "summary": "用户因CRM系统中存在在途工单导致无法更改数智79元套餐，诉求为办理套餐变更。",
+        "level1_code": "SUBSCRIBE_CANCEL",
+        "level2_code": "PLAN_CHANGE_AND_ACCOUNT_CLOSE",
+        "leaf_name": "套餐变更争议",
+        "reason": "工单核心问题是用户要求变更套餐但因系统在途单受阻，属于套餐变更过程中的争议，符合SUBSCRIBE_CANCEL/PLAN_CHANGE_AND_ACCOUNT_CLOSE下的'套餐变更争议'分类。"
+      },
+      "comparison": {
+        "level1_match": false,
+        "level2_match": false,
+        "leaf_match": false
+      },
+      "ticket": {
+        "ticket_id": "WeComQH20240803151527459462",
+        "ticket_type": "投诉单",
+        "complaint_source": "省内工单",
+        "biz_category": "业务办理不畅",
+        "line_category": "渠道条线",
+        "appeal_biz_type": "12.要求办理业务",
+        "repeat_count": 0,
+        "urge_count": 0,
+        "oscillation_count": 0,
+        "satisfaction_score": "满意",
+        "complaint_phenomenon": "服务请求->投诉单->营销服务类->业务办理不畅",
+        "biz_content": "用户要更改数智79元套餐，CRM中有在途单无法更改，联系电话：17797****10",
+        "return_reason": "留单原因->渠道服务->实体渠道->客户原因->",
+        "process_dept": "万号"
+      }
+    },
+    {
+      "ticket_id": "WeComQH20240724111625585117",
+      "expected": {
+        "ticket_id": "WeComQH20240724111625585117",
+        "expected_level1_code": "OPEN_RECOVERY_CONTROL",
+        "expected_level2_code": "RECOVERY_AND_UNBLOCK",
+        "expected_leaf_name": "复机/恢复失败或不及时",
+        "manual_reason": "用户已做二次实名但仍迟迟未复机，核心是恢复不及时。"
+      },
+      "actual": {
+        "summary": "用户在营业厅完成二次实名认证后，被告知1小时可复机，但迟迟未恢复通信服务，投诉复机不及时。",
+        "level1_code": "OPEN_RECOVERY_CONTROL",
+        "level2_code": "RECOVERY_AND_UNBLOCK",
+        "leaf_name": "复机/恢复失败或不及时",
+        "reason": "工单核心问题是用户已完成涉诈停机后的复机手续（二次实名认证），但运营商未按承诺时间恢复服务，属于复机不及时问题，直接对应 OPEN_RECOVERY_CONTROL / RECOVERY_AND_UNBLOCK 下的‘复机/恢复失败或不及时’分类。"
+      },
+      "comparison": {
+        "level1_match": true,
+        "level2_match": true,
+        "leaf_match": true
+      },
+      "ticket": {
+        "ticket_id": "WeComQH20240724111625585117",
+        "ticket_type": "投诉单",
+        "complaint_source": "省内工单",
+        "biz_category": "复机不及时",
+        "line_category": "企信条线",
+        "repeat_count": 0,
+        "urge_count": 0,
+        "oscillation_count": 0,
+        "satisfaction_score": "满意",
+        "complaint_phenomenon": "服务请求->投诉单->开通及停用类->复机不及时",
+        "biz_content": "18097****36用户状态涉诈停机，7月23日在营业厅办理的二次实名认证，营业厅工作人员称1小时后就可以复机使用，但是到目前没有复机，用户特别着急，要求快速解决联系电话：18209****09",
+        "return_reason": "留单原因->移动业务->规则政策->业务管理规则->停复机->其他停复机规则->",
+        "process_dept": "万号"
+      }
+    },
+    {
+      "ticket_id": "WeComQH20240719101034109437",
+      "expected": {
+        "ticket_id": "WeComQH20240719101034109437",
+        "expected_level1_code": "FEE_BILLING",
+        "expected_level2_code": "ACCOUNT_AND_PAYMENT",
+        "expected_leaf_name": "发票问题",
+        "manual_reason": "用户要求核实并开具发票，主问题是开票金额和发票获取争议。"
+      },
+      "actual": {
+        "summary": "用户要求开具6月缴费发票，但对系统显示的开票金额与实际缴费金额不符提出疑问，核心问题为发票开具相关争议。",
+        "level1_code": "FEE_BILLING",
+        "level2_code": "ACCOUNT_AND_PAYMENT",
+        "leaf_name": "发票问题",
+        "reason": "工单核心是用户对发票开具金额存在疑问，属于账单发票类问题，且可选分类中明确包含‘发票问题’这一叶子节点，符合FEE_BILLING / ACCOUNT_AND_PAYMENT路径。"
+      },
+      "comparison": {
+        "level1_match": true,
+        "level2_match": true,
+        "leaf_match": true
+      },
+      "ticket": {
+        "ticket_id": "WeComQH20240719101034109437",
+        "ticket_type": "投诉单",
+        "complaint_source": "省内工单",
+        "biz_category": "账单、发票的寄送/推送/获取问题",
+        "line_category": "企信条线",
+        "appeal_biz_type": "2.计费问题",
+        "repeat_count": 0,
+        "urge_count": 0,
+        "oscillation_count": 0,
+        "satisfaction_score": "满意",
+        "complaint_phenomenon": "服务请求->投诉单->账单发票类->账单、发票的寄送/推送/获取问题",
+        "biz_content": "17797****21的用户称6月缴费200元，现要求开票，计费中查到用户6月实际产生费用 214.40元 ，开票金额14.4元，用户称没有开过预缴发票，要求核实  联系电话：13709****40",
+        "return_reason": "留单原因->电子渠道->省内电渠->发票问题->开具、更换发票->",
+        "process_dept": "万号"
+      }
+    },
+    {
+      "ticket_id": "WeComQH20240718105654266153",
+      "expected": {
+        "ticket_id": "WeComQH20240718105654266153",
+        "expected_level1_code": "RULE_POLICY",
+        "expected_level2_code": "USAGE_AND_LIMIT_RULE",
+        "expected_leaf_name": "达量降速/限速规则争议",
+        "manual_reason": "用户认为套餐应为达量降速不收费，但现行规则是超出流量继续收费，核心是达量降速规则争议。"
+      },
+      "actual": {
+        "summary": "用户投诉办理套餐时被告知达量降速不收费，但实际超出流量后被收费，对费用产生争议。",
+        "level1_code": "FEE_BILLING",
+        "level2_code": "PACKAGE_AND_USAGE_FEE",
+        "leaf_name": "套外使用费用争议",
+        "reason": "工单核心问题是用户对超出套餐流量后产生的收费不认可，属于套外使用费用的争议，而非套餐本身收费、订购否认或规则解释问题。尽管涉及达量降速规则，但争议焦点是已产生的套外费用，因此归入套外使用费用争议最准确。"
+      },
+      "comparison": {
+        "level1_match": false,
+        "level2_match": false,
+        "leaf_match": false
+      },
+      "ticket": {
+        "ticket_id": "WeComQH20240718105654266153",
+        "ticket_type": "投诉单",
+        "complaint_source": "最强工单",
+        "biz_category": "套外费用争议",
+        "line_category": "市场条线",
+        "appeal_biz_type": "5.套餐内资费解释不清",
+        "customer_star": "3星",
+        "repeat_count": 0,
+        "urge_count": 0,
+        "oscillation_count": 0,
+        "satisfaction_score": "满意",
+        "complaint_phenomenon": "服务请求->投诉单->费用争议类->套外费用争议",
+        "biz_content": "18797****06用户办理的是数智139元融合套餐，流量超出收费，用户称我方办理时告知是达量降速不收费，已解释达量降速套餐已下线，现有套餐超出流量都是收费的，用户对此不认可，要投诉，请处理，谢谢！\n甩单渠道：民和县川垣西城西片区店",
+        "return_reason": "留单原因->渠道服务->实体渠道->客户原因->",
+        "process_dept": "万号"
+      }
+    },
+    {
+      "ticket_id": "WeComQH20240713120226578278",
+      "expected": {
+        "ticket_id": "WeComQH20240713120226578278",
+        "expected_level1_code": "SUBSCRIBE_CANCEL",
+        "expected_level2_code": "ORDER_AND_DENY",
+        "expected_leaf_name": "用户否认订购",
+        "manual_reason": "用户明确否认曾订购该合约业务，核心是对订购关系本身不认可。"
+      },
+      "actual": {
+        "summary": "用户否认订购存量提值-视频音乐及生活类权益合约(30元)-24期业务，要求核查。",
+        "level1_code": "SUBSCRIBE_CANCEL",
+        "level2_code": "ORDER_AND_DENY",
+        "leaf_name": "用户否认订购",
+        "reason": "工单核心问题是用户明确否认曾订购某增值业务，符合‘用户否认订购’分类的定义，且该分类在V2体系中直接对应此场景。"
+      },
+      "comparison": {
+        "level1_match": true,
+        "level2_match": true,
+        "leaf_match": true
+      },
+      "ticket": {
+        "ticket_id": "WeComQH20240713120226578278",
+        "ticket_type": "投诉单",
+        "complaint_source": "省内工单",
+        "biz_category": "用户否认订购",
+        "line_category": "渠道条线",
+        "repeat_count": 0,
+        "urge_count": 0,
+        "oscillation_count": 0,
+        "satisfaction_score": "满意",
+        "complaint_phenomenon": "服务请求->投诉单->营销服务类->用户否认订购",
+        "biz_content": "18195****93用户称自己没有订购存量提值-视频音乐及生活类权益合约(30元)-24期,业务，我方查询是2023-06-02 订购的，用户不认可，要求我方核查",
+        "return_reason": "留单原因->移动业务->渠道->自有营业厅->营销不规范（含外呼营销）->可选包/增值业务资费告知不清->",
+        "process_dept": "万号"
+      }
+    }
+  ]
+}

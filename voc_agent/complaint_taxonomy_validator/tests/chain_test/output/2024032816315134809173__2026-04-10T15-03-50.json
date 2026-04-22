@@ -1,0 +1,118 @@
+{
+  "ticket_id": "2024032816315134809173",
+  "status": "success",
+  "stage": "chain",
+  "duration_ms": 14668,
+  "timestamp": "2026-04-10T15:03:50",
+  "model_name": "Qwen3-Max",
+  "result": {
+    "summary": "用户否认订购‘橙翼包19.9元权益合约’，对3月产生的19.9元费用不认可，要求核查处理；此前已有退费退订回单但未实际退费。",
+    "primary_category": {
+      "code": "SUBSCRIBE_DENY_VALUE_ADDED",
+      "full_name": "订购与退订争议/用户否认订购/否认增值业务订购",
+      "confidence": 0.96,
+      "reason": "用户明确表示‘未订购过’该权益合约，且争议产品为增值类权益包（橙翼包），符合‘否认增值业务订购’的核心特征。"
+    },
+    "candidate_categories": [
+      {
+        "code": "FEE_VALUE_DENY_ORDER",
+        "full_name": "资费与收费争议/增值业务收费争议/用户否认订购收费争议",
+        "confidence": 0.85,
+        "reason": "涉及增值业务收费且用户否认订购，但主诉焦点在于‘是否订购’而非‘收费本身’，故优先归入订购争议。"
+      },
+      {
+        "code": "SUBSCRIBE_DENY",
+        "full_name": "订购与退订争议/用户否认订购",
+        "confidence": 0.82,
+        "reason": "通用否认订购类别，但存在更具体的子类‘否认增值业务订购’，应优先使用细化分类。"
+      }
+    ],
+    "candidate_tags": [
+      {
+        "group_code": "PRODUCT",
+        "code": "VALUE_ADDED",
+        "name": "增值业务",
+        "confidence": 0.8,
+        "reason": "用户否认订购‘橙翼包19.9元权益合约’，对3月产生的19.9元费用不认可，要求核查处理；此前已有退费退订回单但未实际退费。"
+      },
+      {
+        "group_code": "ROOT_CAUSE",
+        "code": "DENY_ORDER",
+        "name": "用户否认订购",
+        "confidence": 0.8,
+        "reason": "用户否认订购‘橙翼包19.9元权益合约’，对3月产生的19.9元费用不认可，要求核查处理；此前已有退费退订回单但未实际退费。"
+      },
+      {
+        "group_code": "REQUEST",
+        "code": "REFUND",
+        "name": "退费",
+        "confidence": 0.8,
+        "reason": "用户否认订购‘橙翼包19.9元权益合约’，对3月产生的19.9元费用不认可，要求核查处理；此前已有退费退订回单但未实际退费。"
+      },
+      {
+        "group_code": "RESPONSIBILITY",
+        "code": "MARKET",
+        "name": "市场条线",
+        "confidence": 0.8,
+        "reason": "用户否认订购‘橙翼包19.9元权益合约’，对3月产生的19.9元费用不认可，要求核查处理；此前已有退费退订回单但未实际退费。"
+      },
+      {
+        "group_code": "RESULT",
+        "code": "NOT_ACCEPTED",
+        "name": "用户不认可",
+        "confidence": 0.8,
+        "reason": "用户否认订购‘橙翼包19.9元权益合约’，对3月产生的19.9元费用不认可，要求核查处理；此前已有退费退订回单但未实际退费。"
+      }
+    ],
+    "category_keywords": [
+      {
+        "keyword": "未订购过",
+        "reason": "模型识别为与当前判断有关的关键词",
+        "confidence": 0.7
+      },
+      {
+        "keyword": "橙翼包19.9元权益合约",
+        "reason": "模型识别为与当前判断有关的关键词",
+        "confidence": 0.7
+      },
+      {
+        "keyword": "小合约费用争议",
+        "reason": "模型识别为与当前判断有关的关键词",
+        "confidence": 0.7
+      },
+      {
+        "keyword": "否认订购",
+        "reason": "模型识别为与当前判断有关的关键词",
+        "confidence": 0.7
+      }
+    ],
+    "tag_keywords": [
+      {
+        "keyword": "增值业务",
+        "reason": "模型识别为与当前判断有关的关键词",
+        "confidence": 0.7
+      },
+      {
+        "keyword": "否认订购",
+        "reason": "模型识别为与当前判断有关的关键词",
+        "confidence": 0.7
+      },
+      {
+        "keyword": "要求退费",
+        "reason": "模型识别为与当前判断有关的关键词",
+        "confidence": 0.7
+      },
+      {
+        "keyword": "市场条线",
+        "reason": "模型识别为与当前判断有关的关键词",
+        "confidence": 0.7
+      },
+      {
+        "keyword": "未退费",
+        "reason": "模型识别为与当前判断有关的关键词",
+        "confidence": 0.7
+      }
+    ],
+    "risks": []
+  }
+}

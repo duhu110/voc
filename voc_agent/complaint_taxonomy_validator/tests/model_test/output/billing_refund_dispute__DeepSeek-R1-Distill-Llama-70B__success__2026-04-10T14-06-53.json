@@ -1,0 +1,20 @@
+{
+  "case_name": "billing_refund_dispute",
+  "model_name": "DeepSeek-R1-Distill-Llama-70B",
+  "prompt_path": "D:\\project\\FullStack\\voc\\voc_agent\\complaint_taxonomy_validator\\tests\\model_test\\output\\prompts\\billing_refund_dispute.txt",
+  "status": "success",
+  "error_type": null,
+  "error_message": null,
+  "duration_ms": 24839,
+  "timestamp": "2026-04-10T14:06:53",
+  "response_id": "chatcmpl-00-de6cd77161578d5d8a7a7f582981660b-b421cddbd73d8cd4-01",
+  "response_text": "\n\n```json\n{\n  \"summary\": \"客户投诉账单出现两笔会员扣费，其中一笔为已取消的业务，要求核查账单并退费。\",\n  \"primary_category\": {\n    \"code\": \"BILLING_BILL\",\n    \"full_name\": \"账单、缴费与发票/账单争议/账单金额异常\",\n    \"confidence\": 0.95,\n    \"reason\": \"客户反映账单中存在重复扣费的情况，符合账单金额异常的定义。\"\n  },\n  \"candidate_categories\": [],\n  \"candidate_tags\": [],\n  \"category_keywords\": [\"账单\", \"重复扣费\", \"账单金额异常\"],\n  \"tag_keywords\": [\"增值业务\", \"营业厅\", \"用户否认订购\", \"退费\"],\n  \"risks\": []\n}\n```",
+  "finish_reason": "stop",
+  "usage": {
+    "completion_tokens": 501,
+    "prompt_tokens": 14286,
+    "total_tokens": 14787,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  }
+}

@@ -1,0 +1,130 @@
+{
+  "ticket_id": "2024092315292669996270",
+  "status": "success",
+  "stage": "chain",
+  "duration_ms": 19895,
+  "timestamp": "2026-04-10T15:03:29",
+  "model_name": "Qwen3-Max",
+  "result": {
+    "summary": "用户预约宽带部分拆机，因机主在州县不在西宁市，导致拆机处理不及时。",
+    "primary_category": {
+      "code": "OPEN_CLOSE_CANCEL_DISMANTLE_BROADBAND",
+      "full_name": "开通、停用与销户/拆机销户/拆机销户/宽带拆机不及时",
+      "confidence": 0.95,
+      "reason": "工单明确描述为‘宽带预约拆机处理不及时’，且biz_content指出CRM预约拆机单因机主异地未及时处理，符合宽带拆机不及时的定义。"
+    },
+    "candidate_categories": [
+      {
+        "code": "INSTALL_TIMELINESS_OVERTIME_REMOVE",
+        "full_name": "装维与交付服务/履约时效问题/超时未完成/拆机超时未完成",
+        "confidence": 0.85,
+        "reason": "拆机属于装维履约范畴，也可能归入此子类，但主诉更聚焦于销户拆机流程而非装维服务本身。"
+      },
+      {
+        "code": "OPEN_CLOSE_CANCEL_DISMANTLE_FUSION",
+        "full_name": "开通、停用与销户/拆机销户/拆机销户/融合业务拆机不及时",
+        "confidence": 0.8,
+        "reason": "投诉现象提到‘融合宽带’，可能涉及融合套餐，但拆机号码为宽带账号，且未明确移动号拆机，优先选宽带专用分类。"
+      }
+    ],
+    "candidate_tags": [
+      {
+        "group_code": "",
+        "code": "[PRODUCT] [BROADBAND]",
+        "name": "宽带业务",
+        "confidence": 0.8,
+        "reason": "用户预约宽带部分拆机，因机主在州县不在西宁市，导致拆机处理不及时。"
+      },
+      {
+        "group_code": "",
+        "code": "[PRODUCT] [FUSION_PACKAGE]",
+        "name": "融合套餐",
+        "confidence": 0.8,
+        "reason": "用户预约宽带部分拆机，因机主在州县不在西宁市，导致拆机处理不及时。"
+      },
+      {
+        "group_code": "",
+        "code": "[ROOT_CAUSE] [DELAYED_FULFILLMENT]",
+        "name": "履约不及时",
+        "confidence": 0.8,
+        "reason": "用户预约宽带部分拆机，因机主在州县不在西宁市，导致拆机处理不及时。"
+      },
+      {
+        "group_code": "",
+        "code": "[RESPONSIBILITY] [INSTALL_MAINTAIN]",
+        "name": "装维条线",
+        "confidence": 0.8,
+        "reason": "用户预约宽带部分拆机，因机主在州县不在西宁市，导致拆机处理不及时。"
+      },
+      {
+        "group_code": "",
+        "code": "[REQUEST] [CANCEL]",
+        "name": "取消业务",
+        "confidence": 0.8,
+        "reason": "用户预约宽带部分拆机，因机主在州县不在西宁市，导致拆机处理不及时。"
+      },
+      {
+        "group_code": "",
+        "code": "[REQUEST] [FAST_PROCESS]",
+        "name": "加快处理",
+        "confidence": 0.8,
+        "reason": "用户预约宽带部分拆机，因机主在州县不在西宁市，导致拆机处理不及时。"
+      }
+    ],
+    "category_keywords": [
+      {
+        "keyword": "宽带预约拆机",
+        "reason": "模型识别为与当前判断有关的关键词",
+        "confidence": 0.7
+      },
+      {
+        "keyword": "处理不及时",
+        "reason": "模型识别为与当前判断有关的关键词",
+        "confidence": 0.7
+      },
+      {
+        "keyword": "部分拆机",
+        "reason": "模型识别为与当前判断有关的关键词",
+        "confidence": 0.7
+      },
+      {
+        "keyword": "CRM预约拆机单",
+        "reason": "模型识别为与当前判断有关的关键词",
+        "confidence": 0.7
+      },
+      {
+        "keyword": "融合宽带",
+        "reason": "模型识别为与当前判断有关的关键词",
+        "confidence": 0.7
+      }
+    ],
+    "tag_keywords": [
+      {
+        "keyword": "宽带",
+        "reason": "模型识别为与当前判断有关的关键词",
+        "confidence": 0.7
+      },
+      {
+        "keyword": "融合",
+        "reason": "模型识别为与当前判断有关的关键词",
+        "confidence": 0.7
+      },
+      {
+        "keyword": "拆机慢",
+        "reason": "模型识别为与当前判断有关的关键词",
+        "confidence": 0.7
+      },
+      {
+        "keyword": "机主异地",
+        "reason": "模型识别为与当前判断有关的关键词",
+        "confidence": 0.7
+      },
+      {
+        "keyword": "预约未处理",
+        "reason": "模型识别为与当前判断有关的关键词",
+        "confidence": 0.7
+      }
+    ],
+    "risks": []
+  }
+}

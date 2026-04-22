@@ -1,0 +1,123 @@
+{
+  "ticket_id": "2024053112324270409290",
+  "status": "success",
+  "stage": "chain",
+  "duration_ms": 18467,
+  "timestamp": "2026-04-10T15:02:50",
+  "model_name": "Qwen3-Max",
+  "result": {
+    "summary": "客户办理携号转网业务时，系统提示宽带拆机卡单（工单号：897124053062843839），要求尽快竣工处理。",
+    "primary_category": {
+      "code": "OPEN_CLOSE_CANCEL_DISMANTLE_BROADBAND",
+      "full_name": "开通、停用与销户/拆机销户/拆机销户/宽带拆机不及时",
+      "confidence": 0.95,
+      "reason": "客户因携号转网需拆机宽带，但系统显示拆机卡单未竣工，属于宽带拆机处理不及时问题，直接对应该细分分类。"
+    },
+    "candidate_categories": [
+      {
+        "code": "INSTALL_TIMELINESS_OVERTIME_REMOVE",
+        "full_name": "装维与交付服务/履约时效问题/超时未完成/拆机超时未完成",
+        "confidence": 0.85,
+        "reason": "拆机属于装维履约范畴，若从服务交付角度也可归入此类，但主诉是销户流程中的拆机卡单，更贴近销户拆机分类。"
+      },
+      {
+        "code": "OPEN_CLOSE_CANCEL",
+        "full_name": "开通、停用与销户/拆机销户",
+        "confidence": 0.8,
+        "reason": "上级分类，但存在更具体的子类，应优先选择具体项。"
+      }
+    ],
+    "candidate_tags": [
+      {
+        "group_code": "",
+        "code": "[PRODUCT] [BROADBAND]",
+        "name": "宽带业务",
+        "confidence": 0.8,
+        "reason": "客户办理携号转网业务时，系统提示宽带拆机卡单（工单号：897124053062843839），要求尽快竣工处理。"
+      },
+      {
+        "group_code": "",
+        "code": "[REQUEST] [FAST_PROCESS]",
+        "name": "加快处理",
+        "confidence": 0.8,
+        "reason": "客户办理携号转网业务时，系统提示宽带拆机卡单（工单号：897124053062843839），要求尽快竣工处理。"
+      },
+      {
+        "group_code": "",
+        "code": "[ROOT_CAUSE] [DELAYED_FULFILLMENT]",
+        "name": "履约不及时",
+        "confidence": 0.8,
+        "reason": "客户办理携号转网业务时，系统提示宽带拆机卡单（工单号：897124053062843839），要求尽快竣工处理。"
+      },
+      {
+        "group_code": "",
+        "code": "[RESPONSIBILITY] [INSTALL_MAINTAIN]",
+        "name": "装维条线",
+        "confidence": 0.8,
+        "reason": "客户办理携号转网业务时，系统提示宽带拆机卡单（工单号：897124053062843839），要求尽快竣工处理。"
+      },
+      {
+        "group_code": "",
+        "code": "[PRODUCT] [MOBILE]",
+        "name": "移动业务",
+        "confidence": 0.8,
+        "reason": "客户办理携号转网业务时，系统提示宽带拆机卡单（工单号：897124053062843839），要求尽快竣工处理。"
+      }
+    ],
+    "category_keywords": [
+      {
+        "keyword": "携号转网",
+        "reason": "模型识别为与当前判断有关的关键词",
+        "confidence": 0.7
+      },
+      {
+        "keyword": "宽带拆机",
+        "reason": "模型识别为与当前判断有关的关键词",
+        "confidence": 0.7
+      },
+      {
+        "keyword": "卡单",
+        "reason": "模型识别为与当前判断有关的关键词",
+        "confidence": 0.7
+      },
+      {
+        "keyword": "竣工",
+        "reason": "模型识别为与当前判断有关的关键词",
+        "confidence": 0.7
+      },
+      {
+        "keyword": "拆机不及时",
+        "reason": "模型识别为与当前判断有关的关键词",
+        "confidence": 0.7
+      }
+    ],
+    "tag_keywords": [
+      {
+        "keyword": "宽带",
+        "reason": "模型识别为与当前判断有关的关键词",
+        "confidence": 0.7
+      },
+      {
+        "keyword": "尽快处理",
+        "reason": "模型识别为与当前判断有关的关键词",
+        "confidence": 0.7
+      },
+      {
+        "keyword": "拆机卡单",
+        "reason": "模型识别为与当前判断有关的关键词",
+        "confidence": 0.7
+      },
+      {
+        "keyword": "装维",
+        "reason": "模型识别为与当前判断有关的关键词",
+        "confidence": 0.7
+      },
+      {
+        "keyword": "手机号",
+        "reason": "模型识别为与当前判断有关的关键词",
+        "confidence": 0.7
+      }
+    ],
+    "risks": []
+  }
+}

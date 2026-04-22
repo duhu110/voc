@@ -1,0 +1,10 @@
+{
+  "case_name": "network_quality_escalation",
+  "model_name": "Baichuan2-Turbo",
+  "prompt_path": "D:\\project\\FullStack\\voc\\voc_agent\\complaint_taxonomy_validator\\tests\\model_test\\output\\prompts\\network_quality_escalation.txt",
+  "status": "failed",
+  "error_type": "RateLimitError",
+  "error_message": "Error code: 429 - {'code': 700001, 'detail': '用户请求RPM超限，请稍后重试', 'message': 'USER_RPM_RATELIMITING', 'error': {'code': '700001', 'message': '用户请求RPM超限，请稍后重试', 'type': 'USER_RPM_RATELIMITING'}}",
+  "duration_ms": 1593,
+  "timestamp": "2026-04-10T14:10:53"
+}

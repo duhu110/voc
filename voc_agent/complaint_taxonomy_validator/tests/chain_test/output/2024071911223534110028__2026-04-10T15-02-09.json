@@ -1,0 +1,135 @@
+{
+  "ticket_id": "2024071911223534110028",
+  "status": "success",
+  "stage": "chain",
+  "duration_ms": 19524,
+  "timestamp": "2026-04-10T15:02:09",
+  "model_name": "Qwen3-Max",
+  "result": {
+    "summary": "用户投诉在营业厅办理融合套餐业务时，工作人员张晓玉将其合同号错误变更，导致原合同号余额无法使用、账户欠费停机，要求恢复原合同号。问题属于业务办理差错。",
+    "primary_category": {
+      "code": "MARKETING_PROCESS_ERROR",
+      "full_name": "营销宣传与销售服务/办理差错与漏受理/业务办理差错",
+      "confidence": 0.96,
+      "reason": "工单明确描述‘对更改合同号业务办理错/漏受理有争议’，且受理渠道为自有营业厅，工作人员办错合同号导致用户服务异常，符合‘办错业务、办错号码信息’的定义。"
+    },
+    "candidate_categories": [
+      {
+        "code": "MARKETING_PROCESS_MISS",
+        "full_name": "营销宣传与销售服务/办理差错与漏受理/漏受理",
+        "confidence": 0.65,
+        "reason": "虽提及‘漏受理’，但实际是‘办错合同号’，属于错误操作而非遗漏，故优先级低于业务办理差错。"
+      },
+      {
+        "code": "OPEN_CLOSE_SHUTDOWN_ARREARS",
+        "full_name": "开通、停用与销户/停机关停争议/欠费停机不认可",
+        "confidence": 0.55,
+        "reason": "用户因账户欠费停机，但根本原因是合同号被错误变更导致余额无法使用，停机是结果而非主因。"
+      }
+    ],
+    "candidate_tags": [
+      {
+        "group_code": "",
+        "code": "[PRODUCT] [FUSION_PACKAGE]",
+        "name": "融合套餐",
+        "confidence": 0.8,
+        "reason": "用户投诉在营业厅办理融合套餐业务时，工作人员张晓玉将其合同号错误变更，导致原合同号余额无法使用、账户欠费停机，要求恢复原合同号。问题属于业务办理差错。"
+      },
+      {
+        "group_code": "",
+        "code": "[CHANNEL] [HALL]",
+        "name": "营业厅",
+        "confidence": 0.8,
+        "reason": "用户投诉在营业厅办理融合套餐业务时，工作人员张晓玉将其合同号错误变更，导致原合同号余额无法使用、账户欠费停机，要求恢复原合同号。问题属于业务办理差错。"
+      },
+      {
+        "group_code": "",
+        "code": "[ROOT_CAUSE] [PROCESS_ERROR]",
+        "name": "办理差错",
+        "confidence": 0.8,
+        "reason": "用户投诉在营业厅办理融合套餐业务时，工作人员张晓玉将其合同号错误变更，导致原合同号余额无法使用、账户欠费停机，要求恢复原合同号。问题属于业务办理差错。"
+      },
+      {
+        "group_code": "",
+        "code": "[REQUEST] [RESTORE]",
+        "name": "恢复服务",
+        "confidence": 0.8,
+        "reason": "用户投诉在营业厅办理融合套餐业务时，工作人员张晓玉将其合同号错误变更，导致原合同号余额无法使用、账户欠费停机，要求恢复原合同号。问题属于业务办理差错。"
+      },
+      {
+        "group_code": "",
+        "code": "[RESPONSIBILITY] [CHANNEL_MGMT]",
+        "name": "渠道管理",
+        "confidence": 0.8,
+        "reason": "用户投诉在营业厅办理融合套餐业务时，工作人员张晓玉将其合同号错误变更，导致原合同号余额无法使用、账户欠费停机，要求恢复原合同号。问题属于业务办理差错。"
+      },
+      {
+        "group_code": "",
+        "code": "[EMOTION] [UNSATISFIED]",
+        "name": "不满",
+        "confidence": 0.8,
+        "reason": "用户投诉在营业厅办理融合套餐业务时，工作人员张晓玉将其合同号错误变更，导致原合同号余额无法使用、账户欠费停机，要求恢复原合同号。问题属于业务办理差错。"
+      }
+    ],
+    "category_keywords": [
+      {
+        "keyword": "办理错",
+        "reason": "模型识别为与当前判断有关的关键词",
+        "confidence": 0.7
+      },
+      {
+        "keyword": "漏受理",
+        "reason": "模型识别为与当前判断有关的关键词",
+        "confidence": 0.7
+      },
+      {
+        "keyword": "更改合同号",
+        "reason": "模型识别为与当前判断有关的关键词",
+        "confidence": 0.7
+      },
+      {
+        "keyword": "业务办理差错",
+        "reason": "模型识别为与当前判断有关的关键词",
+        "confidence": 0.7
+      },
+      {
+        "keyword": "工作人员工号张晓玉",
+        "reason": "模型识别为与当前判断有关的关键词",
+        "confidence": 0.7
+      },
+      {
+        "keyword": "营业厅",
+        "reason": "模型识别为与当前判断有关的关键词",
+        "confidence": 0.7
+      }
+    ],
+    "tag_keywords": [
+      {
+        "keyword": "融合套餐",
+        "reason": "模型识别为与当前判断有关的关键词",
+        "confidence": 0.7
+      },
+      {
+        "keyword": "营业厅",
+        "reason": "模型识别为与当前判断有关的关键词",
+        "confidence": 0.7
+      },
+      {
+        "keyword": "恢复原来的合同号",
+        "reason": "模型识别为与当前判断有关的关键词",
+        "confidence": 0.7
+      },
+      {
+        "keyword": "账户欠费无法使用",
+        "reason": "模型识别为与当前判断有关的关键词",
+        "confidence": 0.7
+      },
+      {
+        "keyword": "原合同号上有余额",
+        "reason": "模型识别为与当前判断有关的关键词",
+        "confidence": 0.7
+      }
+    ],
+    "risks": []
+  }
+}

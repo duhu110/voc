@@ -8,7 +8,7 @@ from voc_agent.complaint_taxonomy_validator.prompts import SYSTEM_PROMPT, build_
 from voc_agent.complaint_taxonomy_validator.state import ValidatorOutput, ValidatorState
 from voc_agent.complaint_taxonomy_validator.utils import normalize_result
 from voc_agent.core.llm import get_chat_model
-from voc_agent.share.utils import extract_json_text
+from voc_agent.share.utils import parse_json_payload_once
 
 
 def analyze_ticket(state: ValidatorState) -> ValidatorState:
@@ -24,7 +24,7 @@ def analyze_ticket(state: ValidatorState) -> ValidatorState:
         HumanMessage(content=prompt + '\n\n请只返回纯 JSON，不要使用 Markdown 代码块。'),
     ])
     raw_text = response.text if hasattr(response, 'text') else str(response.content)
-    raw_data = json.loads(extract_json_text(raw_text))
+    raw_data = parse_json_payload_once(raw_text)
     normalized = normalize_result(raw_data, state['categories'], state['tags'])
     parsed = ValidatorOutput.model_validate(normalized)
     return {'result': parsed.model_dump(mode='json')}

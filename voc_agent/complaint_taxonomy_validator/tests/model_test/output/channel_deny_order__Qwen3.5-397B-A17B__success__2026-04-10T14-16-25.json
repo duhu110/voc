@@ -1,0 +1,20 @@
+{
+  "case_name": "channel_deny_order",
+  "model_name": "Qwen3.5-397B-A17B",
+  "prompt_path": "D:\\project\\FullStack\\voc\\voc_agent\\complaint_taxonomy_validator\\tests\\model_test\\output\\prompts\\channel_deny_order.txt",
+  "status": "success",
+  "error_type": null,
+  "error_message": null,
+  "duration_ms": 65453,
+  "timestamp": "2026-04-10T14:16:25",
+  "response_id": "chatcmpl-00-184b78200040118c44d0c2cc70645e5c-97a464bd6f9b95bf-01",
+  "response_text": "{\n  \"summary\": \"用户投诉在合作营业厅办理宽带时，被渠道人员顺带办理了天翼云盘黄金会员合约包，用户否认明确同意该订购行为，要求取消业务、退费并追责渠道。\",\n  \"primary_category\": {\n    \"code\": \"SUBSCRIBE_DENY_CHANNEL\",\n    \"full_name\": \"订购与退订争议/用户否认订购/否认渠道代办订购\",\n    \"confidence\": 0.95,\n    \"reason\": \"用户明确表示在营业厅办理宽带时被‘顺带办理’且‘未明确同意’，属于典型的渠道代为订购且用户否认的场景，匹配度最高。\"\n  },\n  \"candidate_categories\": [\n    {\n      \"code\": \"SUBSCRIBE_ORDER_NO_CONSENT_HALL\",\n      \"full_name\": \"订购与退订争议/业务订购争议/未明确同意订购/营业厅未明确同意订购\",\n      \"confidence\": 0.88,\n      \"reason\": \"用户强调未明确同意，且发生在营业厅场景，但‘否认渠道代办’比‘未明确同意’更贴合‘顺带办理’的描述。\"\n    },\n    {\n      \"code\": \"MARKETING_EXPLAIN_MISLEADING_HIDDEN\",\n      \"full_name\": \"营销宣传与销售服务/宣传解释与营销误导/营销误导/隐瞒限制条件\",\n      \"confidence\": 0.75,\n      \"reason\": \"存在营销过程中未充分告知或误导的可能性，但核心诉求是否认订购。\"\n    }\n  ],\n  \"candidate_tags\": [\n    \"[PRODUCT] [VALUE_ADDED]\",\n    \"[CHANNEL] [AGENT]\",\n    \"[ROOT_CAUSE] [DENY_ORDER]\",\n    \"[ROOT_CAUSE] [NOT_INFORMED]\",\n    \"[RESPONSIBILITY] [CHANNEL_MGMT]\",\n    \"[REQUEST] [CANCEL]\",\n    \"[REQUEST] [REFUND]\",\n    \"[REQUEST] [PUNISH]\",\n    \"[EMOTION] [UNSATISFIED]\",\n    \"[RISK] [COMPLIANCE]\"\n  ],\n  \"category_keywords\": [\n    \"顺带办理\",\n    \"未明确同意\",\n    \"否认订购\",\n    \"合作营业厅\",\n    \"天翼云盘黄金会员\"\n  ],\n  \"tag_keywords\": [\n    \"增值业务\",\n    \"代理渠道\",\n    \"未充分告知\",\n    \"取消业务\",\n    \"退回费用\",\n    \"追查责任\",\n    \"合规风险\"\n  ],\n  \"risks\": [\n    \"用户提到‘追查渠道办理责任’，若处理不当可能引发监管投诉或舆情风险，需关注合规性。\",\n    \"工单中未明确提及是否已产生实际扣费及金额，退费诉求的具体执行需核实账单。\"\n  ]\n}",
+  "finish_reason": "stop",
+  "usage": {
+    "completion_tokens": 620,
+    "prompt_tokens": 11694,
+    "total_tokens": 12314,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  }
+}

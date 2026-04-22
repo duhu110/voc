@@ -1,0 +1,125 @@
+{
+  "ticket_id": "2024032712400643342409",
+  "status": "success",
+  "stage": "chain",
+  "duration_ms": 14592,
+  "timestamp": "2026-04-10T15:14:50",
+  "model_name": "Qwen3-Max",
+  "result": {
+    "summary": "用户通过营业厅申请退订‘手机低消59元送宽带合约’业务，但因营业厅无受理权限导致退订失败，用户不满并要求尽快取消以便携号转网。",
+    "primary_category": {
+      "code": "SUBSCRIBE_CANCEL_FAIL_CHANNEL",
+      "full_name": "订购与退订争议/业务退订争议/退订失败/渠道不受理退订",
+      "confidence": 0.96,
+      "reason": "工单明确指出退订失败原因为‘无受理权限’，且办理渠道为‘中国电信西钢营业厅’，符合‘渠道不受理退订’的具体场景。"
+    },
+    "candidate_categories": [
+      {
+        "code": "SUBSCRIBE_CANCEL",
+        "full_name": "订购与退订争议/业务退订争议",
+        "confidence": 0.85,
+        "reason": "属于退订失败的大类，但不够具体。"
+      },
+      {
+        "code": "MARKETING_PROCESS_MISS",
+        "full_name": "营销宣传与销售服务/办理差错与漏受理/漏受理",
+        "confidence": 0.75,
+        "reason": "营业厅未受理退订可视为漏受理，但主诉焦点是退订失败而非受理遗漏本身。"
+      }
+    ],
+    "candidate_tags": [
+      {
+        "group_code": "PRODUCT",
+        "code": "FUSION_PACKAGE",
+        "name": "融合套餐",
+        "confidence": 0.8,
+        "reason": "用户通过营业厅申请退订‘手机低消59元送宽带合约’业务，但因营业厅无受理权限导致退订失败，用户不满并要求尽快取消以便携号转网。"
+      },
+      {
+        "group_code": "CHANNEL",
+        "code": "HALL",
+        "name": "营业厅",
+        "confidence": 0.8,
+        "reason": "用户通过营业厅申请退订‘手机低消59元送宽带合约’业务，但因营业厅无受理权限导致退订失败，用户不满并要求尽快取消以便携号转网。"
+      },
+      {
+        "group_code": "ROOT_CAUSE",
+        "code": "MISS_ACCEPT",
+        "name": "漏受理",
+        "confidence": 0.8,
+        "reason": "用户通过营业厅申请退订‘手机低消59元送宽带合约’业务，但因营业厅无受理权限导致退订失败，用户不满并要求尽快取消以便携号转网。"
+      },
+      {
+        "group_code": "REQUEST",
+        "code": "CANCEL",
+        "name": "取消业务",
+        "confidence": 0.8,
+        "reason": "用户通过营业厅申请退订‘手机低消59元送宽带合约’业务，但因营业厅无受理权限导致退订失败，用户不满并要求尽快取消以便携号转网。"
+      },
+      {
+        "group_code": "REQUEST",
+        "code": "FAST_PROCESS",
+        "name": "加快处理",
+        "confidence": 0.8,
+        "reason": "用户通过营业厅申请退订‘手机低消59元送宽带合约’业务，但因营业厅无受理权限导致退订失败，用户不满并要求尽快取消以便携号转网。"
+      },
+      {
+        "group_code": "EMOTION",
+        "code": "UNSATISFIED",
+        "name": "不满",
+        "confidence": 0.8,
+        "reason": "用户通过营业厅申请退订‘手机低消59元送宽带合约’业务，但因营业厅无受理权限导致退订失败，用户不满并要求尽快取消以便携号转网。"
+      }
+    ],
+    "category_keywords": [
+      {
+        "keyword": "退订不成功",
+        "reason": "模型识别为与当前判断有关的关键词",
+        "confidence": 0.7
+      },
+      {
+        "keyword": "无受理权限",
+        "reason": "模型识别为与当前判断有关的关键词",
+        "confidence": 0.7
+      },
+      {
+        "keyword": "营业厅",
+        "reason": "模型识别为与当前判断有关的关键词",
+        "confidence": 0.7
+      },
+      {
+        "keyword": "业务退订",
+        "reason": "模型识别为与当前判断有关的关键词",
+        "confidence": 0.7
+      }
+    ],
+    "tag_keywords": [
+      {
+        "keyword": "手机低消59元送宽带合约",
+        "reason": "模型识别为与当前判断有关的关键词",
+        "confidence": 0.7
+      },
+      {
+        "keyword": "西钢营业厅",
+        "reason": "模型识别为与当前判断有关的关键词",
+        "confidence": 0.7
+      },
+      {
+        "keyword": "要求尽快取消",
+        "reason": "模型识别为与当前判断有关的关键词",
+        "confidence": 0.7
+      },
+      {
+        "keyword": "携号转网",
+        "reason": "模型识别为与当前判断有关的关键词",
+        "confidence": 0.7
+      },
+      {
+        "keyword": "客户表达不满意",
+        "reason": "模型识别为与当前判断有关的关键词",
+        "confidence": 0.7
+      }
+    ],
+    "risks": []
+  }
+}

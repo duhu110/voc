@@ -1,0 +1,357 @@
+{
+  "timestamp": "2026-04-10T17:11:58",
+  "sample_size": 20,
+  "model_name": "Qwen3-Max",
+  "ticket_ids": [
+    "2024121013451359982515",
+    "2024121013441528920042",
+    "2024121013400271313375",
+    "2024121013340268735503",
+    "2024121013300731653279",
+    "2024121013283220479801",
+    "2024121013260421732567",
+    "2024121013242550934454",
+    "2024121013162426209818",
+    "2024121013092968298839",
+    "2024121012541339789523",
+    "2024121012513761694350",
+    "2024121012512524235545",
+    "2024121012492372212732",
+    "2024121012443819711573",
+    "2024121012340495012424",
+    "2024121012271836752361",
+    "2024121012250403807598",
+    "2024121012083129025786",
+    "2024121012060204865695"
+  ],
+  "success_count": 20,
+  "failure_count": 0,
+  "success_rate": 1.0,
+  "failures_by_stage": {},
+  "results": [
+    {
+      "ticket_id": "2024121013451359982515",
+      "status": "success",
+      "stage": "persistence",
+      "duration_ms": 19601,
+      "timestamp": "2026-04-10T17:11:58",
+      "model_name": "Qwen3-Max",
+      "write_summary": {
+        "category_results": 3,
+        "tag_results": 8,
+        "keyword_results": 9,
+        "match_details": 11
+      },
+      "artifact_path": "D:\\project\\FullStack\\voc\\voc_agent\\complaint_taxonomy_validator\\batch_output\\2024121013451359982515__2026-04-10T17-11-58.json"
+    },
+    {
+      "ticket_id": "2024121013441528920042",
+      "status": "success",
+      "stage": "persistence",
+      "duration_ms": 25865,
+      "timestamp": "2026-04-10T17:12:18",
+      "model_name": "Qwen3-Max",
+      "write_summary": {
+        "category_results": 3,
+        "tag_results": 5,
+        "keyword_results": 10,
+        "match_details": 8
+      },
+      "artifact_path": "D:\\project\\FullStack\\voc\\voc_agent\\complaint_taxonomy_validator\\batch_output\\2024121013441528920042__2026-04-10T17-12-18.json"
+    },
+    {
+      "ticket_id": "2024121013400271313375",
+      "status": "success",
+      "stage": "persistence",
+      "duration_ms": 17212,
+      "timestamp": "2026-04-10T17:12:43",
+      "model_name": "Qwen3-Max",
+      "write_summary": {
+        "category_results": 3,
+        "tag_results": 5,
+        "keyword_results": 7,
+        "match_details": 8
+      },
+      "artifact_path": "D:\\project\\FullStack\\voc\\voc_agent\\complaint_taxonomy_validator\\batch_output\\2024121013400271313375__2026-04-10T17-12-43.json"
+    },
+    {
+      "ticket_id": "2024121013340268735503",
+      "status": "success",
+      "stage": "persistence",
+      "duration_ms": 19267,
+      "timestamp": "2026-04-10T17:13:01",
+      "model_name": "Qwen3-Max",
+      "write_summary": {
+        "category_results": 3,
+        "tag_results": 7,
+        "keyword_results": 9,
+        "match_details": 10
+      },
+      "artifact_path": "D:\\project\\FullStack\\voc\\voc_agent\\complaint_taxonomy_validator\\batch_output\\2024121013340268735503__2026-04-10T17-13-01.json"
+    },
+    {
+      "ticket_id": "2024121013300731653279",
+      "status": "success",
+      "stage": "persistence",
+      "duration_ms": 16864,
+      "timestamp": "2026-04-10T17:13:20",
+      "model_name": "Qwen3-Max",
+      "write_summary": {
+        "category_results": 3,
+        "tag_results": 6,
+        "keyword_results": 10,
+        "match_details": 9
+      },
+      "artifact_path": "D:\\project\\FullStack\\voc\\voc_agent\\complaint_taxonomy_validator\\batch_output\\2024121013300731653279__2026-04-10T17-13-20.json"
+    },
+    {
+      "ticket_id": "2024121013283220479801",
+      "status": "success",
+      "stage": "persistence",
+      "duration_ms": 19440,
+      "timestamp": "2026-04-10T17:13:37",
+      "model_name": "Qwen3-Max",
+      "write_summary": {
+        "category_results": 3,
+        "tag_results": 4,
+        "keyword_results": 8,
+        "match_details": 7
+      },
+      "artifact_path": "D:\\project\\FullStack\\voc\\voc_agent\\complaint_taxonomy_validator\\batch_output\\2024121013283220479801__2026-04-10T17-13-37.json"
+    },
+    {
+      "ticket_id": "2024121013260421732567",
+      "status": "success",
+      "stage": "persistence",
+      "duration_ms": 19980,
+      "timestamp": "2026-04-10T17:13:56",
+      "model_name": "Qwen3-Max",
+      "write_summary": {
+        "category_results": 3,
+        "tag_results": 0,
+        "keyword_results": 7,
+        "match_details": 3
+      },
+      "artifact_path": "D:\\project\\FullStack\\voc\\voc_agent\\complaint_taxonomy_validator\\batch_output\\2024121013260421732567__2026-04-10T17-13-56.json"
+    },
+    {
+      "ticket_id": "2024121013242550934454",
+      "status": "success",
+      "stage": "persistence",
+      "duration_ms": 19854,
+      "timestamp": "2026-04-10T17:14:16",
+      "model_name": "Qwen3-Max",
+      "write_summary": {
+        "category_results": 3,
+        "tag_results": 6,
+        "keyword_results": 13,
+        "match_details": 9
+      },
+      "artifact_path": "D:\\project\\FullStack\\voc\\voc_agent\\complaint_taxonomy_validator\\batch_output\\2024121013242550934454__2026-04-10T17-14-16.json"
+    },
+    {
+      "ticket_id": "2024121013162426209818",
+      "status": "success",
+      "stage": "persistence",
+      "duration_ms": 19800,
+      "timestamp": "2026-04-10T17:14:36",
+      "model_name": "Qwen3-Max",
+      "write_summary": {
+        "category_results": 3,
+        "tag_results": 8,
+        "keyword_results": 9,
+        "match_details": 11
+      },
+      "artifact_path": "D:\\project\\FullStack\\voc\\voc_agent\\complaint_taxonomy_validator\\batch_output\\2024121013162426209818__2026-04-10T17-14-36.json"
+    },
+    {
+      "ticket_id": "2024121013092968298839",
+      "status": "success",
+      "stage": "persistence",
+      "duration_ms": 15196,
+      "timestamp": "2026-04-10T17:14:56",
+      "model_name": "Qwen3-Max",
+      "write_summary": {
+        "category_results": 3,
+        "tag_results": 5,
+        "keyword_results": 11,
+        "match_details": 8
+      },
+      "artifact_path": "D:\\project\\FullStack\\voc\\voc_agent\\complaint_taxonomy_validator\\batch_output\\2024121013092968298839__2026-04-10T17-14-56.json"
+    },
+    {
+      "ticket_id": "2024121012541339789523",
+      "status": "success",
+      "stage": "persistence",
+      "duration_ms": 20389,
+      "timestamp": "2026-04-10T17:15:11",
+      "model_name": "Qwen3-Max",
+      "write_summary": {
+        "category_results": 3,
+        "tag_results": 5,
+        "keyword_results": 8,
+        "match_details": 8
+      },
+      "artifact_path": "D:\\project\\FullStack\\voc\\voc_agent\\complaint_taxonomy_validator\\batch_output\\2024121012541339789523__2026-04-10T17-15-11.json"
+    },
+    {
+      "ticket_id": "2024121012513761694350",
+      "status": "success",
+      "stage": "persistence",
+      "duration_ms": 19602,
+      "timestamp": "2026-04-10T17:15:31",
+      "model_name": "Qwen3-Max",
+      "write_summary": {
+        "category_results": 3,
+        "tag_results": 8,
+        "keyword_results": 8,
+        "match_details": 11
+      },
+      "artifact_path": "D:\\project\\FullStack\\voc\\voc_agent\\complaint_taxonomy_validator\\batch_output\\2024121012513761694350__2026-04-10T17-15-31.json"
+    },
+    {
+      "ticket_id": "2024121012512524235545",
+      "status": "success",
+      "stage": "persistence",
+      "duration_ms": 15178,
+      "timestamp": "2026-04-10T17:15:51",
+      "model_name": "Qwen3-Max",
+      "write_summary": {
+        "category_results": 3,
+        "tag_results": 6,
+        "keyword_results": 9,
+        "match_details": 9
+      },
+      "artifact_path": "D:\\project\\FullStack\\voc\\voc_agent\\complaint_taxonomy_validator\\batch_output\\2024121012512524235545__2026-04-10T17-15-51.json"
+    },
+    {
+      "ticket_id": "2024121012492372212732",
+      "status": "success",
+      "stage": "persistence",
+      "duration_ms": 19615,
+      "timestamp": "2026-04-10T17:16:06",
+      "model_name": "Qwen3-Max",
+      "write_summary": {
+        "category_results": 3,
+        "tag_results": 5,
+        "keyword_results": 12,
+        "match_details": 8
+      },
+      "artifact_path": "D:\\project\\FullStack\\voc\\voc_agent\\complaint_taxonomy_validator\\batch_output\\2024121012492372212732__2026-04-10T17-16-06.json"
+    },
+    {
+      "ticket_id": "2024121012443819711573",
+      "status": "success",
+      "stage": "persistence",
+      "duration_ms": 19210,
+      "timestamp": "2026-04-10T17:16:26",
+      "model_name": "Qwen3-Max",
+      "write_summary": {
+        "category_results": 3,
+        "tag_results": 4,
+        "keyword_results": 9,
+        "match_details": 7
+      },
+      "artifact_path": "D:\\project\\FullStack\\voc\\voc_agent\\complaint_taxonomy_validator\\batch_output\\2024121012443819711573__2026-04-10T17-16-26.json"
+    },
+    {
+      "ticket_id": "2024121012340495012424",
+      "status": "success",
+      "stage": "persistence",
+      "duration_ms": 20847,
+      "timestamp": "2026-04-10T17:16:45",
+      "model_name": "Qwen3-Max",
+      "write_summary": {
+        "category_results": 4,
+        "tag_results": 5,
+        "keyword_results": 10,
+        "match_details": 9
+      },
+      "artifact_path": "D:\\project\\FullStack\\voc\\voc_agent\\complaint_taxonomy_validator\\batch_output\\2024121012340495012424__2026-04-10T17-16-45.json"
+    },
+    {
+      "ticket_id": "2024121012271836752361",
+      "status": "success",
+      "stage": "persistence",
+      "duration_ms": 22518,
+      "timestamp": "2026-04-10T17:17:06",
+      "model_name": "Qwen3-Max",
+      "write_summary": {
+        "category_results": 3,
+        "tag_results": 6,
+        "keyword_results": 9,
+        "match_details": 9
+      },
+      "artifact_path": "D:\\project\\FullStack\\voc\\voc_agent\\complaint_taxonomy_validator\\batch_output\\2024121012271836752361__2026-04-10T17-17-06.json"
+    },
+    {
+      "ticket_id": "2024121012250403807598",
+      "status": "success",
+      "stage": "persistence",
+      "duration_ms": 22892,
+      "timestamp": "2026-04-10T17:17:28",
+      "model_name": "Qwen3-Max",
+      "write_summary": {
+        "category_results": 3,
+        "tag_results": 6,
+        "keyword_results": 11,
+        "match_details": 9
+      },
+      "artifact_path": "D:\\project\\FullStack\\voc\\voc_agent\\complaint_taxonomy_validator\\batch_output\\2024121012250403807598__2026-04-10T17-17-28.json"
+    },
+    {
+      "ticket_id": "2024121012083129025786",
+      "status": "success",
+      "stage": "persistence",
+      "duration_ms": 15933,
+      "timestamp": "2026-04-10T17:17:51",
+      "model_name": "Qwen3-Max",
+      "write_summary": {
+        "category_results": 3,
+        "tag_results": 6,
+        "keyword_results": 9,
+        "match_details": 9
+      },
+      "artifact_path": "D:\\project\\FullStack\\voc\\voc_agent\\complaint_taxonomy_validator\\batch_output\\2024121012083129025786__2026-04-10T17-17-51.json"
+    },
+    {
+      "ticket_id": "2024121012060204865695",
+      "status": "success",
+      "stage": "persistence",
+      "duration_ms": 23480,
+      "timestamp": "2026-04-10T17:18:07",
+      "model_name": "Qwen3-Max",
+      "write_summary": {
+        "category_results": 3,
+        "tag_results": 6,
+        "keyword_results": 8,
+        "match_details": 9
+      },
+      "artifact_path": "D:\\project\\FullStack\\voc\\voc_agent\\complaint_taxonomy_validator\\batch_output\\2024121012060204865695__2026-04-10T17-18-07.json"
+    }
+  ],
+  "result_files": [
+    "D:\\project\\FullStack\\voc\\voc_agent\\complaint_taxonomy_validator\\batch_output\\2024121013451359982515__2026-04-10T17-11-58.json",
+    "D:\\project\\FullStack\\voc\\voc_agent\\complaint_taxonomy_validator\\batch_output\\2024121013441528920042__2026-04-10T17-12-18.json",
+    "D:\\project\\FullStack\\voc\\voc_agent\\complaint_taxonomy_validator\\batch_output\\2024121013400271313375__2026-04-10T17-12-43.json",
+    "D:\\project\\FullStack\\voc\\voc_agent\\complaint_taxonomy_validator\\batch_output\\2024121013340268735503__2026-04-10T17-13-01.json",
+    "D:\\project\\FullStack\\voc\\voc_agent\\complaint_taxonomy_validator\\batch_output\\2024121013300731653279__2026-04-10T17-13-20.json",
+    "D:\\project\\FullStack\\voc\\voc_agent\\complaint_taxonomy_validator\\batch_output\\2024121013283220479801__2026-04-10T17-13-37.json",
+    "D:\\project\\FullStack\\voc\\voc_agent\\complaint_taxonomy_validator\\batch_output\\2024121013260421732567__2026-04-10T17-13-56.json",
+    "D:\\project\\FullStack\\voc\\voc_agent\\complaint_taxonomy_validator\\batch_output\\2024121013242550934454__2026-04-10T17-14-16.json",
+    "D:\\project\\FullStack\\voc\\voc_agent\\complaint_taxonomy_validator\\batch_output\\2024121013162426209818__2026-04-10T17-14-36.json",
+    "D:\\project\\FullStack\\voc\\voc_agent\\complaint_taxonomy_validator\\batch_output\\2024121013092968298839__2026-04-10T17-14-56.json",
+    "D:\\project\\FullStack\\voc\\voc_agent\\complaint_taxonomy_validator\\batch_output\\2024121012541339789523__2026-04-10T17-15-11.json",
+    "D:\\project\\FullStack\\voc\\voc_agent\\complaint_taxonomy_validator\\batch_output\\2024121012513761694350__2026-04-10T17-15-31.json",
+    "D:\\project\\FullStack\\voc\\voc_agent\\complaint_taxonomy_validator\\batch_output\\2024121012512524235545__2026-04-10T17-15-51.json",
+    "D:\\project\\FullStack\\voc\\voc_agent\\complaint_taxonomy_validator\\batch_output\\2024121012492372212732__2026-04-10T17-16-06.json",
+    "D:\\project\\FullStack\\voc\\voc_agent\\complaint_taxonomy_validator\\batch_output\\2024121012443819711573__2026-04-10T17-16-26.json",
+    "D:\\project\\FullStack\\voc\\voc_agent\\complaint_taxonomy_validator\\batch_output\\2024121012340495012424__2026-04-10T17-16-45.json",
+    "D:\\project\\FullStack\\voc\\voc_agent\\complaint_taxonomy_validator\\batch_output\\2024121012271836752361__2026-04-10T17-17-06.json",
+    "D:\\project\\FullStack\\voc\\voc_agent\\complaint_taxonomy_validator\\batch_output\\2024121012250403807598__2026-04-10T17-17-28.json",
+    "D:\\project\\FullStack\\voc\\voc_agent\\complaint_taxonomy_validator\\batch_output\\2024121012083129025786__2026-04-10T17-17-51.json",
+    "D:\\project\\FullStack\\voc\\voc_agent\\complaint_taxonomy_validator\\batch_output\\2024121012060204865695__2026-04-10T17-18-07.json"
+  ],
+  "summary_path": "D:\\project\\FullStack\\voc\\voc_agent\\complaint_taxonomy_validator\\batch_output\\summary__2026-04-10T17-11-58.json",
+  "report_path": "D:\\project\\FullStack\\voc\\voc_agent\\complaint_taxonomy_validator\\batch_output\\report__2026-04-10T17-11-58.md"
+}

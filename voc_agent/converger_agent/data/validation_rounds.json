@@ -1,0 +1,93 @@
+{
+  "version": "v1",
+  "updated_at": "2026-04-11",
+  "model_name": "Qwen3-Max",
+  "source_doc": "D:/project/FullStack/voc/docs/converger_design/category_system_v2_final.md",
+  "rounds": [
+    {
+      "round_id": 1,
+      "sample_count": 12,
+      "level1_match_count": 11,
+      "level2_match_count": 8,
+      "leaf_match_count": 5,
+      "report_markdown": "D:/project/FullStack/voc/docs/converger_design/taxonomy_v2_validation_report.md",
+      "report_json": "D:/project/FullStack/voc/docs/converger_design/taxonomy_v2_validation_report.json",
+      "summary": "一级域基本稳定，叶子边界仍需收敛。"
+    },
+    {
+      "round_id": 2,
+      "sample_count": 10,
+      "level1_match_count": 9,
+      "level2_match_count": 8,
+      "leaf_match_count": 7,
+      "report_markdown": "D:/project/FullStack/voc/docs/converger_design/taxonomy_v2_final_round2_report.md",
+      "report_json": "D:/project/FullStack/voc/docs/converger_design/taxonomy_v2_final_round2_report.json",
+      "summary": "二级域已较稳定，主要冲突在少数近邻叶子。"
+    },
+    {
+      "round_id": 3,
+      "sample_count": 10,
+      "level1_match_count": 7,
+      "level2_match_count": 6,
+      "leaf_match_count": 6,
+      "report_markdown": "D:/project/FullStack/voc/docs/converger_design/taxonomy_v2_final_round3_report.md",
+      "report_json": "D:/project/FullStack/voc/docs/converger_design/taxonomy_v2_final_round3_report.json",
+      "summary": "边界样本下暴露出用户感知问题与后台原因之间的归因冲突。"
+    },
+    {
+      "round_id": 4,
+      "sample_count": 10,
+      "level1_match_count": 8,
+      "level2_match_count": 8,
+      "leaf_match_count": 8,
+      "report_markdown": "D:/project/FullStack/voc/docs/converger_design/taxonomy_v2_final_round4_report.md",
+      "report_json": "D:/project/FullStack/voc/docs/converger_design/taxonomy_v2_final_round4_report.json",
+      "summary": "收费、退费、缴费、规则、恢复、履约等高频问题上已比较稳定。"
+    },
+    {
+      "round_id": 5,
+      "sample_count": 10,
+      "level1_match_count": 9,
+      "level2_match_count": 9,
+      "leaf_match_count": 8,
+      "report_markdown": "D:/project/FullStack/voc/docs/converger_design/taxonomy_v2_final_round5_report.md",
+      "report_json": "D:/project/FullStack/voc/docs/converger_design/taxonomy_v2_final_round5_report.json",
+      "summary": "进入平台期，残留歧义主要集中在营销域内部的近邻叶子。"
+    },
+    {
+      "round_id": 6,
+      "sample_count": 10,
+      "level1_match_count": 9,
+      "level2_match_count": 9,
+      "leaf_match_count": 8,
+      "report_markdown": "D:/project/FullStack/voc/docs/converger_design/taxonomy_v2_json_round6_report.md",
+      "report_json": "D:/project/FullStack/voc/docs/converger_design/taxonomy_v2_json_round6_report.json",
+      "summary": "category_v2.json 作为运行时事实源首次验证通过；R00 修复了退款未到账与承诺未兑现的冲突，但营销承诺与权益兑现边界仍存在残留歧义。"
+    },
+    {
+      "round_id": 7,
+      "sample_count": 10,
+      "level1_match_count": 9,
+      "level2_match_count": 9,
+      "leaf_match_count": 8,
+      "report_markdown": "D:/project/FullStack/voc/docs/converger_design/taxonomy_v2_json_round7_report.md",
+      "report_json": "D:/project/FullStack/voc/docs/converger_design/taxonomy_v2_json_round7_report.json",
+      "summary": "基于同一 JSON 事实源复跑后结果稳定，当前主要剩余歧义集中在 PROMISE_NOT_FULFILLED vs BENEFIT_NOT_DELIVERED，以及 MISLEADING_EXPLANATION vs CONTRACT_LIMIT_RULE_DISPUTE。"
+    },
+    {
+      "round_id": 8,
+      "sample_count": 10,
+      "level1_match_count": 10,
+      "level2_match_count": 10,
+      "leaf_match_count": 10,
+      "report_markdown": "D:/project/FullStack/voc/docs/converger_design/taxonomy_v2_json_round8_report.md",
+      "report_json": "D:/project/FullStack/voc/docs/converger_design/taxonomy_v2_json_round8_report.json",
+      "summary": "补入营销承诺与合约告知两条边界规则后，基于 category_v2.json 的 10 条真实样本验证达到 10/10/10。"
+    }
+  ],
+  "current_conclusion": {
+    "status": "validated_for_prompt_integration",
+    "recommended_next_step": "以 category_v2.json 为运行时事实源，直接注入 converger_agent 的分类 prompt、加载工具和测试，不再继续改一级、二级结构。",
+    "main_ambiguities": []
+  }
+}

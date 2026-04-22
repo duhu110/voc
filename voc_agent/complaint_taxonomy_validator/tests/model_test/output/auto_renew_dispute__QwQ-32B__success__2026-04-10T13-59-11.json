@@ -1,0 +1,20 @@
+{
+  "case_name": "auto_renew_dispute",
+  "model_name": "QwQ-32B",
+  "prompt_path": "D:\\project\\FullStack\\voc\\voc_agent\\complaint_taxonomy_validator\\tests\\model_test\\output\\prompts\\auto_renew_dispute.txt",
+  "status": "success",
+  "error_type": null,
+  "error_message": null,
+  "duration_ms": 59734,
+  "timestamp": "2026-04-10T13:59:11",
+  "response_id": "chatcmpl-00-85f14426ccb918c73ce1615c1450d1a8-b3969b0dbe57a46a-01",
+  "response_text": "\n\n{\n  \"summary\": \"客户反映视频会员试用到期后自动转为连续包月，未收到提醒且已扣费3个月，要求取消并退款。\",\n  \"primary_category\": {\n    \"code\": \"SUBSCRIBE_RENEW_FREE_TO_PAID_TRIAL\",\n    \"full_name\": \"订购与退订争议/自动续订争议/免费到期转收费争议/试用到期转收费争议\",\n    \"confidence\": 0.98,\n    \"reason\": \"客户明确提到试用到期转收费、未收到提醒、连续扣费等核心要素，完全匹配该分类定义的'试用到期转收费争议'。\"\n  },\n  \"candidate_categories\": [\n    {\n      \"code\": \"SUBSCRIBE_RENEW_AUTO\",\n      \"full_name\": \"订购与退订争议/自动续订争议/自动续订争议\",\n      \"confidence\": 0.85\n    }\n  ],\n  \"candidate_tags\": [],\n  \"category_keywords\": [\"自动续订\", \"试用到期转收费\", \"未提醒扣费\"],\n  \"tag_keywords\": [\"视频会员\", \"营业厅\", \"未告知\", \"退订\"],\n  \"risks\": [\"RISK.COMPLIANCE\"]\n}",
+  "finish_reason": "stop",
+  "usage": {
+    "completion_tokens": 1276,
+    "prompt_tokens": 12961,
+    "total_tokens": 14237,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  }
+}

@@ -9,6 +9,7 @@ from voc_agent.core.db import get_engine
 TAG_QUERY = text(
     """
     select
+        t.id,
         g.code as group_code,
         g.name as group_name,
         t.code,

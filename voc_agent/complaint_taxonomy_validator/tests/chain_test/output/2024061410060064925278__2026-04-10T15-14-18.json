@@ -1,0 +1,142 @@
+{
+  "ticket_id": "2024061410060064925278",
+  "status": "success",
+  "stage": "chain",
+  "duration_ms": 17916,
+  "timestamp": "2026-04-10T15:14:18",
+  "model_name": "Qwen3-Max",
+  "result": {
+    "summary": "客户称12月联系客户经理办理停机保号，承诺已办理，但现查询未办理成功，导致产生套餐费，不认可费用，要求投诉并更换客户经理。",
+    "primary_category": {
+      "code": "OPEN_CLOSE_SHUTDOWN",
+      "full_name": "开通、停用与销户/停机关停争议",
+      "confidence": 0.94,
+      "reason": "核心问题是客户认为已申请停机保号但系统未执行，导致继续计费，属于停机状态未生效引发的争议。"
+    },
+    "candidate_categories": [
+      {
+        "code": "MARKETING_PROCESS_ERROR",
+        "full_name": "营销宣传与销售服务/办理差错与漏受理/业务办理差错",
+        "confidence": 0.85,
+        "reason": "客户经理可能未正确提交或处理停机保号请求，属于办理差错。"
+      },
+      {
+        "code": "FEE_PACKAGE_MONTHLY",
+        "full_name": "资费与收费争议/套餐收费争议/套餐收费疑议",
+        "confidence": 0.78,
+        "reason": "客户对产生的套餐月费不认可，但根本原因在于停机未生效，非单纯资费争议。"
+      }
+    ],
+    "candidate_tags": [
+      {
+        "group_code": "PRODUCT",
+        "code": "MOBILE",
+        "name": "移动业务",
+        "confidence": 0.8,
+        "reason": "客户称12月联系客户经理办理停机保号，承诺已办理，但现查询未办理成功，导致产生套餐费，不认可费用，要求投诉并更换客户经理。"
+      },
+      {
+        "group_code": "CHANNEL",
+        "code": "DOOR_SERVICE",
+        "name": "上门服务",
+        "confidence": 0.8,
+        "reason": "客户称12月联系客户经理办理停机保号，承诺已办理，但现查询未办理成功，导致产生套餐费，不认可费用，要求投诉并更换客户经理。"
+      },
+      {
+        "group_code": "ROOT_CAUSE",
+        "code": "PROCESS_ERROR",
+        "name": "办理差错",
+        "confidence": 0.8,
+        "reason": "客户称12月联系客户经理办理停机保号，承诺已办理，但现查询未办理成功，导致产生套餐费，不认可费用，要求投诉并更换客户经理。"
+      },
+      {
+        "group_code": "RESPONSIBILITY",
+        "code": "NETWORK_OP",
+        "name": "网运条线",
+        "confidence": 0.8,
+        "reason": "客户称12月联系客户经理办理停机保号，承诺已办理，但现查询未办理成功，导致产生套餐费，不认可费用，要求投诉并更换客户经理。"
+      },
+      {
+        "group_code": "REQUEST",
+        "code": "REFUND",
+        "name": "退费",
+        "confidence": 0.8,
+        "reason": "客户称12月联系客户经理办理停机保号，承诺已办理，但现查询未办理成功，导致产生套餐费，不认可费用，要求投诉并更换客户经理。"
+      },
+      {
+        "group_code": "REQUEST",
+        "code": "PUNISH",
+        "name": "追责处罚",
+        "confidence": 0.8,
+        "reason": "客户称12月联系客户经理办理停机保号，承诺已办理，但现查询未办理成功，导致产生套餐费，不认可费用，要求投诉并更换客户经理。"
+      },
+      {
+        "group_code": "EMOTION",
+        "code": "ANGRY",
+        "name": "强烈投诉",
+        "confidence": 0.8,
+        "reason": "客户称12月联系客户经理办理停机保号，承诺已办理，但现查询未办理成功，导致产生套餐费，不认可费用，要求投诉并更换客户经理。"
+      }
+    ],
+    "category_keywords": [
+      {
+        "keyword": "停机保号",
+        "reason": "模型识别为与当前判断有关的关键词",
+        "confidence": 0.7
+      },
+      {
+        "keyword": "未办理",
+        "reason": "模型识别为与当前判断有关的关键词",
+        "confidence": 0.7
+      },
+      {
+        "keyword": "套餐费",
+        "reason": "模型识别为与当前判断有关的关键词",
+        "confidence": 0.7
+      },
+      {
+        "keyword": "客户经理",
+        "reason": "模型识别为与当前判断有关的关键词",
+        "confidence": 0.7
+      },
+      {
+        "keyword": "承诺已办理",
+        "reason": "模型识别为与当前判断有关的关键词",
+        "confidence": 0.7
+      }
+    ],
+    "tag_keywords": [
+      {
+        "keyword": "移动业务",
+        "reason": "模型识别为与当前判断有关的关键词",
+        "confidence": 0.7
+      },
+      {
+        "keyword": "客户经理",
+        "reason": "模型识别为与当前判断有关的关键词",
+        "confidence": 0.7
+      },
+      {
+        "keyword": "办理差错",
+        "reason": "模型识别为与当前判断有关的关键词",
+        "confidence": 0.7
+      },
+      {
+        "keyword": "退费",
+        "reason": "模型识别为与当前判断有关的关键词",
+        "confidence": 0.7
+      },
+      {
+        "keyword": "更换客户经理",
+        "reason": "模型识别为与当前判断有关的关键词",
+        "confidence": 0.7
+      },
+      {
+        "keyword": "投诉",
+        "reason": "模型识别为与当前判断有关的关键词",
+        "confidence": 0.7
+      }
+    ],
+    "risks": []
+  }
+}

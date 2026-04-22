@@ -1,0 +1,118 @@
+{
+  "ticket_id": "2024042616405018276535",
+  "status": "success",
+  "stage": "chain",
+  "duration_ms": 19615,
+  "timestamp": "2026-04-10T15:06:44",
+  "model_name": "Qwen3-Max",
+  "result": {
+    "summary": "用户办理农村5G畅享169元云融合套餐2022版，反映4月26日在加油站加油后翼支付权益金未返还，通过中油好客e站小程序查询也未到账，要求核实处理。",
+    "primary_category": {
+      "code": "FEE_WINGPAY_RIGHTS",
+      "full_name": "资费与收费争议/翼支付及权益争议/翼支付权益金争议",
+      "confidence": 0.98,
+      "reason": "工单明确描述为“翼支付权益金争议”，用户对加油后应返还的权益金未到账提出异议，完全匹配该分类定义。"
+    },
+    "candidate_categories": [
+      {
+        "code": "FEE_REFUND_REBATE_ACTIVITY",
+        "full_name": "资费与收费争议/返费退款争议/返费赠费未到账/活动返费未到账",
+        "confidence": 0.75,
+        "reason": "权益金可视为活动返费的一种形式，但因问题明确指向翼支付权益金，优先级低于专用分类。"
+      },
+      {
+        "code": "RULE_ACTIVITY_REBATE",
+        "full_name": "规则政策争议/营销活动规则争议/返费奖励规则争议",
+        "confidence": 0.65,
+        "reason": "若争议焦点是返费规则而非到账本身，可能归入此类，但当前主诉是未到账，非规则理解分歧。"
+      }
+    ],
+    "candidate_tags": [
+      {
+        "group_code": "",
+        "code": "[PRODUCT] [WINGPAY]",
+        "name": "翼支付",
+        "confidence": 0.99,
+        "reason": "用户办理农村5G畅享169元云融合套餐2022版，反映4月26日在加油站加油后翼支付权益金未返还，通过中油好客e站小程序查询也未到账，要求核实处理。"
+      },
+      {
+        "group_code": "",
+        "code": "[REQUEST] [EXPLAIN]",
+        "name": "解释说明",
+        "confidence": 0.9,
+        "reason": "用户办理农村5G畅享169元云融合套餐2022版，反映4月26日在加油站加油后翼支付权益金未返还，通过中油好客e站小程序查询也未到账，要求核实处理。"
+      },
+      {
+        "group_code": "",
+        "code": "[RESPONSIBILITY] [WINGPAY_TEAM]",
+        "name": "支付金融条线",
+        "confidence": 0.95,
+        "reason": "用户办理农村5G畅享169元云融合套餐2022版，反映4月26日在加油站加油后翼支付权益金未返还，通过中油好客e站小程序查询也未到账，要求核实处理。"
+      },
+      {
+        "group_code": "",
+        "code": "[ROOT_CAUSE] [RULE_DISPUTE]",
+        "name": "规则不认可",
+        "confidence": 0.7,
+        "reason": "用户办理农村5G畅享169元云融合套餐2022版，反映4月26日在加油站加油后翼支付权益金未返还，通过中油好客e站小程序查询也未到账，要求核实处理。"
+      },
+      {
+        "group_code": "",
+        "code": "[CHANNEL] [APP]",
+        "name": "APP",
+        "confidence": 0.8,
+        "reason": "用户办理农村5G畅享169元云融合套餐2022版，反映4月26日在加油站加油后翼支付权益金未返还，通过中油好客e站小程序查询也未到账，要求核实处理。"
+      }
+    ],
+    "category_keywords": [
+      {
+        "keyword": "翼支付权益金争议",
+        "reason": "模型识别为与当前判断有关的关键词",
+        "confidence": 0.7
+      },
+      {
+        "keyword": "权益金优惠有异议",
+        "reason": "模型识别为与当前判断有关的关键词",
+        "confidence": 0.7
+      },
+      {
+        "keyword": "权益金返还",
+        "reason": "模型识别为与当前判断有关的关键词",
+        "confidence": 0.7
+      },
+      {
+        "keyword": "未到账",
+        "reason": "模型识别为与当前判断有关的关键词",
+        "confidence": 0.7
+      }
+    ],
+    "tag_keywords": [
+      {
+        "keyword": "翼支付",
+        "reason": "模型识别为与当前判断有关的关键词",
+        "confidence": 0.7
+      },
+      {
+        "keyword": "中油好客e站",
+        "reason": "模型识别为与当前判断有关的关键词",
+        "confidence": 0.7
+      },
+      {
+        "keyword": "小程序",
+        "reason": "模型识别为与当前判断有关的关键词",
+        "confidence": 0.7
+      },
+      {
+        "keyword": "要求核实",
+        "reason": "模型识别为与当前判断有关的关键词",
+        "confidence": 0.7
+      },
+      {
+        "keyword": "支付金融",
+        "reason": "模型识别为与当前判断有关的关键词",
+        "confidence": 0.7
+      }
+    ],
+    "risks": []
+  }
+}

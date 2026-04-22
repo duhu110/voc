@@ -1,0 +1,30 @@
+{
+  "case_name": "billing_refund_dispute",
+  "model_name": "DeepSeek-V3.2",
+  "prompt_path": "D:\\project\\FullStack\\voc\\voc_agent\\complaint_taxonomy_validator\\tests\\model_test\\output\\prompts\\billing_refund_dispute.txt",
+  "status": "success",
+  "error_type": null,
+  "error_message": null,
+  "duration_ms": 14522,
+  "timestamp": "2026-04-10T14:17:24",
+  "response_id": "chatcmpl-177580184461662800007c16faac",
+  "response_text": "{\n  \"summary\": \"客户投诉本月账单出现两笔会员扣费，认为其中一笔为已取消业务，存在重复计费，要求核查并退费。\",\n  \"primary_category\": {\n    \"code\": \"FEE_VALUE_SUBSCRIBE\",\n    \"full_name\": \"资费与收费争议/增值业务收费争议/增值业务收费争议\",\n    \"confidence\": 0.96,\n    \"reason\": \"核心投诉点是关于‘天翼云盘黄金会员’此类增值业务的重复计费问题，直接对应‘增值业务收费争议’。\"\n  },\n  \"candidate_categories\": [\n    \"SUBSCRIBE_RENEW_AUTO\",\n    \"FEE_UNKNOWN_CHARGE\"\n  ],\n  \"candidate_tags\": [\n    [\n      \"PRODUCT\",\n      \"VALUE_ADDED\"\n    ],\n    [\n      \"CHANNEL\",\n      \"HALL\"\n    ],\n    [\n      \"ROOT_CAUSE\",\n      \"RULE_DISPUTE\"\n    ],\n    [\n      \"RESPONSIBILITY\",\n      \"FINANCE\"\n    ],\n    [\n      \"REQUEST\",\n      \"REFUND\"\n    ]\n  ],\n  \"category_keywords\": [\n    \"会员扣费\",\n    \"重复计费\",\n    \"已取消业务\",\n    \"天翼云盘黄金会员\"\n  ],\n  \"tag_keywords\": [\n    \"增值业务\",\n    \"营业厅\",\n    \"规则不认可\",\n    \"账务\",\n    \"退费\"\n  ],\n  \"risks\": [\n    \"用户声称其中一笔为历史已取消业务，但无法判断该业务的真实退订时间、是否仍在计费周期内或是否为系统原因导致重复扣费，需要进一步核实。\"\n  ]\n}",
+  "finish_reason": "stop",
+  "usage": {
+    "completion_tokens": 371,
+    "prompt_tokens": 13220,
+    "total_tokens": 13591,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": {
+      "audio_tokens": null,
+      "cached_tokens": 0
+    }
+  },
+  "json_validation": {
+    "is_json_object": true,
+    "required_keys_valid": true,
+    "primary_category_valid": true,
+    "schema_valid": true,
+    "parse_error": null
+  }
+}

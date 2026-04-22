@@ -1,0 +1,23 @@
+{
+  "case_name": "auto_renew_dispute",
+  "model_name": "DeepSeek-V3.2-Standard",
+  "prompt_path": "D:\\project\\FullStack\\voc\\voc_agent\\complaint_taxonomy_validator\\tests\\model_test\\output\\prompts\\auto_renew_dispute.txt",
+  "status": "success",
+  "error_type": null,
+  "error_message": null,
+  "duration_ms": 11177,
+  "timestamp": "2026-04-10T13:49:05",
+  "response_id": "chatcmpl-1775800146031382000050028f77",
+  "response_text": "{\"summary\": \"客户投诉视频会员试用到期后，未收到明确提醒即自动转为连续包月，已持续扣费3个月，要求取消并退费。\", \"primary_category\": {\"code\": \"SUBSCRIBE_RENEW_FREE_TO_PAID_TRIAL\", \"full_name\": \"订购与退订争议/自动续订争议/免费到期转收费争议/试用到期转收费争议\", \"confidence\": 0.95, \"reason\": \"投诉内容核心是‘试用到期后自动转为连续包月’的自动续订问题，并明确要求取消和退费，符合‘试用到期转收费’的子分类定义，比父类‘自动续订争议’更精确。\"}, \"candidate_categories\": [\"SUBSCRIBE_RENEW_AUTO\", \"FEE_VALUE_RENEW\"], \"candidate_tags\": [\"PRODUCT/VALUE_ADDED\", \"ROOT_CAUSE/NOT_INFORMED\", \"REQUEST/CANCEL\", \"REQUEST/REFUND\", \"EMOTION/UNSATISFIED\", \"RISK/COMPLIANCE\"], \"category_keywords\": [\"试用到期\", \"自动转为连续包月\", \"自动续订\", \"自动扣费\", \"取消\", \"退费\", \"增值业务\", \"视频会员\", \"连续包月\"], \"tag_keywords\": [\"增值业务\", \"未充分告知\", \"取消业务\", \"退费\", \"不满\", \"合规风险\"], \"risks\": [\"工单未明确提及‘未收到提醒’的具体证据（如短信、APP通知记录）。若客户否认收到任何提醒，将涉及‘未充分告知’的合规风险。\"]}",
+  "finish_reason": "stop",
+  "usage": {
+    "completion_tokens": 357,
+    "prompt_tokens": 13226,
+    "total_tokens": 13583,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": {
+      "audio_tokens": null,
+      "cached_tokens": 0
+    }
+  }
+}

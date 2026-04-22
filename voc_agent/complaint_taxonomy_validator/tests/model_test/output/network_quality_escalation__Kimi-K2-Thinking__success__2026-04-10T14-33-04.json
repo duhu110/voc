@@ -1,0 +1,20 @@
+{
+  "case_name": "network_quality_escalation",
+  "model_name": "Kimi-K2-Thinking",
+  "prompt_path": "D:\\project\\FullStack\\voc\\voc_agent\\complaint_taxonomy_validator\\tests\\model_test\\output\\prompts\\network_quality_escalation.txt",
+  "status": "success",
+  "error_type": null,
+  "error_message": null,
+  "duration_ms": 74739,
+  "timestamp": "2026-04-10T14:33:04",
+  "response_id": "chatcmpl-00-112ee5535e9314d7c910cbb5e51f20b9-1a95a85f820492ad-01",
+  "response_text": " {\"summary\":\"客户投诉家庭住宅内5G移动网络近一周持续无信号或网速极慢，影响工作使用，多次反馈未解决，要求尽快处理并解释。\",\"primary_category\":{\"code\":\"NETWORK_SIGNAL_AREA_HOME\",\"full_name\":\"网络与通信质量/信号覆盖问题/特定区域信号差/家庭室内信号差\",\"confidence\":0.95,\"reason\":\"return_reason明确指向信号覆盖问题，biz_content描述'家庭住宅内5G网络持续无信号'，且发生在特定区域（家庭室内），符合家庭室内信号差分类定义。\"},\"candidate_categories\":[{\"code\":\"NETWORK_SPEED_MOBILE_INDOOR\",\"full_name\":\"网络与通信质量/网速质量问题/移动上网慢/室内上网慢\",\"confidence\":0.75,\"reason\":\"工单同时提到'网速极慢'，且发生在家庭室内，可作为次要选择\"},{\"code\":\"NETWORK_SIGNAL_NO\",\"full_name\":\"网络与通信质量/信号覆盖问题/无信号\",\"confidence\":0.7,\"reason\":\"工单描述包含'无信号'关键词，但未明确是否完全无信号还是弱覆盖\"},{\"code\":\"NETWORK\",\"full_name\":\"网络与通信质量\",\"confidence\":0.6,\"reason\":\"上级分类，但不够具体\"}],\"candidate_tags\":[{\"code\":\"[PRODUCT] [MOBILE]\",\"name\":\"移动业务\"},{\"code\":\"[CHANNEL] [CALL_CENTER]\",\"name\":\"客服热线\"},{\"code\":\"[ROOT_CAUSE] [DELAYED_FULFILLMENT]\",\"name\":\"履约不及时\"},{\"code\":\"[REQUEST] [FAST_PROCESS]\",\"name\":\"加快处理\"},{\"code\":\"[REQUEST] [EXPLAIN]\",\"name\":\"解释说明\"},{\"code\":\"[RISK] [REPEATED]\",\"name\":\"重复投诉\"},{\"code\":\"[RISK] [ESCALATED]\",\"name\":\"升级投诉\"},{\"code\":\"[RESPONSIBILITY] [NETWORK_OP]\",\"name\":\"网运条线\"},{\"code\":\"[EMOTION] [UNSATISFIED]\",\"name\":\"不满\"},{\"code\":\"[ROOT_CAUSE] [UNCLEAR_EXPLANATION]\",\"name\":\"解释不清\"}],\"category_keywords\":[\"5G网络\",\"无信号\",\"网速极慢\",\"家庭住宅内\",\"信号覆盖问题\"],\"tag_keywords\":[\"5G移动业务\",\"10000号\",\"多次反馈未解决\",\"尽快处理\",\"给出解释\"],\"risks\":[\"工单描述包含'无信号或网速极慢'，未明确是持续无信号还是间歇性网速慢，需进一步确认具体症状\",\"客户情绪程度未在工单中明确描述，无法准确判断是[UNSATISFIED]还是更高等级情绪标签\",\"'已多次反馈'但未说明具体次数和过往处理情况，重复投诉风险等级存在不确定性\",\"问题持续时间'近一周'，且影响客户工作视频会议，可能存在舆情或监管升级风险，但工单未明确说明\"]}",
+  "finish_reason": "stop",
+  "usage": {
+    "completion_tokens": 2114,
+    "prompt_tokens": 11705,
+    "total_tokens": 13819,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  }
+}

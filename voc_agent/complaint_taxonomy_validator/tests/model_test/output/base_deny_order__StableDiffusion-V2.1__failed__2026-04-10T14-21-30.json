@@ -1,0 +1,10 @@
+{
+  "case_name": "base_deny_order",
+  "model_name": "StableDiffusion-V2.1",
+  "prompt_path": "D:\\project\\FullStack\\voc\\voc_agent\\complaint_taxonomy_validator\\tests\\model_test\\output\\prompts\\base_deny_order.txt",
+  "status": "failed",
+  "error_type": "BadRequestError",
+  "error_message": "Error code: 400 - {'code': 500002, 'detail': '必传的参数 prompt 未传', 'message': 'PARAM_ERROR', 'error': {'code': '500002', 'message': '必传的参数 prompt 未传', 'type': 'PARAM_ERROR'}}",
+  "duration_ms": 432,
+  "timestamp": "2026-04-10T14:21:30"
+}

@@ -1,0 +1,118 @@
+{
+  "ticket_id": "2024092416410541520209",
+  "status": "success",
+  "stage": "chain",
+  "duration_ms": 19721,
+  "timestamp": "2026-04-10T15:03:08",
+  "model_name": "Qwen3-Max",
+  "result": {
+    "summary": "客户因不在归属地无法办理销户业务，对当前处理不满，要求核查处理，客服安抚无效。",
+    "primary_category": {
+      "code": "OPEN_CLOSE_CANCEL",
+      "full_name": "开通、停用与销户/拆机销户",
+      "confidence": 0.95,
+      "reason": "工单明确涉及‘拆机销户’业务，且客户因异地无法办理销户产生投诉，符合该分类定义。"
+    },
+    "candidate_categories": [
+      {
+        "code": "RULE_PROCESS_REMOTE",
+        "full_name": "规则政策争议/办理规则争议/异地办理规则争议",
+        "confidence": 0.85,
+        "reason": "客户因不在归属地无法销户，可能涉及异地办理限制规则。"
+      },
+      {
+        "code": "OPEN_CLOSE_CANCEL_RULE_LOCAL",
+        "full_name": "开通、停用与销户/拆机销户/销户规则争议/必须本地销户规则争议",
+        "confidence": 0.82,
+        "reason": "具体指向‘必须本地销户’的规则限制，与客户情况高度吻合。"
+      }
+    ],
+    "candidate_tags": [
+      {
+        "group_code": "",
+        "code": "[PRODUCT] [MOBILE]",
+        "name": "[PRODUCT] [MOBILE]",
+        "confidence": 0.95,
+        "reason": "投诉对象为手机号销户，属于移动业务。"
+      },
+      {
+        "group_code": "",
+        "code": "[REQUEST] [CANCEL]",
+        "name": "[REQUEST] [CANCEL]",
+        "confidence": 0.98,
+        "reason": "客户明确要求办理销户，即取消业务。"
+      },
+      {
+        "group_code": "",
+        "code": "[EMOTION] [UNSATISFIED]",
+        "name": "[EMOTION] [UNSATISFIED]",
+        "confidence": 0.9,
+        "reason": "工单注明‘客户表达不满意，客服代表安抚无效’。"
+      },
+      {
+        "group_code": "",
+        "code": "[ROOT_CAUSE] [RULE_DISPUTE]",
+        "name": "[ROOT_CAUSE] [RULE_DISPUTE]",
+        "confidence": 0.85,
+        "reason": "客户对异地不能销户的规则不认可。"
+      },
+      {
+        "group_code": "",
+        "code": "[RESPONSIBILITY] [CHANNEL_MGMT]",
+        "name": "[RESPONSIBILITY] [CHANNEL_MGMT]",
+        "confidence": 0.8,
+        "reason": "工单归类为‘渠道条线’，且销户通常需通过实体渠道办理。"
+      }
+    ],
+    "category_keywords": [
+      {
+        "keyword": "拆机销户",
+        "reason": "模型识别为与当前判断有关的关键词",
+        "confidence": 0.7
+      },
+      {
+        "keyword": "销户",
+        "reason": "模型识别为与当前判断有关的关键词",
+        "confidence": 0.7
+      },
+      {
+        "keyword": "不在归属地",
+        "reason": "模型识别为与当前判断有关的关键词",
+        "confidence": 0.7
+      },
+      {
+        "keyword": "办理产品销户业务",
+        "reason": "模型识别为与当前判断有关的关键词",
+        "confidence": 0.7
+      }
+    ],
+    "tag_keywords": [
+      {
+        "keyword": "手机号",
+        "reason": "模型识别为与当前判断有关的关键词",
+        "confidence": 0.7
+      },
+      {
+        "keyword": "销户",
+        "reason": "模型识别为与当前判断有关的关键词",
+        "confidence": 0.7
+      },
+      {
+        "keyword": "不满意",
+        "reason": "模型识别为与当前判断有关的关键词",
+        "confidence": 0.7
+      },
+      {
+        "keyword": "异地",
+        "reason": "模型识别为与当前判断有关的关键词",
+        "confidence": 0.7
+      },
+      {
+        "keyword": "渠道",
+        "reason": "模型识别为与当前判断有关的关键词",
+        "confidence": 0.7
+      }
+    ],
+    "risks": []
+  }
+}

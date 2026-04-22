@@ -1,0 +1,23 @@
+{
+  "case_name": "billing_refund_dispute",
+  "model_name": "GLM-5",
+  "prompt_path": "D:\\project\\FullStack\\voc\\voc_agent\\complaint_taxonomy_validator\\tests\\model_test\\output\\prompts\\billing_refund_dispute.txt",
+  "status": "success",
+  "error_type": null,
+  "error_message": null,
+  "duration_ms": 14833,
+  "timestamp": "2026-04-10T14:14:57",
+  "response_id": "chatcmpl-177580169773037400009567f482",
+  "response_text": "{\n  \"summary\": \"客户反映本月账单对已取消的天翼云盘黄金会员业务仍产生扣费，认为存在重复计费，要求核查并退费。\",\n  \"primary_category\": {\n    \"code\": \"FEE_UNKNOWN_UNUSED\",\n    \"full_name\": \"资费与收费争议/不明收费争议/未使用收费争议\",\n    \"confidence\": 0.85,\n    \"reason\": \"客户主诉已取消业务仍产生扣费，属于未使用或已取消服务却被收费的情况，符合'未使用收费争议'的定义。虽然涉及退款诉求，但核心争议点在于费用的不合理产生。\"\n  },\n  \"candidate_categories\": [\n    {\n      \"code\": \"FEE_REFUND_MONEY\",\n      \"full_name\": \"资费与收费争议/返费退款争议/退款未到账\",\n      \"confidence\": 0.60,\n      \"reason\": \"客户诉求包含'退回多收费用'，若费用已确认多收但未到账，则适用此类。目前尚处核查阶段，故作为候选。\"\n    },\n    {\n      \"code\": \"SUBSCRIBE_CANCEL_DELAY\",\n      \"full_name\": \"订购与退订争议/业务退订争议/退订不及时\",\n      \"confidence\": 0.55,\n      \"reason\": \"已取消业务仍扣费，可能原因为退订流程未及时生效，导致跨月计费，属于退订不及时引发的争议。\"\n    }\n  ],\n  \"candidate_tags\": [\n    {\n      \"code\": \"PRODUCT\",\n      \"full_name\": \"移动业务\",\n      \"reason\": \"涉及天翼云盘黄金会员，属于增值业务产品。\"\n    },\n    {\n      \"code\": \"REQUEST\",\n      \"full_name\": \"退费\",\n      \"reason\": \"客户明确提出要求退回多收费用。\"\n    }\n  ],\n  \"category_keywords\": [\n    \"重复计费\",\n    \"已取消业务\",\n    \"账单明细\"\n  ],\n  \"tag_keywords\": [\n    \"天翼云盘黄金会员\"\n  ],\n  \"risks\": [\n    \"工单未说明此前是否已向运营商反馈过该问题，当前费用状态是'已产生争议'还是'已承诺退费未到账'尚不明确，影响分类的最终确定性（FEE_UNKNOWN_UNUSED 与 FEE_REFUND_MONEY 的区分）。\"\n  ]\n}",
+  "finish_reason": "stop",
+  "usage": {
+    "completion_tokens": 509,
+    "prompt_tokens": 12185,
+    "total_tokens": 12694,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": {
+      "audio_tokens": null,
+      "cached_tokens": 0
+    }
+  }
+}

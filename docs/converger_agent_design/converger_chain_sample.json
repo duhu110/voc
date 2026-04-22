@@ -1,0 +1,1204 @@
+{
+  "ticket_id": "WeComQH20240601125916780935",
+  "ticket": {
+    "ticket_id": "WeComQH20240601125916780935",
+    "created_at": "2026-04-02T06:14:22.128024",
+    "updated_at": "2026-04-02T06:14:22.128024",
+    "is_archived": "是",
+    "ticket_type": "投诉单",
+    "complaint_source": "最强工单",
+    "biz_category": "套餐收费疑议",
+    "line_category": "市场条线",
+    "appeal_biz_type": "11.要求取消业务",
+    "accept_month": "06",
+    "accept_time": "-01 12:59:16",
+    "feedback_time": "2024-06-02 16:43:30",
+    "user_city": "西宁",
+    "district": "",
+    "fault_city": "西宁",
+    "branch_bureau": "",
+    "grid": "",
+    "area": "",
+    "resp_branch_bureau": "中国电信互助营业厅",
+    "accept_channel": "",
+    "user_name": "张*",
+    "customer_group": "",
+    "customer_star": "",
+    "customer_brand": "",
+    "dispute_product_name": "",
+    "is_timeout": "否",
+    "is_resolved_once": "是",
+    "process_hours": "27.73",
+    "repeat_count": 0,
+    "urge_count": 0,
+    "oscillation_count": 0,
+    "satisfaction_score": "满意",
+    "process_dept": "万号",
+    "flow_depts": "",
+    "creator_id": "jtWeCom",
+    "feedback_id": "1108",
+    "resp_person": "寇才旦卓玛(HZ0704)",
+    "co_seller_name": "",
+    "complaint_phenomenon": "服务请求->投诉单->费用争议类->套餐收费疑议",
+    "biz_content": "15349****09用户对办理的50元手机直降礼包不认可，称办理时未告知有合约，已告知用户每月可以通过翼支付APP领取权益金交话费，用户也不认可，要求取消，请处理，谢谢！\n受理渠道：中国电信互助营业厅",
+    "return_reason": "留单原因->渠道服务->实体渠道->客户原因->",
+    "prov_dispatch_desc": "",
+    "prov_process_desc": "",
+    "city_process_desc": "",
+    "process_status": false
+  },
+  "runtime_data": {
+    "category": {
+      "version": "v2-final",
+      "updated_at": "2026-04-11",
+      "source_of_truth": "D:/project/FullStack/voc/voc_agent/converger_agent/data/category_v2.json",
+      "source_doc": "D:/project/FullStack/voc/docs/converger_design/category_system_v2_final.md",
+      "validation_summary_file": "D:/project/FullStack/voc/voc_agent/converger_agent/data/validation_rounds.json",
+      "counts": {
+        "level1": 9,
+        "level2": 23,
+        "leaf": 69
+      },
+      "notes": [
+        "本文件用于 converger_agent 运行时加载。",
+        "通过 level1_code、level2_code、leaf_code 可以快速反查父子关系。",
+        "当文档说明与本文件冲突时，以本文件中的 disambiguation_rules 和 leaves 定义为准。",
+        "当前叶子总数以本文件为准，为 69 个。"
+      ],
+      "disambiguation_rules": [
+        {
+          "rule_id": "R00",
+          "decision": "refund_over_promise",
+          "when": "工单表述为工作人员承诺退费、退款、返费，但用户最终投诉的是金额一直未到账。",
+          "prefer_leaf_code": "REFUND_NOT_ARRIVED",
+          "over_leaf_codes": [
+            "PROMISE_NOT_FULFILLED"
+          ],
+          "note": "只要最终争议点是退款/退费没有到账，优先归返费/赠费/退款未到账，而不是承诺未兑现。"
+        },
+        {
+          "rule_id": "R01",
+          "decision": "1B",
+          "when": "工单核心描述为工作人员答应过某件事但最后没有做到；即使承诺内容涉及具体权益，只要争议重点仍是“说过会办但没办”，也按承诺未兑现处理。",
+          "prefer_leaf_code": "PROMISE_NOT_FULFILLED",
+          "over_leaf_codes": [
+            "BENEFIT_NOT_DELIVERED"
+          ],
+          "note": "如果核心是工作人员承诺过某事但最后没做到，即使承诺内容是具体权益，也优先归承诺未兑现。"
+        },
+        {
+          "rule_id": "R02",
+          "decision": "2A",
+          "when": "工单核心已经收敛为具体权益、会员、礼包、赠品本身拿不到、用不了、未到账、未发放，而不是强调工作人员曾经怎么承诺。",
+          "prefer_leaf_code": "BENEFIT_NOT_DELIVERED",
+          "over_leaf_codes": [
+            "CAMPAIGN_RULE_DISPUTE"
+          ],
+          "note": "只有当争议核心是权益本身没到账、不能用、没发放时，才优先归赠品/权益未兑现。"
+        },
+        {
+          "rule_id": "R03",
+          "decision": "3A",
+          "when": "用户明确表示不是自己办理、没有订购、否认订购关系本身。",
+          "prefer_leaf_code": "ORDER_DENIAL",
+          "over_leaf_codes": [
+            "MISLEADING_EXPLANATION"
+          ],
+          "note": "只有明确否认订购关系本身时，才归用户否认订购。"
+        },
+        {
+          "rule_id": "R04",
+          "decision": "4A",
+          "when": "最终业务诉求是开具发票、补开发票、核实开票金额或发票获取异常。",
+          "prefer_leaf_code": "INVOICE_ISSUE",
+          "over_leaf_codes": [
+            "ACCOUNT_MANAGER_COORDINATION"
+          ],
+          "note": "处理中出现客户经理、营业厅、企微客服等角色，不改变发票问题的主归类。"
+        },
+        {
+          "rule_id": "R05",
+          "decision": "5B",
+          "when": "即使已经上门或联系过，但最终结果仍然没装成、没办成、没履约。",
+          "prefer_leaf_code": "DELIVERY_DELAY",
+          "over_leaf_codes": [
+            "ONSITE_SERVICE_IRREGULAR"
+          ],
+          "note": "以最终是否完成履约为优先判断。"
+        },
+        {
+          "rule_id": "R06",
+          "decision": "6A",
+          "when": "修障后短时间再次故障、仍无法连接、仍不稳定。",
+          "prefer_leaf_code": "BROADBAND_UNSTABLE",
+          "over_leaf_codes": [
+            "INSTALL_QUALITY_ISSUE"
+          ],
+          "note": "优先按用户感知的网络结果归类，而不是后台施工原因。"
+        },
+        {
+          "rule_id": "R07",
+          "decision": "7B",
+          "when": "工单里已经出现具体套外费用、超额费用、继续收费金额，并且用户对金额本身不认可。",
+          "prefer_leaf_code": "OUT_OF_BUNDLE_FEE_DISPUTE",
+          "over_leaf_codes": [
+            "THROTTLING_LIMIT_RULE_DISPUTE"
+          ],
+          "note": "只要争议重心落在已产生的费用金额，优先归套外使用费用争议。"
+        },
+        {
+          "rule_id": "R08",
+          "decision": "8AB",
+          "when": "工单同时具备套餐变更目标和流程受阻特征。",
+          "prefer_logic": [
+            "如果文本明确出现更改套餐、变更套餐、套餐改档等目标，优先归 PLAN_CHANGE_DISPUTE。",
+            "如果文本没有明确套餐变更目标，只是泛化的办理受阻、流程卡住，归 PROCESS_BLOCKED。"
+          ],
+          "note": "这是混合规则，不强制单向覆盖。"
+        },
+        {
+          "rule_id": "R09",
+          "decision": "misleading_over_contract_limit",
+          "when": "用户不否认业务办过，但核心不满点是办理时没人说清楚合约、限制条件、违约后果，属于前置告知或营销解释问题。",
+          "prefer_leaf_code": "MISLEADING_EXPLANATION",
+          "over_leaf_codes": [
+            "CONTRACT_LIMIT_RULE_DISPUTE"
+          ],
+          "note": "如果用户并不否认办理关系，只是不满办理时未被告知合约或限制，优先归宣传/解释不清或误导；只有明确知道有该合约但不认可规则本身时，才归合约限制争议。"
+        }
+      ],
+      "level1": {
+        "FEE_BILLING": {
+          "name": "费用与账务",
+          "desc": "收费、扣费、账单、缴费、退款、违约金等问题。",
+          "level2_children": [
+            "PACKAGE_AND_USAGE_FEE",
+            "ACCOUNT_AND_PAYMENT",
+            "REFUND_PENALTY_RIGHTS"
+          ]
+        },
+        "SUBSCRIBE_CANCEL": {
+          "name": "订购与退订",
+          "desc": "订购关系是否成立、退订取消、套餐变更、拆机销户等问题。",
+          "level2_children": [
+            "ORDER_AND_DENY",
+            "CANCEL_AND_UNSUBSCRIBE",
+            "PLAN_CHANGE_AND_ACCOUNT_CLOSE"
+          ]
+        },
+        "OPEN_RECOVERY_CONTROL": {
+          "name": "开通与恢复控制",
+          "desc": "开通失败、停机控制、复机恢复等服务状态问题。",
+          "level2_children": [
+            "OPEN_AND_ACTIVATION",
+            "SHUTDOWN_AND_CONTROL",
+            "RECOVERY_AND_UNBLOCK"
+          ]
+        },
+        "MARKETING_SALES": {
+          "name": "营销与销售",
+          "desc": "营销解释、承诺兑现、办理过程差错或态度问题。",
+          "level2_children": [
+            "EXPLAIN_AND_COMMITMENT",
+            "SALES_PROCESS_AND_ATTITUDE"
+          ]
+        },
+        "RULE_POLICY": {
+          "name": "规则政策",
+          "desc": "活动规则、生效规则、限制条件、资格条件、流程规则等。",
+          "level2_children": [
+            "ACTIVITY_AND_EFFECTIVE_RULE",
+            "USAGE_AND_LIMIT_RULE",
+            "QUALIFICATION_AND_PROCESS_RULE"
+          ]
+        },
+        "PRODUCT_PLATFORM": {
+          "name": "产品与平台",
+          "desc": "产品功能、APP/网厅、账号校验、查询展示等问题。",
+          "level2_children": [
+            "BASIC_FUNCTION",
+            "APP_AND_ACCOUNT",
+            "QUERY_AND_DISPLAY"
+          ]
+        },
+        "NETWORK_QUALITY": {
+          "name": "网络质量",
+          "desc": "网络表现、信号、网速、通话、漫游等用户感知问题。",
+          "level2_children": [
+            "NETWORK_QUALITY"
+          ]
+        },
+        "INSTALL_DELIVERY": {
+          "name": "装维与交付",
+          "desc": "履约、上门、施工、交付结果等过程问题。",
+          "level2_children": [
+            "INSTALL_TIMELINESS",
+            "INSTALL_STANDARD_AND_RESULT"
+          ]
+        },
+        "SERVICE_PROCESS": {
+          "name": "服务流程",
+          "desc": "投诉处理流程、工单流转、客户经理协调、举报和资料核实。",
+          "level2_children": [
+            "COMPLAINT_HANDLING",
+            "WORK_ORDER_FLOW",
+            "SPECIAL_REPORT_AND_MANAGER"
+          ]
+        }
+      },
+      "level2": {
+        "PACKAGE_AND_USAGE_FEE": {
+          "parent_level1_code": "FEE_BILLING",
+          "name": "套餐与使用费用",
+          "desc": "套餐费用、套外费用、增值业务费用、不明扣费等。",
+          "leaf_children": [
+            "PACKAGE_FEE_DISPUTE",
+            "OUT_OF_BUNDLE_FEE_DISPUTE",
+            "VAS_FEE_DISPUTE",
+            "UNKNOWN_CHARGE",
+            "BROADBAND_TV_FEE_DISPUTE"
+          ]
+        },
+        "ACCOUNT_AND_PAYMENT": {
+          "parent_level1_code": "FEE_BILLING",
+          "name": "账单与缴费",
+          "desc": "账单展示、充值缴费、发票相关问题。",
+          "leaf_children": [
+            "BILL_AMOUNT_DISPLAY_ISSUE",
+            "PAYMENT_RECHARGE_ISSUE",
+            "INVOICE_ISSUE"
+          ]
+        },
+        "REFUND_PENALTY_RIGHTS": {
+          "parent_level1_code": "FEE_BILLING",
+          "name": "退款与违约权益",
+          "desc": "退款未到账、翼支付权益、违约金和滞纳金争议。",
+          "leaf_children": [
+            "REFUND_NOT_ARRIVED",
+            "BESTPAY_BENEFIT_FEE_DISPUTE",
+            "PENALTY_LATE_FEE_DISPUTE"
+          ]
+        },
+        "ORDER_AND_DENY": {
+          "parent_level1_code": "SUBSCRIBE_CANCEL",
+          "name": "订购与否认",
+          "desc": "否认订购、订购过程争议、自动续订争议。",
+          "leaf_children": [
+            "ORDER_DENIAL",
+            "ORDER_PROCESS_DISPUTE",
+            "AUTO_RENEWAL_DISPUTE"
+          ]
+        },
+        "CANCEL_AND_UNSUBSCRIBE": {
+          "parent_level1_code": "SUBSCRIBE_CANCEL",
+          "name": "退订与取消",
+          "desc": "退订取消争议、失败、退订后仍收费。",
+          "leaf_children": [
+            "CANCEL_DISPUTE",
+            "CANCEL_FAILURE",
+            "CHARGED_AFTER_CANCEL"
+          ]
+        },
+        "PLAN_CHANGE_AND_ACCOUNT_CLOSE": {
+          "parent_level1_code": "SUBSCRIBE_CANCEL",
+          "name": "套餐变更与销户",
+          "desc": "改套餐、拆机销户、销户后仍计费或规则争议。",
+          "leaf_children": [
+            "PLAN_CHANGE_DISPUTE",
+            "ACCOUNT_CLOSURE_DISPUTE",
+            "CHARGED_AFTER_CLOSURE_OR_RULE_DISPUTE"
+          ]
+        },
+        "OPEN_AND_ACTIVATION": {
+          "parent_level1_code": "OPEN_RECOVERY_CONTROL",
+          "name": "开通与激活",
+          "desc": "业务、号卡、宽带开通失败以及激活实名认证异常。",
+          "leaf_children": [
+            "SERVICE_OPEN_FAILURE",
+            "SIM_OPEN_FAILURE",
+            "BROADBAND_OPEN_FAILURE",
+            "ACTIVATION_REALNAME_ISSUE"
+          ]
+        },
+        "SHUTDOWN_AND_CONTROL": {
+          "parent_level1_code": "OPEN_RECOVERY_CONTROL",
+          "name": "停机与控制",
+          "desc": "欠费停机不认可、风险关停、屏蔽解限问题。",
+          "leaf_children": [
+            "ARREARS_SHUTDOWN_DISPUTE",
+            "RISK_MODEL_SHUTDOWN_DISPUTE",
+            "BLOCK_UNBLOCK_ISSUE"
+          ]
+        },
+        "RECOVERY_AND_UNBLOCK": {
+          "parent_level1_code": "OPEN_RECOVERY_CONTROL",
+          "name": "恢复与复机",
+          "desc": "复机或服务恢复失败、恢复不及时。",
+          "leaf_children": [
+            "RECOVERY_DELAY_OR_FAILURE"
+          ]
+        },
+        "EXPLAIN_AND_COMMITMENT": {
+          "parent_level1_code": "MARKETING_SALES",
+          "name": "解释与承诺",
+          "desc": "营销解释不清、承诺未兑现、权益赠品未兑现。",
+          "leaf_children": [
+            "MISLEADING_EXPLANATION",
+            "PROMISE_NOT_FULFILLED",
+            "BENEFIT_NOT_DELIVERED"
+          ]
+        },
+        "SALES_PROCESS_AND_ATTITUDE": {
+          "parent_level1_code": "MARKETING_SALES",
+          "name": "办理过程与态度",
+          "desc": "办理差错、办理受阻、服务态度问题。",
+          "leaf_children": [
+            "PROCESSING_ERROR_OR_OMISSION",
+            "PROCESS_BLOCKED",
+            "SERVICE_ATTITUDE_ISSUE"
+          ]
+        },
+        "ACTIVITY_AND_EFFECTIVE_RULE": {
+          "parent_level1_code": "RULE_POLICY",
+          "name": "活动与生效规则",
+          "desc": "营销活动规则、生效失效规则问题。",
+          "leaf_children": [
+            "CAMPAIGN_RULE_DISPUTE",
+            "EFFECTIVE_RULE_DISPUTE"
+          ]
+        },
+        "USAGE_AND_LIMIT_RULE": {
+          "parent_level1_code": "RULE_POLICY",
+          "name": "使用与限制规则",
+          "desc": "达量降速、使用范围、合约限制等。",
+          "leaf_children": [
+            "THROTTLING_LIMIT_RULE_DISPUTE",
+            "BENEFIT_USAGE_SCOPE_DISPUTE",
+            "CONTRACT_LIMIT_RULE_DISPUTE"
+          ]
+        },
+        "QUALIFICATION_AND_PROCESS_RULE": {
+          "parent_level1_code": "RULE_POLICY",
+          "name": "资格与流程规则",
+          "desc": "资格条件、实名要求、代办流程规则问题。",
+          "leaf_children": [
+            "ELIGIBILITY_REALNAME_RULE_DISPUTE",
+            "AGENCY_PROCESS_RULE_DISPUTE"
+          ]
+        },
+        "BASIC_FUNCTION": {
+          "parent_level1_code": "PRODUCT_PLATFORM",
+          "name": "基础功能",
+          "desc": "语音、短信、流量和产品基础功能本身的问题。",
+          "leaf_children": [
+            "VOICE_FUNCTION_ISSUE",
+            "SMS_FUNCTION_ISSUE",
+            "DATA_FUNCTION_ISSUE",
+            "PRODUCT_FUNCTION_UNSTABLE"
+          ]
+        },
+        "APP_AND_ACCOUNT": {
+          "parent_level1_code": "PRODUCT_PLATFORM",
+          "name": "APP 与账号",
+          "desc": "APP 报错、线上办理失败、登录和身份校验问题。",
+          "leaf_children": [
+            "APP_ONLINE_PROCESS_FAILURE",
+            "ACCOUNT_IDENTITY_VERIFICATION_ISSUE"
+          ]
+        },
+        "QUERY_AND_DISPLAY": {
+          "parent_level1_code": "PRODUCT_PLATFORM",
+          "name": "查询与展示",
+          "desc": "订单套餐信息展示异常、平台客户端软件展示问题。",
+          "leaf_children": [
+            "ORDER_PLAN_INFO_DISPLAY_ISSUE",
+            "PLATFORM_CLIENT_SOFTWARE_ISSUE"
+          ]
+        },
+        "NETWORK_QUALITY": {
+          "parent_level1_code": "NETWORK_QUALITY",
+          "name": "网络质量",
+          "desc": "信号、网速、掉线、通话、漫游等网络表现问题。",
+          "leaf_children": [
+            "NO_SIGNAL_OR_WEAK_SIGNAL",
+            "MOBILE_DATA_SLOW",
+            "BROADBAND_SLOW",
+            "BROADBAND_UNSTABLE",
+            "CALL_QUALITY_ISSUE",
+            "ROAMING_COMMUNICATION_ISSUE"
+          ]
+        },
+        "INSTALL_TIMELINESS": {
+          "parent_level1_code": "INSTALL_DELIVERY",
+          "name": "履约时效",
+          "desc": "未按约履约、超时、催装移机等。",
+          "leaf_children": [
+            "DELIVERY_DELAY",
+            "INSTALL_MOVE_URGING"
+          ]
+        },
+        "INSTALL_STANDARD_AND_RESULT": {
+          "parent_level1_code": "INSTALL_DELIVERY",
+          "name": "交付规范与结果",
+          "desc": "上门服务不规范、施工质量、损坏、交付结果不符。",
+          "leaf_children": [
+            "ONSITE_SERVICE_IRREGULAR",
+            "INSTALL_QUALITY_ISSUE",
+            "CONSTRUCTION_DAMAGE",
+            "DELIVERY_RESULT_MISMATCH"
+          ]
+        },
+        "COMPLAINT_HANDLING": {
+          "parent_level1_code": "SERVICE_PROCESS",
+          "name": "投诉处理",
+          "desc": "久拖未决、重复投诉、处理结果不认可。",
+          "leaf_children": [
+            "UNRESOLVED_OR_REPEAT_COMPLAINT",
+            "RESULT_NOT_ACCEPTED"
+          ]
+        },
+        "WORK_ORDER_FLOW": {
+          "parent_level1_code": "SERVICE_PROCESS",
+          "name": "工单流转",
+          "desc": "流转错误、转派错误、多部门扯皮。",
+          "leaf_children": [
+            "WORK_ORDER_FLOW_ERROR"
+          ]
+        },
+        "SPECIAL_REPORT_AND_MANAGER": {
+          "parent_level1_code": "SERVICE_PROCESS",
+          "name": "协调、举报与核实",
+          "desc": "客户经理协调、资料查询、举报和表扬。",
+          "leaf_children": [
+            "ACCOUNT_MANAGER_COORDINATION",
+            "PROXY_APPLICATION_MATERIAL_QUERY",
+            "HARASSMENT_FRAUD_REPORT",
+            "BAD_CONTENT_OR_TAGGING_REPORT",
+            "PRAISE_SUGGESTION"
+          ]
+        }
+      },
+      "leaves": {
+        "PACKAGE_FEE_DISPUTE": {
+          "parent_level1_code": "FEE_BILLING",
+          "parent_level2_code": "PACKAGE_AND_USAGE_FEE",
+          "name": "套餐收费争议",
+          "desc": "对基础套餐或套餐本身的收费金额、是否应收取存在争议。"
+        },
+        "OUT_OF_BUNDLE_FEE_DISPUTE": {
+          "parent_level1_code": "FEE_BILLING",
+          "parent_level2_code": "PACKAGE_AND_USAGE_FEE",
+          "name": "套外使用费用争议",
+          "desc": "对超出套餐范围后的使用费用、超额费用产生争议。"
+        },
+        "VAS_FEE_DISPUTE": {
+          "parent_level1_code": "FEE_BILLING",
+          "parent_level2_code": "PACKAGE_AND_USAGE_FEE",
+          "name": "增值业务收费争议",
+          "desc": "对彩铃、点播、会员包、通信助理等增值业务收费不认可。"
+        },
+        "UNKNOWN_CHARGE": {
+          "parent_level1_code": "FEE_BILLING",
+          "parent_level2_code": "PACKAGE_AND_USAGE_FEE",
+          "name": "异常扣费/不明收费",
+          "desc": "出现来源不明或无法清楚解释的异常扣费。"
+        },
+        "BROADBAND_TV_FEE_DISPUTE": {
+          "parent_level1_code": "FEE_BILLING",
+          "parent_level2_code": "PACKAGE_AND_USAGE_FEE",
+          "name": "宽带/电视收费争议",
+          "desc": "对宽带、电视、IPTV 主体服务收费存在争议。"
+        },
+        "BILL_AMOUNT_DISPLAY_ISSUE": {
+          "parent_level1_code": "FEE_BILLING",
+          "parent_level2_code": "ACCOUNT_AND_PAYMENT",
+          "name": "账单金额/展示异常",
+          "desc": "账单金额展示不一致、账单内容展示异常。"
+        },
+        "PAYMENT_RECHARGE_ISSUE": {
+          "parent_level1_code": "FEE_BILLING",
+          "parent_level2_code": "ACCOUNT_AND_PAYMENT",
+          "name": "充值缴费异常",
+          "desc": "充值、缴费、冲正、到账结果异常或无法正常缴费。"
+        },
+        "INVOICE_ISSUE": {
+          "parent_level1_code": "FEE_BILLING",
+          "parent_level2_code": "ACCOUNT_AND_PAYMENT",
+          "name": "发票问题",
+          "desc": "开票、补开发票、开票金额、发票获取和寄送异常。"
+        },
+        "REFUND_NOT_ARRIVED": {
+          "parent_level1_code": "FEE_BILLING",
+          "parent_level2_code": "REFUND_PENALTY_RIGHTS",
+          "name": "返费/赠费/退款未到账",
+          "desc": "应返还的费用、赠费、退款迟迟未到账。"
+        },
+        "BESTPAY_BENEFIT_FEE_DISPUTE": {
+          "parent_level1_code": "FEE_BILLING",
+          "parent_level2_code": "REFUND_PENALTY_RIGHTS",
+          "name": "翼支付权益/费用争议",
+          "desc": "翼支付权益、权益金、返现、支付相关费用争议。"
+        },
+        "PENALTY_LATE_FEE_DISPUTE": {
+          "parent_level1_code": "FEE_BILLING",
+          "parent_level2_code": "REFUND_PENALTY_RIGHTS",
+          "name": "违约金/滞纳金争议",
+          "desc": "对违约金、滞纳金或类似惩罚性费用不认可。"
+        },
+        "ORDER_DENIAL": {
+          "parent_level1_code": "SUBSCRIBE_CANCEL",
+          "parent_level2_code": "ORDER_AND_DENY",
+          "name": "用户否认订购",
+          "desc": "用户明确否认自己办理、订购过相关业务。"
+        },
+        "ORDER_PROCESS_DISPUTE": {
+          "parent_level1_code": "SUBSCRIBE_CANCEL",
+          "parent_level2_code": "ORDER_AND_DENY",
+          "name": "订购办理争议",
+          "desc": "订购办理过程中发生争议，但不属于明确否认订购。"
+        },
+        "AUTO_RENEWAL_DISPUTE": {
+          "parent_level1_code": "SUBSCRIBE_CANCEL",
+          "parent_level2_code": "ORDER_AND_DENY",
+          "name": "自动续订争议",
+          "desc": "对自动续订、自动延续扣费规则不认可。"
+        },
+        "CANCEL_DISPUTE": {
+          "parent_level1_code": "SUBSCRIBE_CANCEL",
+          "parent_level2_code": "CANCEL_AND_UNSUBSCRIBE",
+          "name": "业务退订/取消争议",
+          "desc": "退订取消相关一般争议，但未明确构成失败。"
+        },
+        "CANCEL_FAILURE": {
+          "parent_level1_code": "SUBSCRIBE_CANCEL",
+          "parent_level2_code": "CANCEL_AND_UNSUBSCRIBE",
+          "name": "业务退订/取消失败",
+          "desc": "用户要求退订取消，但系统或流程导致未成功。"
+        },
+        "CHARGED_AFTER_CANCEL": {
+          "parent_level1_code": "SUBSCRIBE_CANCEL",
+          "parent_level2_code": "CANCEL_AND_UNSUBSCRIBE",
+          "name": "退订后仍收费",
+          "desc": "退订或取消完成后仍继续产生收费。"
+        },
+        "PLAN_CHANGE_DISPUTE": {
+          "parent_level1_code": "SUBSCRIBE_CANCEL",
+          "parent_level2_code": "PLAN_CHANGE_AND_ACCOUNT_CLOSE",
+          "name": "套餐变更争议",
+          "desc": "对套餐改档、变更能否办理或变更结果产生争议。"
+        },
+        "ACCOUNT_CLOSURE_DISPUTE": {
+          "parent_level1_code": "SUBSCRIBE_CANCEL",
+          "parent_level2_code": "PLAN_CHANGE_AND_ACCOUNT_CLOSE",
+          "name": "拆机销户争议",
+          "desc": "对拆机、销户、预约拆机等问题产生争议。"
+        },
+        "CHARGED_AFTER_CLOSURE_OR_RULE_DISPUTE": {
+          "parent_level1_code": "SUBSCRIBE_CANCEL",
+          "parent_level2_code": "PLAN_CHANGE_AND_ACCOUNT_CLOSE",
+          "name": "销户后仍计费/销户规则争议",
+          "desc": "销户后仍收费，或对销户规则本身不认可。"
+        },
+        "SERVICE_OPEN_FAILURE": {
+          "parent_level1_code": "OPEN_RECOVERY_CONTROL",
+          "parent_level2_code": "OPEN_AND_ACTIVATION",
+          "name": "业务开通失败",
+          "desc": "一般业务开通办理失败。"
+        },
+        "SIM_OPEN_FAILURE": {
+          "parent_level1_code": "OPEN_RECOVERY_CONTROL",
+          "parent_level2_code": "OPEN_AND_ACTIVATION",
+          "name": "号卡开通失败",
+          "desc": "号码或 SIM 卡开通失败。"
+        },
+        "BROADBAND_OPEN_FAILURE": {
+          "parent_level1_code": "OPEN_RECOVERY_CONTROL",
+          "parent_level2_code": "OPEN_AND_ACTIVATION",
+          "name": "宽带开通失败",
+          "desc": "宽带开通未成功。"
+        },
+        "ACTIVATION_REALNAME_ISSUE": {
+          "parent_level1_code": "OPEN_RECOVERY_CONTROL",
+          "parent_level2_code": "OPEN_AND_ACTIVATION",
+          "name": "激活/实名认证异常",
+          "desc": "激活、实名登记、认证过程发生异常。"
+        },
+        "ARREARS_SHUTDOWN_DISPUTE": {
+          "parent_level1_code": "OPEN_RECOVERY_CONTROL",
+          "parent_level2_code": "SHUTDOWN_AND_CONTROL",
+          "name": "欠费停机不认可",
+          "desc": "对因欠费导致停机不认可。"
+        },
+        "RISK_MODEL_SHUTDOWN_DISPUTE": {
+          "parent_level1_code": "OPEN_RECOVERY_CONTROL",
+          "parent_level2_code": "SHUTDOWN_AND_CONTROL",
+          "name": "风险/模型关停不认可",
+          "desc": "对风控、模型、公安等关停不认可。"
+        },
+        "BLOCK_UNBLOCK_ISSUE": {
+          "parent_level1_code": "OPEN_RECOVERY_CONTROL",
+          "parent_level2_code": "SHUTDOWN_AND_CONTROL",
+          "name": "屏蔽/解限问题",
+          "desc": "短信、外呼、功能屏蔽和解限问题。"
+        },
+        "RECOVERY_DELAY_OR_FAILURE": {
+          "parent_level1_code": "OPEN_RECOVERY_CONTROL",
+          "parent_level2_code": "RECOVERY_AND_UNBLOCK",
+          "name": "复机/恢复失败或不及时",
+          "desc": "已经申请恢复、复机，但仍未恢复或恢复不及时。"
+        },
+        "MISLEADING_EXPLANATION": {
+          "parent_level1_code": "MARKETING_SALES",
+          "parent_level2_code": "EXPLAIN_AND_COMMITMENT",
+          "name": "宣传/解释不清或误导",
+          "desc": "营销宣传、办理解释、规则说明不清，导致用户误解；尤其适用于业务已办理，但办理时未告知合约、限制条件或违约后果。"
+        },
+        "PROMISE_NOT_FULFILLED": {
+          "parent_level1_code": "MARKETING_SALES",
+          "parent_level2_code": "EXPLAIN_AND_COMMITMENT",
+          "name": "承诺未兑现",
+          "desc": "工作人员明确承诺过某事，但最终未兑现；即使承诺内容是具体权益，只要核心争议仍是“答应过但没做到”，也归此类。"
+        },
+        "BENEFIT_NOT_DELIVERED": {
+          "parent_level1_code": "MARKETING_SALES",
+          "parent_level2_code": "EXPLAIN_AND_COMMITMENT",
+          "name": "赠品/权益未兑现",
+          "desc": "具体赠品、礼包、会员、权益没有到账、没有开通或不能使用；仅当争议核心已经收敛为权益本身没到账、不能用、没发放时适用。"
+        },
+        "PROCESSING_ERROR_OR_OMISSION": {
+          "parent_level1_code": "MARKETING_SALES",
+          "parent_level2_code": "SALES_PROCESS_AND_ATTITUDE",
+          "name": "业务办理差错/漏受理",
+          "desc": "办理时承诺办理但未受理、漏受理或办错。"
+        },
+        "PROCESS_BLOCKED": {
+          "parent_level1_code": "MARKETING_SALES",
+          "parent_level2_code": "SALES_PROCESS_AND_ATTITUDE",
+          "name": "业务办理不畅",
+          "desc": "办理流程被阻塞、卡单、受阻，但不特指套餐变更争议。"
+        },
+        "SERVICE_ATTITUDE_ISSUE": {
+          "parent_level1_code": "MARKETING_SALES",
+          "parent_level2_code": "SALES_PROCESS_AND_ATTITUDE",
+          "name": "服务态度问题",
+          "desc": "窗口、客服、装维或工作人员服务态度不佳。"
+        },
+        "CAMPAIGN_RULE_DISPUTE": {
+          "parent_level1_code": "RULE_POLICY",
+          "parent_level2_code": "ACTIVITY_AND_EFFECTIVE_RULE",
+          "name": "营销活动规则争议",
+          "desc": "对营销活动资格、条件、兑现规则、生效条件有争议。"
+        },
+        "EFFECTIVE_RULE_DISPUTE": {
+          "parent_level1_code": "RULE_POLICY",
+          "parent_level2_code": "ACTIVITY_AND_EFFECTIVE_RULE",
+          "name": "生效/失效规则争议",
+          "desc": "对业务或规则何时生效、何时失效存在争议。"
+        },
+        "THROTTLING_LIMIT_RULE_DISPUTE": {
+          "parent_level1_code": "RULE_POLICY",
+          "parent_level2_code": "USAGE_AND_LIMIT_RULE",
+          "name": "达量降速/限速规则争议",
+          "desc": "对达量降速、限速、继续收费/不断网规则不认可。"
+        },
+        "BENEFIT_USAGE_SCOPE_DISPUTE": {
+          "parent_level1_code": "RULE_POLICY",
+          "parent_level2_code": "USAGE_AND_LIMIT_RULE",
+          "name": "权益/流量使用范围争议",
+          "desc": "对权益、流量、会员等使用范围和适用范围不认可。"
+        },
+        "CONTRACT_LIMIT_RULE_DISPUTE": {
+          "parent_level1_code": "RULE_POLICY",
+          "parent_level2_code": "USAGE_AND_LIMIT_RULE",
+          "name": "合约限制争议",
+          "desc": "对合约期、限制条件、提前取消限制存在争议；仅当用户明确知道存在该合约或限制，但不认可规则本身时适用。"
+        },
+        "ELIGIBILITY_REALNAME_RULE_DISPUTE": {
+          "parent_level1_code": "RULE_POLICY",
+          "parent_level2_code": "QUALIFICATION_AND_PROCESS_RULE",
+          "name": "资格条件/实名规则争议",
+          "desc": "对办理资格、实名要求、身份条件不认可。"
+        },
+        "AGENCY_PROCESS_RULE_DISPUTE": {
+          "parent_level1_code": "RULE_POLICY",
+          "parent_level2_code": "QUALIFICATION_AND_PROCESS_RULE",
+          "name": "代办/流程规则争议",
+          "desc": "对代办、代理、流程性规则不认可。"
+        },
+        "VOICE_FUNCTION_ISSUE": {
+          "parent_level1_code": "PRODUCT_PLATFORM",
+          "parent_level2_code": "BASIC_FUNCTION",
+          "name": "语音功能异常",
+          "desc": "语音呼叫功能异常。"
+        },
+        "SMS_FUNCTION_ISSUE": {
+          "parent_level1_code": "PRODUCT_PLATFORM",
+          "parent_level2_code": "BASIC_FUNCTION",
+          "name": "短信功能异常",
+          "desc": "短信收发、验证码、提醒短信功能异常。"
+        },
+        "DATA_FUNCTION_ISSUE": {
+          "parent_level1_code": "PRODUCT_PLATFORM",
+          "parent_level2_code": "BASIC_FUNCTION",
+          "name": "流量功能异常",
+          "desc": "流量功能、上网能力、流量包功能异常。"
+        },
+        "PRODUCT_FUNCTION_UNSTABLE": {
+          "parent_level1_code": "PRODUCT_PLATFORM",
+          "parent_level2_code": "BASIC_FUNCTION",
+          "name": "产品功能缺失/不稳定",
+          "desc": "产品功能本身缺失、功能不全或不稳定。"
+        },
+        "APP_ONLINE_PROCESS_FAILURE": {
+          "parent_level1_code": "PRODUCT_PLATFORM",
+          "parent_level2_code": "APP_AND_ACCOUNT",
+          "name": "APP/网厅报错或线上办理失败",
+          "desc": "APP、网厅、线上入口报错、异常或办理失败。"
+        },
+        "ACCOUNT_IDENTITY_VERIFICATION_ISSUE": {
+          "parent_level1_code": "PRODUCT_PLATFORM",
+          "parent_level2_code": "APP_AND_ACCOUNT",
+          "name": "账号登录/身份校验异常",
+          "desc": "登录失败、身份校验失败、账号异常。"
+        },
+        "ORDER_PLAN_INFO_DISPLAY_ISSUE": {
+          "parent_level1_code": "PRODUCT_PLATFORM",
+          "parent_level2_code": "QUERY_AND_DISPLAY",
+          "name": "订单/套餐/信息查询展示异常",
+          "desc": "订单、套餐、业务信息查询或展示不正确。"
+        },
+        "PLATFORM_CLIENT_SOFTWARE_ISSUE": {
+          "parent_level1_code": "PRODUCT_PLATFORM",
+          "parent_level2_code": "QUERY_AND_DISPLAY",
+          "name": "网站/平台/客户端软件问题",
+          "desc": "网站、客户端、软件平台本身存在问题。"
+        },
+        "NO_SIGNAL_OR_WEAK_SIGNAL": {
+          "parent_level1_code": "NETWORK_QUALITY",
+          "parent_level2_code": "NETWORK_QUALITY",
+          "name": "无信号/信号弱",
+          "desc": "无信号、信号差、信号弱。"
+        },
+        "MOBILE_DATA_SLOW": {
+          "parent_level1_code": "NETWORK_QUALITY",
+          "parent_level2_code": "NETWORK_QUALITY",
+          "name": "移动上网慢",
+          "desc": "手机移动网络上网速度慢。"
+        },
+        "BROADBAND_SLOW": {
+          "parent_level1_code": "NETWORK_QUALITY",
+          "parent_level2_code": "NETWORK_QUALITY",
+          "name": "宽带网速慢",
+          "desc": "宽带速率低、网速慢。"
+        },
+        "BROADBAND_UNSTABLE": {
+          "parent_level1_code": "NETWORK_QUALITY",
+          "parent_level2_code": "NETWORK_QUALITY",
+          "name": "宽带掉线/网络不稳定",
+          "desc": "宽带反复掉线、无法连接、恢复后仍不稳定。"
+        },
+        "CALL_QUALITY_ISSUE": {
+          "parent_level1_code": "NETWORK_QUALITY",
+          "parent_level2_code": "NETWORK_QUALITY",
+          "name": "通话质量异常",
+          "desc": "通话杂音、断续、无法听清等。"
+        },
+        "ROAMING_COMMUNICATION_ISSUE": {
+          "parent_level1_code": "NETWORK_QUALITY",
+          "parent_level2_code": "NETWORK_QUALITY",
+          "name": "漫游通信异常",
+          "desc": "漫游状态下通信异常。"
+        },
+        "DELIVERY_DELAY": {
+          "parent_level1_code": "INSTALL_DELIVERY",
+          "parent_level2_code": "INSTALL_TIMELINESS",
+          "name": "履约不及时/未履约",
+          "desc": "未按约定时间上门、安装、拆机、移机或处理。"
+        },
+        "INSTALL_MOVE_URGING": {
+          "parent_level1_code": "INSTALL_DELIVERY",
+          "parent_level2_code": "INSTALL_TIMELINESS",
+          "name": "催装移机",
+          "desc": "核心诉求是尽快装机、移机、上门处理。"
+        },
+        "ONSITE_SERVICE_IRREGULAR": {
+          "parent_level1_code": "INSTALL_DELIVERY",
+          "parent_level2_code": "INSTALL_STANDARD_AND_RESULT",
+          "name": "上门服务不规范",
+          "desc": "已经上门，但解释、服务过程、操作方式不规范。"
+        },
+        "INSTALL_QUALITY_ISSUE": {
+          "parent_level1_code": "INSTALL_DELIVERY",
+          "parent_level2_code": "INSTALL_STANDARD_AND_RESULT",
+          "name": "安装施工质量问题",
+          "desc": "施工、安装、修障质量差，导致问题仍然存在。"
+        },
+        "CONSTRUCTION_DAMAGE": {
+          "parent_level1_code": "INSTALL_DELIVERY",
+          "parent_level2_code": "INSTALL_STANDARD_AND_RESULT",
+          "name": "施工损坏问题",
+          "desc": "施工过程损坏用户设施、房屋或设备。"
+        },
+        "DELIVERY_RESULT_MISMATCH": {
+          "parent_level1_code": "INSTALL_DELIVERY",
+          "parent_level2_code": "INSTALL_STANDARD_AND_RESULT",
+          "name": "交付结果不符/实测速率不达标",
+          "desc": "交付结果与承诺结果不一致，例如速率、交付内容不达标。"
+        },
+        "UNRESOLVED_OR_REPEAT_COMPLAINT": {
+          "parent_level1_code": "SERVICE_PROCESS",
+          "parent_level2_code": "COMPLAINT_HANDLING",
+          "name": "久拖未决/重复投诉处理不满意",
+          "desc": "问题长期未解决，或多次投诉后仍不满意。"
+        },
+        "RESULT_NOT_ACCEPTED": {
+          "parent_level1_code": "SERVICE_PROCESS",
+          "parent_level2_code": "COMPLAINT_HANDLING",
+          "name": "处理结果不认可",
+          "desc": "对回单、处理结果、处理结论本身不认可。"
+        },
+        "WORK_ORDER_FLOW_ERROR": {
+          "parent_level1_code": "SERVICE_PROCESS",
+          "parent_level2_code": "WORK_ORDER_FLOW",
+          "name": "工单流转/转派错误/多部门扯皮",
+          "desc": "工单流转出错、派单错误、部门之间扯皮。"
+        },
+        "ACCOUNT_MANAGER_COORDINATION": {
+          "parent_level1_code": "SERVICE_PROCESS",
+          "parent_level2_code": "SPECIAL_REPORT_AND_MANAGER",
+          "name": "客户经理协调/业务核实",
+          "desc": "核心诉求是联系客户经理、安排协调、核实业务。"
+        },
+        "PROXY_APPLICATION_MATERIAL_QUERY": {
+          "parent_level1_code": "SERVICE_PROCESS",
+          "parent_level2_code": "SPECIAL_REPORT_AND_MANAGER",
+          "name": "查询申请代理资料",
+          "desc": "核心诉求是查询、核实、补充代理办理资料。"
+        },
+        "HARASSMENT_FRAUD_REPORT": {
+          "parent_level1_code": "SERVICE_PROCESS",
+          "parent_level2_code": "SPECIAL_REPORT_AND_MANAGER",
+          "name": "举报骚扰/诈骗电话",
+          "desc": "举报骚扰电话、诈骗电话问题。"
+        },
+        "BAD_CONTENT_OR_TAGGING_REPORT": {
+          "parent_level1_code": "SERVICE_PROCESS",
+          "parent_level2_code": "SPECIAL_REPORT_AND_MANAGER",
+          "name": "举报不良信息/第三方平台标记错误",
+          "desc": "举报不良信息、错误标记、错误归类。"
+        },
+        "PRAISE_SUGGESTION": {
+          "parent_level1_code": "SERVICE_PROCESS",
+          "parent_level2_code": "SPECIAL_REPORT_AND_MANAGER",
+          "name": "建议表扬",
+          "desc": "建议、表扬、正向反馈。"
+        }
+      }
+    },
+    "request_tags": {
+      "version": "v1",
+      "updated_at": "2026-04-11",
+      "source_doc": "D:/project/FullStack/voc/docs/converger_design/README.md",
+      "tag_type": "request_tag",
+      "selection_rule": "必须从下列常量中选 1 个，不允许生成新诉求标签。",
+      "source_fields": [
+        "complaint_phenomenon",
+        "biz_content",
+        "appeal_biz_type",
+        "biz_category"
+      ],
+      "default_code": null,
+      "boundary_rules": [
+        {
+          "rule_id": "REQ01",
+          "when": "停机恢复、解限、恢复已中断服务",
+          "prefer_code": "RESTORE"
+        },
+        {
+          "rule_id": "REQ02",
+          "when": "网络质量、故障申告、宽带/信号/网速修复",
+          "prefer_code": "NETWORK_REPAIR"
+        }
+      ],
+      "items": [
+        {
+          "code": "EXPLAIN",
+          "name": "解释说明",
+          "desc": "客户核心诉求是要一个明确说法、规则解释、原因说明。"
+        },
+        {
+          "code": "REFUND",
+          "name": "退费",
+          "desc": "客户核心诉求是退回已扣费用、退回已支付金额。"
+        },
+        {
+          "code": "CANCEL",
+          "name": "取消业务",
+          "desc": "客户核心诉求是退订、取消、拆除、销户、停止某项业务。"
+        },
+        {
+          "code": "RESTORE",
+          "name": "恢复服务",
+          "desc": "客户核心诉求是恢复已中断、已限制或异常的服务。"
+        },
+        {
+          "code": "NETWORK_REPAIR",
+          "name": "网络修复",
+          "desc": "客户核心诉求是修复网络、信号、网速、宽带、装维或通信故障问题。"
+        },
+        {
+          "code": "COMPENSATE",
+          "name": "赔偿补偿",
+          "desc": "客户核心诉求是获得补偿、赔付、赠费、赔礼类补救。"
+        },
+        {
+          "code": "APPLY_SERVICE",
+          "name": "办理业务",
+          "desc": "客户核心诉求是希望办理、开通、申请某项业务。"
+        },
+        {
+          "code": "CHANGE_PLAN",
+          "name": "变更套餐",
+          "desc": "客户核心诉求是修改当前套餐、资费方案、业务档位。"
+        },
+        {
+          "code": "CONTACT_MANAGER",
+          "name": "联系客户经理",
+          "desc": "客户核心诉求是要求专人联系、业务核实、由客户经理介入。"
+        },
+        {
+          "code": "FAST_PROCESS",
+          "name": "加快处理",
+          "desc": "客户核心诉求是催办、加急、尽快处理，而不是重新定义业务结果。"
+        }
+      ]
+    },
+    "emotion_tags": {
+      "version": "v1",
+      "updated_at": "2026-04-11",
+      "source_doc": "D:/project/FullStack/voc/docs/converger_design/README.md",
+      "tag_type": "emotion_tag",
+      "selection_rule": "必须从下列常量中选 1 个，不允许生成新情绪标签。",
+      "source_fields": [
+        "biz_content"
+      ],
+      "default_code": "CALM",
+      "items": [
+        {
+          "code": "CALM",
+          "name": "平稳",
+          "desc": "客户表达相对克制，主要在陈述问题、咨询原因、要求处理，没有明显强烈情绪。"
+        },
+        {
+          "code": "UNSATISFIED",
+          "name": "不满",
+          "desc": "客户已明显表达不认可、不接受、不满意，但还没到激烈冲突。"
+        },
+        {
+          "code": "AGITATED",
+          "name": "激动",
+          "desc": "客户情绪明显上升，催促、反复强调、施压、抱怨明显。"
+        },
+        {
+          "code": "ANGRY",
+          "name": "强烈投诉",
+          "desc": "客户进入强烈负面情绪状态，可能伴随指责、威胁升级、投诉监管、公开曝光等表达。"
+        }
+      ]
+    },
+    "risk_tags": {
+      "version": "v1",
+      "updated_at": "2026-04-11",
+      "source_doc": "D:/project/FullStack/voc/docs/converger_design/README.md",
+      "tag_type": "risk_tag",
+      "selection_rule": "必须从下列常量中选 1 个，不允许生成新风险标签。",
+      "source_fields": [
+        "ticket_type",
+        "customer_star",
+        "repeat_count",
+        "urge_count",
+        "oscillation_count",
+        "satisfaction_score",
+        "complaint_phenomenon",
+        "complaint_source"
+      ],
+      "default_code": "NORMAL",
+      "priority_hints": [
+        "REGULATORY / PUBLIC_OPINION / ESCALATED 一般高于 REPEATED。",
+        "HIGH_VALUE 表示客户属性重要，不一定表示事件本身最严重。"
+      ],
+      "items": [
+        {
+          "code": "NORMAL",
+          "name": "正常",
+          "desc": "普通工单，没有明显升级风险，也没有明显高级投诉特征。"
+        },
+        {
+          "code": "REPEATED",
+          "name": "重复投诉",
+          "desc": "客户已经多次重复反馈同一问题。"
+        },
+        {
+          "code": "ESCALATED",
+          "name": "升级投诉",
+          "desc": "工单已经表现出升级趋势，或客户明确表达要继续向上投诉。"
+        },
+        {
+          "code": "REGULATORY",
+          "name": "监管风险",
+          "desc": "涉及监管、主管部门、政务热线、通管局等外部监督渠道。"
+        },
+        {
+          "code": "PUBLIC_OPINION",
+          "name": "舆情风险",
+          "desc": "客户表达公开曝光、媒体传播、网络发酵等倾向。"
+        },
+        {
+          "code": "HIGH_VALUE",
+          "name": "高价值客户",
+          "desc": "工单来自重点客户，需要提高关注等级。"
+        },
+        {
+          "code": "BATCH_ISSUE",
+          "name": "批量问题",
+          "desc": "问题可能不是单个客户独有，而是成批发生。"
+        },
+        {
+          "code": "COMPLIANCE",
+          "name": "合规风险",
+          "desc": "涉及规则、宣传、资费、授权、办理流程等合规性争议。"
+        }
+      ]
+    },
+    "product_tags": {
+      "version": "v1",
+      "updated_at": "2026-04-11",
+      "source_doc": "D:/project/FullStack/voc/docs/converger_design/README.md",
+      "tag_type": "product_tag",
+      "selection_rule": "必须从下列常量中选 1 个，不允许生成新产品标签。",
+      "source_fields": [
+        "dispute_product_name",
+        "biz_content",
+        "complaint_phenomenon",
+        "return_reason"
+      ],
+      "default_code": null,
+      "items": [
+        {
+          "code": "MOBILE",
+          "name": "移动业务",
+          "desc": "与手机号、手机套餐、流量、语音、短信、停复机、移动基础通信服务相关。"
+        },
+        {
+          "code": "BROADBAND",
+          "name": "宽带业务",
+          "desc": "与家庭宽带、专线宽带、装维、拆机、移机、网络接入相关。"
+        },
+        {
+          "code": "IPTV",
+          "name": "IPTV业务",
+          "desc": "与电视业务、机顶盒、ITV资费、ITV功能异常相关。"
+        },
+        {
+          "code": "FUSION_PACKAGE",
+          "name": "融合套餐",
+          "desc": "同时涉及移动、宽带、ITV 等组合套餐的业务。"
+        },
+        {
+          "code": "VALUE_ADDED",
+          "name": "增值业务",
+          "desc": "与彩铃、会员、名片、通信助理、权益包、流量包、合约包等附加业务相关。"
+        },
+        {
+          "code": "WINGPAY",
+          "name": "翼支付",
+          "desc": "与翼支付账户、权益金、支付、返费、提现等相关。"
+        },
+        {
+          "code": "DEVICE",
+          "name": "终端设备",
+          "desc": "与手机终端、设备销售、直降礼包、硬件本体相关。"
+        }
+      ]
+    }
+  },
+  "result": {
+    "ticket_id": "WeComQH20240601125916780935",
+    "status": "completed",
+    "summary": "用户对办理的50元手机直降礼包不认可，称办理时未告知有合约，要求取消。",
+    "primary_category": {
+      "level1_code": "MARKETING_SALES",
+      "level1_name": "营销与销售",
+      "level2_code": "EXPLAIN_AND_COMMITMENT",
+      "level2_name": "解释与承诺",
+      "leaf_code": "MISLEADING_EXPLANATION",
+      "leaf_name": "宣传/解释不清或误导",
+      "reason": "用户并未否认办理过该业务，而是不满办理时未被告知存在合约限制，符合歧义规则R09，应归为宣传/解释不清或误导。"
+    },
+    "request_tag": {
+      "code": "CANCEL",
+      "name": "取消业务",
+      "reason": "用户明确要求取消50元手机直降礼包业务，核心诉求为退订或取消已办理的业务。"
+    },
+    "emotion_tag": {
+      "code": "UNSATISFIED",
+      "name": "不满",
+      "reason": "用户对办理时未被告知合约限制表示不认可，且对后续解释也不接受，表现出明显不满情绪。"
+    },
+    "risk_tag": {
+      "code": "COMPLIANCE",
+      "name": "合规风险",
+      "reason": "用户投诉焦点在于业务办理过程中未充分告知合约限制，涉及营销宣传与办理流程的合规性问题。"
+    },
+    "product_tag": {
+      "code": "VALUE_ADDED",
+      "name": "增值业务",
+      "reason": "50元手机直降礼包属于附加权益类业务，归类为增值业务。"
+    },
+    "line_category": {
+      "value": "市场条线",
+      "reason": "直接来自原始工单"
+    },
+    "resolution_summary": null
+  },
+  "category_summary": "用户对办理的50元手机直降礼包不认可，称办理时未告知有合约，要求取消。",
+  "primary_category": {
+    "level1_code": "MARKETING_SALES",
+    "level1_name": "营销与销售",
+    "level2_code": "EXPLAIN_AND_COMMITMENT",
+    "level2_name": "解释与承诺",
+    "leaf_code": "MISLEADING_EXPLANATION",
+    "leaf_name": "宣传/解释不清或误导",
+    "reason": "用户并未否认办理过该业务，而是不满办理时未被告知存在合约限制，符合歧义规则R09，应归为宣传/解释不清或误导。"
+  },
+  "status": "resolution_unavailable",
+  "category_prompt": "请只完成 primary_category 分析。\n\n硬性要求：\n1. 只能从给定 category_v2 叶子分类中选择 1 个。\n2. 必须优先遵守给定歧义规则。\n3. 不允许输出分类范围外的新值。\n4. 只输出纯 JSON。\n\n返回 JSON 结构：\n{\n  \"summary\": \"...\",\n  \"level1_code\": \"...\",\n  \"level2_code\": \"...\",\n  \"leaf_code\": \"...\",\n  \"reason\": \"...\"\n}\n\n【工单】\n{\n  \"ticket_id\": \"WeComQH20240601125916780935\",\n  \"ticket_type\": \"投诉单\",\n  \"complaint_source\": \"最强工单\",\n  \"biz_category\": \"套餐收费疑议\",\n  \"line_category\": \"市场条线\",\n  \"appeal_biz_type\": \"11.要求取消业务\",\n  \"repeat_count\": 0,\n  \"urge_count\": 0,\n  \"oscillation_count\": 0,\n  \"satisfaction_score\": \"满意\",\n  \"complaint_phenomenon\": \"服务请求->投诉单->费用争议类->套餐收费疑议\",\n  \"biz_content\": \"15349****09用户对办理的50元手机直降礼包不认可，称办理时未告知有合约，已告知用户每月可以通过翼支付APP领取权益金交话费，用户也不认可，要求取消，请处理，谢谢！\\n受理渠道：中国电信互助营业厅\",\n  \"return_reason\": \"留单原因->渠道服务->实体渠道->客户原因->\",\n  \"process_dept\": \"万号\"\n}\n\n【分类歧义规则】\n- R00: 工单表述为工作人员承诺退费、退款、返费，但用户最终投诉的是金额一直未到账。 规则说明：只要最终争议点是退款/退费没有到账，优先归返费/赠费/退款未到账，而不是承诺未兑现。\n- R01: 工单核心描述为工作人员答应过某件事但最后没有做到；即使承诺内容涉及具体权益，只要争议重点仍是“说过会办但没办”，也按承诺未兑现处理。 规则说明：如果核心是工作人员承诺过某事但最后没做到，即使承诺内容是具体权益，也优先归承诺未兑现。\n- R02: 工单核心已经收敛为具体权益、会员、礼包、赠品本身拿不到、用不了、未到账、未发放，而不是强调工作人员曾经怎么承诺。 规则说明：只有当争议核心是权益本身没到账、不能用、没发放时，才优先归赠品/权益未兑现。\n- R03: 用户明确表示不是自己办理、没有订购、否认订购关系本身。 规则说明：只有明确否认订购关系本身时，才归用户否认订购。\n- R04: 最终业务诉求是开具发票、补开发票、核实开票金额或发票获取异常。 规则说明：处理中出现客户经理、营业厅、企微客服等角色，不改变发票问题的主归类。\n- R05: 即使已经上门或联系过，但最终结果仍然没装成、没办成、没履约。 规则说明：以最终是否完成履约为优先判断。\n- R06: 修障后短时间再次故障、仍无法连接、仍不稳定。 规则说明：优先按用户感知的网络结果归类，而不是后台施工原因。\n- R07: 工单里已经出现具体套外费用、超额费用、继续收费金额，并且用户对金额本身不认可。 规则说明：只要争议重心落在已产生的费用金额，优先归套外使用费用争议。\n- R08: 工单同时具备套餐变更目标和流程受阻特征。 规则说明：这是混合规则，不强制单向覆盖。\n- R09: 用户不否认业务办过，但核心不满点是办理时没人说清楚合约、限制条件、违约后果，属于前置告知或营销解释问题。 规则说明：如果用户并不否认办理关系，只是不满办理时未被告知合约或限制，优先归宣传/解释不清或误导；只有明确知道有该合约但不认可规则本身时，才归合约限制争议。\n\n【可选分类叶子】\n- [FEE_BILLING] 费用与账务 / [ACCOUNT_AND_PAYMENT] 账单与缴费 / [BILL_AMOUNT_DISPLAY_ISSUE] 账单金额/展示异常：账单金额展示不一致、账单内容展示异常。\n- [FEE_BILLING] 费用与账务 / [ACCOUNT_AND_PAYMENT] 账单与缴费 / [INVOICE_ISSUE] 发票问题：开票、补开发票、开票金额、发票获取和寄送异常。\n- [FEE_BILLING] 费用与账务 / [ACCOUNT_AND_PAYMENT] 账单与缴费 / [PAYMENT_RECHARGE_ISSUE] 充值缴费异常：充值、缴费、冲正、到账结果异常或无法正常缴费。\n- [FEE_BILLING] 费用与账务 / [PACKAGE_AND_USAGE_FEE] 套餐与使用费用 / [BROADBAND_TV_FEE_DISPUTE] 宽带/电视收费争议：对宽带、电视、IPTV 主体服务收费存在争议。\n- [FEE_BILLING] 费用与账务 / [PACKAGE_AND_USAGE_FEE] 套餐与使用费用 / [OUT_OF_BUNDLE_FEE_DISPUTE] 套外使用费用争议：对超出套餐范围后的使用费用、超额费用产生争议。\n- [FEE_BILLING] 费用与账务 / [PACKAGE_AND_USAGE_FEE] 套餐与使用费用 / [PACKAGE_FEE_DISPUTE] 套餐收费争议：对基础套餐或套餐本身的收费金额、是否应收取存在争议。\n- [FEE_BILLING] 费用与账务 / [PACKAGE_AND_USAGE_FEE] 套餐与使用费用 / [UNKNOWN_CHARGE] 异常扣费/不明收费：出现来源不明或无法清楚解释的异常扣费。\n- [FEE_BILLING] 费用与账务 / [PACKAGE_AND_USAGE_FEE] 套餐与使用费用 / [VAS_FEE_DISPUTE] 增值业务收费争议：对彩铃、点播、会员包、通信助理等增值业务收费不认可。\n- [FEE_BILLING] 费用与账务 / [REFUND_PENALTY_RIGHTS] 退款与违约权益 / [BESTPAY_BENEFIT_FEE_DISPUTE] 翼支付权益/费用争议：翼支付权益、权益金、返现、支付相关费用争议。\n- [FEE_BILLING] 费用与账务 / [REFUND_PENALTY_RIGHTS] 退款与违约权益 / [PENALTY_LATE_FEE_DISPUTE] 违约金/滞纳金争议：对违约金、滞纳金或类似惩罚性费用不认可。\n- [FEE_BILLING] 费用与账务 / [REFUND_PENALTY_RIGHTS] 退款与违约权益 / [REFUND_NOT_ARRIVED] 返费/赠费/退款未到账：应返还的费用、赠费、退款迟迟未到账。\n- [INSTALL_DELIVERY] 装维与交付 / [INSTALL_STANDARD_AND_RESULT] 交付规范与结果 / [CONSTRUCTION_DAMAGE] 施工损坏问题：施工过程损坏用户设施、房屋或设备。\n- [INSTALL_DELIVERY] 装维与交付 / [INSTALL_STANDARD_AND_RESULT] 交付规范与结果 / [DELIVERY_RESULT_MISMATCH] 交付结果不符/实测速率不达标：交付结果与承诺结果不一致，例如速率、交付内容不达标。\n- [INSTALL_DELIVERY] 装维与交付 / [INSTALL_STANDARD_AND_RESULT] 交付规范与结果 / [INSTALL_QUALITY_ISSUE] 安装施工质量问题：施工、安装、修障质量差，导致问题仍然存在。\n- [INSTALL_DELIVERY] 装维与交付 / [INSTALL_STANDARD_AND_RESULT] 交付规范与结果 / [ONSITE_SERVICE_IRREGULAR] 上门服务不规范：已经上门，但解释、服务过程、操作方式不规范。\n- [INSTALL_DELIVERY] 装维与交付 / [INSTALL_TIMELINESS] 履约时效 / [DELIVERY_DELAY] 履约不及时/未履约：未按约定时间上门、安装、拆机、移机或处理。\n- [INSTALL_DELIVERY] 装维与交付 / [INSTALL_TIMELINESS] 履约时效 / [INSTALL_MOVE_URGING] 催装移机：核心诉求是尽快装机、移机、上门处理。\n- [MARKETING_SALES] 营销与销售 / [EXPLAIN_AND_COMMITMENT] 解释与承诺 / [BENEFIT_NOT_DELIVERED] 赠品/权益未兑现：具体赠品、礼包、会员、权益没有到账、没有开通或不能使用；仅当争议核心已经收敛为权益本身没到账、不能用、没发放时适用。\n- [MARKETING_SALES] 营销与销售 / [EXPLAIN_AND_COMMITMENT] 解释与承诺 / [MISLEADING_EXPLANATION] 宣传/解释不清或误导：营销宣传、办理解释、规则说明不清，导致用户误解；尤其适用于业务已办理，但办理时未告知合约、限制条件或违约后果。\n- [MARKETING_SALES] 营销与销售 / [EXPLAIN_AND_COMMITMENT] 解释与承诺 / [PROMISE_NOT_FULFILLED] 承诺未兑现：工作人员明确承诺过某事，但最终未兑现；即使承诺内容是具体权益，只要核心争议仍是“答应过但没做到”，也归此类。\n- [MARKETING_SALES] 营销与销售 / [SALES_PROCESS_AND_ATTITUDE] 办理过程与态度 / [PROCESSING_ERROR_OR_OMISSION] 业务办理差错/漏受理：办理时承诺办理但未受理、漏受理或办错。\n- [MARKETING_SALES] 营销与销售 / [SALES_PROCESS_AND_ATTITUDE] 办理过程与态度 / [PROCESS_BLOCKED] 业务办理不畅：办理流程被阻塞、卡单、受阻，但不特指套餐变更争议。\n- [MARKETING_SALES] 营销与销售 / [SALES_PROCESS_AND_ATTITUDE] 办理过程与态度 / [SERVICE_ATTITUDE_ISSUE] 服务态度问题：窗口、客服、装维或工作人员服务态度不佳。\n- [NETWORK_QUALITY] 网络质量 / [NETWORK_QUALITY] 网络质量 / [BROADBAND_SLOW] 宽带网速慢：宽带速率低、网速慢。\n- [NETWORK_QUALITY] 网络质量 / [NETWORK_QUALITY] 网络质量 / [BROADBAND_UNSTABLE] 宽带掉线/网络不稳定：宽带反复掉线、无法连接、恢复后仍不稳定。\n- [NETWORK_QUALITY] 网络质量 / [NETWORK_QUALITY] 网络质量 / [CALL_QUALITY_ISSUE] 通话质量异常：通话杂音、断续、无法听清等。\n- [NETWORK_QUALITY] 网络质量 / [NETWORK_QUALITY] 网络质量 / [MOBILE_DATA_SLOW] 移动上网慢：手机移动网络上网速度慢。\n- [NETWORK_QUALITY] 网络质量 / [NETWORK_QUALITY] 网络质量 / [NO_SIGNAL_OR_WEAK_SIGNAL] 无信号/信号弱：无信号、信号差、信号弱。\n- [NETWORK_QUALITY] 网络质量 / [NETWORK_QUALITY] 网络质量 / [ROAMING_COMMUNICATION_ISSUE] 漫游通信异常：漫游状态下通信异常。\n- [OPEN_RECOVERY_CONTROL] 开通与恢复控制 / [OPEN_AND_ACTIVATION] 开通与激活 / [ACTIVATION_REALNAME_ISSUE] 激活/实名认证异常：激活、实名登记、认证过程发生异常。\n- [OPEN_RECOVERY_CONTROL] 开通与恢复控制 / [OPEN_AND_ACTIVATION] 开通与激活 / [BROADBAND_OPEN_FAILURE] 宽带开通失败：宽带开通未成功。\n- [OPEN_RECOVERY_CONTROL] 开通与恢复控制 / [OPEN_AND_ACTIVATION] 开通与激活 / [SERVICE_OPEN_FAILURE] 业务开通失败：一般业务开通办理失败。\n- [OPEN_RECOVERY_CONTROL] 开通与恢复控制 / [OPEN_AND_ACTIVATION] 开通与激活 / [SIM_OPEN_FAILURE] 号卡开通失败：号码或 SIM 卡开通失败。\n- [OPEN_RECOVERY_CONTROL] 开通与恢复控制 / [RECOVERY_AND_UNBLOCK] 恢复与复机 / [RECOVERY_DELAY_OR_FAILURE] 复机/恢复失败或不及时：已经申请恢复、复机，但仍未恢复或恢复不及时。\n- [OPEN_RECOVERY_CONTROL] 开通与恢复控制 / [SHUTDOWN_AND_CONTROL] 停机与控制 / [ARREARS_SHUTDOWN_DISPUTE] 欠费停机不认可：对因欠费导致停机不认可。\n- [OPEN_RECOVERY_CONTROL] 开通与恢复控制 / [SHUTDOWN_AND_CONTROL] 停机与控制 / [BLOCK_UNBLOCK_ISSUE] 屏蔽/解限问题：短信、外呼、功能屏蔽和解限问题。\n- [OPEN_RECOVERY_CONTROL] 开通与恢复控制 / [SHUTDOWN_AND_CONTROL] 停机与控制 / [RISK_MODEL_SHUTDOWN_DISPUTE] 风险/模型关停不认可：对风控、模型、公安等关停不认可。\n- [PRODUCT_PLATFORM] 产品与平台 / [APP_AND_ACCOUNT] APP 与账号 / [ACCOUNT_IDENTITY_VERIFICATION_ISSUE] 账号登录/身份校验异常：登录失败、身份校验失败、账号异常。\n- [PRODUCT_PLATFORM] 产品与平台 / [APP_AND_ACCOUNT] APP 与账号 / [APP_ONLINE_PROCESS_FAILURE] APP/网厅报错或线上办理失败：APP、网厅、线上入口报错、异常或办理失败。\n- [PRODUCT_PLATFORM] 产品与平台 / [BASIC_FUNCTION] 基础功能 / [DATA_FUNCTION_ISSUE] 流量功能异常：流量功能、上网能力、流量包功能异常。\n- [PRODUCT_PLATFORM] 产品与平台 / [BASIC_FUNCTION] 基础功能 / [PRODUCT_FUNCTION_UNSTABLE] 产品功能缺失/不稳定：产品功能本身缺失、功能不全或不稳定。\n- [PRODUCT_PLATFORM] 产品与平台 / [BASIC_FUNCTION] 基础功能 / [SMS_FUNCTION_ISSUE] 短信功能异常：短信收发、验证码、提醒短信功能异常。\n- [PRODUCT_PLATFORM] 产品与平台 / [BASIC_FUNCTION] 基础功能 / [VOICE_FUNCTION_ISSUE] 语音功能异常：语音呼叫功能异常。\n- [PRODUCT_PLATFORM] 产品与平台 / [QUERY_AND_DISPLAY] 查询与展示 / [ORDER_PLAN_INFO_DISPLAY_ISSUE] 订单/套餐/信息查询展示异常：订单、套餐、业务信息查询或展示不正确。\n- [PRODUCT_PLATFORM] 产品与平台 / [QUERY_AND_DISPLAY] 查询与展示 / [PLATFORM_CLIENT_SOFTWARE_ISSUE] 网站/平台/客户端软件问题：网站、客户端、软件平台本身存在问题。\n- [RULE_POLICY] 规则政策 / [ACTIVITY_AND_EFFECTIVE_RULE] 活动与生效规则 / [CAMPAIGN_RULE_DISPUTE] 营销活动规则争议：对营销活动资格、条件、兑现规则、生效条件有争议。\n- [RULE_POLICY] 规则政策 / [ACTIVITY_AND_EFFECTIVE_RULE] 活动与生效规则 / [EFFECTIVE_RULE_DISPUTE] 生效/失效规则争议：对业务或规则何时生效、何时失效存在争议。\n- [RULE_POLICY] 规则政策 / [QUALIFICATION_AND_PROCESS_RULE] 资格与流程规则 / [AGENCY_PROCESS_RULE_DISPUTE] 代办/流程规则争议：对代办、代理、流程性规则不认可。\n- [RULE_POLICY] 规则政策 / [QUALIFICATION_AND_PROCESS_RULE] 资格与流程规则 / [ELIGIBILITY_REALNAME_RULE_DISPUTE] 资格条件/实名规则争议：对办理资格、实名要求、身份条件不认可。\n- [RULE_POLICY] 规则政策 / [USAGE_AND_LIMIT_RULE] 使用与限制规则 / [BENEFIT_USAGE_SCOPE_DISPUTE] 权益/流量使用范围争议：对权益、流量、会员等使用范围和适用范围不认可。\n- [RULE_POLICY] 规则政策 / [USAGE_AND_LIMIT_RULE] 使用与限制规则 / [CONTRACT_LIMIT_RULE_DISPUTE] 合约限制争议：对合约期、限制条件、提前取消限制存在争议；仅当用户明确知道存在该合约或限制，但不认可规则本身时适用。\n- [RULE_POLICY] 规则政策 / [USAGE_AND_LIMIT_RULE] 使用与限制规则 / [THROTTLING_LIMIT_RULE_DISPUTE] 达量降速/限速规则争议：对达量降速、限速、继续收费/不断网规则不认可。\n- [SERVICE_PROCESS] 服务流程 / [COMPLAINT_HANDLING] 投诉处理 / [RESULT_NOT_ACCEPTED] 处理结果不认可：对回单、处理结果、处理结论本身不认可。\n- [SERVICE_PROCESS] 服务流程 / [COMPLAINT_HANDLING] 投诉处理 / [UNRESOLVED_OR_REPEAT_COMPLAINT] 久拖未决/重复投诉处理不满意：问题长期未解决，或多次投诉后仍不满意。\n- [SERVICE_PROCESS] 服务流程 / [SPECIAL_REPORT_AND_MANAGER] 协调、举报与核实 / [ACCOUNT_MANAGER_COORDINATION] 客户经理协调/业务核实：核心诉求是联系客户经理、安排协调、核实业务。\n- [SERVICE_PROCESS] 服务流程 / [SPECIAL_REPORT_AND_MANAGER] 协调、举报与核实 / [BAD_CONTENT_OR_TAGGING_REPORT] 举报不良信息/第三方平台标记错误：举报不良信息、错误标记、错误归类。\n- [SERVICE_PROCESS] 服务流程 / [SPECIAL_REPORT_AND_MANAGER] 协调、举报与核实 / [HARASSMENT_FRAUD_REPORT] 举报骚扰/诈骗电话：举报骚扰电话、诈骗电话问题。\n- [SERVICE_PROCESS] 服务流程 / [SPECIAL_REPORT_AND_MANAGER] 协调、举报与核实 / [PRAISE_SUGGESTION] 建议表扬：建议、表扬、正向反馈。\n- [SERVICE_PROCESS] 服务流程 / [SPECIAL_REPORT_AND_MANAGER] 协调、举报与核实 / [PROXY_APPLICATION_MATERIAL_QUERY] 查询申请代理资料：核心诉求是查询、核实、补充代理办理资料。\n- [SERVICE_PROCESS] 服务流程 / [WORK_ORDER_FLOW] 工单流转 / [WORK_ORDER_FLOW_ERROR] 工单流转/转派错误/多部门扯皮：工单流转出错、派单错误、部门之间扯皮。\n- [SUBSCRIBE_CANCEL] 订购与退订 / [CANCEL_AND_UNSUBSCRIBE] 退订与取消 / [CANCEL_DISPUTE] 业务退订/取消争议：退订取消相关一般争议，但未明确构成失败。\n- [SUBSCRIBE_CANCEL] 订购与退订 / [CANCEL_AND_UNSUBSCRIBE] 退订与取消 / [CANCEL_FAILURE] 业务退订/取消失败：用户要求退订取消，但系统或流程导致未成功。\n- [SUBSCRIBE_CANCEL] 订购与退订 / [CANCEL_AND_UNSUBSCRIBE] 退订与取消 / [CHARGED_AFTER_CANCEL] 退订后仍收费：退订或取消完成后仍继续产生收费。\n- [SUBSCRIBE_CANCEL] 订购与退订 / [ORDER_AND_DENY] 订购与否认 / [AUTO_RENEWAL_DISPUTE] 自动续订争议：对自动续订、自动延续扣费规则不认可。\n- [SUBSCRIBE_CANCEL] 订购与退订 / [ORDER_AND_DENY] 订购与否认 / [ORDER_DENIAL] 用户否认订购：用户明确否认自己办理、订购过相关业务。\n- [SUBSCRIBE_CANCEL] 订购与退订 / [ORDER_AND_DENY] 订购与否认 / [ORDER_PROCESS_DISPUTE] 订购办理争议：订购办理过程中发生争议，但不属于明确否认订购。\n- [SUBSCRIBE_CANCEL] 订购与退订 / [PLAN_CHANGE_AND_ACCOUNT_CLOSE] 套餐变更与销户 / [ACCOUNT_CLOSURE_DISPUTE] 拆机销户争议：对拆机、销户、预约拆机等问题产生争议。\n- [SUBSCRIBE_CANCEL] 订购与退订 / [PLAN_CHANGE_AND_ACCOUNT_CLOSE] 套餐变更与销户 / [CHARGED_AFTER_CLOSURE_OR_RULE_DISPUTE] 销户后仍计费/销户规则争议：销户后仍收费，或对销户规则本身不认可。\n- [SUBSCRIBE_CANCEL] 订购与退订 / [PLAN_CHANGE_AND_ACCOUNT_CLOSE] 套餐变更与销户 / [PLAN_CHANGE_DISPUTE] 套餐变更争议：对套餐改档、变更能否办理或变更结果产生争议。",
+  "category_raw_response": "{\n  \"summary\": \"用户对办理的50元手机直降礼包不认可，称办理时未告知有合约，要求取消。\",\n  \"level1_code\": \"MARKETING_SALES\",\n  \"level2_code\": \"EXPLAIN_AND_COMMITMENT\",\n  \"leaf_code\": \"MISLEADING_EXPLANATION\",\n  \"reason\": \"用户并未否认办理过该业务，而是不满办理时未被告知存在合约限制，符合歧义规则R09，应归为宣传/解释不清或误导。\"\n}",
+  "tags_prompt": "请在主分类已经确定的前提下，完成 request_tag、emotion_tag、risk_tag、product_tag、line_category 分析。\n\n硬性要求：\n1. request_tag、emotion_tag、risk_tag、product_tag 必须且只能各选 1 个。\n2. line_category 直接抄录原始工单值，不做重判。\n3. 只输出纯 JSON。\n\n返回 JSON 结构：\n{\n  \"request_tag\": {\"code\": \"...\", \"reason\": \"...\"},\n  \"emotion_tag\": {\"code\": \"...\", \"reason\": \"...\"},\n  \"risk_tag\": {\"code\": \"...\", \"reason\": \"...\"},\n  \"product_tag\": {\"code\": \"...\", \"reason\": \"...\"},\n}\n\n【已确定主分类】\n{\n  \"level1_code\": \"MARKETING_SALES\",\n  \"level1_name\": \"营销与销售\",\n  \"level2_code\": \"EXPLAIN_AND_COMMITMENT\",\n  \"level2_name\": \"解释与承诺\",\n  \"leaf_code\": \"MISLEADING_EXPLANATION\",\n  \"leaf_name\": \"宣传/解释不清或误导\",\n  \"reason\": \"用户并未否认办理过该业务，而是不满办理时未被告知存在合约限制，符合歧义规则R09，应归为宣传/解释不清或误导。\"\n}\n\n【工单】\n{\n  \"ticket_id\": \"WeComQH20240601125916780935\",\n  \"ticket_type\": \"投诉单\",\n  \"complaint_source\": \"最强工单\",\n  \"biz_category\": \"套餐收费疑议\",\n  \"line_category\": \"市场条线\",\n  \"appeal_biz_type\": \"11.要求取消业务\",\n  \"repeat_count\": 0,\n  \"urge_count\": 0,\n  \"oscillation_count\": 0,\n  \"satisfaction_score\": \"满意\",\n  \"complaint_phenomenon\": \"服务请求->投诉单->费用争议类->套餐收费疑议\",\n  \"biz_content\": \"15349****09用户对办理的50元手机直降礼包不认可，称办理时未告知有合约，已告知用户每月可以通过翼支付APP领取权益金交话费，用户也不认可，要求取消，请处理，谢谢！\\n受理渠道：中国电信互助营业厅\",\n  \"return_reason\": \"留单原因->渠道服务->实体渠道->客户原因->\",\n  \"process_dept\": \"万号\"\n}\n\n【可选 request_tag】\n重点参考字段：complaint_phenomenon, biz_content, appeal_biz_type, biz_category\n选择规则：必须从下列常量中选 1 个，不允许生成新诉求标签。\n- [EXPLAIN] 解释说明：客户核心诉求是要一个明确说法、规则解释、原因说明。\n- [REFUND] 退费：客户核心诉求是退回已扣费用、退回已支付金额。\n- [CANCEL] 取消业务：客户核心诉求是退订、取消、拆除、销户、停止某项业务。\n- [RESTORE] 恢复服务：客户核心诉求是恢复已中断、已限制或异常的服务。\n- [NETWORK_REPAIR] 网络修复：客户核心诉求是修复网络、信号、网速、宽带、装维或通信故障问题。\n- [COMPENSATE] 赔偿补偿：客户核心诉求是获得补偿、赔付、赠费、赔礼类补救。\n- [APPLY_SERVICE] 办理业务：客户核心诉求是希望办理、开通、申请某项业务。\n- [CHANGE_PLAN] 变更套餐：客户核心诉求是修改当前套餐、资费方案、业务档位。\n- [CONTACT_MANAGER] 联系客户经理：客户核心诉求是要求专人联系、业务核实、由客户经理介入。\n- [FAST_PROCESS] 加快处理：客户核心诉求是催办、加急、尽快处理，而不是重新定义业务结果。\n\n【可选 emotion_tag】\n重点参考字段：biz_content\n选择规则：必须从下列常量中选 1 个，不允许生成新情绪标签。\n默认值：CALM\n- [CALM] 平稳：客户表达相对克制，主要在陈述问题、咨询原因、要求处理，没有明显强烈情绪。\n- [UNSATISFIED] 不满：客户已明显表达不认可、不接受、不满意，但还没到激烈冲突。\n- [AGITATED] 激动：客户情绪明显上升，催促、反复强调、施压、抱怨明显。\n- [ANGRY] 强烈投诉：客户进入强烈负面情绪状态，可能伴随指责、威胁升级、投诉监管、公开曝光等表达。\n\n【可选 risk_tag】\n重点参考字段：ticket_type, customer_star, repeat_count, urge_count, oscillation_count, satisfaction_score, complaint_phenomenon, complaint_source\n选择规则：必须从下列常量中选 1 个，不允许生成新风险标签。\n默认值：NORMAL\n- [NORMAL] 正常：普通工单，没有明显升级风险，也没有明显高级投诉特征。\n- [REPEATED] 重复投诉：客户已经多次重复反馈同一问题。\n- [ESCALATED] 升级投诉：工单已经表现出升级趋势，或客户明确表达要继续向上投诉。\n- [REGULATORY] 监管风险：涉及监管、主管部门、政务热线、通管局等外部监督渠道。\n- [PUBLIC_OPINION] 舆情风险：客户表达公开曝光、媒体传播、网络发酵等倾向。\n- [HIGH_VALUE] 高价值客户：工单来自重点客户，需要提高关注等级。\n- [BATCH_ISSUE] 批量问题：问题可能不是单个客户独有，而是成批发生。\n- [COMPLIANCE] 合规风险：涉及规则、宣传、资费、授权、办理流程等合规性争议。\n\n【可选 product_tag】\n重点参考字段：dispute_product_name, biz_content, complaint_phenomenon, return_reason\n选择规则：必须从下列常量中选 1 个，不允许生成新产品标签。\n- [MOBILE] 移动业务：与手机号、手机套餐、流量、语音、短信、停复机、移动基础通信服务相关。\n- [BROADBAND] 宽带业务：与家庭宽带、专线宽带、装维、拆机、移机、网络接入相关。\n- [IPTV] IPTV业务：与电视业务、机顶盒、ITV资费、ITV功能异常相关。\n- [FUSION_PACKAGE] 融合套餐：同时涉及移动、宽带、ITV 等组合套餐的业务。\n- [VALUE_ADDED] 增值业务：与彩铃、会员、名片、通信助理、权益包、流量包、合约包等附加业务相关。\n- [WINGPAY] 翼支付：与翼支付账户、权益金、支付、返费、提现等相关。\n- [DEVICE] 终端设备：与手机终端、设备销售、直降礼包、硬件本体相关。\n\n【line_category 处理规则】\n- 当前工单原始 line_category 为：市场条线\n- 直接抄录原始工单中的 line_category 值。",
+  "tags_raw_response": "{\n  \"request_tag\": {\"code\": \"CANCEL\", \"reason\": \"用户明确要求取消50元手机直降礼包业务，核心诉求为退订或取消已办理的业务。\"},\n  \"emotion_tag\": {\"code\": \"UNSATISFIED\", \"reason\": \"用户对办理时未被告知合约限制表示不认可，且对后续解释也不接受，表现出明显不满情绪。\"},\n  \"risk_tag\": {\"code\": \"COMPLIANCE\", \"reason\": \"用户投诉焦点在于业务办理过程中未充分告知合约限制，涉及营销宣传与办理流程的合规性问题。\"},\n  \"product_tag\": {\"code\": \"VALUE_ADDED\", \"reason\": \"50元手机直降礼包属于附加权益类业务，归类为增值业务。\"}\n}",
+  "request_tag": {
+    "code": "CANCEL",
+    "name": "取消业务",
+    "reason": "用户明确要求取消50元手机直降礼包业务，核心诉求为退订或取消已办理的业务。"
+  },
+  "emotion_tag": {
+    "code": "UNSATISFIED",
+    "name": "不满",
+    "reason": "用户对办理时未被告知合约限制表示不认可，且对后续解释也不接受，表现出明显不满情绪。"
+  },
+  "risk_tag": {
+    "code": "COMPLIANCE",
+    "name": "合规风险",
+    "reason": "用户投诉焦点在于业务办理过程中未充分告知合约限制，涉及营销宣传与办理流程的合规性问题。"
+  },
+  "product_tag": {
+    "code": "VALUE_ADDED",
+    "name": "增值业务",
+    "reason": "50元手机直降礼包属于附加权益类业务，归类为增值业务。"
+  },
+  "line_category": {
+    "value": "市场条线",
+    "reason": "直接来自原始工单"
+  },
+  "resolution_summary": null
+}

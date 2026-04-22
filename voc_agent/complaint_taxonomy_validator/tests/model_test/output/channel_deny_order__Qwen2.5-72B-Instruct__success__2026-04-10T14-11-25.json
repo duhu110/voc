@@ -1,0 +1,20 @@
+{
+  "case_name": "channel_deny_order",
+  "model_name": "Qwen2.5-72B-Instruct",
+  "prompt_path": "D:\\project\\FullStack\\voc\\voc_agent\\complaint_taxonomy_validator\\tests\\model_test\\output\\prompts\\channel_deny_order.txt",
+  "status": "success",
+  "error_type": null,
+  "error_message": null,
+  "duration_ms": 24117,
+  "timestamp": "2026-04-10T14:11:25",
+  "response_id": "chatcmpl-00-6aea13b037f2c83026485ccba5972926-9446097d1ace0a50-01",
+  "response_text": "{\n  \"summary\": \"客户在合作营业厅办理宽带时被顺带办理了天翼云盘黄金会员合约包，本人未明确同意，要求取消业务、退回已扣费用，并追查渠道办理责任。\",\n  \"primary_category\": {\n    \"code\": \"SUBSCRIBE_DENY_CHANNEL\",\n    \"full_name\": \"订购与退订争议/用户否认订购/否认渠道代办订购\",\n    \"confidence\": 0.95,\n    \"reason\": \"客户明确表示在合作营业厅办理宽带时被顺带办理了天翼云盘黄金会员合约包，且本人未明确同意，要求取消业务并退回费用，同时追查渠道办理责任。\"\n  },\n  \"candidate_categories\": [\n    {\n      \"code\": \"SUBSCRIBE_ORDER_NO_CONSENT_HALL\",\n      \"full_name\": \"订购与退订争议/业务订购争议/未明确同意订购/营业厅未明确同意订购\",\n      \"confidence\": 0.85,\n      \"reason\": \"客户在营业厅办理时未被明确告知，符合未明确同意订购的定义。\"\n    }\n  ],\n  \"candidate_tags\": [\n    {\n      \"code\": \"CHANNEL_AGENT\",\n      \"full_name\": \"代理渠道\",\n      \"confidence\": 0.95,\n      \"reason\": \"客户在合作营业厅办理业务，属于代理渠道。\"\n    },\n    {\n      \"code\": \"PRODUCT_VALUE_ADDED\",\n      \"full_name\": \"增值业务\",\n      \"confidence\": 0.90,\n      \"reason\": \"天翼云盘黄金会员合约包属于增值业务。\"\n    },\n    {\n      \"code\": \"REQUEST_REFUND\",\n      \"full_name\": \"退费\",\n      \"confidence\": 0.90,\n      \"reason\": \"客户要求退回已扣费用。\"\n    },\n    {\n      \"code\": \"REQUEST_CANCEL\",\n      \"full_name\": \"取消业务\",\n      \"confidence\": 0.90,\n      \"reason\": \"客户要求取消天翼云盘黄金会员合约包。\"\n    },\n    {\n      \"code\": \"RISK_COMPLIANCE\",\n      \"full_name\": \"合规风险\",\n      \"confidence\": 0.85,\n      \"reason\": \"涉及营业厅办理业务时未明确告知客户，可能存在合规风险。\"\n    }\n  ],\n  \"category_keywords\": [\n    \"合作营业厅\",\n    \"办理宽带\",\n    \"顺带办理\",\n    \"天翼云盘黄金会员合约包\",\n    \"未明确同意\",\n    \"要求取消业务\",\n    \"退回已扣费用\",\n    \"追查渠道办理责任\"\n  ],\n  \"tag_keywords\": [\n    \"合作营业厅\",\n    \"天翼云盘黄金会员合约包\",\n    \"退回已扣费用\",\n    \"取消业务\",\n    \"合规风险\"\n  ],\n  \"risks\": [\n    \"客户情绪可能较为激动，存在升级投诉的风险。\"\n  ]\n}",
+  "finish_reason": "stop",
+  "usage": {
+    "completion_tokens": 624,
+    "prompt_tokens": 12957,
+    "total_tokens": 13581,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  }
+}

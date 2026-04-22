@@ -1,0 +1,120 @@
+{
+  "ticket_id": "2024052214070887007619",
+  "status": "success",
+  "stage": "chain",
+  "duration_ms": 15139,
+  "timestamp": "2026-04-10T15:04:21",
+  "model_name": "Qwen3-Max",
+  "result": {
+    "summary": "用户预约宽带拆机，要求当天处理，但存在处理不及时问题，拆机原因为网速慢。",
+    "primary_category": {
+      "code": "OPEN_CLOSE_CANCEL_DISMANTLE_BROADBAND",
+      "full_name": "开通、停用与销户/拆机销户/拆机销户/宽带拆机不及时",
+      "confidence": 0.95,
+      "reason": "工单明确为宽带预约拆机处理不及时，且属于融合宽带拆机场景，最贴近该细分分类。"
+    },
+    "candidate_categories": [
+      {
+        "code": "INSTALL_TIMELINESS_OVERTIME_REMOVE",
+        "full_name": "装维与交付服务/履约时效问题/超时未完成/拆机超时未完成",
+        "confidence": 0.85,
+        "reason": "也涉及拆机履约时效问题，但主诉是拆机销户流程而非装维服务本身。"
+      },
+      {
+        "code": "OPEN_CLOSE_CANCEL_DISMANTLE_FUSION",
+        "full_name": "开通、停用与销户/拆机销户/拆机销户/融合业务拆机不及时",
+        "confidence": 0.88,
+        "reason": "工单提到‘融合宽带’，可能适用，但具体拆机对象是宽带，优先选宽带专用分类。"
+      }
+    ],
+    "candidate_tags": [
+      {
+        "group_code": "PRODUCT",
+        "code": "BROADBAND",
+        "name": "宽带业务",
+        "confidence": 0.8,
+        "reason": "用户预约宽带拆机，要求当天处理，但存在处理不及时问题，拆机原因为网速慢。"
+      },
+      {
+        "group_code": "PRODUCT",
+        "code": "FUSION_PACKAGE",
+        "name": "融合套餐",
+        "confidence": 0.8,
+        "reason": "用户预约宽带拆机，要求当天处理，但存在处理不及时问题，拆机原因为网速慢。"
+      },
+      {
+        "group_code": "REQUEST",
+        "code": "CANCEL",
+        "name": "取消业务",
+        "confidence": 0.8,
+        "reason": "用户预约宽带拆机，要求当天处理，但存在处理不及时问题，拆机原因为网速慢。"
+      },
+      {
+        "group_code": "REQUEST",
+        "code": "FAST_PROCESS",
+        "name": "加快处理",
+        "confidence": 0.8,
+        "reason": "用户预约宽带拆机，要求当天处理，但存在处理不及时问题，拆机原因为网速慢。"
+      },
+      {
+        "group_code": "ROOT_CAUSE",
+        "code": "DELAYED_FULFILLMENT",
+        "name": "履约不及时",
+        "confidence": 0.8,
+        "reason": "用户预约宽带拆机，要求当天处理，但存在处理不及时问题，拆机原因为网速慢。"
+      },
+      {
+        "group_code": "RESPONSIBILITY",
+        "code": "INSTALL_MAINTAIN",
+        "name": "装维条线",
+        "confidence": 0.8,
+        "reason": "用户预约宽带拆机，要求当天处理，但存在处理不及时问题，拆机原因为网速慢。"
+      }
+    ],
+    "category_keywords": [
+      {
+        "keyword": "宽带预约拆机",
+        "reason": "模型识别为与当前判断有关的关键词",
+        "confidence": 0.7
+      },
+      {
+        "keyword": "处理不及时",
+        "reason": "模型识别为与当前判断有关的关键词",
+        "confidence": 0.7
+      },
+      {
+        "keyword": "全部拆机",
+        "reason": "模型识别为与当前判断有关的关键词",
+        "confidence": 0.7
+      },
+      {
+        "keyword": "融合宽带",
+        "reason": "模型识别为与当前判断有关的关键词",
+        "confidence": 0.7
+      }
+    ],
+    "tag_keywords": [
+      {
+        "keyword": "宽带",
+        "reason": "模型识别为与当前判断有关的关键词",
+        "confidence": 0.7
+      },
+      {
+        "keyword": "融合",
+        "reason": "模型识别为与当前判断有关的关键词",
+        "confidence": 0.7
+      },
+      {
+        "keyword": "要求今天务必处理",
+        "reason": "模型识别为与当前判断有关的关键词",
+        "confidence": 0.7
+      },
+      {
+        "keyword": "拆机",
+        "reason": "模型识别为与当前判断有关的关键词",
+        "confidence": 0.7
+      }
+    ],
+    "risks": []
+  }
+}

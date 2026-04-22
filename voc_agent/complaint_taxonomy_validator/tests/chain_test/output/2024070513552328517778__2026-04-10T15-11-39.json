@@ -1,0 +1,133 @@
+{
+  "ticket_id": "2024070513552328517778",
+  "status": "success",
+  "stage": "chain",
+  "duration_ms": 14539,
+  "timestamp": "2026-04-10T15:11:39",
+  "model_name": "Qwen3-Max",
+  "result": {
+    "summary": "客户因公司办公号码需办理过户，但原机主已离职无法联系，对实名制及一证五号规则不满，认为规则不合理导致无法过户，要求处理。",
+    "primary_category": {
+      "code": "RULE_PROCESS_PROXY_ENTERPRISE",
+      "full_name": "规则政策争议/办理规则争议/代办规则争议/企业经办人代办争议",
+      "confidence": 0.95,
+      "reason": "投诉核心是对企业号码在原经办人离职后无法过户的规则不满，属于企业客户在代办或过户场景下的规则适用争议，与‘企业经办人代办争议’高度匹配。"
+    },
+    "candidate_categories": [
+      {
+        "code": "RULE_PROCESS",
+        "full_name": "规则政策争议/办理规则争议",
+        "confidence": 0.85,
+        "reason": "广义办理规则争议，但不够具体"
+      },
+      {
+        "code": "RULE_QUALIFICATION_CHANNEL",
+        "full_name": "规则政策争议/资格条件争议/渠道资格条件争议",
+        "confidence": 0.65,
+        "reason": "涉及企业身份办理资格，但非渠道限制问题"
+      }
+    ],
+    "candidate_tags": [
+      {
+        "group_code": "PRODUCT",
+        "code": "MOBILE",
+        "name": "移动业务",
+        "confidence": 0.8,
+        "reason": "客户因公司办公号码需办理过户，但原机主已离职无法联系，对实名制及一证五号规则不满，认为规则不合理导致无法过户，要求处理。"
+      },
+      {
+        "group_code": "ROOT_CAUSE",
+        "code": "RULE_DISPUTE",
+        "name": "规则不认可",
+        "confidence": 0.8,
+        "reason": "客户因公司办公号码需办理过户，但原机主已离职无法联系，对实名制及一证五号规则不满，认为规则不合理导致无法过户，要求处理。"
+      },
+      {
+        "group_code": "RESPONSIBILITY",
+        "code": "MARKET",
+        "name": "市场条线",
+        "confidence": 0.8,
+        "reason": "客户因公司办公号码需办理过户，但原机主已离职无法联系，对实名制及一证五号规则不满，认为规则不合理导致无法过户，要求处理。"
+      },
+      {
+        "group_code": "REQUEST",
+        "code": "EXPLAIN",
+        "name": "解释说明",
+        "confidence": 0.8,
+        "reason": "客户因公司办公号码需办理过户，但原机主已离职无法联系，对实名制及一证五号规则不满，认为规则不合理导致无法过户，要求处理。"
+      },
+      {
+        "group_code": "EMOTION",
+        "code": "UNSATISFIED",
+        "name": "不满",
+        "confidence": 0.8,
+        "reason": "客户因公司办公号码需办理过户，但原机主已离职无法联系，对实名制及一证五号规则不满，认为规则不合理导致无法过户，要求处理。"
+      }
+    ],
+    "category_keywords": [
+      {
+        "keyword": "过户",
+        "reason": "模型识别为与当前判断有关的关键词",
+        "confidence": 0.7
+      },
+      {
+        "keyword": "实名制",
+        "reason": "模型识别为与当前判断有关的关键词",
+        "confidence": 0.7
+      },
+      {
+        "keyword": "一证五号",
+        "reason": "模型识别为与当前判断有关的关键词",
+        "confidence": 0.7
+      },
+      {
+        "keyword": "公司员工离职",
+        "reason": "模型识别为与当前判断有关的关键词",
+        "confidence": 0.7
+      },
+      {
+        "keyword": "办公号码",
+        "reason": "模型识别为与当前判断有关的关键词",
+        "confidence": 0.7
+      },
+      {
+        "keyword": "办理规则",
+        "reason": "模型识别为与当前判断有关的关键词",
+        "confidence": 0.7
+      },
+      {
+        "keyword": "企业",
+        "reason": "模型识别为与当前判断有关的关键词",
+        "confidence": 0.7
+      }
+    ],
+    "tag_keywords": [
+      {
+        "keyword": "移动业务",
+        "reason": "模型识别为与当前判断有关的关键词",
+        "confidence": 0.7
+      },
+      {
+        "keyword": "规则不认可",
+        "reason": "模型识别为与当前判断有关的关键词",
+        "confidence": 0.7
+      },
+      {
+        "keyword": "市场条线",
+        "reason": "模型识别为与当前判断有关的关键词",
+        "confidence": 0.7
+      },
+      {
+        "keyword": "要求处理",
+        "reason": "模型识别为与当前判断有关的关键词",
+        "confidence": 0.7
+      },
+      {
+        "keyword": "客服解释无效",
+        "reason": "模型识别为与当前判断有关的关键词",
+        "confidence": 0.7
+      }
+    ],
+    "risks": []
+  }
+}

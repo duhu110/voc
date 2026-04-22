@@ -1,0 +1,27 @@
+{
+  "version": "v1",
+  "updated_at": "2026-04-11",
+  "agent_name": "converger_agent",
+  "data_dir": "D:/project/FullStack/voc/voc_agent/converger_agent/data",
+  "files": {
+    "category": "D:/project/FullStack/voc/voc_agent/converger_agent/data/category_v2.json",
+    "request_tags": "D:/project/FullStack/voc/voc_agent/converger_agent/data/request_tags.json",
+    "emotion_tags": "D:/project/FullStack/voc/voc_agent/converger_agent/data/emotion_tags.json",
+    "risk_tags": "D:/project/FullStack/voc/voc_agent/converger_agent/data/risk_tags.json",
+    "product_tags": "D:/project/FullStack/voc/voc_agent/converger_agent/data/product_tags.json",
+    "validation_rounds": "D:/project/FullStack/voc/voc_agent/converger_agent/data/validation_rounds.json"
+  },
+  "load_order": [
+    "category",
+    "request_tags",
+    "emotion_tags",
+    "risk_tags",
+    "product_tags",
+    "validation_rounds"
+  ],
+  "notes": [
+    "category_v2.json 是分类主事实源。",
+    "四个 tag JSON 是受控常量集合。",
+    "validation_rounds.json 用于解释分类体系当前稳定性和歧义来源。"
+  ]
+}

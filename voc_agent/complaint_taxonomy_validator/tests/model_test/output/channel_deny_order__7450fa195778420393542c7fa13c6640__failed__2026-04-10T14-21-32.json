@@ -1,0 +1,10 @@
+{
+  "case_name": "channel_deny_order",
+  "model_name": "7450fa195778420393542c7fa13c6640",
+  "prompt_path": "D:\\project\\FullStack\\voc\\voc_agent\\complaint_taxonomy_validator\\tests\\model_test\\output\\prompts\\channel_deny_order.txt",
+  "status": "failed",
+  "error_type": "BadRequestError",
+  "error_message": "Error code: 400 - {'code': 500002, 'detail': 'prompt_tokens 值应该小于等于 (maxSeqLen - maxIterTimes)', 'message': 'PARAM_ERROR', 'error': {'code': '500002', 'message': 'prompt_tokens 值应该小于等于 (maxSeqLen - maxIterTimes)', 'type': 'PARAM_ERROR'}}",
+  "duration_ms": 355,
+  "timestamp": "2026-04-10T14:21:32"
+}

@@ -1,0 +1,20 @@
+{
+  "case_name": "network_quality_escalation",
+  "model_name": "Qwen3-235B-A22B",
+  "prompt_path": "D:\\project\\FullStack\\voc\\voc_agent\\complaint_taxonomy_validator\\tests\\model_test\\output\\prompts\\network_quality_escalation.txt",
+  "status": "success",
+  "error_type": null,
+  "error_message": null,
+  "duration_ms": 47521,
+  "timestamp": "2026-04-10T15:16:46",
+  "response_id": "chatcmpl-00-9bfc4ff9ae082cc74753c7131d208961-4d4aa81e19544603-01",
+  "response_text": "\n\n{\n  \"summary\": \"客户投诉家庭住宅内5G网络持续无信号或网速极慢，影响视频会议，多次反馈未解决，要求尽快处理。\",\n  \"primary_category\": {\n    \"code\": \"NETWORK_SPEED_MOBILE\",\n    \"full_name\": \"网络与通信质量/网速质量问题/移动上网慢\",\n    \"confidence\": 0.9,\n    \"reason\": \"客户明确描述5G网络'网速极慢'直接影响视频会议使用，符合移动网速慢的核心定义。虽然存在'无信号'描述，但工单路径分类指向网速质量问题，且网速慢是最终影响结果。\"\n  },\n  \"candidate_categories\": [\n    {\n      \"code\": \"NETWORK_SIGNAL_NO\",\n      \"full_name\": \"网络与通信质量/信号覆盖问题/无信号\",\n      \"confidence\": 0.8,\n      \"reason\": \"工单返回原因明确指向信号覆盖问题，且客户提及'无信号'现象，符合该分类特征\"\n    }\n  ],\n  \"candidate_tags\": [\n    {\n      \"code\": \"PRODUCT/MOBILE\",\n      \"full_name\": \"移动业务\"\n    },\n    {\n      \"code\": \"CHANNEL/CALL_CENTER\",\n      \"full_name\": \"客服热线\"\n    },\n    {\n      \"code\": \"REQUEST/FAST_PROCESS\",\n      \"full_name\": \"加快处理\"\n    },\n    {\n      \"code\": \"RISK/REPEATED\",\n      \"full_name\": \"重复投诉\"\n    }\n  ],\n  \"category_keywords\": [\n    \"5G网络持续无信号\",\n    \"网速极慢\",\n    \"视频会议\",\n    \"网络通信类->网速质量问题\"\n  ],\n  \"tag_keywords\": [\n    \"5G移动业务\",\n    \"10000号\",\n    \"要求尽快处理\",\n    \"多次反馈未解决\"\n  ],\n  \"risks\": [\n    \"需注意'无信号'与'网速慢'可能存在不同成因，建议后续核实具体网络诊断报告以确认主因\",\n    \"多次反馈未解决可能隐含服务流程问题，建议检查历史工单处理记录\"\n  ]\n}",
+  "finish_reason": "stop",
+  "usage": {
+    "completion_tokens": 2123,
+    "prompt_tokens": 12943,
+    "total_tokens": 15066,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  }
+}

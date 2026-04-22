@@ -1,0 +1,135 @@
+{
+  "ticket_id": "2024111011032938850944",
+  "status": "success",
+  "stage": "chain",
+  "duration_ms": 14369,
+  "timestamp": "2026-04-10T15:13:05",
+  "model_name": "Qwen3-Max",
+  "result": {
+    "summary": "用户多次前往古城台营业厅申请加装副卡，但被反复拖延至今无法办理，认为营业厅人员故意推诿，要求协助处理。",
+    "primary_category": {
+      "code": "MARKETING_PROCESS_MISS",
+      "full_name": "营销宣传与销售服务/办理差错与漏受理/漏受理",
+      "confidence": 0.95,
+      "reason": "用户明确表示多次到营业厅申请加装副卡业务，但始终未被受理，符合‘应受理未受理、遗漏处理’的定义。"
+    },
+    "candidate_categories": [
+      {
+        "code": "MARKETING_PROCESS",
+        "full_name": "营销宣传与销售服务/办理差错与漏受理",
+        "confidence": 0.92,
+        "reason": "上级分类，涵盖漏受理问题"
+      },
+      {
+        "code": "SERVICE_OTHER_PROCESS_DELAY",
+        "full_name": "服务投诉与其他/投诉处理不满意/久拖未决",
+        "confidence": 0.75,
+        "reason": "问题长期未解决，但核心是业务未受理而非投诉处理本身"
+      }
+    ],
+    "candidate_tags": [
+      {
+        "group_code": "PRODUCT",
+        "code": "FUSION_PACKAGE",
+        "name": "融合套餐",
+        "confidence": 0.8,
+        "reason": "用户多次前往古城台营业厅申请加装副卡，但被反复拖延至今无法办理，认为营业厅人员故意推诿，要求协助处理。"
+      },
+      {
+        "group_code": "CHANNEL",
+        "code": "HALL",
+        "name": "营业厅",
+        "confidence": 0.8,
+        "reason": "用户多次前往古城台营业厅申请加装副卡，但被反复拖延至今无法办理，认为营业厅人员故意推诿，要求协助处理。"
+      },
+      {
+        "group_code": "ROOT_CAUSE",
+        "code": "MISS_ACCEPT",
+        "name": "漏受理",
+        "confidence": 0.8,
+        "reason": "用户多次前往古城台营业厅申请加装副卡，但被反复拖延至今无法办理，认为营业厅人员故意推诿，要求协助处理。"
+      },
+      {
+        "group_code": "RESPONSIBILITY",
+        "code": "CHANNEL_MGMT",
+        "name": "渠道管理",
+        "confidence": 0.8,
+        "reason": "用户多次前往古城台营业厅申请加装副卡，但被反复拖延至今无法办理，认为营业厅人员故意推诿，要求协助处理。"
+      },
+      {
+        "group_code": "REQUEST",
+        "code": "FAST_PROCESS",
+        "name": "加快处理",
+        "confidence": 0.8,
+        "reason": "用户多次前往古城台营业厅申请加装副卡，但被反复拖延至今无法办理，认为营业厅人员故意推诿，要求协助处理。"
+      },
+      {
+        "group_code": "EMOTION",
+        "code": "UNSATISFIED",
+        "name": "不满",
+        "confidence": 0.8,
+        "reason": "用户多次前往古城台营业厅申请加装副卡，但被反复拖延至今无法办理，认为营业厅人员故意推诿，要求协助处理。"
+      }
+    ],
+    "category_keywords": [
+      {
+        "keyword": "加装副卡",
+        "reason": "模型识别为与当前判断有关的关键词",
+        "confidence": 0.7
+      },
+      {
+        "keyword": "无法办理",
+        "reason": "模型识别为与当前判断有关的关键词",
+        "confidence": 0.7
+      },
+      {
+        "keyword": "营业厅",
+        "reason": "模型识别为与当前判断有关的关键词",
+        "confidence": 0.7
+      },
+      {
+        "keyword": "多次",
+        "reason": "模型识别为与当前判断有关的关键词",
+        "confidence": 0.7
+      },
+      {
+        "keyword": "告知过两天来办",
+        "reason": "模型识别为与当前判断有关的关键词",
+        "confidence": 0.7
+      },
+      {
+        "keyword": "漏受理",
+        "reason": "模型识别为与当前判断有关的关键词",
+        "confidence": 0.7
+      }
+    ],
+    "tag_keywords": [
+      {
+        "keyword": "数智99元融合套餐",
+        "reason": "模型识别为与当前判断有关的关键词",
+        "confidence": 0.7
+      },
+      {
+        "keyword": "古城台营业厅",
+        "reason": "模型识别为与当前判断有关的关键词",
+        "confidence": 0.7
+      },
+      {
+        "keyword": "故意拖延",
+        "reason": "模型识别为与当前判断有关的关键词",
+        "confidence": 0.7
+      },
+      {
+        "keyword": "不需要赔偿",
+        "reason": "模型识别为与当前判断有关的关键词",
+        "confidence": 0.7
+      },
+      {
+        "keyword": "客服代表解释无效",
+        "reason": "模型识别为与当前判断有关的关键词",
+        "confidence": 0.7
+      }
+    ],
+    "risks": []
+  }
+}

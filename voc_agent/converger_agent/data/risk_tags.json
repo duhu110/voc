@@ -1,0 +1,64 @@
+{
+  "version": "v1",
+  "updated_at": "2026-04-11",
+  "source_doc": "D:/project/FullStack/voc/docs/converger_design/README.md",
+  "tag_type": "risk_tag",
+  "selection_rule": "必须从下列常量中选 1 个，不允许生成新风险标签。",
+  "source_fields": [
+    "ticket_type",
+    "customer_star",
+    "repeat_count",
+    "urge_count",
+    "oscillation_count",
+    "satisfaction_score",
+    "complaint_phenomenon",
+    "complaint_source"
+  ],
+  "default_code": "NORMAL",
+  "priority_hints": [
+    "REGULATORY / PUBLIC_OPINION / ESCALATED 一般高于 REPEATED。",
+    "HIGH_VALUE 表示客户属性重要，不一定表示事件本身最严重。"
+  ],
+  "items": [
+    {
+      "code": "NORMAL",
+      "name": "正常",
+      "desc": "普通工单，没有明显升级风险，也没有明显高级投诉特征。"
+    },
+    {
+      "code": "REPEATED",
+      "name": "重复投诉",
+      "desc": "客户已经多次重复反馈同一问题。"
+    },
+    {
+      "code": "ESCALATED",
+      "name": "升级投诉",
+      "desc": "工单已经表现出升级趋势，或客户明确表达要继续向上投诉。"
+    },
+    {
+      "code": "REGULATORY",
+      "name": "监管风险",
+      "desc": "涉及监管、主管部门、政务热线、通管局等外部监督渠道。"
+    },
+    {
+      "code": "PUBLIC_OPINION",
+      "name": "舆情风险",
+      "desc": "客户表达公开曝光、媒体传播、网络发酵等倾向。"
+    },
+    {
+      "code": "HIGH_VALUE",
+      "name": "高价值客户",
+      "desc": "工单来自重点客户，需要提高关注等级。"
+    },
+    {
+      "code": "BATCH_ISSUE",
+      "name": "批量问题",
+      "desc": "问题可能不是单个客户独有，而是成批发生。"
+    },
+    {
+      "code": "COMPLIANCE",
+      "name": "合规风险",
+      "desc": "涉及规则、宣传、资费、授权、办理流程等合规性争议。"
+    }
+  ]
+}

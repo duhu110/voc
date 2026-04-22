@@ -1,0 +1,28 @@
+{
+  "case_name": "network_quality_escalation",
+  "model_name": "Doubao-Seed-1.8",
+  "prompt_path": "D:\\project\\FullStack\\voc\\voc_agent\\complaint_taxonomy_validator\\tests\\model_test\\output\\prompts\\network_quality_escalation.txt",
+  "status": "success",
+  "error_type": null,
+  "error_message": null,
+  "duration_ms": 41893,
+  "timestamp": "2026-04-10T14:44:14",
+  "response_id": "02177580345539372955853283a14d90985fd352360c0a6e30d9b",
+  "response_text": "{\n  \"summary\": \"客户反映家庭住宅内近一周5G网络持续无信号或网速极慢，影响工作视频会议，已多次反馈未解决，要求尽快处理并给出解释。\",\n  \"primary_category\": {\n    \"code\": \"NETWORK_SIGNAL_AREA_HOME\",\n    \"full_name\": \"网络与通信质量/信号覆盖问题/特定区域信号差/家庭室内信号差\",\n    \"confidence\": 0.85,\n    \"reason\": \"客户核心投诉家庭住宅内5G网络无信号，属于家庭室内信号差范畴，同时伴随网速极慢现象，优先按核心信号问题归类\"\n  },\n  \"candidate_categories\": [\n    {\n      \"code\": \"NETWORK_SPEED_MOBILE_INDOOR\",\n      \"full_name\": \"网络与通信质量/网速质量问题/移动上网慢/室内上网慢\"\n    },\n    {\n      \"code\": \"SERVICE_OTHER_PROCESS_DELAY\",\n      \"full_name\": \"服务投诉与其他/投诉处理不满意/久拖未决\"\n    }\n  ],\n  \"candidate_tags\": [\n    {\n      \"code\": \"MOBILE\",\n      \"full_name\": \"移动业务\"\n    },\n    {\n      \"code\": \"CALL_CENTER\",\n      \"full_name\": \"客服热线\"\n    },\n    {\n      \"code\": \"DELAYED_FULFILLMENT\",\n      \"full_name\": \"履约不及时\"\n    },\n    {\n      \"code\": \"FAST_PROCESS\",\n      \"full_name\": \"加快处理\"\n    },\n    {\n      \"code\": \"EXPLAIN\",\n      \"full_name\": \"解释说明\"\n    },\n    {\n      \"code\": \"REPEATED\",\n      \"full_name\": \"重复投诉\"\n    },\n    {\n      \"code\": \"UNSATISFIED\",\n      \"full_name\": \"不满\"\n    }\n  ],\n  \"category_keywords\": [\"家庭住宅\", \"5G网络\", \"无信号\", \"网速极慢\"],\n  \"tag_keywords\": [\"多次反馈未解决\", \"尽快处理\", \"解释\"],\n  \"risks\": []\n}",
+  "finish_reason": "stop",
+  "usage": {
+    "completion_tokens": 1553,
+    "prompt_tokens": 12571,
+    "total_tokens": 14124,
+    "completion_tokens_details": {
+      "accepted_prediction_tokens": null,
+      "audio_tokens": null,
+      "reasoning_tokens": 1050,
+      "rejected_prediction_tokens": null
+    },
+    "prompt_tokens_details": {
+      "audio_tokens": null,
+      "cached_tokens": 0
+    }
+  }
+}

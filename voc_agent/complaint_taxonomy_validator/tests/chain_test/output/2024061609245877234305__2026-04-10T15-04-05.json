@@ -1,0 +1,134 @@
+{
+  "ticket_id": "2024061609245877234305",
+  "status": "success",
+  "stage": "chain",
+  "duration_ms": 16520,
+  "timestamp": "2026-04-10T15:04:05",
+  "model_name": "Qwen3-Max",
+  "result": {
+    "summary": "用户在营业厅办理5G畅享79元套餐时，未被告知其关联固话的来电显示功能需额外收费6元，现对这笔费用不认可并要求赔偿。",
+    "primary_category": {
+      "code": "MARKETING_EXPLAIN_UNCLEAR_FEE",
+      "full_name": "营销宣传与销售服务/宣传解释与营销误导/解释宣传不清/资费解释不清",
+      "confidence": 0.95,
+      "reason": "客户明确表示办理套餐时未被告知固话来电显示收费，属于关键资费项目未充分说明，符合‘资费解释不清’子类。"
+    },
+    "candidate_categories": [
+      {
+        "code": "FEE_UNKNOWN_UNUSED_VAS",
+        "full_name": "资费与收费争议/不明收费争议/未使用收费争议/未使用增值服务却计费",
+        "confidence": 0.75,
+        "reason": "用户称未被告知该收费，可能认为未主动使用该增值功能。但核心问题在于办理时未告知，而非是否使用。"
+      },
+      {
+        "code": "MARKETING_PROCESS_ERROR_PACKAGE",
+        "full_name": "营销宣传与销售服务/办理差错与漏受理/业务办理差错/办错套餐",
+        "confidence": 0.65,
+        "reason": "虽涉及套餐办理，但并非办错套餐档位，而是未告知关联收费项，更偏向解释不清而非操作错误。"
+      }
+    ],
+    "candidate_tags": [
+      {
+        "group_code": "PRODUCT",
+        "code": "VALUE_ADDED",
+        "name": "增值业务",
+        "confidence": 0.8,
+        "reason": "用户在营业厅办理5G畅享79元套餐时，未被告知其关联固话的来电显示功能需额外收费6元，现对这笔费用不认可并要求赔偿。"
+      },
+      {
+        "group_code": "CHANNEL",
+        "code": "HALL",
+        "name": "营业厅",
+        "confidence": 0.8,
+        "reason": "用户在营业厅办理5G畅享79元套餐时，未被告知其关联固话的来电显示功能需额外收费6元，现对这笔费用不认可并要求赔偿。"
+      },
+      {
+        "group_code": "ROOT_CAUSE",
+        "code": "NOT_INFORMED",
+        "name": "未充分告知",
+        "confidence": 0.8,
+        "reason": "用户在营业厅办理5G畅享79元套餐时，未被告知其关联固话的来电显示功能需额外收费6元，现对这笔费用不认可并要求赔偿。"
+      },
+      {
+        "group_code": "REQUEST",
+        "code": "REFUND",
+        "name": "退费",
+        "confidence": 0.8,
+        "reason": "用户在营业厅办理5G畅享79元套餐时，未被告知其关联固话的来电显示功能需额外收费6元，现对这笔费用不认可并要求赔偿。"
+      },
+      {
+        "group_code": "REQUEST",
+        "code": "COMPENSATE",
+        "name": "赔偿补偿",
+        "confidence": 0.8,
+        "reason": "用户在营业厅办理5G畅享79元套餐时，未被告知其关联固话的来电显示功能需额外收费6元，现对这笔费用不认可并要求赔偿。"
+      },
+      {
+        "group_code": "RESPONSIBILITY",
+        "code": "CHANNEL_MGMT",
+        "name": "渠道管理",
+        "confidence": 0.8,
+        "reason": "用户在营业厅办理5G畅享79元套餐时，未被告知其关联固话的来电显示功能需额外收费6元，现对这笔费用不认可并要求赔偿。"
+      },
+      {
+        "group_code": "RISK",
+        "code": "COMPLIANCE",
+        "name": "合规风险",
+        "confidence": 0.8,
+        "reason": "用户在营业厅办理5G畅享79元套餐时，未被告知其关联固话的来电显示功能需额外收费6元，现对这笔费用不认可并要求赔偿。"
+      },
+      {
+        "group_code": "EMOTION",
+        "code": "UNSATISFIED",
+        "name": "不满",
+        "confidence": 0.8,
+        "reason": "用户在营业厅办理5G畅享79元套餐时，未被告知其关联固话的来电显示功能需额外收费6元，现对这笔费用不认可并要求赔偿。"
+      }
+    ],
+    "category_keywords": [
+      {
+        "keyword": "办理时并未告知",
+        "reason": "模型识别为与当前判断有关的关键词",
+        "confidence": 0.7
+      },
+      {
+        "keyword": "来电显示需要收费",
+        "reason": "模型识别为与当前判断有关的关键词",
+        "confidence": 0.7
+      },
+      {
+        "keyword": "有争议",
+        "reason": "模型识别为与当前判断有关的关键词",
+        "confidence": 0.7
+      },
+      {
+        "keyword": "解释无效",
+        "reason": "模型识别为与当前判断有关的关键词",
+        "confidence": 0.7
+      }
+    ],
+    "tag_keywords": [
+      {
+        "keyword": "中国电信开元路营业厅",
+        "reason": "模型识别为与当前判断有关的关键词",
+        "confidence": 0.7
+      },
+      {
+        "keyword": "固话来电显示收费",
+        "reason": "模型识别为与当前判断有关的关键词",
+        "confidence": 0.7
+      },
+      {
+        "keyword": "要求赔偿",
+        "reason": "模型识别为与当前判断有关的关键词",
+        "confidence": 0.7
+      },
+      {
+        "keyword": "客服代表解释无效",
+        "reason": "模型识别为与当前判断有关的关键词",
+        "confidence": 0.7
+      }
+    ],
+    "risks": []
+  }
+}

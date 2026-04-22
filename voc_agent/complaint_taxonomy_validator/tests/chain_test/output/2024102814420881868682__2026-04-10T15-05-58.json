@@ -1,0 +1,118 @@
+{
+  "ticket_id": "2024102814420881868682",
+  "status": "success",
+  "stage": "chain",
+  "duration_ms": 12842,
+  "timestamp": "2026-04-10T15:05:58",
+  "model_name": "Qwen3-Max",
+  "result": {
+    "summary": "用户为老年人，居住在青海省西宁市城北区朝阳西路，反映附近网格店全部关门，无法线下缴费，且不会使用线上缴费方式，请求在该地址设立门店以便缴费。",
+    "primary_category": {
+      "code": "SERVICE_OTHER_REPORT_SUGGEST",
+      "full_name": "服务投诉与其他/举报建议表扬/建议表扬",
+      "confidence": 0.95,
+      "reason": "用户核心诉求是建议运营商在特定区域增设实体门店，属于服务设施布局建议，非具体业务争议或故障，符合‘建议表扬’子类。"
+    },
+    "candidate_categories": [
+      {
+        "code": "BILLING_PAYMENT",
+        "full_name": "账单、缴费与发票/缴费充值问题",
+        "confidence": 0.7,
+        "reason": "涉及缴费困难，但根本原因非缴费系统故障，而是渠道缺失，故不优先。"
+      },
+      {
+        "code": "CHANNEL_MGMT",
+        "full_name": "渠道管理相关（注：此为责任标签，非分类）",
+        "confidence": 0.7,
+        "reason": "实际应归入服务建议类，渠道问题是背景而非投诉直接对象。"
+      }
+    ],
+    "candidate_tags": [
+      {
+        "group_code": "CHANNEL",
+        "code": "HALL",
+        "name": "营业厅",
+        "confidence": 0.8,
+        "reason": "用户为老年人，居住在青海省西宁市城北区朝阳西路，反映附近网格店全部关门，无法线下缴费，且不会使用线上缴费方式，请求在该地址设立门店以便缴费。"
+      },
+      {
+        "group_code": "REQUEST",
+        "code": "FAST_PROCESS",
+        "name": "加快处理",
+        "confidence": 0.8,
+        "reason": "用户为老年人，居住在青海省西宁市城北区朝阳西路，反映附近网格店全部关门，无法线下缴费，且不会使用线上缴费方式，请求在该地址设立门店以便缴费。"
+      },
+      {
+        "group_code": "RISK",
+        "code": "BATCH_ISSUE",
+        "name": "批量问题",
+        "confidence": 0.8,
+        "reason": "用户为老年人，居住在青海省西宁市城北区朝阳西路，反映附近网格店全部关门，无法线下缴费，且不会使用线上缴费方式，请求在该地址设立门店以便缴费。"
+      },
+      {
+        "group_code": "EMOTION",
+        "code": "UNSATISFIED",
+        "name": "不满",
+        "confidence": 0.8,
+        "reason": "用户为老年人，居住在青海省西宁市城北区朝阳西路，反映附近网格店全部关门，无法线下缴费，且不会使用线上缴费方式，请求在该地址设立门店以便缴费。"
+      },
+      {
+        "group_code": "RESPONSIBILITY",
+        "code": "CHANNEL_MGMT",
+        "name": "渠道管理",
+        "confidence": 0.8,
+        "reason": "用户为老年人，居住在青海省西宁市城北区朝阳西路，反映附近网格店全部关门，无法线下缴费，且不会使用线上缴费方式，请求在该地址设立门店以便缴费。"
+      }
+    ],
+    "category_keywords": [
+      {
+        "keyword": "设立门店",
+        "reason": "模型识别为与当前判断有关的关键词",
+        "confidence": 0.7
+      },
+      {
+        "keyword": "网格店关门",
+        "reason": "模型识别为与当前判断有关的关键词",
+        "confidence": 0.7
+      },
+      {
+        "keyword": "老人不方便缴费",
+        "reason": "模型识别为与当前判断有关的关键词",
+        "confidence": 0.7
+      },
+      {
+        "keyword": "要求设立",
+        "reason": "模型识别为与当前判断有关的关键词",
+        "confidence": 0.7
+      }
+    ],
+    "tag_keywords": [
+      {
+        "keyword": "营业厅",
+        "reason": "模型识别为与当前判断有关的关键词",
+        "confidence": 0.7
+      },
+      {
+        "keyword": "渠道",
+        "reason": "模型识别为与当前判断有关的关键词",
+        "confidence": 0.7
+      },
+      {
+        "keyword": "老人",
+        "reason": "模型识别为与当前判断有关的关键词",
+        "confidence": 0.7
+      },
+      {
+        "keyword": "缴费困难",
+        "reason": "模型识别为与当前判断有关的关键词",
+        "confidence": 0.7
+      },
+      {
+        "keyword": "建议",
+        "reason": "模型识别为与当前判断有关的关键词",
+        "confidence": 0.7
+      }
+    ],
+    "risks": []
+  }
+}

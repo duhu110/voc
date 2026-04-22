@@ -1,0 +1,123 @@
+{
+  "ticket_id": "2024051915032825995760",
+  "status": "success",
+  "stage": "chain",
+  "duration_ms": 18348,
+  "timestamp": "2026-04-10T15:03:48",
+  "model_name": "Qwen3-Max",
+  "result": {
+    "summary": "客户对因涉诈被停机不认可，称号码为员工使用、非本人无法线上复机，要求恢复服务。",
+    "primary_category": {
+      "code": "OPEN_CLOSE_SHUTDOWN_RISK_FRAUD",
+      "full_name": "开通、停用与销户/停机关停争议/风险关停不认可/反诈治理关停争议",
+      "confidence": 0.96,
+      "reason": "工单明确指出停机类型为‘省内涉诈单停’，属于反诈治理措施导致的关停，客户对此不认可，符合该分类定义。"
+    },
+    "candidate_categories": [
+      {
+        "code": "OPEN_CLOSE_SHUTDOWN_RISK",
+        "full_name": "开通、停用与销户/停机关停争议/风险关停不认可",
+        "confidence": 0.85,
+        "reason": "上一级分类，但不如 OPEN_CLOSE_SHUTDOWN_RISK_FRAUD 具体。"
+      },
+      {
+        "code": "OPEN_CLOSE_RECOVERY",
+        "full_name": "开通、停用与销户/复机恢复争议",
+        "confidence": 0.75,
+        "reason": "客户要求复机，但核心争议在于停机原因而非复机流程本身。"
+      }
+    ],
+    "candidate_tags": [
+      {
+        "group_code": "",
+        "code": "[PRODUCT] [MOBILE]",
+        "name": "移动业务",
+        "confidence": 0.98,
+        "reason": "客户对因涉诈被停机不认可，称号码为员工使用、非本人无法线上复机，要求恢复服务。"
+      },
+      {
+        "group_code": "",
+        "code": "[REQUEST] [RESTORE]",
+        "name": "恢复服务",
+        "confidence": 0.95,
+        "reason": "客户对因涉诈被停机不认可，称号码为员工使用、非本人无法线上复机，要求恢复服务。"
+      },
+      {
+        "group_code": "",
+        "code": "[RESPONSIBILITY] [NETWORK_OP]",
+        "name": "网运条线",
+        "confidence": 0.9,
+        "reason": "客户对因涉诈被停机不认可，称号码为员工使用、非本人无法线上复机，要求恢复服务。"
+      },
+      {
+        "group_code": "",
+        "code": "[ROOT_CAUSE] [RULE_DISPUTE]",
+        "name": "规则不认可",
+        "confidence": 0.88,
+        "reason": "客户对因涉诈被停机不认可，称号码为员工使用、非本人无法线上复机，要求恢复服务。"
+      },
+      {
+        "group_code": "",
+        "code": "[EMOTION] [UNSATISFIED]",
+        "name": "不满",
+        "confidence": 0.85,
+        "reason": "客户对因涉诈被停机不认可，称号码为员工使用、非本人无法线上复机，要求恢复服务。"
+      }
+    ],
+    "category_keywords": [
+      {
+        "keyword": "涉诈停机",
+        "reason": "模型识别为与当前判断有关的关键词",
+        "confidence": 0.7
+      },
+      {
+        "keyword": "关停不认可",
+        "reason": "模型识别为与当前判断有关的关键词",
+        "confidence": 0.7
+      },
+      {
+        "keyword": "省内涉诈单停",
+        "reason": "模型识别为与当前判断有关的关键词",
+        "confidence": 0.7
+      },
+      {
+        "keyword": "停机类型",
+        "reason": "模型识别为与当前判断有关的关键词",
+        "confidence": 0.7
+      },
+      {
+        "keyword": "反诈",
+        "reason": "模型识别为与当前判断有关的关键词",
+        "confidence": 0.7
+      }
+    ],
+    "tag_keywords": [
+      {
+        "keyword": "员工使用",
+        "reason": "模型识别为与当前判断有关的关键词",
+        "confidence": 0.7
+      },
+      {
+        "keyword": "无法线上复机",
+        "reason": "模型识别为与当前判断有关的关键词",
+        "confidence": 0.7
+      },
+      {
+        "keyword": "要求复机",
+        "reason": "模型识别为与当前判断有关的关键词",
+        "confidence": 0.7
+      },
+      {
+        "keyword": "号码状态不正常",
+        "reason": "模型识别为与当前判断有关的关键词",
+        "confidence": 0.7
+      },
+      {
+        "keyword": "计费中话单异常",
+        "reason": "模型识别为与当前判断有关的关键词",
+        "confidence": 0.7
+      }
+    ],
+    "risks": []
+  }
+}

@@ -1,0 +1,120 @@
+{
+  "ticket_id": "2024121012083129025786",
+  "status": "success",
+  "stage": "chain",
+  "duration_ms": 16090,
+  "timestamp": "2026-04-10T15:09:32",
+  "model_name": "Qwen3-Max",
+  "result": {
+    "summary": "用户投诉在古城台营业厅办理数智79元融合套餐202406时，未被告知会收取过渡期资费，要求赔偿。客服解释无效。",
+    "primary_category": {
+      "code": "MARKETING_EXPLAIN_UNCLEAR_FEE",
+      "full_name": "营销宣传与销售服务/宣传解释与营销误导/解释宣传不清/资费解释不清",
+      "confidence": 0.95,
+      "reason": "用户明确表示办理时未被告知存在过渡期资费，属于资费说明不清，符合该分类定义。"
+    },
+    "candidate_categories": [
+      {
+        "code": "FEE_PACKAGE_FUSION",
+        "full_name": "资费与收费争议/套餐收费争议/融合套餐资费争议",
+        "confidence": 0.85,
+        "reason": "涉及融合套餐的收费问题，但核心争议点在于未告知而非资费标准本身。"
+      },
+      {
+        "code": "MARKETING_EXPLAIN_MISLEADING_HIDDEN",
+        "full_name": "营销宣传与销售服务/宣传解释与营销误导/营销误导/隐瞒限制条件",
+        "confidence": 0.8,
+        "reason": "若‘未告知过渡期资费’构成隐瞒关键收费条件，可能属于营销误导，但工单描述更偏向‘未说明’而非‘故意隐瞒’。"
+      }
+    ],
+    "candidate_tags": [
+      {
+        "group_code": "PRODUCT",
+        "code": "FUSION_PACKAGE",
+        "name": "融合套餐",
+        "confidence": 0.8,
+        "reason": "用户投诉在古城台营业厅办理数智79元融合套餐202406时，未被告知会收取过渡期资费，要求赔偿。客服解释无效。"
+      },
+      {
+        "group_code": "CHANNEL",
+        "code": "HALL",
+        "name": "营业厅",
+        "confidence": 0.8,
+        "reason": "用户投诉在古城台营业厅办理数智79元融合套餐202406时，未被告知会收取过渡期资费，要求赔偿。客服解释无效。"
+      },
+      {
+        "group_code": "ROOT_CAUSE",
+        "code": "NOT_INFORMED",
+        "name": "未充分告知",
+        "confidence": 0.8,
+        "reason": "用户投诉在古城台营业厅办理数智79元融合套餐202406时，未被告知会收取过渡期资费，要求赔偿。客服解释无效。"
+      },
+      {
+        "group_code": "REQUEST",
+        "code": "COMPENSATE",
+        "name": "赔偿补偿",
+        "confidence": 0.8,
+        "reason": "用户投诉在古城台营业厅办理数智79元融合套餐202406时，未被告知会收取过渡期资费，要求赔偿。客服解释无效。"
+      },
+      {
+        "group_code": "RESPONSIBILITY",
+        "code": "CHANNEL_MGMT",
+        "name": "渠道管理",
+        "confidence": 0.8,
+        "reason": "用户投诉在古城台营业厅办理数智79元融合套餐202406时，未被告知会收取过渡期资费，要求赔偿。客服解释无效。"
+      },
+      {
+        "group_code": "EMOTION",
+        "code": "UNSATISFIED",
+        "name": "不满",
+        "confidence": 0.8,
+        "reason": "用户投诉在古城台营业厅办理数智79元融合套餐202406时，未被告知会收取过渡期资费，要求赔偿。客服解释无效。"
+      }
+    ],
+    "category_keywords": [
+      {
+        "keyword": "未告知",
+        "reason": "模型识别为与当前判断有关的关键词",
+        "confidence": 0.7
+      },
+      {
+        "keyword": "过渡期资费",
+        "reason": "模型识别为与当前判断有关的关键词",
+        "confidence": 0.7
+      },
+      {
+        "keyword": "数智79元融合套餐",
+        "reason": "模型识别为与当前判断有关的关键词",
+        "confidence": 0.7
+      },
+      {
+        "keyword": "解释无效",
+        "reason": "模型识别为与当前判断有关的关键词",
+        "confidence": 0.7
+      }
+    ],
+    "tag_keywords": [
+      {
+        "keyword": "融合套餐",
+        "reason": "模型识别为与当前判断有关的关键词",
+        "confidence": 0.7
+      },
+      {
+        "keyword": "古城台营业厅",
+        "reason": "模型识别为与当前判断有关的关键词",
+        "confidence": 0.7
+      },
+      {
+        "keyword": "需要赔偿",
+        "reason": "模型识别为与当前判断有关的关键词",
+        "confidence": 0.7
+      },
+      {
+        "keyword": "客服代表解释无效",
+        "reason": "模型识别为与当前判断有关的关键词",
+        "confidence": 0.7
+      }
+    ],
+    "risks": []
+  }
+}

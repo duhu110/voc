@@ -1,0 +1,20 @@
+{
+  "case_name": "network_quality_escalation",
+  "model_name": "DeepSeek-V3.2-Standard",
+  "prompt_path": "D:\\project\\FullStack\\voc\\voc_agent\\complaint_taxonomy_validator\\tests\\model_test\\output\\prompts\\network_quality_escalation.txt",
+  "status": "success",
+  "error_type": null,
+  "error_message": null,
+  "duration_ms": 15125,
+  "timestamp": "2026-04-10T13:49:29",
+  "response_id": "chatcmpl-177580016945893400009128ee2c",
+  "response_text": "{\"summary\": \"客户反映家庭住宅内近一周5G网络持续无信号或网速极慢，影响工作视频会议，已多次反馈未解决，要求尽快处理并给出解释。\", \"primary_category\": {\"code\": \"NETWORK_SIGNAL_AREA_HOME\", \"full_name\": \"网络与通信质量/信号覆盖问题/特定区域信号差/家庭室内信号差\", \"confidence\": 0.9, \"reason\": \"工单直接描述家庭住宅内信号问题，并归入返回原因'信号覆盖问题'，且属于[NETWORK]网络与通信质量大类下的具体子类。\"}, \"candidate_categories\": [\"NETWORK_SPEED_MOBILE_INDOOR\", \"NETWORK_SIGNAL_WEAK\", \"NETWORK_SPEED_MOBILE\", \"NETWORK_SIGNAL_NO\", \"SERVICE_OTHER_PROCESS_DELAY\"], \"candidate_tags\": [\"PRODUCT_MOBILE\", \"ROOT_CAUSE_RULE_DISPUTE\", \"REQUEST_EXPLAIN\", \"REQUEST_FAST_PROCESS\", \"EMOTION_UNSATISFIED\", \"CUSTOMER_SERVICE_FAST_PROCESS\"], \"category_keywords\": [\"家庭住宅\", \"5G\", \"持续无信号\", \"网速极慢\", \"信号覆盖问题\"], \"tag_keywords\": [\"5G移动业务\", \"多次反馈未解决\", \"要求尽快处理\", \"要求解释\", \"影响工作视频会议\"], \"risks\": [\"未明确说明已反馈的具体渠道和处理过程，可能涉及SERVICE_OTHER_PROCESS_DELAY或SERVICE_OTHER_FLOW_TIMEOUT\", \"未明确是否已联系网络维护部门，可能涉及RESPONSIBILITY_NETWORK_OP\"]}",
+  "finish_reason": "stop",
+  "usage": {
+    "completion_tokens": 380,
+    "prompt_tokens": 13211,
+    "total_tokens": 13591,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  }
+}

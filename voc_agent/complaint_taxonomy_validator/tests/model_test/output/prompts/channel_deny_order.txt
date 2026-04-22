@@ -1,0 +1,379 @@
+===== SYSTEM PROMPT =====
+你是运营商投诉分类与标签体系验证 Agent。
+
+你的任务不是回写数据库，也不是创造新分类，而是基于现有投诉分类树和标签体系，对单条原始工单做验证性判断。
+
+要求：
+1. 只能从提供的分类清单中选择分类。
+2. 只能从提供的标签清单中选择标签。
+3. 分类要优先选择最具体、最贴近投诉主诉的问题类目。
+4. 标签是并行补充信息，不要把标签当分类。
+5. category_keywords 和 tag_keywords 只提取对判断真正有帮助的关键词或短语。
+6. 若信息不足，要在 risks 中明确写出不确定点。
+7. 分类 code 和标签 code 必须严格使用清单里已有的真实编码，不允许自造编码。
+8. 输出必须是纯 JSON 对象，不要使用 Markdown 代码块，不要附加解释文字。
+9. 优先按以下目标结构输出：
+{
+  "summary": "...",
+  "primary_category": {
+    "code": "真实分类编码",
+    "full_name": "真实分类完整名称",
+    "confidence": 0.92,
+    "reason": "..."
+  },
+  "candidate_categories": [],
+  "candidate_tags": [],
+  "category_keywords": [],
+  "tag_keywords": [],
+  "risks": []
+}
+
+===== USER PROMPT =====
+请基于以下输入完成投诉分类与标签验证。
+
+【原始工单】
+{
+  "ticket_id": "CASE_CHANNEL_DENY_001",
+  "ticket_type": "投诉单",
+  "complaint_source": "最强工单",
+  "biz_category": "用户否认订购",
+  "line_category": "渠道条线",
+  "appeal_biz_type": "11.要求取消业务",
+  "dispute_product_name": "天翼云盘黄金会员合约包",
+  "accept_channel": "城东合作营业厅",
+  "customer_group": "公众",
+  "complaint_phenomenon": "服务请求->投诉单->营销服务类->用户否认订购",
+  "biz_content": "客户表示在合作营业厅办理宽带时被顺带办理天翼云盘黄金会员合约包，本人未明确同意，要求立即取消业务、退回已扣费用，并追查渠道办理责任。",
+  "return_reason": "留单原因->业务规则->业务办理规则->渠道办理争议->"
+}
+
+【可选分类清单】
+- [FEE] 资费与收费争议 | 定义: 套餐、套外、增值业务、权益金、违约金等收费问题
+- [SUBSCRIBE] 订购与退订争议 | 定义: 业务订购、退订、自动续订、否认订购等问题
+- [OPEN_CLOSE] 开通、停用与销户 | 定义: 开通失败、关停争议、复机、拆机销户等问题
+- [MARKETING] 营销宣传与销售服务 | 定义: 宣传解释、营销误导、办理差错、漏受理等问题
+- [RULE] 规则政策争议 | 定义: 活动规则、生失效规则、办理规则、资格条件争议
+- [PRODUCT_PLATFORM] 产品功能与平台使用 | 定义: APP、网厅、平台、产品功能使用异常
+- [INSTALL_SERVICE] 装维与交付服务 | 定义: 安装、履约、上门、施工质量等问题
+- [NETWORK] 网络与通信质量 | 定义: 无信号、网速慢、掉话、宽带质量等问题
+- [BILLING] 账单、缴费与发票 | 定义: 账单争议、缴费失败、充值未到账、发票问题
+- [SERVICE_OTHER] 服务投诉与其他 | 定义: 投诉处理不满意、工单流转、举报建议等
+- [FEE_PACKAGE] 资费与收费争议/套餐收费争议 | 定义: 套餐月费、升降档、融合套餐等收费争议
+- [SUBSCRIBE_ORDER] 订购与退订争议/业务订购争议 | 定义: 未明确同意即订购、搭售、误办等
+- [OPEN_CLOSE_OPENING] 开通、停用与销户/开通失败 | 定义: 业务、宽带、号卡、套餐等开通失败
+- [MARKETING_EXPLAIN] 营销宣传与销售服务/宣传解释与营销误导 | 定义: 资费、活动、权益、规则等解释不清或误导
+- [RULE_ACTIVITY] 规则政策争议/营销活动规则争议 | 定义: 活动参与条件、奖励发放、返费规则争议
+- [PRODUCT_PLATFORM_BASIC] 产品功能与平台使用/基础功能异常 | 定义: 语音、短信、流量等基础功能异常
+- [INSTALL_TIMELINESS] 装维与交付服务/履约时效问题 | 定义: 预约未上门、超时未处理、安装慢、拆机慢
+- [NETWORK_SIGNAL] 网络与通信质量/信号覆盖问题 | 定义: 无信号、弱覆盖、特定区域信号差
+- [BILLING_BILL] 账单、缴费与发票/账单争议 | 定义: 账单明细、账期、金额异常
+- [SERVICE_OTHER_PROCESS] 服务投诉与其他/投诉处理不满意 | 定义: 处理结果不认可、久拖未决、重复投诉
+- [FEE_EXTRA] 资费与收费争议/套外费用争议 | 定义: 流量、语音、短信、漫游等超套餐收费争议
+- [SUBSCRIBE_CANCEL] 订购与退订争议/业务退订争议 | 定义: 退订失败、退订不及时、退订后仍收费等
+- [OPEN_CLOSE_SHUTDOWN] 开通、停用与销户/停机关停争议 | 定义: 欠费停机、风险关停、模型关停等争议
+- [MARKETING_PROCESS] 营销宣传与销售服务/办理差错与漏受理 | 定义: 办错、漏办、状态异常、受理错误
+- [RULE_EFFECTIVE] 规则政策争议/生效失效规则争议 | 定义: 套餐、业务生效/失效时间争议
+- [PRODUCT_PLATFORM_APP] 产品功能与平台使用/APP网厅异常 | 定义: APP、网厅、小程序功能异常
+- [INSTALL_STANDARD] 装维与交付服务/上门服务不规范 | 定义: 服务流程、沟通、施工不规范
+- [NETWORK_SPEED] 网络与通信质量/网速质量问题 | 定义: 移动网速慢、宽带速率不达标
+- [BILLING_PAYMENT] 账单、缴费与发票/缴费充值问题 | 定义: 缴费失败、充值未到账、代扣失败
+- [SERVICE_OTHER_FLOW] 服务投诉与其他/工单流转问题 | 定义: 转派错误、超时未处理、多部门扯皮
+- [FEE_VALUE_ADDED] 资费与收费争议/增值业务收费争议 | 定义: 会员、订阅、铃音、自动续订等收费争议
+- [SUBSCRIBE_RENEW] 订购与退订争议/自动续订争议 | 定义: 自动续费、免费到期转收费等
+- [OPEN_CLOSE_RECOVERY] 开通、停用与销户/复机恢复争议 | 定义: 复机慢、恢复不及时、恢复失败等
+- [MARKETING_ATTITUDE] 营销宣传与销售服务/服务态度问题 | 定义: 营业厅、客服、客户经理等服务态度问题
+- [RULE_PROCESS] 规则政策争议/办理规则争议 | 定义: 代办、异地办理、销户前置条件等规则争议
+- [PRODUCT_PLATFORM_ACCOUNT] 产品功能与平台使用/账号登录问题 | 定义: 账号登录失败、实名校验、权限异常
+- [INSTALL_QUALITY] 装维与交付服务/安装施工质量问题 | 定义: 安装质量、布线质量、设备安装质量问题
+- [NETWORK_CALL] 网络与通信质量/通话质量问题 | 定义: 掉话、杂音、接通困难、通话中断
+- [BILLING_INVOICE] 账单、缴费与发票/发票问题 | 定义: 开票失败、发票信息错误、开票慢
+- [SERVICE_OTHER_REPORT] 服务投诉与其他/举报建议表扬 | 定义: 举报、建议、表扬类事项
+- [FEE_WINGPAY] 资费与收费争议/翼支付及权益争议 | 定义: 翼支付、权益金、支付类收费争议
+- [SUBSCRIBE_DENY] 订购与退订争议/用户否认订购 | 定义: 用户否认主动订购某业务
+- [OPEN_CLOSE_CANCEL] 开通、停用与销户/拆机销户 | 定义: 拆机、销户、销户后仍计费等问题
+- [MARKETING_PROMISE] 营销宣传与销售服务/承诺未兑现 | 定义: 承诺赠费、赠品、速率、权益未兑现
+- [RULE_USAGE] 规则政策争议/使用规则争议 | 定义: 套餐使用范围、限速、封顶、定向流量等争议
+- [PRODUCT_PLATFORM_QUERY] 产品功能与平台使用/查询展示异常 | 定义: 套餐、余额、订单、账单展示异常
+- [INSTALL_RESULT] 装维与交付服务/交付结果不符 | 定义: 交付结果与承诺不一致
+- [NETWORK_ROAMING] 网络与通信质量/漫游通信问题 | 定义: 省际、港澳台、国际漫游异常
+- [FEE_PENALTY] 资费与收费争议/违约金及滞纳金争议 | 定义: 违约金、滞纳金相关收费争议
+- [OPEN_CLOSE_ACTIVATION] 开通、停用与销户/激活异常 | 定义: 号卡激活、实名认证、首登激活等异常
+- [RULE_QUALIFICATION] 规则政策争议/资格条件争议 | 定义: 老用户、新用户、特定渠道、特定套餐资格争议
+- [NETWORK_BROADBAND] 网络与通信质量/宽带网络质量问题 | 定义: 宽带不稳定、频繁掉线、延迟高
+- [FEE_BROADBAND_TV] 资费与收费争议/宽带电视收费争议 | 定义: 宽带、IPTV等收费争议
+- [FEE_REFUND] 资费与收费争议/返费退款争议 | 定义: 返费、赠费、退款未到账等问题
+- [FEE_UNKNOWN] 资费与收费争议/不明收费争议 | 定义: 账单中不明扣费、未使用收费等问题
+- [FEE_PACKAGE_MONTHLY] 资费与收费争议/套餐收费争议/套餐收费疑议 | 定义: 用户对套餐月费、资费标准不认可
+- [FEE_EXTRA_FLOW] 资费与收费争议/套外费用争议/流量超套收费争议 | 定义: 用户对流量超套收费不认可
+- [FEE_VALUE_SUBSCRIBE] 资费与收费争议/增值业务收费争议/增值业务收费争议 | 定义: 会员、视频、铃音、订阅类收费争议
+- [FEE_WINGPAY_RIGHTS] 资费与收费争议/翼支付及权益争议/翼支付权益金争议 | 定义: 翼支付权益金、权益包收费争议
+- [FEE_PENALTY_BREACH] 资费与收费争议/违约金及滞纳金争议/违约金争议 | 定义: 协议期解约、合约终止违约金争议
+- [FEE_BROADBAND_TV_BROADBAND] 资费与收费争议/宽带电视收费争议/宽带收费争议 | 定义: 宽带月费、安装费、移机费等争议
+- [FEE_REFUND_REBATE] 资费与收费争议/返费退款争议/返费赠费未到账 | 定义: 返费、赠费、权益到账异常
+- [FEE_UNKNOWN_CHARGE] 资费与收费争议/不明收费争议/不明扣费 | 定义: 账单中出现无法识别收费项目
+- [SUBSCRIBE_ORDER_FORCED] 订购与退订争议/业务订购争议/强制搭售争议 | 定义: 用户认为被强制搭售业务
+- [SUBSCRIBE_CANCEL_FAIL] 订购与退订争议/业务退订争议/退订失败 | 定义: 用户申请退订但未成功
+- [SUBSCRIBE_RENEW_AUTO] 订购与退订争议/自动续订争议/自动续订争议 | 定义: 自动续费、续订未感知
+- [SUBSCRIBE_DENY_VALUE_ADDED] 订购与退订争议/用户否认订购/否认增值业务订购 | 定义: 否认订购会员、订阅、铃音等
+- [OPEN_CLOSE_OPENING_SERVICE] 开通、停用与销户/开通失败/业务开通失败 | 定义: 产品或业务开通失败
+- [OPEN_CLOSE_SHUTDOWN_ARREARS] 开通、停用与销户/停机关停争议/欠费停机不认可 | 定义: 用户对欠费停机处理不认可
+- [OPEN_CLOSE_RECOVERY_DELAY] 开通、停用与销户/复机恢复争议/复机不及时 | 定义: 复机申请后恢复过慢
+- [OPEN_CLOSE_CANCEL_DISMANTLE] 开通、停用与销户/拆机销户/拆机销户 | 定义: 宽带、融合、IPTV等拆机销户问题
+- [OPEN_CLOSE_ACTIVATION_CARD] 开通、停用与销户/激活异常/号卡激活异常 | 定义: 新卡首激活失败
+- [MARKETING_EXPLAIN_UNCLEAR] 营销宣传与销售服务/宣传解释与营销误导/解释宣传不清 | 定义: 资费、活动、权益、规则等解释不清
+- [MARKETING_PROCESS_ERROR] 营销宣传与销售服务/办理差错与漏受理/业务办理差错 | 定义: 办错业务、办错套餐、办错号码信息
+- [MARKETING_ATTITUDE_HALL] 营销宣传与销售服务/服务态度问题/营业厅服务态度问题 | 定义: 营业厅人员服务态度投诉
+- [MARKETING_PROMISE_REBATE] 营销宣传与销售服务/承诺未兑现/赠费返费未兑现 | 定义: 承诺赠费返费未兑现
+- [RULE_ACTIVITY_PARTICIPATION] 规则政策争议/营销活动规则争议/活动参与条件争议 | 定义: 活动参加条件不认可
+- [RULE_EFFECTIVE_PACKAGE] 规则政策争议/生效失效规则争议/套餐生效时间争议 | 定义: 套餐生效时间与用户预期不一致
+- [RULE_PROCESS_PROXY] 规则政策争议/办理规则争议/代办规则争议 | 定义: 委托代办、家属代办、企业代办规则争议
+- [RULE_USAGE_FLOW_SCOPE] 规则政策争议/使用规则争议/流量使用范围争议 | 定义: 省内、国内、定向流量使用范围争议
+- [RULE_QUALIFICATION_NEW_OLD] 规则政策争议/资格条件争议/新老用户资格争议 | 定义: 新用户、老用户资格限制争议
+- [PRODUCT_PLATFORM_BASIC_VOICE] 产品功能与平台使用/基础功能异常/语音功能异常 | 定义: 打电话异常、无法通话等
+- [PRODUCT_PLATFORM_APP_ERROR] 产品功能与平台使用/APP网厅异常/APP网厅报错 | 定义: 页面报错、闪退、无法打开
+- [PRODUCT_PLATFORM_ACCOUNT_LOGIN] 产品功能与平台使用/账号登录问题/账号登录失败 | 定义: 无法登录、密码错误、验证码失败
+- [PRODUCT_PLATFORM_QUERY_PACKAGE] 产品功能与平台使用/查询展示异常/套餐信息展示异常 | 定义: 套餐内容展示不正确
+- [INSTALL_TIMELINESS_NOT_VISIT] 装维与交付服务/履约时效问题/预约未上门 | 定义: 已预约但未按时上门
+- [INSTALL_STANDARD_COMM] 装维与交付服务/上门服务不规范/沟通不规范 | 定义: 未按约联系、解释不到位、沟通差
+- [INSTALL_QUALITY_WIRING] 装维与交付服务/安装施工质量问题/布线安装质量问题 | 定义: 线路布放、走线、美观等问题
+- [INSTALL_RESULT_SIGNAL] 装维与交付服务/交付结果不符/信号覆盖不达预期 | 定义: 安装后信号覆盖与预期不符
+- [NETWORK_SIGNAL_NO] 网络与通信质量/信号覆盖问题/无信号 | 定义: 完全无信号、无法驻网
+- [NETWORK_SPEED_MOBILE] 网络与通信质量/网速质量问题/移动上网慢 | 定义: 手机上网速度慢
+- [NETWORK_CALL_DROP] 网络与通信质量/通话质量问题/掉话 | 定义: 通话中断、掉线
+- [NETWORK_ROAMING_DOMESTIC] 网络与通信质量/漫游通信问题/国内漫游异常 | 定义: 省际、跨区域通信异常
+- [NETWORK_BROADBAND_DISCONNECT] 网络与通信质量/宽带网络质量问题/宽带频繁掉线 | 定义: 宽带连接不稳定、频繁中断
+- [BILLING_BILL_AMOUNT] 账单、缴费与发票/账单争议/账单金额异常 | 定义: 账单金额与预期不符
+- [BILLING_PAYMENT_FAIL] 账单、缴费与发票/缴费充值问题/缴费失败 | 定义: 缴费无法完成
+- [BILLING_INVOICE_FAIL] 账单、缴费与发票/发票问题/无法开票 | 定义: 发票申请失败
+- [SERVICE_OTHER_PROCESS_RESULT] 服务投诉与其他/投诉处理不满意/处理结果不认可 | 定义: 对最终处理方案不认可
+- [SERVICE_OTHER_FLOW_TRANSFER] 服务投诉与其他/工单流转问题/转派错误 | 定义: 工单派错部门、转派错误
+- [SERVICE_OTHER_REPORT_SPAM] 服务投诉与其他/举报建议表扬/骚扰电话举报 | 定义: 骚扰电话、不当外呼举报
+- [FEE_PACKAGE_CHANGE] 资费与收费争议/套餐收费争议/套餐变更后资费争议 | 定义: 升降档、改套餐后费用与预期不一致
+- [FEE_EXTRA_CALL] 资费与收费争议/套外费用争议/通话超套收费争议 | 定义: 用户对通话超套收费不认可
+- [FEE_VALUE_RENEW] 资费与收费争议/增值业务收费争议/自动续订收费争议 | 定义: 增值业务自动续费争议
+- [FEE_WINGPAY_PAYMENT] 资费与收费争议/翼支付及权益争议/支付扣款争议 | 定义: 翼支付或支付账户异常扣款争议
+- [FEE_PENALTY_LATE] 资费与收费争议/违约金及滞纳金争议/滞纳金争议 | 定义: 欠费滞纳金相关争议
+- [FEE_BROADBAND_TV_IPTV] 资费与收费争议/宽带电视收费争议/IPTV收费争议 | 定义: 电视业务费用争议
+- [FEE_REFUND_MONEY] 资费与收费争议/返费退款争议/退款未到账 | 定义: 退款已承诺但未到账
+- [FEE_UNKNOWN_UNUSED] 资费与收费争议/不明收费争议/未使用收费争议 | 定义: 用户称未使用服务却被收费
+- [SUBSCRIBE_ORDER_MISTAKE] 订购与退订争议/业务订购争议/误办理争议 | 定义: 办理了错误产品或错误套餐
+- [SUBSCRIBE_CANCEL_DELAY] 订购与退订争议/业务退订争议/退订不及时 | 定义: 退订流程过慢或超过承诺时限
+- [SUBSCRIBE_RENEW_FREE_TO_PAID] 订购与退订争议/自动续订争议/免费到期转收费争议 | 定义: 试用到期转收费争议
+- [SUBSCRIBE_DENY_CHANNEL] 订购与退订争议/用户否认订购/否认渠道代办订购 | 定义: 否认营业厅、代理点、外呼代为订购
+- [OPEN_CLOSE_OPENING_BROADBAND] 开通、停用与销户/开通失败/宽带开通失败 | 定义: 宽带预约或安装后未开通成功
+- [OPEN_CLOSE_SHUTDOWN_RISK] 开通、停用与销户/停机关停争议/风险关停不认可 | 定义: 用户对反诈、风控等关停处理不认可
+- [OPEN_CLOSE_RECOVERY_FAIL] 开通、停用与销户/复机恢复争议/复机失败 | 定义: 复机流程失败或无法恢复
+- [OPEN_CLOSE_CANCEL_RULE] 开通、停用与销户/拆机销户/销户规则争议 | 定义: 销户条件、前置要求、归还设备等规则争议
+- [OPEN_CLOSE_ACTIVATION_REALNAME] 开通、停用与销户/激活异常/实名认证异常 | 定义: 实名校验失败、信息不一致
+- [MARKETING_EXPLAIN_MISLEADING] 营销宣传与销售服务/宣传解释与营销误导/营销误导 | 定义: 承诺与实际不符、夸大宣传、隐瞒条件
+- [MARKETING_PROCESS_MISS] 营销宣传与销售服务/办理差错与漏受理/漏受理 | 定义: 应受理未受理、遗漏处理
+- [MARKETING_ATTITUDE_CALL] 营销宣传与销售服务/服务态度问题/客服服务态度问题 | 定义: 热线客服服务态度投诉
+- [MARKETING_PROMISE_GIFT] 营销宣传与销售服务/承诺未兑现/赠品权益未兑现 | 定义: 赠品、权益、礼包未兑现
+- [RULE_ACTIVITY_REBATE] 规则政策争议/营销活动规则争议/返费奖励规则争议 | 定义: 返费到账条件、奖励发放规则争议
+- [RULE_EFFECTIVE_CANCEL] 规则政策争议/生效失效规则争议/退订失效时间争议 | 定义: 退订后失效时间与预期不一致
+- [RULE_PROCESS_REMOTE] 规则政策争议/办理规则争议/异地办理规则争议 | 定义: 异地受理、跨地区办理限制争议
+- [RULE_USAGE_SPEED_LIMIT] 规则政策争议/使用规则争议/限速封顶规则争议 | 定义: 达量限速、封顶后处理规则争议
+- [RULE_QUALIFICATION_PACKAGE] 规则政策争议/资格条件争议/套餐资格条件争议 | 定义: 指定套餐才能参与引发争议
+- [PRODUCT_PLATFORM_BASIC_SMS] 产品功能与平台使用/基础功能异常/短信功能异常 | 定义: 短信收发异常
+- [PRODUCT_PLATFORM_APP_HANDLE] 产品功能与平台使用/APP网厅异常/线上办理失败 | 定义: APP、网厅、小程序无法完成办理
+- [PRODUCT_PLATFORM_ACCOUNT_VERIFY] 产品功能与平台使用/账号登录问题/身份校验异常 | 定义: 实名校验、身份识别失败
+- [PRODUCT_PLATFORM_QUERY_BALANCE] 产品功能与平台使用/查询展示异常/余额账单展示异常 | 定义: 余额、账单、欠费展示错误
+- [INSTALL_TIMELINESS_OVERTIME] 装维与交付服务/履约时效问题/超时未完成 | 定义: 安装、移机、拆机超时未完成
+- [INSTALL_STANDARD_PROCESS] 装维与交付服务/上门服务不规范/作业流程不规范 | 定义: 操作流程、施工流程不规范
+- [INSTALL_QUALITY_DEVICE] 装维与交付服务/安装施工质量问题/设备安装质量问题 | 定义: 光猫、机顶盒、路由器安装质量问题
+- [INSTALL_RESULT_SPEED] 装维与交付服务/交付结果不符/实测速率不达标 | 定义: 安装后测速与承诺不一致
+- [NETWORK_SIGNAL_WEAK] 网络与通信质量/信号覆盖问题/弱覆盖 | 定义: 信号弱、不稳定
+- [NETWORK_SPEED_BROADBAND] 网络与通信质量/网速质量问题/宽带网速慢 | 定义: 宽带测速低、体验慢
+- [NETWORK_CALL_NOISE] 网络与通信质量/通话质量问题/杂音回声 | 定义: 通话杂音、回声、听不清
+- [NETWORK_ROAMING_INTL] 网络与通信质量/漫游通信问题/国际港澳台漫游异常 | 定义: 国际及港澳台漫游异常
+- [NETWORK_BROADBAND_DELAY] 网络与通信质量/宽带网络质量问题/宽带时延高卡顿 | 定义: 延迟高、游戏卡、视频卡顿
+- [BILLING_BILL_DETAIL] 账单、缴费与发票/账单争议/账单明细不清 | 定义: 账单明细无法理解或展示不清
+- [BILLING_PAYMENT_NOT_ARRIVE] 账单、缴费与发票/缴费充值问题/充值未到账 | 定义: 充值或缴费成功但余额未到账
+- [BILLING_INVOICE_ERROR] 账单、缴费与发票/发票问题/发票信息错误 | 定义: 抬头、金额、项目等开票信息错误
+- [SERVICE_OTHER_PROCESS_DELAY] 服务投诉与其他/投诉处理不满意/久拖未决 | 定义: 问题长时间未解决
+- [SERVICE_OTHER_FLOW_TIMEOUT] 服务投诉与其他/工单流转问题/超时未处理 | 定义: 工单超时未处理
+- [SERVICE_OTHER_REPORT_CHANNEL] 服务投诉与其他/举报建议表扬/渠道违规举报 | 定义: 营业厅、代理渠道违规行为举报
+- [FEE_PACKAGE_FUSION] 资费与收费争议/套餐收费争议/融合套餐资费争议 | 定义: 融合套餐资费、拆分计费、组合收费争议
+- [FEE_EXTRA_SMS] 资费与收费争议/套外费用争议/短信超套收费争议 | 定义: 用户对短信超套收费不认可
+- [FEE_VALUE_DENY_ORDER] 资费与收费争议/增值业务收费争议/用户否认订购收费争议 | 定义: 用户否认主动订购产生收费
+- [SUBSCRIBE_ORDER_NO_CONSENT] 订购与退订争议/业务订购争议/未明确同意订购 | 定义: 用户未明确授权订购业务
+- [SUBSCRIBE_CANCEL_CONTINUE_FEE] 订购与退订争议/业务退订争议/退订后仍收费 | 定义: 退订完成后仍继续收费
+- [OPEN_CLOSE_OPENING_CARD] 开通、停用与销户/开通失败/号卡开通失败 | 定义: 新卡、补卡、激活卡开通失败
+- [OPEN_CLOSE_SHUTDOWN_MODEL] 开通、停用与销户/停机关停争议/模型关停不认可 | 定义: 用户对系统模型识别后的关停不认可
+- [OPEN_CLOSE_CANCEL_CONTINUE_FEE] 开通、停用与销户/拆机销户/销户后仍计费 | 定义: 已销户仍持续计费
+- [MARKETING_PROCESS_STATUS] 营销宣传与销售服务/办理差错与漏受理/受理状态异常 | 定义: 订单状态不同步、显示异常、处理中断
+- [MARKETING_ATTITUDE_MANAGER] 营销宣传与销售服务/服务态度问题/客户经理服务问题 | 定义: 客户经理/销售经理服务态度或跟进问题
+- [MARKETING_PROMISE_SPEED] 营销宣传与销售服务/承诺未兑现/速率能力未兑现 | 定义: 承诺带宽、网络能力、千兆能力未兑现
+- [RULE_ACTIVITY_CHANNEL] 规则政策争议/营销活动规则争议/渠道限制规则争议 | 定义: 活动仅限特定渠道引发争议
+- [RULE_EFFECTIVE_CHANGE] 规则政策争议/生效失效规则争议/套餐变更生效规则争议 | 定义: 套餐切换、生效折算等规则争议
+- [RULE_PROCESS_CANCEL] 规则政策争议/办理规则争议/销户前置条件争议 | 定义: 销户前要求归还设备、结清费用等争议
+- [RULE_USAGE_RIGHTS_SCOPE] 规则政策争议/使用规则争议/权益适用范围争议 | 定义: 会员、权益、礼包适用范围争议
+- [RULE_QUALIFICATION_CHANNEL] 规则政策争议/资格条件争议/渠道资格条件争议 | 定义: 指定渠道、指定身份才能办理引发争议
+- [PRODUCT_PLATFORM_BASIC_FLOW] 产品功能与平台使用/基础功能异常/流量功能异常 | 定义: 流量无法使用、断流等
+- [PRODUCT_PLATFORM_APP_SUBMIT] 产品功能与平台使用/APP网厅异常/提交支付异常 | 定义: 订单提交失败、支付失败、重复提交
+- [PRODUCT_PLATFORM_QUERY_ORDER] 产品功能与平台使用/查询展示异常/订单状态展示异常 | 定义: 订单状态、进度、处理结果显示错误
+- [INSTALL_TIMELINESS_REBOOK] 装维与交付服务/履约时效问题/反复改约 | 定义: 多次改约、爽约
+- [INSTALL_QUALITY_DAMAGE] 装维与交付服务/安装施工质量问题/施工损坏问题 | 定义: 施工导致墙面、家具、环境损坏
+- [INSTALL_RESULT_LAYOUT] 装维与交付服务/交付结果不符/设备摆放不合理 | 定义: 设备位置不合理影响体验
+- [NETWORK_SIGNAL_AREA] 网络与通信质量/信号覆盖问题/特定区域信号差 | 定义: 小区、楼宇、室内等特定区域信号差
+- [NETWORK_CALL_CONNECT] 网络与通信质量/通话质量问题/接通困难 | 定义: 拨打困难、接通慢、无法接通
+- [BILLING_BILL_PERIOD] 账单、缴费与发票/账单争议/账期争议 | 定义: 出账周期、账期边界争议
+- [BILLING_PAYMENT_DEDUCT] 账单、缴费与发票/缴费充值问题/代扣失败争议 | 定义: 代扣未成功或异常扣款争议
+- [BILLING_INVOICE_DELAY] 账单、缴费与发票/发票问题/开票时效慢 | 定义: 开票流程处理慢
+- [SERVICE_OTHER_PROCESS_REPEAT] 服务投诉与其他/投诉处理不满意/重复投诉 | 定义: 同一问题多次投诉
+- [SERVICE_OTHER_FLOW_PULL] 服务投诉与其他/工单流转问题/多部门扯皮 | 定义: 多部门相互推诿
+- [SERVICE_OTHER_REPORT_SUGGEST] 服务投诉与其他/举报建议表扬/建议表扬 | 定义: 建议、优化意见、表扬类事项
+- [FEE_EXTRA_ROAMING] 资费与收费争议/套外费用争议/漫游费用争议 | 定义: 用户对国内/国际漫游费用不认可
+- [FEE_PACKAGE_MONTHLY_BASE] 资费与收费争议/套餐收费争议/套餐收费疑议/套餐月费不认可 | 定义: 用户认为套餐基础月费不合理或与承诺不符
+- [FEE_PACKAGE_CHANGE_UPGRADE] 资费与收费争议/套餐收费争议/套餐变更后资费争议/升档后资费不符 | 定义: 升级套餐后费用争议
+- [FEE_EXTRA_FLOW_DOMESTIC] 资费与收费争议/套外费用争议/流量超套收费争议/国内流量超套收费争议 | 定义: 国内通用流量超套收费争议
+- [FEE_EXTRA_CALL_DOMESTIC] 资费与收费争议/套外费用争议/通话超套收费争议/国内通话超套收费争议 | 定义: 国内语音超套费用争议
+- [FEE_EXTRA_ROAMING_DOMESTIC] 资费与收费争议/套外费用争议/漫游费用争议/国内漫游收费争议 | 定义: 国内跨区域通信费用争议
+- [FEE_VALUE_DENY_ORDER_SMS] 资费与收费争议/增值业务收费争议/用户否认订购收费争议/短信订购争议 | 定义: 用户否认通过短信订购业务
+- [FEE_WINGPAY_RIGHTS_UNCLEAR] 资费与收费争议/翼支付及权益争议/翼支付权益金争议/权益金收费未充分说明 | 定义: 权益金收费规则解释不清
+- [FEE_PENALTY_BREACH_PACKAGE] 资费与收费争议/违约金及滞纳金争议/违约金争议/合约套餐违约金争议 | 定义: 套餐合约期内解约违约金争议
+- [FEE_REFUND_REBATE_ACTIVITY] 资费与收费争议/返费退款争议/返费赠费未到账/活动返费未到账 | 定义: 活动返费未按规则发放
+- [FEE_UNKNOWN_UNUSED_DATA] 资费与收费争议/不明收费争议/未使用收费争议/未使用流量却计费 | 定义: 用户称未使用流量却产生流量费
+- [SUBSCRIBE_ORDER_NO_CONSENT_HALL] 订购与退订争议/业务订购争议/未明确同意订购/营业厅未明确同意订购 | 定义: 营业厅办理时未明确确认订购
+- [SUBSCRIBE_CANCEL_FAIL_USER] 订购与退订争议/业务退订争议/退订失败/用户端无法退订 | 定义: APP、网厅、小程序无法操作退订
+- [SUBSCRIBE_CANCEL_CONTINUE_FEE_NEXT] 订购与退订争议/业务退订争议/退订后仍收费/次月继续收费 | 定义: 退订后次月仍继续收费
+- [SUBSCRIBE_RENEW_FREE_TO_PAID_TRIAL] 订购与退订争议/自动续订争议/免费到期转收费争议/试用到期转收费争议 | 定义: 试用服务到期后自动转收费
+- [OPEN_CLOSE_SHUTDOWN_RISK_FRAUD] 开通、停用与销户/停机关停争议/风险关停不认可/反诈治理关停争议 | 定义: 因反诈治理措施导致关停
+- [OPEN_CLOSE_CANCEL_DISMANTLE_BROADBAND] 开通、停用与销户/拆机销户/拆机销户/宽带拆机不及时 | 定义: 宽带拆机预约后长期未完成
+- [OPEN_CLOSE_CANCEL_RULE_RETURN] 开通、停用与销户/拆机销户/销户规则争议/设备归还规则争议 | 定义: 销户要求归还设备引发争议
+- [OPEN_CLOSE_CANCEL_CONTINUE_FEE_STATE] 开通、停用与销户/拆机销户/销户后仍计费/销户状态未同步仍计费 | 定义: 销户完成但状态未同步导致计费
+- [OPEN_CLOSE_ACTIVATION_CARD_NEW] 开通、停用与销户/激活异常/号卡激活异常/新卡激活失败 | 定义: 新开号卡首次激活失败
+- [MARKETING_EXPLAIN_UNCLEAR_FEE] 营销宣传与销售服务/宣传解释与营销误导/解释宣传不清/资费解释不清 | 定义: 套餐、收费项目说明不清
+- [MARKETING_EXPLAIN_MISLEADING_PROMISE] 营销宣传与销售服务/宣传解释与营销误导/营销误导/承诺与实际不符 | 定义: 销售承诺与最终实际不一致
+- [MARKETING_PROCESS_ERROR_PRODUCT] 营销宣传与销售服务/办理差错与漏受理/业务办理差错/办错产品 | 定义: 办理了错误产品类型
+- [MARKETING_PROMISE_REBATE_MONTHLY] 营销宣传与销售服务/承诺未兑现/赠费返费未兑现/月返费未兑现 | 定义: 承诺月返费未兑现
+- [RULE_ACTIVITY_PARTICIPATION_OLD] 规则政策争议/营销活动规则争议/活动参与条件争议/老用户不能参与争议 | 定义: 老用户不可参加活动引发争议
+- [RULE_EFFECTIVE_PACKAGE_IMMEDIATE] 规则政策争议/生效失效规则争议/套餐生效时间争议/未即时生效争议 | 定义: 用户认为套餐应立即生效
+- [RULE_PROCESS_PROXY_FAMILY] 规则政策争议/办理规则争议/代办规则争议/家属代办规则争议 | 定义: 家属能否代办引发争议
+- [PRODUCT_PLATFORM_APP_ERROR_APP] 产品功能与平台使用/APP网厅异常/APP网厅报错/APP页面报错 | 定义: 中国电信APP页面异常
+- [PRODUCT_PLATFORM_QUERY_ORDER_PROGRESS] 产品功能与平台使用/查询展示异常/订单状态展示异常/进度显示错误 | 定义: 订单进度展示不正确
+- [INSTALL_TIMELINESS_NOT_VISIT_FIRST] 装维与交付服务/履约时效问题/预约未上门/首次安装未上门 | 定义: 首次安装预约未上门
+- [INSTALL_TIMELINESS_OVERTIME_INSTALL] 装维与交付服务/履约时效问题/超时未完成/安装超时未完成 | 定义: 安装工单超时未完成
+- [INSTALL_RESULT_SPEED_BANDWIDTH] 装维与交付服务/交付结果不符/实测速率不达标/带宽实测速率不达标 | 定义: 宽带实测速率不达承诺标准
+- [NETWORK_SIGNAL_AREA_HOME] 网络与通信质量/信号覆盖问题/特定区域信号差/家庭室内信号差 | 定义: 家庭住宅室内信号差
+- [NETWORK_SPEED_MOBILE_INDOOR] 网络与通信质量/网速质量问题/移动上网慢/室内上网慢 | 定义: 室内移动数据速度慢
+- [NETWORK_CALL_DROP_VOLTE] 网络与通信质量/通话质量问题/掉话/VoLTE掉话 | 定义: VoLTE通话中掉话
+- [NETWORK_CALL_CONNECT_OUT] 网络与通信质量/通话质量问题/接通困难/拨出困难 | 定义: 呼出困难、长时间无响应
+- [BILLING_BILL_AMOUNT_HIGH] 账单、缴费与发票/账单争议/账单金额异常/账单金额偏高争议 | 定义: 本期账单金额高于用户预期
+- [BILLING_PAYMENT_NOT_ARRIVE_ONLINE] 账单、缴费与发票/缴费充值问题/充值未到账/线上充值未到账 | 定义: 通过APP/网厅充值未到账
+- [BILLING_INVOICE_ERROR_TITLE] 账单、缴费与发票/发票问题/发票信息错误/发票抬头错误 | 定义: 开票抬头与要求不一致
+- [SERVICE_OTHER_PROCESS_REPEAT_SECOND] 服务投诉与其他/投诉处理不满意/重复投诉/二次投诉 | 定义: 同一事项再次投诉
+- [SERVICE_OTHER_FLOW_TIMEOUT_FIRST] 服务投诉与其他/工单流转问题/超时未处理/首次超时未处理 | 定义: 首次流转即超时
+- [FEE_PACKAGE_MONTHLY_PROMISE] 资费与收费争议/套餐收费争议/套餐收费疑议/套餐资费与承诺不符 | 定义: 实际资费与营销承诺不一致
+- [FEE_PACKAGE_CHANGE_DOWNGRADE] 资费与收费争议/套餐收费争议/套餐变更后资费争议/降档后资费不符 | 定义: 降档套餐后费用争议
+- [FEE_EXTRA_FLOW_PROVINCIAL] 资费与收费争议/套外费用争议/流量超套收费争议/省内流量超套收费争议 | 定义: 省内流量使用范围/收费争议
+- [FEE_EXTRA_CALL_SPECIAL] 资费与收费争议/套外费用争议/通话超套收费争议/特殊号码通话收费争议 | 定义: 特殊号段、特殊通话收费争议
+- [FEE_EXTRA_ROAMING_INTL] 资费与收费争议/套外费用争议/漫游费用争议/国际港澳台漫游收费争议 | 定义: 国际及港澳台漫游资费争议
+- [FEE_VALUE_DENY_ORDER_CHANNEL] 资费与收费争议/增值业务收费争议/用户否认订购收费争议/渠道代订购争议 | 定义: 用户否认由营业厅/代理点代订购
+- [FEE_WINGPAY_RIGHTS_CONTINUE] 资费与收费争议/翼支付及权益争议/翼支付权益金争议/权益包退订后仍收费 | 定义: 权益包退订后持续计费争议
+- [FEE_PENALTY_BREACH_BROADBAND] 资费与收费争议/违约金及滞纳金争议/违约金争议/宽带协议违约金争议 | 定义: 宽带协议期违约金争议
+- [FEE_REFUND_REBATE_GIFT] 资费与收费争议/返费退款争议/返费赠费未到账/赠费未到账 | 定义: 承诺赠费未到账
+- [FEE_UNKNOWN_UNUSED_VAS] 资费与收费争议/不明收费争议/未使用收费争议/未使用增值服务却计费 | 定义: 用户称未使用增值业务却收费
+- [SUBSCRIBE_ORDER_NO_CONSENT_CALL] 订购与退订争议/业务订购争议/未明确同意订购/电话营销未明确同意订购 | 定义: 外呼营销中未明确确认订购
+- [SUBSCRIBE_CANCEL_FAIL_CHANNEL] 订购与退订争议/业务退订争议/退订失败/渠道不受理退订 | 定义: 营业厅或渠道不予受理退订
+- [SUBSCRIBE_CANCEL_CONTINUE_FEE_NOT_EFFECT] 订购与退订争议/业务退订争议/退订后仍收费/退订未生效仍收费 | 定义: 退订提交成功但未生效
+- [SUBSCRIBE_RENEW_FREE_TO_PAID_PROMO] 订购与退订争议/自动续订争议/免费到期转收费争议/优惠到期转原价争议 | 定义: 优惠价到期转原价引发争议
+- [OPEN_CLOSE_SHUTDOWN_RISK_SAFE] 开通、停用与销户/停机关停争议/风险关停不认可/安全风控关停争议 | 定义: 因安全风控导致限制通信
+- [OPEN_CLOSE_CANCEL_DISMANTLE_IPTV] 开通、停用与销户/拆机销户/拆机销户/IPTV拆机不及时 | 定义: 电视业务拆机长期未完成
+- [OPEN_CLOSE_CANCEL_RULE_LOCAL] 开通、停用与销户/拆机销户/销户规则争议/必须本地销户规则争议 | 定义: 要求到归属地销户引发争议
+- [OPEN_CLOSE_CANCEL_CONTINUE_FEE_PROCESS] 开通、停用与销户/拆机销户/销户后仍计费/销户流程中断仍计费 | 定义: 销户中途失败导致持续收费
+- [OPEN_CLOSE_ACTIVATION_CARD_REISSUE] 开通、停用与销户/激活异常/号卡激活异常/补卡激活异常 | 定义: 补卡后激活异常
+- [MARKETING_EXPLAIN_UNCLEAR_ACTIVITY] 营销宣传与销售服务/宣传解释与营销误导/解释宣传不清/活动规则解释不清 | 定义: 活动参与条件、返费方式解释不清
+- [MARKETING_EXPLAIN_MISLEADING_HIDDEN] 营销宣传与销售服务/宣传解释与营销误导/营销误导/隐瞒限制条件 | 定义: 未告知关键前提、资格、期限、收费条件
+- [MARKETING_PROCESS_ERROR_PACKAGE] 营销宣传与销售服务/办理差错与漏受理/业务办理差错/办错套餐 | 定义: 办理了错误套餐档位
+- [MARKETING_PROMISE_REBATE_ONCE] 营销宣传与销售服务/承诺未兑现/赠费返费未兑现/一次性返费未兑现 | 定义: 承诺一次性返费未到账
+- [RULE_ACTIVITY_PARTICIPATION_CHANNEL] 规则政策争议/营销活动规则争议/活动参与条件争议/指定渠道参与争议 | 定义: 仅指定渠道参与活动引发争议
+- [RULE_EFFECTIVE_PACKAGE_NEXT] 规则政策争议/生效失效规则争议/套餐生效时间争议/次月生效争议 | 定义: 套餐按次月生效引发争议
+- [RULE_PROCESS_PROXY_ENTERPRISE] 规则政策争议/办理规则争议/代办规则争议/企业经办人代办争议 | 定义: 企业客户代办权限争议
+- [PRODUCT_PLATFORM_APP_ERROR_WEB] 产品功能与平台使用/APP网厅异常/APP网厅报错/网厅页面报错 | 定义: 网上营业厅页面异常
+- [PRODUCT_PLATFORM_QUERY_ORDER_RESULT] 产品功能与平台使用/查询展示异常/订单状态展示异常/结果显示错误 | 定义: 订单结果与实际不符
+- [INSTALL_TIMELINESS_NOT_VISIT_MOVE] 装维与交付服务/履约时效问题/预约未上门/移机未上门 | 定义: 移机预约未上门
+- [INSTALL_TIMELINESS_OVERTIME_REMOVE] 装维与交付服务/履约时效问题/超时未完成/拆机超时未完成 | 定义: 拆机工单超时未完成
+- [INSTALL_RESULT_SPEED_WIFI] 装维与交付服务/交付结果不符/实测速率不达标/WiFi体验速率不达预期 | 定义: 用户体验速率低于预期
+- [NETWORK_SIGNAL_AREA_COMMUNITY] 网络与通信质量/信号覆盖问题/特定区域信号差/小区区域信号差 | 定义: 小区公共区域或整体覆盖差
+- [NETWORK_SPEED_MOBILE_PERIOD] 网络与通信质量/网速质量问题/移动上网慢/特定时段上网慢 | 定义: 高峰期或特定时段上网慢
+- [NETWORK_CALL_DROP_FALLBACK] 网络与通信质量/通话质量问题/掉话/回落导致掉话 | 定义: 网络制式回落导致掉话
+- [NETWORK_CALL_CONNECT_IN] 网络与通信质量/通话质量问题/接通困难/呼入困难 | 定义: 别人打不进来、无法接入
+- [BILLING_BILL_AMOUNT_ABNORMAL] 账单、缴费与发票/账单争议/账单金额异常/账单突增争议 | 定义: 账单金额突然异常升高
+- [BILLING_PAYMENT_NOT_ARRIVE_CHANNEL] 账单、缴费与发票/缴费充值问题/充值未到账/渠道缴费未到账 | 定义: 通过营业厅/代理点缴费未到账
+- [BILLING_INVOICE_ERROR_AMOUNT] 账单、缴费与发票/发票问题/发票信息错误/发票金额错误 | 定义: 发票金额与实际不一致
+- [SERVICE_OTHER_PROCESS_REPEAT_MULTI] 服务投诉与其他/投诉处理不满意/重复投诉/多次重复投诉 | 定义: 同一事项多次重复投诉
+- [SERVICE_OTHER_FLOW_TIMEOUT_MULTI] 服务投诉与其他/工单流转问题/超时未处理/多轮流转超时 | 定义: 多轮流转后仍超时
+- [FEE_EXTRA_FLOW_DIRECTIONAL] 资费与收费争议/套外费用争议/流量超套收费争议/定向流量超套收费争议 | 定义: 定向流量识别与收费争议
+- [FEE_VALUE_DENY_ORDER_TOUCH] 资费与收费争议/增值业务收费争议/用户否认订购收费争议/误触订购争议 | 定义: 用户认为因误触页面导致订购
+- [SUBSCRIBE_CANCEL_FAIL_SYSTEM] 订购与退订争议/业务退订争议/退订失败/系统报错导致退订失败 | 定义: 系统异常导致退订无法完成
+- [OPEN_CLOSE_CANCEL_DISMANTLE_FUSION] 开通、停用与销户/拆机销户/拆机销户/融合业务拆机不及时 | 定义: 融合业务整体拆机处理慢
+- [OPEN_CLOSE_CANCEL_RULE_CLEAR] 开通、停用与销户/拆机销户/销户规则争议/销户前必须结清规则争议 | 定义: 要求结清欠费、违约金等后才能销户
+- [MARKETING_EXPLAIN_UNCLEAR_RIGHTS] 营销宣传与销售服务/宣传解释与营销误导/解释宣传不清/权益内容解释不清 | 定义: 会员、礼包、权益内容说明不清
+- [MARKETING_EXPLAIN_MISLEADING_EXAGGERATE] 营销宣传与销售服务/宣传解释与营销误导/营销误导/夸大宣传 | 定义: 宣传内容存在明显夸大
+- [MARKETING_PROCESS_ERROR_INFO] 营销宣传与销售服务/办理差错与漏受理/业务办理差错/录入信息错误 | 定义: 号码、身份、地址等录入错误
+- [RULE_ACTIVITY_PARTICIPATION_PACKAGE] 规则政策争议/营销活动规则争议/活动参与条件争议/指定套餐参与争议 | 定义: 仅指定套餐可参与活动引发争议
+- [PRODUCT_PLATFORM_APP_ERROR_MINI] 产品功能与平台使用/APP网厅异常/APP网厅报错/小程序页面报错 | 定义: 小程序页面异常
+- [INSTALL_TIMELINESS_NOT_VISIT_REMOVE] 装维与交付服务/履约时效问题/预约未上门/拆机未上门 | 定义: 拆机预约未上门
+- [NETWORK_SIGNAL_AREA_BUILDING] 网络与通信质量/信号覆盖问题/特定区域信号差/楼宇办公区信号差 | 定义: 楼宇、写字楼等区域覆盖差
+
+【可选标签清单】
+- [PRODUCT] [MOBILE] 移动业务 | 手机号、语音、流量等移动业务
+- [PRODUCT] [BROADBAND] 宽带业务 | 家庭宽带业务
+- [PRODUCT] [IPTV] IPTV业务 | 电视业务
+- [PRODUCT] [FUSION_PACKAGE] 融合套餐 | 移动+宽带+电视等融合产品
+- [PRODUCT] [VALUE_ADDED] 增值业务 | 铃音、会员、订阅等
+- [PRODUCT] [WINGPAY] 翼支付 | 翼支付、权益金等金融支付类
+- [PRODUCT] [DEVICE] 终端设备 | 手机、光猫、机顶盒等设备
+- [CHANNEL] [HALL] 营业厅 | 自有营业厅或线下门店
+- [CHANNEL] [AGENT] 代理渠道 | 社会代理点、合作渠道
+- [CHANNEL] [CALL_CENTER] 客服热线 | 10000号等热线渠道
+- [CHANNEL] [APP] APP | 手机APP办理或查询
+- [CHANNEL] [WEB] 网上营业厅 | 网页端办理渠道
+- [CHANNEL] [OUTBOUND] 外呼营销 | 电话营销、主动外呼
+- [CHANNEL] [DOOR_SERVICE] 上门服务 | 装维、客户经理上门
+- [ROOT_CAUSE] [MISLEADING] 营销误导 | 承诺与实际不符、夸大宣传
+- [ROOT_CAUSE] [UNCLEAR_EXPLANATION] 解释不清 | 规则、资费、流程说明不清楚
+- [ROOT_CAUSE] [NOT_INFORMED] 未充分告知 | 关键收费或规则未明确告知
+- [ROOT_CAUSE] [DENY_ORDER] 用户否认订购 | 用户否认主动办理或订购
+- [ROOT_CAUSE] [PROCESS_ERROR] 办理差错 | 办理错误、办错套餐、办错产品
+- [ROOT_CAUSE] [MISS_ACCEPT] 漏受理 | 应受理未受理、遗漏处理
+- [ROOT_CAUSE] [SYSTEM_ERROR] 系统异常 | 系统状态、同步、接口异常
+- [ROOT_CAUSE] [RULE_DISPUTE] 规则不认可 | 不接受现有业务规则或资费规则
+- [ROOT_CAUSE] [DELAYED_FULFILLMENT] 履约不及时 | 上门、安装、拆机、开通处理慢
+- [ROOT_CAUSE] [SERVICE_ATTITUDE] 服务态度问题 | 沟通态度差、服务体验差
+- [RESPONSIBILITY] [MARKET] 市场条线 | 产品、资费、活动、销售政策相关
+- [RESPONSIBILITY] [CUSTOMER_SERVICE] 客服条线 | 热线、解释、回访、工单处理相关
+- [RESPONSIBILITY] [CHANNEL_MGMT] 渠道管理 | 营业厅、代理点、销售人员相关
+- [RESPONSIBILITY] [NETWORK_OP] 网运条线 | 网络、宽带、开通、停机相关
+- [RESPONSIBILITY] [INSTALL_MAINTAIN] 装维条线 | 安装维护、上门服务相关
+- [RESPONSIBILITY] [IT] IT系统 | 系统、平台、数据同步相关
+- [RESPONSIBILITY] [FINANCE] 财务条线 | 账务、退款、发票相关
+- [RESPONSIBILITY] [WINGPAY_TEAM] 支付金融条线 | 翼支付、权益金等相关
+- [REQUEST] [EXPLAIN] 解释说明 | 要求解释清楚原因或规则
+- [REQUEST] [REFUND] 退费 | 要求退回费用
+- [REQUEST] [CANCEL] 取消业务 | 要求退订、取消、拆机、销户
+- [REQUEST] [RESTORE] 恢复服务 | 要求复机、恢复正常使用
+- [REQUEST] [COMPENSATE] 赔偿补偿 | 要求额外补偿、赔付
+- [REQUEST] [APOLOGIZE] 道歉 | 要求道歉
+- [REQUEST] [FAST_PROCESS] 加快处理 | 要求尽快处理
+- [REQUEST] [PUNISH] 追责处罚 | 要求追责相关人员或渠道
+- [RISK] [REPEATED] 重复投诉 | 同一问题多次投诉
+- [RISK] [ESCALATED] 升级投诉 | 有升级趋势或已升级
+- [RISK] [REGULATORY] 监管风险 | 涉及监管转办或工信部
+- [RISK] [PUBLIC_OPINION] 舆情风险 | 可能引发媒体或网络舆情
+- [RISK] [HIGH_VALUE] 高价值客户 | 重要客户、高价值客户
+- [RISK] [BATCH_ISSUE] 批量问题 | 批量相似问题
+- [RISK] [COMPLIANCE] 合规风险 | 涉及资费、告知、营销合规
+- [EMOTION] [CALM] 平稳 | 客户情绪平稳
+- [EMOTION] [UNSATISFIED] 不满 | 客户表达明显不满意
+- [EMOTION] [AGITATED] 激动 | 客户情绪激动
+- [EMOTION] [ANGRY] 强烈投诉 | 客户强烈不满并可能升级
+- [RESULT] [ACCEPTED_AFTER_EXPLAIN] 解释后接受 | 已解释，客户接受
+- [RESULT] [REFUNDED] 已退费 | 已完成退费
+- [RESULT] [COMPENSATED] 已补偿 | 已给予补偿
+- [RESULT] [RESTORED] 已恢复 | 业务或服务已恢复
+- [RESULT] [COMPLETED_CANCEL] 已取消/已销户 | 取消、退订、销户已完成
+- [RESULT] [USER_WITHDRAWN] 用户撤诉 | 客户主动撤销投诉
+- [RESULT] [NOT_ACCEPTED] 用户不认可 | 处理后用户仍不认可
+- [RESULT] [PENDING] 继续处理 | 尚未完结，需要继续跟进

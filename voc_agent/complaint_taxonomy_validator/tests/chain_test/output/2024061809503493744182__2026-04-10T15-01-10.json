@@ -1,0 +1,104 @@
+{
+  "ticket_id": "2024061809503493744182",
+  "status": "success",
+  "stage": "chain",
+  "duration_ms": 22984,
+  "timestamp": "2026-04-10T15:01:10",
+  "model_name": "Qwen3-Max",
+  "result": {
+    "summary": "用户15803****62（归属地山西）申请复机，请求归属地协助处理。",
+    "primary_category": {
+      "code": "OPEN_CLOSE_RECOVERY",
+      "full_name": "开通、停用与销户/复机恢复争议",
+      "confidence": 0.95,
+      "reason": "工单明确提及“复机”诉求，属于复机恢复类问题，且biz_category为“办理不及时/不成功”，符合复机恢复争议定义。"
+    },
+    "candidate_categories": [
+      {
+        "code": "OPEN_CLOSE_RECOVERY_DELAY",
+        "full_name": "开通、停用与销户/复机恢复争议/复机不及时",
+        "confidence": 0.85,
+        "reason": "若复机已申请但处理延迟，则可能属于此子类，但当前信息未明确是否已申请或仅初次请求。"
+      },
+      {
+        "code": "OPEN_CLOSE_RECOVERY_FAIL",
+        "full_name": "开通、停用与销户/复机恢复争议/复机失败",
+        "confidence": 0.75,
+        "reason": "若用户此前已尝试复机但失败，则适用，但工单未说明历史操作。"
+      }
+    ],
+    "candidate_tags": [
+      {
+        "group_code": "",
+        "code": "[PRODUCT] [MOBILE]",
+        "name": "移动业务",
+        "confidence": 0.95,
+        "reason": "涉及手机号码复机，属于移动业务范畴。"
+      },
+      {
+        "group_code": "",
+        "code": "[REQUEST] [RESTORE]",
+        "name": "恢复服务",
+        "confidence": 0.98,
+        "reason": "明确请求“复机”，即恢复通信服务。"
+      },
+      {
+        "group_code": "",
+        "code": "[RESPONSIBILITY] [NETWORK_OP]",
+        "name": "网运条线",
+        "confidence": 0.9,
+        "reason": "复机操作通常由网络运营或号卡管理条线负责。"
+      },
+      {
+        "group_code": "",
+        "code": "[CHANNEL] [HALL]",
+        "name": "营业厅",
+        "confidence": 0.6,
+        "reason": "return_reason提到“实体渠道”，但未明确是用户通过营业厅发起，仅作为辅助参考。"
+      }
+    ],
+    "category_keywords": [
+      {
+        "keyword": "复机",
+        "reason": "模型识别为与当前判断有关的关键词",
+        "confidence": 0.7
+      },
+      {
+        "keyword": "办理不及时/不成功",
+        "reason": "模型识别为与当前判断有关的关键词",
+        "confidence": 0.7
+      },
+      {
+        "keyword": "开通及停用类",
+        "reason": "模型识别为与当前判断有关的关键词",
+        "confidence": 0.7
+      }
+    ],
+    "tag_keywords": [
+      {
+        "keyword": "复机",
+        "reason": "模型识别为与当前判断有关的关键词",
+        "confidence": 0.7
+      },
+      {
+        "keyword": "手机号",
+        "reason": "模型识别为与当前判断有关的关键词",
+        "confidence": 0.7
+      },
+      {
+        "keyword": "恢复服务",
+        "reason": "模型识别为与当前判断有关的关键词",
+        "confidence": 0.7
+      },
+      {
+        "keyword": "归属地处理",
+        "reason": "模型识别为与当前判断有关的关键词",
+        "confidence": 0.7
+      }
+    ],
+    "risks": [
+      "工单未说明复机原因（如欠费、风控等），无法判断是否涉及[OPEN_CLOSE_SHUTDOWN_ARREARS]或[OPEN_CLOSE_SHUTDOWN_RISK]等子类。",
+      "未明确用户是否已提交复机申请但未处理，还是首次请求，影响是否归入‘复机不及时’或仅一般复机请求。"
+    ]
+  }
+}

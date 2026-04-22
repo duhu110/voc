@@ -9,6 +9,7 @@ from voc_agent.core.db import get_engine
 CATEGORY_QUERY = text(
     """
     select
+        id,
         code,
         name,
         level,

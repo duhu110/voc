@@ -49,7 +49,14 @@ def find_project_root(explicit: str | None) -> Path:
     return current
 
 
-def local_python_candidates(project_root: Path) -> list[Path]:
+def local_python_candidates(project_root: Path, os_name: str | None = None) -> list[Path]:
+    platform_os = os_name or os.name
+    if platform_os == "nt":
+        return [
+            project_root / ".venv" / "Scripts" / "python.exe",
+            project_root / "venv" / "Scripts" / "python.exe",
+        ]
+
     return [
         project_root / ".venv" / "bin" / "python",
         project_root / "venv" / "bin" / "python",
@@ -69,6 +76,18 @@ def repo_looks_like_uv(project_root: Path) -> bool:
     return "[project]" in content or "[tool.uv]" in content
 
 
+def reexec_command(command: list[str], env: dict[str, str], project_root: Path, *, use_path: bool = False) -> None:
+    if os.name == "nt":
+        completed = subprocess.run(command, check=False, cwd=str(project_root), env=env)
+        raise SystemExit(completed.returncode)
+
+    executable = command[0]
+    if use_path:
+        os.execvpe(executable, command, env)
+    else:
+        os.execve(executable, command, env)
+
+
 def maybe_reexec_into_project_python(project_root: Path) -> None:
     if os.environ.get(REEXEC_ENV) == "1":
         return
@@ -79,13 +98,13 @@ def maybe_reexec_into_project_python(project_root: Path) -> None:
             if candidate.resolve() != current_python:
                 env = os.environ.copy()
                 env[REEXEC_ENV] = "1"
-                os.execve(str(candidate), [str(candidate), SCRIPT_PATH, *sys.argv[1:]], env)
+                reexec_command([str(candidate), SCRIPT_PATH, *sys.argv[1:]], env, project_root)
             return
 
     if repo_looks_like_uv(project_root) and shutil.which("uv"):
         env = os.environ.copy()
         env[REEXEC_ENV] = "1"
-        os.execvpe("uv", ["uv", "run", "python", SCRIPT_PATH, *sys.argv[1:]], env)
+        reexec_command(["uv", "run", "python", SCRIPT_PATH, *sys.argv[1:]], env, project_root, use_path=True)
 
 
 def ensure_dependencies(project_root: Path) -> None:
@@ -112,7 +131,7 @@ def ensure_dependencies(project_root: Path) -> None:
     subprocess.run(cmd, check=True, cwd=str(project_root))
     env = os.environ.copy()
     env[DEPENDENCY_ENV] = "1"
-    os.execve(str(target_python), [str(target_python), SCRIPT_PATH, *sys.argv[1:]], env)
+    reexec_command([str(target_python), SCRIPT_PATH, *sys.argv[1:]], env, project_root)
 
 
 def load_runtime_modules() -> tuple[Any, Any, Any, Any]:

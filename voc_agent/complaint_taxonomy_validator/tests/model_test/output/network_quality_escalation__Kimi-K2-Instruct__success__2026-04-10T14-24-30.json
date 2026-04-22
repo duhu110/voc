@@ -1,0 +1,28 @@
+{
+  "case_name": "network_quality_escalation",
+  "model_name": "Kimi-K2-Instruct",
+  "prompt_path": "D:\\project\\FullStack\\voc\\voc_agent\\complaint_taxonomy_validator\\tests\\model_test\\output\\prompts\\network_quality_escalation.txt",
+  "status": "success",
+  "error_type": null,
+  "error_message": null,
+  "duration_ms": 19055,
+  "timestamp": "2026-04-10T14:24:30",
+  "response_id": "chatcmpl-606ccbed3f3f44759a2e719f64455198",
+  "response_text": "{\n  \"summary\": \"客户反映家庭住宅内近一周5G网络持续无信号或网速极慢，影响工作视频会议，已多次反馈未解决，要求尽快处理并给出解释。\",\n  \"primary_category\": {\n    \"code\": \"NETWORK_SIGNAL_AREA_HOME\",\n    \"full_name\": \"网络与通信质量/信号覆盖问题/特定区域信号差/家庭室内信号差\",\n    \"confidence\": 0.95,\n    \"reason\": \"工单主诉为家庭住宅内5G无信号或网速极慢，符合“家庭室内信号差”定义，且为网络质量类投诉。\"\n  },\n  \"candidate_categories\": [\n    {\n      \"code\": \"NETWORK_SPEED_MOBILE_INDOOR\",\n      \"full_name\": \"网络与通信质量/网速质量问题/移动上网慢/室内上网慢\",\n      \"confidence\": 0.85,\n      \"reason\": \"客户同时提到网速极慢，存在网速质量维度，但信号覆盖是首要问题。\"\n    },\n    {\n      \"code\": \"SERVICE_OTHER_PROCESS_DELAY\",\n      \"full_name\": \"服务投诉与其他/投诉处理不满意/久拖未决\",\n      \"confidence\": 0.75,\n      \"reason\": \"客户已多次反馈未解决，存在处理时效问题，但非主诉。\"\n    }\n  ],\n  \"candidate_tags\": [\n    \"[PRODUCT][MOBILE]\",\n    \"[CHANNEL][CALL_CENTER]\",\n    \"[ROOT_CAUSE][DELAYED_FULFILLMENT]\",\n    \"[RESPONSIBILITY][NETWORK_OP]\",\n    \"[REQUEST][FAST_PROCESS]\",\n    \"[REQUEST][EXPLAIN]\",\n    \"[RISK][REPEATED]\",\n    \"[EMOTION][UNSATISFIED]\"\n  ],\n  \"category_keywords\": [\"家庭住宅内\", \"5G网络持续无信号\", \"网速极慢\"],\n  \"tag_keywords\": [\"5G移动业务\", \"10000号\", \"多次反馈未解决\", \"要求尽快处理\"],\n  \"risks\": []\n}",
+  "finish_reason": "stop",
+  "usage": {
+    "completion_tokens": 413,
+    "prompt_tokens": 11705,
+    "total_tokens": 12118,
+    "completion_tokens_details": {
+      "accepted_prediction_tokens": null,
+      "audio_tokens": null,
+      "reasoning_tokens": null,
+      "rejected_prediction_tokens": null
+    },
+    "prompt_tokens_details": {
+      "audio_tokens": null,
+      "cached_tokens": null
+    }
+  }
+}

@@ -1,0 +1,91 @@
+{
+  "ticket_id": "2024102500213652493321",
+  "status": "success",
+  "stage": "chain",
+  "duration_ms": 17882,
+  "timestamp": "2026-04-10T15:15:40",
+  "model_name": "Qwen3-Max",
+  "result": {
+    "summary": "用户投诉装维服务履约不及时，属于装维与交付服务中的履约时效问题。",
+    "primary_category": {
+      "code": "INSTALL_TIMELINESS",
+      "full_name": "装维与交付服务/履约时效问题",
+      "confidence": 0.95,
+      "reason": "工单中明确描述为“履约不及时/超时履约/未履约”，且归类于“装维服务类”，与 INSTALL_TIMELINESS 定义完全匹配。"
+    },
+    "candidate_categories": [
+      {
+        "code": "INSTALL_TIMELINESS_NOT_VISIT",
+        "full_name": "装维与交付服务/履约时效问题/预约未上门",
+        "confidence": 0.85,
+        "reason": "可能涉及预约后未上门，但原始工单未明确是否已预约或具体履约阶段。"
+      },
+      {
+        "code": "INSTALL_TIMELINESS_OVERTIME",
+        "full_name": "装维与交付服务/履约时效问题/超时未完成",
+        "confidence": 0.8,
+        "reason": "也可能是安装、拆机等处理超时，但缺乏具体场景信息。"
+      }
+    ],
+    "candidate_tags": [
+      {
+        "group_code": "ROOT_CAUSE",
+        "code": "DELAYED_FULFILLMENT",
+        "name": "履约不及时",
+        "confidence": 0.95,
+        "reason": "直接对应投诉现象“履约不及时/超时履约/未履约”。"
+      },
+      {
+        "group_code": "RESPONSIBILITY",
+        "code": "INSTALL_MAINTAIN",
+        "name": "装维条线",
+        "confidence": 0.9,
+        "reason": "投诉内容为装维服务类问题，责任归属装维条线。"
+      },
+      {
+        "group_code": "REQUEST",
+        "code": "FAST_PROCESS",
+        "name": "加快处理",
+        "confidence": 0.7,
+        "reason": "履约不及时类投诉通常隐含希望尽快处理的诉求，但工单未明示。"
+      }
+    ],
+    "category_keywords": [
+      {
+        "keyword": "履约不及时",
+        "reason": "模型识别为与当前判断有关的关键词",
+        "confidence": 0.7
+      },
+      {
+        "keyword": "超时履约",
+        "reason": "模型识别为与当前判断有关的关键词",
+        "confidence": 0.7
+      },
+      {
+        "keyword": "未履约",
+        "reason": "模型识别为与当前判断有关的关键词",
+        "confidence": 0.7
+      },
+      {
+        "keyword": "装维服务类",
+        "reason": "模型识别为与当前判断有关的关键词",
+        "confidence": 0.7
+      }
+    ],
+    "tag_keywords": [
+      {
+        "keyword": "履约不及时",
+        "reason": "模型识别为与当前判断有关的关键词",
+        "confidence": 0.7
+      },
+      {
+        "keyword": "装维",
+        "reason": "模型识别为与当前判断有关的关键词",
+        "confidence": 0.7
+      }
+    ],
+    "risks": [
+      "工单内容为'测试工单'，实际投诉细节缺失，可能影响分类准确性；无法确认是否涉及重复投诉或客户情绪状态。"
+    ]
+  }
+}

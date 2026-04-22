@@ -1,0 +1,20 @@
+{
+  "case_name": "channel_deny_order",
+  "model_name": "DeepSeek-V3",
+  "prompt_path": "D:\\project\\FullStack\\voc\\voc_agent\\complaint_taxonomy_validator\\tests\\model_test\\output\\prompts\\channel_deny_order.txt",
+  "status": "success",
+  "error_type": null,
+  "error_message": null,
+  "duration_ms": 14761,
+  "timestamp": "2026-04-10T14:13:10",
+  "response_id": "chatcmpl-00-671017c6313f1db08d9c076cf4f6c3ab-74ee39acae09a19b-01",
+  "response_text": "```json\n{\n  \"summary\": \"客户在合作营业厅办理宽带时被顺带办理天翼云盘黄金会员合约包，否认主动订购，要求取消业务并退费。\",\n  \"primary_category\": {\n    \"code\": \"SUBSCRIBE_DENY_CHANNEL\",\n    \"full_name\": \"订购与退订争议/用户否认订购/否认渠道代办订购\",\n    \"confidence\": 0.95,\n    \"reason\": \"客户明确表示在营业厅办理宽带时被顺带办理增值业务，且否认主动同意订购。\"\n  },\n  \"candidate_categories\": [\n    {\n      \"code\": \"MARKETING_PROCESS_ERROR\",\n      \"full_name\": \"营销宣传与销售服务/办理差错与漏受理/业务办理差错\",\n      \"confidence\": 0.85,\n      \"reason\": \"营业厅可能存在办理差错或强制搭售行为。\"\n    },\n    {\n      \"code\": \"FEE_VALUE_ADDED\",\n      \"full_name\": \"资费与收费争议/增值业务收费争议\",\n      \"confidence\": 0.80,\n      \"reason\": \"涉及增值业务收费争议，但主诉焦点是否认订购。\"\n    }\n  ],\n  \"candidate_tags\": [\n    \"[PRODUCT] [VALUE_ADDED]\",\n    \"[CHANNEL] [HALL]\",\n    \"[ROOT_CAUSE] [DENY_ORDER]\",\n    \"[ROOT_CAUSE] [MISLEADING]\",\n    \"[RESPONSIBILITY] [CHANNEL_MGMT]\",\n    \"[REQUEST] [CANCEL]\",\n    \"[REQUEST] [REFUND]\",\n    \"[REQUEST] [PUNISH]\"\n  ],\n  \"category_keywords\": [\"否认订购\", \"营业厅办理\", \"天翼云盘黄金会员\"],\n  \"tag_keywords\": [\"增值业务\", \"营业厅\", \"否认订购\", \"营销误导\", \"取消业务\", \"退费\"],\n  \"risks\": [\"可能存在渠道违规风险，需核查营业厅办理记录。\"]\n}\n```",
+  "finish_reason": "stop",
+  "usage": {
+    "completion_tokens": 445,
+    "prompt_tokens": 13229,
+    "total_tokens": 13674,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  }
+}

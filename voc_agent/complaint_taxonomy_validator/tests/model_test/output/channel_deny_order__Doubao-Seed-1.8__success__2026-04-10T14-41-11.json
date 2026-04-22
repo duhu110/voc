@@ -1,0 +1,28 @@
+{
+  "case_name": "channel_deny_order",
+  "model_name": "Doubao-Seed-1.8",
+  "prompt_path": "D:\\project\\FullStack\\voc\\voc_agent\\complaint_taxonomy_validator\\tests\\model_test\\output\\prompts\\channel_deny_order.txt",
+  "status": "success",
+  "error_type": null,
+  "error_message": null,
+  "duration_ms": 67938,
+  "timestamp": "2026-04-10T14:41:11",
+  "response_id": "0217758032714239badbe816172dbb331753bd21c11e8fa8cd2af",
+  "response_text": "{\n  \"summary\": \"客户表示在合作营业厅办理宽带时被顺带办理天翼云盘黄金会员合约包，本人未明确同意，要求立即取消该业务、退回已扣费用，并追查渠道办理责任。\",\n  \"primary_category\": {\n    \"code\": \"SUBSCRIBE_DENY_CHANNEL\",\n    \"full_name\": \"订购与退订争议/用户否认订购/否认渠道代办订购\",\n    \"confidence\": 0.98,\n    \"reason\": \"客户明确否认合作营业厅代办天翼云盘黄金会员合约包的行为，本人未明确同意办理，完全匹配该分类“否认营业厅、代理点代为订购”的定义，是最贴合的具体分类。\"\n  },\n  \"candidate_categories\": [\n    {\n      \"code\": \"FEE_REFUND_MONEY\",\n      \"full_name\": \"资费与收费争议/返费退款争议/退款未到账\"\n    }\n  ],\n  \"candidate_tags\": [\n    {\n      \"code\": \"PRODUCT_VALUE_ADDED\",\n      \"full_name\": \"增值业务\"\n    },\n    {\n      \"code\": \"CHANNEL_AGENT\",\n      \"full_name\": \"代理渠道\"\n    },\n    {\n      \"code\": \"ROOT_CAUSE_DENY_ORDER\",\n      \"full_name\": \"用户否认订购\"\n    },\n    {\n      \"code\": \"RESPONSIBILITY_CHANNEL_MGMT\",\n      \"full_name\": \"渠道管理\"\n    },\n    {\n      \"code\": \"REQUEST_CANCEL\",\n      \"full_name\": \"取消业务\"\n    },\n    {\n      \"code\": \"REQUEST_REFUND\",\n      \"full_name\": \"退费\"\n    },\n    {\n      \"code\": \"REQUEST_PUNISH\",\n      \"full_name\": \"追责处罚\"\n    },\n    {\n      \"code\": \"EMOTION_UNSATISFIED\",\n      \"full_name\": \"不满\"\n    }\n  ],\n  \"category_keywords\": [\"天翼云盘黄金会员合约包\", \"未明确同意\", \"合作营业厅\", \"否认订购\"],\n  \"tag_keywords\": [\"天翼云盘黄金会员合约包\", \"合作营业厅\", \"取消业务\", \"退回已扣费用\", \"追查渠道责任\"],\n  \"risks\": []\n}",
+  "finish_reason": "stop",
+  "usage": {
+    "completion_tokens": 2116,
+    "prompt_tokens": 12577,
+    "total_tokens": 14693,
+    "completion_tokens_details": {
+      "accepted_prediction_tokens": null,
+      "audio_tokens": null,
+      "reasoning_tokens": 1594,
+      "rejected_prediction_tokens": null
+    },
+    "prompt_tokens_details": {
+      "audio_tokens": null,
+      "cached_tokens": 0
+    }
+  }
+}

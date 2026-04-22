@@ -1,0 +1,20 @@
+{
+  "case_name": "auto_renew_dispute",
+  "model_name": "Kimi-K2-Thinking",
+  "prompt_path": "D:\\project\\FullStack\\voc\\voc_agent\\complaint_taxonomy_validator\\tests\\model_test\\output\\prompts\\auto_renew_dispute.txt",
+  "status": "success",
+  "error_type": null,
+  "error_message": null,
+  "duration_ms": 145431,
+  "timestamp": "2026-04-10T14:29:43",
+  "response_id": "chatcmpl-00-a446d2932ee591b934b361504e7667b1-6385d76b74560706-01",
+  "response_text": " {\"summary\": \"客户投诉视频会员试用到期后自动转为连续包月，未收到明确提醒，连续3个月被扣费19元/月，要求取消并退费。\",\"primary_category\": {\"code\":\"SUBSCRIBE_RENEW_FREE_TO_PAID_TRIAL\",\"full_name\":\"订购与退订争议/自动续订争议/免费到期转收费争议/试用到期转收费争议\",\"confidence\":0.98,\"reason\":\"工单明确描述视频会员试用到期后自动转为连续包月扣费，属于试用到期转收费的典型场景，客户诉求为取消和退费，与分类定义完全匹配\"},\"candidate_categories\": [{\"code\":\"SUBSCRIBE_RENEW_AUTO\",\"full_name\":\"订购与退订争议/自动续订争议/自动续订争议\",\"confidence\":0.85,\"reason\":\"也属于自动续订大类，但不如试用到期转收费精准\"},{\"code\":\"FEE_VALUE_RENEW\",\"full_name\":\"资费与收费争议/增值业务收费争议/自动续订收费争议\",\"confidence\":0.75,\"reason\":\"涉及增值业务自动续费收费，但核心问题是订购争议而非单纯资费争议\"}],\"candidate_tags\": [\"[PRODUCT] [VALUE_ADDED]\",\"[CHANNEL] [HALL]\",\"[ROOT_CAUSE] [NOT_INFORMED]\",\"[ROOT_CAUSE] [RULE_DISPUTE]\",\"[RESPONSIBILITY] [MARKET]\",\"[REQUEST] [CANCEL]\",\"[REQUEST] [REFUND]\",\"[EMOTION] [UNSATISFIED]\",\"[RISK] [COMPLIANCE]\"],\"category_keywords\": [\"自动续订\",\"视频会员\",\"试用到期\",\"连续包月\",\"未收到提醒\"],\"tag_keywords\": [\"增值业务\",\"营业厅\",\"未充分告知\",\"取消\",\"退费\"],\"risks\": []}",
+  "finish_reason": "stop",
+  "usage": {
+    "completion_tokens": 1390,
+    "prompt_tokens": 11722,
+    "total_tokens": 13112,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "case_name": "billing_refund_dispute",
+  "model_name": "Qwen3.5-397B-A17B",
+  "prompt_path": "D:\\project\\FullStack\\voc\\voc_agent\\complaint_taxonomy_validator\\tests\\model_test\\output\\prompts\\billing_refund_dispute.txt",
+  "status": "success",
+  "error_type": null,
+  "error_message": null,
+  "duration_ms": 33351,
+  "timestamp": "2026-04-10T14:18:31",
+  "response_id": "chatcmpl-00-c26c98588df20f0ae41f0be4660da61d-495109c48d20cc05-01",
+  "response_text": "{\n  \"summary\": \"客户投诉天翼云盘黄金会员存在重复计费，指出其中一笔为历史已取消业务，要求核查账单明细并退费。\",\n  \"primary_category\": {\n    \"code\": \"FEE_VALUE_SUBSCRIBE\",\n    \"full_name\": \"资费与收费争议/增值业务收费争议/增值业务收费争议\",\n    \"confidence\": 0.95,\n    \"reason\": \"用户明确针对'天翼云盘黄金会员'这一增值业务的扣费提出异议，认为存在重复计费（含已取消业务仍扣费），属于典型的增值业务收费争议。\"\n  },\n  \"candidate_categories\": [\n    {\n      \"code\": \"FEE_UNKNOWN_CHARGE\",\n      \"full_name\": \"资费与收费争议/不明收费争议/不明扣费\",\n      \"confidence\": 0.75,\n      \"reason\": \"用户提到'历史已取消业务'仍在扣费，对于用户而言这笔费用属于不明扣费。\"\n    },\n    {\n      \"code\": \"BILLING_BILL_AMOUNT\",\n      \"full_name\": \"账单、缴费与发票/账单争议/账单金额异常\",\n      \"confidence\": 0.60,\n      \"reason\": \"用户整体诉求是账单出现两笔扣费导致金额异常，但核心根源在于具体业务收费问题。\"\n    }\n  ],\n  \"candidate_tags\": [\n    \"[PRODUCT] [VALUE_ADDED]\",\n    \"[REQUEST] [REFUND]\",\n    \"[REQUEST] [EXPLAIN]\",\n    \"[ROOT_CAUSE] [SYSTEM_ERROR]\",\n    \"[RESPONSIBILITY] [FINANCE]\",\n    \"[EMOTION] [UNSATISFIED]\"\n  ],\n  \"category_keywords\": [\n    \"天翼云盘黄金会员\",\n    \"重复计费\",\n    \"历史已取消业务\",\n    \"退回多收费用\"\n  ],\n  \"tag_keywords\": [\n    \"会员扣费\",\n    \"核查账单\",\n    \"退费\"\n  ],\n  \"risks\": [\n    \"无法确定'历史已取消业务'是用户侧操作失败未真正退订，还是系统侧数据同步延迟导致的重复扣费，需进一步核查后台日志。\",\n    \"工单未明确用户是否已经尝试过自行退订或联系过客服，不确定是否存在之前的处理记录。\"\n  ]\n}",
+  "finish_reason": "stop",
+  "usage": {
+    "completion_tokens": 525,
+    "prompt_tokens": 11686,
+    "total_tokens": 12211,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  }
+}

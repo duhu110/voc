@@ -1,0 +1,125 @@
+{
+  "ticket_id": "2024082211562487146196",
+  "status": "success",
+  "stage": "chain",
+  "duration_ms": 22407,
+  "timestamp": "2026-04-10T15:06:08",
+  "model_name": "Qwen3-Max",
+  "result": {
+    "summary": "客户对因‘省内涉诈单停’导致的停机不认可，要求复机，后已在营业厅办理复机。",
+    "primary_category": {
+      "code": "OPEN_CLOSE_SHUTDOWN_RISK_FRAUD",
+      "full_name": "开通、停用与销户/停机关停争议/风险关停不认可/反诈治理关停争议",
+      "confidence": 0.96,
+      "reason": "工单明确指出停机类型为‘省内涉诈单停’，属于反诈治理措施下的风险关停，客户对此不认可，符合该分类定义。"
+    },
+    "candidate_categories": [
+      {
+        "code": "OPEN_CLOSE_SHUTDOWN_RISK",
+        "full_name": "开通、停用与销户/停机关停争议/风险关停不认可",
+        "confidence": 0.92,
+        "reason": "上一级分类，涵盖所有风险类关停，但不如子类精准。"
+      },
+      {
+        "code": "OPEN_CLOSE_SHUTDOWN",
+        "full_name": "开通、停用与销户/停机关停争议",
+        "confidence": 0.85,
+        "reason": "更宽泛的停机关停争议，未体现‘反诈’这一关键原因。"
+      }
+    ],
+    "candidate_tags": [
+      {
+        "group_code": "",
+        "code": "[PRODUCT] [MOBILE]",
+        "name": "移动业务",
+        "confidence": 0.98,
+        "reason": "涉及手机号码18935****70的停复机问题。"
+      },
+      {
+        "group_code": "",
+        "code": "[CHANNEL] [HALL]",
+        "name": "营业厅",
+        "confidence": 0.95,
+        "reason": "用户通过古城台营业厅办理复机。"
+      },
+      {
+        "group_code": "",
+        "code": "[REQUEST] [RESTORE]",
+        "name": "恢复服务",
+        "confidence": 0.97,
+        "reason": "用户主诉为要求尽快复机。"
+      },
+      {
+        "group_code": "",
+        "code": "[RESULT] [RESTORED]",
+        "name": "已恢复",
+        "confidence": 0.99,
+        "reason": "备注明确说明已办理复机。"
+      },
+      {
+        "group_code": "",
+        "code": "[RESPONSIBILITY] [NETWORK_OP]",
+        "name": "网运条线",
+        "confidence": 0.9,
+        "reason": "停复机操作通常由网络运营或信安条线执行，工单中‘网信安条线’佐证。"
+      },
+      {
+        "group_code": "",
+        "code": "[ROOT_CAUSE] [RULE_DISPUTE]",
+        "name": "规则不认可",
+        "confidence": 0.88,
+        "reason": "客户不认可基于反诈规则的关停决定。"
+      }
+    ],
+    "category_keywords": [
+      {
+        "keyword": "停机不认可",
+        "reason": "模型识别为与当前判断有关的关键词",
+        "confidence": 0.7
+      },
+      {
+        "keyword": "省内涉诈单停",
+        "reason": "模型识别为与当前判断有关的关键词",
+        "confidence": 0.7
+      },
+      {
+        "keyword": "复机",
+        "reason": "模型识别为与当前判断有关的关键词",
+        "confidence": 0.7
+      },
+      {
+        "keyword": "关停",
+        "reason": "模型识别为与当前判断有关的关键词",
+        "confidence": 0.7
+      }
+    ],
+    "tag_keywords": [
+      {
+        "keyword": "18935****70",
+        "reason": "模型识别为与当前判断有关的关键词",
+        "confidence": 0.7
+      },
+      {
+        "keyword": "古城台营业厅",
+        "reason": "模型识别为与当前判断有关的关键词",
+        "confidence": 0.7
+      },
+      {
+        "keyword": "王雪颖",
+        "reason": "模型识别为与当前判断有关的关键词",
+        "confidence": 0.7
+      },
+      {
+        "keyword": "复机",
+        "reason": "模型识别为与当前判断有关的关键词",
+        "confidence": 0.7
+      },
+      {
+        "keyword": "网信安条线",
+        "reason": "模型识别为与当前判断有关的关键词",
+        "confidence": 0.7
+      }
+    ],
+    "risks": []
+  }
+}

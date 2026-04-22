@@ -1,0 +1,23 @@
+{
+  "case_name": "billing_refund_dispute",
+  "model_name": "Qwen3-Max",
+  "prompt_path": "D:\\project\\FullStack\\voc\\voc_agent\\complaint_taxonomy_validator\\tests\\model_test\\output\\prompts\\billing_refund_dispute.txt",
+  "status": "success",
+  "error_type": null,
+  "error_message": null,
+  "duration_ms": 23124,
+  "timestamp": "2026-04-10T14:39:59",
+  "response_id": "chatcmpl-e232dbbd-1c84-95f1-ad86-40575c19cf1d",
+  "response_text": "{\n  \"summary\": \"客户投诉账单中出现两笔天翼云盘黄金会员扣费，其中一笔为已取消业务，认为存在重复计费，要求核查并退费。\",\n  \"primary_category\": {\n    \"code\": \"FEE_VALUE_ADDED\",\n    \"full_name\": \"资费与收费争议/增值业务收费争议\",\n    \"confidence\": 0.96,\n    \"reason\": \"投诉核心是增值业务（天翼云盘黄金会员）被重复扣费，属于增值业务收费争议。虽然涉及账单展示，但主诉为收费合理性而非账单格式或查询问题，因此优先归入FEE大类下的增值业务子类。\"\n  },\n  \"candidate_categories\": [\n    {\n      \"code\": \"BILLING_BILL_AMOUNT\",\n      \"full_name\": \"账单、缴费与发票/账单争议/账单金额异常\",\n      \"confidence\": 0.85,\n      \"reason\": \"工单原始分类为账单争议，且现象描述为账单金额异常，但根本原因是增值业务退订后仍收费，属于收费规则问题，故次选。\"\n    },\n    {\n      \"code\": \"SUBSCRIBE_CANCEL_CONTINUE_FEE\",\n      \"full_name\": \"订购与退订争议/业务退订争议/退订后仍收费\",\n      \"confidence\": 0.82,\n      \"reason\": \"客户称已取消业务但仍被扣费，符合退订后继续收费特征，但用户主诉求是退费而非退订流程本身，因此作为候选。\"\n    }\n  ],\n  \"candidate_tags\": [\n    {\n      \"code\": \"[PRODUCT] [VALUE_ADDED]\",\n      \"full_name\": \"增值业务\",\n      \"confidence\": 0.98,\n      \"reason\": \"明确涉及‘天翼云盘黄金会员’，属于典型增值业务。\"\n    },\n    {\n      \"code\": \"[REQUEST] [REFUND]\",\n      \"full_name\": \"退费\",\n      \"confidence\": 0.99,\n      \"reason\": \"客户明确提出‘要求退回多收费用’。\"\n    },\n    {\n      \"code\": \"[ROOT_CAUSE] [SYSTEM_ERROR]\",\n      \"full_name\": \"系统异常\",\n      \"confidence\": 0.75,\n      \"reason\": \"退订后仍扣费可能因系统状态未同步，但工单未明确说明原因，存在一定推测成分。\"\n    },\n    {\n      \"code\": \"[RESPONSIBILITY] [FINANCE]\",\n      \"full_name\": \"财务条线\",\n      \"confidence\": 0.80,\n      \"reason\": \"涉及账单核查与退款，属财务/账务职责范围。\"\n    },\n    {\n      \"code\": \"[CHANNEL] [HALL]\",\n      \"full_name\": \"营业厅\",\n      \"confidence\": 0.65,\n      \"reason\": \"受理渠道为‘大通长宁支局景阳片区店’，属营业厅，但投诉内容未指向渠道服务问题，仅作背景信息参考。\"\n    }\n  ],\n  \"category_keywords\": [\"重复计费\", \"会员扣费\", \"已取消业务\", \"多收费用\", \"天翼云盘黄金会员\"],\n  \"tag_keywords\": [\"退费\", \"增值业务\", \"账单明细\", \"核查\"],\n  \"risks\": []\n}",
+  "finish_reason": "stop",
+  "usage": {
+    "completion_tokens": 717,
+    "prompt_tokens": 12955,
+    "total_tokens": 13672,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": {
+      "audio_tokens": null,
+      "cached_tokens": 0
+    }
+  }
+}

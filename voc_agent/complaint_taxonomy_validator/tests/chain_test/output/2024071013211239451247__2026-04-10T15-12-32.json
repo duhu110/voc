@@ -1,0 +1,140 @@
+{
+  "ticket_id": "2024071013211239451247",
+  "status": "success",
+  "stage": "chain",
+  "duration_ms": 14943,
+  "timestamp": "2026-04-10T15:12:32",
+  "model_name": "Qwen3-Max",
+  "result": {
+    "summary": "用户通过中国电信微店新办号卡，提交资料后被要求自行前往营业厅取卡，否则需承担邮寄费用，用户认为该规则不合理并提出争议。",
+    "primary_category": {
+      "code": "RULE_ACTIVITY_CHANNEL",
+      "full_name": "规则政策争议/营销活动规则争议/渠道限制规则争议",
+      "confidence": 0.94,
+      "reason": "投诉核心在于用户对通过电子渠道（微众/微店）办理业务后，取卡方式及邮寄费用承担规则的不满，属于营销活动或业务办理中因渠道限制引发的规则争议。"
+    },
+    "candidate_categories": [
+      {
+        "code": "RULE_PROCESS",
+        "full_name": "规则政策争议/办理规则争议",
+        "confidence": 0.85,
+        "reason": "涉及号卡领取流程规则，但更贴近营销活动中的渠道规则限制。"
+      },
+      {
+        "code": "MARKETING_PROCESS",
+        "full_name": "营销宣传与销售服务/办理差错与漏受理",
+        "confidence": 0.72,
+        "reason": "虽有办理流程问题，但无明确差错或漏受理，更多是规则本身争议。"
+      }
+    ],
+    "candidate_tags": [
+      {
+        "group_code": "PRODUCT",
+        "code": "MOBILE",
+        "name": "移动业务",
+        "confidence": 0.8,
+        "reason": "用户通过中国电信微店新办号卡，提交资料后被要求自行前往营业厅取卡，否则需承担邮寄费用，用户认为该规则不合理并提出争议。"
+      },
+      {
+        "group_code": "CHANNEL",
+        "code": "APP",
+        "name": "APP",
+        "confidence": 0.8,
+        "reason": "用户通过中国电信微店新办号卡，提交资料后被要求自行前往营业厅取卡，否则需承担邮寄费用，用户认为该规则不合理并提出争议。"
+      },
+      {
+        "group_code": "CHANNEL",
+        "code": "HALL",
+        "name": "营业厅",
+        "confidence": 0.8,
+        "reason": "用户通过中国电信微店新办号卡，提交资料后被要求自行前往营业厅取卡，否则需承担邮寄费用，用户认为该规则不合理并提出争议。"
+      },
+      {
+        "group_code": "ROOT_CAUSE",
+        "code": "RULE_DISPUTE",
+        "name": "规则不认可",
+        "confidence": 0.8,
+        "reason": "用户通过中国电信微店新办号卡，提交资料后被要求自行前往营业厅取卡，否则需承担邮寄费用，用户认为该规则不合理并提出争议。"
+      },
+      {
+        "group_code": "RESPONSIBILITY",
+        "code": "MARKET",
+        "name": "市场条线",
+        "confidence": 0.8,
+        "reason": "用户通过中国电信微店新办号卡，提交资料后被要求自行前往营业厅取卡，否则需承担邮寄费用，用户认为该规则不合理并提出争议。"
+      },
+      {
+        "group_code": "REQUEST",
+        "code": "EXPLAIN",
+        "name": "解释说明",
+        "confidence": 0.8,
+        "reason": "用户通过中国电信微店新办号卡，提交资料后被要求自行前往营业厅取卡，否则需承担邮寄费用，用户认为该规则不合理并提出争议。"
+      }
+    ],
+    "category_keywords": [
+      {
+        "keyword": "微众",
+        "reason": "模型识别为与当前判断有关的关键词",
+        "confidence": 0.7
+      },
+      {
+        "keyword": "微店",
+        "reason": "模型识别为与当前判断有关的关键词",
+        "confidence": 0.7
+      },
+      {
+        "keyword": "新办号卡",
+        "reason": "模型识别为与当前判断有关的关键词",
+        "confidence": 0.7
+      },
+      {
+        "keyword": "营业厅拿卡",
+        "reason": "模型识别为与当前判断有关的关键词",
+        "confidence": 0.7
+      },
+      {
+        "keyword": "邮寄费由用户承担",
+        "reason": "模型识别为与当前判断有关的关键词",
+        "confidence": 0.7
+      },
+      {
+        "keyword": "规则不合理",
+        "reason": "模型识别为与当前判断有关的关键词",
+        "confidence": 0.7
+      }
+    ],
+    "tag_keywords": [
+      {
+        "keyword": "移动业务",
+        "reason": "模型识别为与当前判断有关的关键词",
+        "confidence": 0.7
+      },
+      {
+        "keyword": "APP渠道",
+        "reason": "模型识别为与当前判断有关的关键词",
+        "confidence": 0.7
+      },
+      {
+        "keyword": "营业厅",
+        "reason": "模型识别为与当前判断有关的关键词",
+        "confidence": 0.7
+      },
+      {
+        "keyword": "规则不认可",
+        "reason": "模型识别为与当前判断有关的关键词",
+        "confidence": 0.7
+      },
+      {
+        "keyword": "市场条线",
+        "reason": "模型识别为与当前判断有关的关键词",
+        "confidence": 0.7
+      },
+      {
+        "keyword": "要求解释",
+        "reason": "模型识别为与当前判断有关的关键词",
+        "confidence": 0.7
+      }
+    ],
+    "risks": []
+  }
+}

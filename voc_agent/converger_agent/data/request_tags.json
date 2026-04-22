@@ -1,0 +1,78 @@
+{
+  "version": "v1",
+  "updated_at": "2026-04-11",
+  "source_doc": "D:/project/FullStack/voc/docs/converger_design/README.md",
+  "tag_type": "request_tag",
+  "selection_rule": "必须从下列常量中选 1 个，不允许生成新诉求标签。",
+  "source_fields": [
+    "complaint_phenomenon",
+    "biz_content",
+    "appeal_biz_type",
+    "biz_category"
+  ],
+  "default_code": null,
+  "boundary_rules": [
+    {
+      "rule_id": "REQ01",
+      "when": "停机恢复、解限、恢复已中断服务",
+      "prefer_code": "RESTORE"
+    },
+    {
+      "rule_id": "REQ02",
+      "when": "网络质量、故障申告、宽带/信号/网速修复",
+      "prefer_code": "NETWORK_REPAIR"
+    }
+  ],
+  "items": [
+    {
+      "code": "EXPLAIN",
+      "name": "解释说明",
+      "desc": "客户核心诉求是要一个明确说法、规则解释、原因说明。"
+    },
+    {
+      "code": "REFUND",
+      "name": "退费",
+      "desc": "客户核心诉求是退回已扣费用、退回已支付金额。"
+    },
+    {
+      "code": "CANCEL",
+      "name": "取消业务",
+      "desc": "客户核心诉求是退订、取消、拆除、销户、停止某项业务。"
+    },
+    {
+      "code": "RESTORE",
+      "name": "恢复服务",
+      "desc": "客户核心诉求是恢复已中断、已限制或异常的服务。"
+    },
+    {
+      "code": "NETWORK_REPAIR",
+      "name": "网络修复",
+      "desc": "客户核心诉求是修复网络、信号、网速、宽带、装维或通信故障问题。"
+    },
+    {
+      "code": "COMPENSATE",
+      "name": "赔偿补偿",
+      "desc": "客户核心诉求是获得补偿、赔付、赠费、赔礼类补救。"
+    },
+    {
+      "code": "APPLY_SERVICE",
+      "name": "办理业务",
+      "desc": "客户核心诉求是希望办理、开通、申请某项业务。"
+    },
+    {
+      "code": "CHANGE_PLAN",
+      "name": "变更套餐",
+      "desc": "客户核心诉求是修改当前套餐、资费方案、业务档位。"
+    },
+    {
+      "code": "CONTACT_MANAGER",
+      "name": "联系客户经理",
+      "desc": "客户核心诉求是要求专人联系、业务核实、由客户经理介入。"
+    },
+    {
+      "code": "FAST_PROCESS",
+      "name": "加快处理",
+      "desc": "客户核心诉求是催办、加急、尽快处理，而不是重新定义业务结果。"
+    }
+  ]
+}

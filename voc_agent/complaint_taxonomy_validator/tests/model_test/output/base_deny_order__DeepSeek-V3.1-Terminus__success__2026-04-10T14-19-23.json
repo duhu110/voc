@@ -1,0 +1,23 @@
+{
+  "case_name": "base_deny_order",
+  "model_name": "DeepSeek-V3.1-Terminus",
+  "prompt_path": "D:\\project\\FullStack\\voc\\voc_agent\\complaint_taxonomy_validator\\tests\\model_test\\output\\prompts\\base_deny_order.txt",
+  "status": "success",
+  "error_type": null,
+  "error_message": null,
+  "duration_ms": 17989,
+  "timestamp": "2026-04-10T14:19:23",
+  "response_id": "9c2b4cdd0f6f4ae7a74fbe881e5ffddb",
+  "response_text": "{\n  \"summary\": \"用户投诉天翼云盘黄金会员合约包业务不知情办理，要求取消业务并赔偿\",\n  \"primary_category\": {\n    \"code\": \"SUBSCRIBE_DENY_VALUE_ADDED\",\n    \"full_name\": \"订购与退订争议/用户否认订购/否认增值业务订购\",\n    \"confidence\": 0.95,\n    \"reason\": \"用户明确表示对天翼云盘黄金会员合约包业务不认可，称不知情办理，属于典型的否认增值业务订购问题\"\n  },\n  \"candidate_categories\": [\n    {\n      \"code\": \"FEE_VALUE_DENY_ORDER\",\n      \"full_name\": \"资费与收费争议/增值业务收费争议/用户否认订购收费争议\",\n      \"confidence\": 0.85,\n      \"reason\": \"涉及每月5元费用争议，但主要矛盾是订购本身而非收费\"\n    },\n    {\n      \"code\": \"MARKETING_PROCESS_ERROR\",\n      \"full_name\": \"营销宣传与销售服务/办理差错与漏受理/业务办理差错\",\n      \"confidence\": 0.70,\n      \"reason\": \"可能涉及渠道办理过程中的差错\"\n    }\n  ],\n  \"candidate_tags\": [\n    {\n      \"code\": \"PRODUCT_VALUE_ADDED\",\n      \"full_name\": \"增值业务\"\n    },\n    {\n      \"code\": \"ROOT_CAUSE_DENY_ORDER\",\n      \"full_name\": \"用户否认订购\"\n    },\n    {\n      \"code\": \"REQUEST_CANCEL\",\n      \"full_name\": \"取消业务\"\n    },\n    {\n      \"code\": \"REQUEST_REFUND\",\n      \"full_name\": \"退费\"\n    },\n    {\n      \"code\": \"REQUEST_COMPENSATE\",\n      \"full_name\": \"赔偿补偿\"\n    },\n    {\n      \"code\": \"CHANNEL_HALL\",\n      \"full_name\": \"营业厅\"\n    }\n  ],\n  \"category_keywords\": [\"不知情办理\", \"天翼云盘黄金会员合约包\", \"否认订购\"],\n  \"tag_keywords\": [\"增值业务\", \"营业厅办理\", \"否认订购\", \"取消业务\", \"赔偿\"],\n  \"risks\": [\"需要核实具体办理渠道和订购方式，确认是否存在营销误导或系统误操作\"]\n}",
+  "finish_reason": "stop",
+  "usage": {
+    "completion_tokens": 491,
+    "prompt_tokens": 13301,
+    "total_tokens": 13792,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": {
+      "audio_tokens": null,
+      "cached_tokens": 0
+    }
+  }
+}

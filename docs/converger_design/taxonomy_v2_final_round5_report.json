@@ -1,0 +1,388 @@
+{
+  "model_name": "Qwen3-Max",
+  "sample_count": 10,
+  "level1_match_count": 9,
+  "level2_match_count": 9,
+  "leaf_match_count": 8,
+  "results": [
+    {
+      "ticket_id": "WeComQH20240802101714527035",
+      "expected": {
+        "ticket_id": "WeComQH20240802101714527035",
+        "expected_level1_code": "INSTALL_DELIVERY",
+        "expected_level2_code": "INSTALL_STANDARD_AND_RESULT",
+        "expected_leaf_name": "上门服务不规范",
+        "manual_reason": "装维已上门，但只给出“没有资源无法安装”的模糊解释，核心是上门交付解释与服务规范问题。"
+      },
+      "actual": {
+        "summary": "用户申请安装宽带，装维师傅上门后称无资源无法安装，但未向用户清晰解释‘无资源’的具体含义，用户对此不认可。",
+        "level1_code": "INSTALL_DELIVERY",
+        "level2_code": "INSTALL_STANDARD_AND_RESULT",
+        "leaf_name": "上门服务不规范",
+        "reason": "工单核心问题是装维人员上门服务过程中未对‘无资源’情况进行清晰解释，属于上门服务过程中的沟通与操作不规范，符合 INSTALL_DELIVERY / INSTALL_STANDARD_AND_RESULT / 上门服务不规范 的定义。"
+      },
+      "comparison": {
+        "level1_match": true,
+        "level2_match": true,
+        "leaf_match": true
+      },
+      "ticket": {
+        "ticket_id": "WeComQH20240802101714527035",
+        "ticket_type": "投诉单",
+        "complaint_source": "省内工单",
+        "biz_category": "装维服务或交付不规范",
+        "line_category": "网运条线",
+        "appeal_biz_type": "13.催装移机",
+        "repeat_count": 0,
+        "urge_count": 0,
+        "oscillation_count": 0,
+        "satisfaction_score": "满意",
+        "complaint_phenomenon": "服务请求->投诉单->装维服务类->装维服务或交付不规范",
+        "biz_content": "用户称要安装宽带，装维师傅上门后说没有资源无法安装，用户认为没有解释清楚什么叫没有资源，对此不认可，联系电话：15297****07",
+        "return_reason": "留单原因->宽带业务->渠道->装维营销售->用户端原因->",
+        "process_dept": "万号"
+      }
+    },
+    {
+      "ticket_id": "WeComQH20240728095528188566",
+      "expected": {
+        "ticket_id": "WeComQH20240728095528188566",
+        "expected_level1_code": "MARKETING_SALES",
+        "expected_level2_code": "EXPLAIN_AND_COMMITMENT",
+        "expected_leaf_name": "赠品/权益未兑现",
+        "manual_reason": "办理套餐时承诺免费赠送监控，但一直未安装，核心是承诺赠品未兑现。"
+      },
+      "actual": {
+        "summary": "用户反映办理套餐时承诺免费赠送监控但未上门安装，且系统无相关业务记录，属于承诺未兑现问题。",
+        "level1_code": "MARKETING_SALES",
+        "level2_code": "EXPLAIN_AND_COMMITMENT",
+        "leaf_name": "承诺未兑现",
+        "reason": "工单核心是营销过程中承诺赠送监控但未履行，且用户套餐中无该业务，符合‘承诺未兑现’分类，而非安装履约或订购否认问题。"
+      },
+      "comparison": {
+        "level1_match": true,
+        "level2_match": true,
+        "leaf_match": false
+      },
+      "ticket": {
+        "ticket_id": "WeComQH20240728095528188566",
+        "ticket_type": "投诉单",
+        "complaint_source": "省内工单",
+        "biz_category": "解释、说明、宣传不清晰/错误/误导",
+        "line_category": "渠道条线",
+        "appeal_biz_type": "10.要求变更套餐",
+        "repeat_count": 0,
+        "urge_count": 0,
+        "oscillation_count": 0,
+        "satisfaction_score": "满意",
+        "complaint_phenomenon": "服务请求->投诉单->营销服务类->解释、说明、宣传不清晰/错误/误导",
+        "biz_content": "17797****98客户反映当时办理套餐的时候承诺免费赠送监控，但是一直未上门安装，我方核查用户的套餐也没有监控的业务，现用户不认可，请尽快解决，联系电话17797****98",
+        "return_reason": "留单原因->数字生活->天翼看家->其他->",
+        "process_dept": "万号"
+      }
+    },
+    {
+      "ticket_id": "WeComQH20240714184406787934",
+      "expected": {
+        "ticket_id": "WeComQH20240714184406787934",
+        "expected_level1_code": "RULE_POLICY",
+        "expected_level2_code": "ACTIVITY_AND_EFFECTIVE_RULE",
+        "expected_leaf_name": "营销活动规则争议",
+        "manual_reason": "用户办理礼包后会员权益无法使用，主问题更像活动权益兑现规则争议。"
+      },
+      "actual": {
+        "summary": "用户办理50元手机直降礼包后，领取的腾讯视频会员权益无法使用，属于营销活动中承诺的权益未兑现问题。",
+        "level1_code": "MARKETING_SALES",
+        "level2_code": "EXPLAIN_AND_COMMITMENT",
+        "leaf_name": "赠品/权益未兑现",
+        "reason": "工单核心问题是用户已参与营销活动并成功办理礼包，但所承诺的腾讯视频会员权益无法使用，属于营销活动中赠品或权益未按规则兑现的情形，应归入 MARKETING_SALES / EXPLAIN_AND_COMMITMENT / 赠品/权益未兑现。"
+      },
+      "comparison": {
+        "level1_match": false,
+        "level2_match": false,
+        "leaf_match": false
+      },
+      "ticket": {
+        "ticket_id": "WeComQH20240714184406787934",
+        "ticket_type": "投诉单",
+        "complaint_source": "省内工单",
+        "biz_category": "营销活动规则争议",
+        "line_category": "市场条线",
+        "appeal_biz_type": "23.其它非业务问题",
+        "repeat_count": 0,
+        "urge_count": 0,
+        "oscillation_count": 0,
+        "satisfaction_score": "满意",
+        "complaint_phenomenon": "服务请求->投诉单->规则政策类->营销活动规则争议",
+        "biz_content": "17797****17用户办理了50元手机直降礼包，领取的腾讯视频的会员权益无法使用，请处理，谢谢！",
+        "return_reason": "留单原因->移动业务->规则政策->业务办理规则->其他业务办理规则->",
+        "process_dept": "万号"
+      }
+    },
+    {
+      "ticket_id": "WeComQH20240713102056192380",
+      "expected": {
+        "ticket_id": "WeComQH20240713102056192380",
+        "expected_level1_code": "SUBSCRIBE_CANCEL",
+        "expected_level2_code": "CANCEL_AND_UNSUBSCRIBE",
+        "expected_leaf_name": "业务退订/取消失败",
+        "manual_reason": "用户明确要求取消连续包月业务，但系统带出异常属性导致取消不成功，核心是退订失败。"
+      },
+      "actual": {
+        "summary": "用户要求取消芒果TV会员权益2GB通用流量包（连续包月）业务，但在验证取消时系统带出修改ITV属性导致取消不成功。",
+        "level1_code": "SUBSCRIBE_CANCEL",
+        "level2_code": "CANCEL_AND_UNSUBSCRIBE",
+        "leaf_name": "业务退订/取消失败",
+        "reason": "工单核心问题是用户在尝试取消已订购的增值业务（芒果TV会员流量包）时因系统异常导致退订操作失败，符合‘业务退订/取消失败’分类。"
+      },
+      "comparison": {
+        "level1_match": true,
+        "level2_match": true,
+        "leaf_match": true
+      },
+      "ticket": {
+        "ticket_id": "WeComQH20240713102056192380",
+        "ticket_type": "投诉单",
+        "complaint_source": "省内工单",
+        "biz_category": "办理不及时/不成功",
+        "line_category": "企信条线",
+        "repeat_count": 0,
+        "urge_count": 0,
+        "oscillation_count": 0,
+        "satisfaction_score": "满意",
+        "complaint_phenomenon": "服务请求->投诉单->开通及停用类->办理不及时/不成功",
+        "biz_content": "18797****73用户要求取消本机芒果TV会员权益2GB通用流量包(连续包月)业务，验证取消时系统带出了修改ITV属性，取消不成功，请取消，谢谢",
+        "return_reason": "留单原因->移动业务->规则政策->业务办理规则->其他业务办理规则->",
+        "process_dept": "万号"
+      }
+    },
+    {
+      "ticket_id": "WeComQH20240712180131851489",
+      "expected": {
+        "ticket_id": "WeComQH20240712180131851489",
+        "expected_level1_code": "SUBSCRIBE_CANCEL",
+        "expected_level2_code": "ORDER_AND_DENY",
+        "expected_leaf_name": "用户否认订购",
+        "manual_reason": "用户对芒果TV会员权益费用不认可并明确否认订购，核心是订购关系不认可。"
+      },
+      "actual": {
+        "summary": "用户否认订购芒果TV会员权益并要求退费",
+        "level1_code": "SUBSCRIBE_CANCEL",
+        "level2_code": "ORDER_AND_DENY",
+        "leaf_name": "用户否认订购",
+        "reason": "工单核心问题是用户明确否认曾订购芒果TV会员权益，并对因此产生的费用不认可，符合‘用户否认订购’这一叶子分类的定义。"
+      },
+      "comparison": {
+        "level1_match": true,
+        "level2_match": true,
+        "leaf_match": true
+      },
+      "ticket": {
+        "ticket_id": "WeComQH20240712180131851489",
+        "ticket_type": "投诉单",
+        "complaint_source": "省内工单",
+        "biz_category": "用户否认订购",
+        "line_category": "渠道条线",
+        "customer_star": "1星",
+        "repeat_count": 0,
+        "urge_count": 0,
+        "oscillation_count": 0,
+        "satisfaction_score": "满意",
+        "complaint_phenomenon": "服务请求->投诉单->营销服务类->用户否认订购",
+        "biz_content": "13209****32用户对每月产生的芒果TV会员权益费用不认可否认订购，要求退费，请处理，谢谢！",
+        "return_reason": "留单原因->业务规则->业务办理规则->生/失效规则->对套餐生/失效规则不认可->",
+        "process_dept": "万号"
+      }
+    },
+    {
+      "ticket_id": "WeComQH20240604105832012251",
+      "expected": {
+        "ticket_id": "WeComQH20240604105832012251",
+        "expected_level1_code": "FEE_BILLING",
+        "expected_level2_code": "ACCOUNT_AND_PAYMENT",
+        "expected_leaf_name": "充值缴费异常",
+        "manual_reason": "用户缴费 200 元中有 100 元被冲正并导致宽带欠费停机，核心是缴费结果异常。"
+      },
+      "actual": {
+        "summary": "用户缴费200元后，其中100元被冲正导致宽带欠费停机，用户不认可，要求核实处理。",
+        "level1_code": "FEE_BILLING",
+        "level2_code": "ACCOUNT_AND_PAYMENT",
+        "leaf_name": "充值缴费异常",
+        "reason": "工单核心问题是用户已缴费但部分金额被冲正，导致欠费停机，属于缴费到账异常问题，应归入充值缴费异常。"
+      },
+      "comparison": {
+        "level1_match": true,
+        "level2_match": true,
+        "leaf_match": true
+      },
+      "ticket": {
+        "ticket_id": "WeComQH20240604105832012251",
+        "ticket_type": "投诉单",
+        "complaint_source": "省内工单",
+        "biz_category": "代缴/代扣/托收争议",
+        "line_category": "政企条线",
+        "appeal_biz_type": "2.计费问题",
+        "repeat_count": 0,
+        "urge_count": 2,
+        "oscillation_count": 0,
+        "satisfaction_score": "满意",
+        "complaint_phenomenon": "服务请求->投诉单->费用争议类->代缴/代扣/托收争议",
+        "biz_content": "09718****60用户2024-05-03 12:44:59缴费200元，其中100元显示被冲正导致宽带欠费停机，用户对此不认可，请核实处理，谢谢！",
+        "return_reason": "留单原因->渠道服务->自营电子渠道（中国电信APP/网厅/掌厅/短厅/积分商城/易信等）->客户原因->",
+        "process_dept": "万号"
+      }
+    },
+    {
+      "ticket_id": "WeComQH20240531105149107161",
+      "expected": {
+        "ticket_id": "WeComQH20240531105149107161",
+        "expected_level1_code": "OPEN_RECOVERY_CONTROL",
+        "expected_level2_code": "RECOVERY_AND_UNBLOCK",
+        "expected_leaf_name": "复机/恢复失败或不及时",
+        "manual_reason": "用户已到营业厅申请复机，但公安双停后仍未恢复，核心是恢复失败或不及时。"
+      },
+      "actual": {
+        "summary": "用户反映已到营业厅申请复机但仍未恢复通信服务，要求核实处理。",
+        "level1_code": "OPEN_RECOVERY_CONTROL",
+        "level2_code": "RECOVERY_AND_UNBLOCK",
+        "leaf_name": "复机/恢复失败或不及时",
+        "reason": "工单核心问题是用户已申请复机但未及时恢复服务，属于复机失败或不及时的范畴，应归入 OPEN_RECOVERY_CONTROL / RECOVERY_AND_UNBLOCK。"
+      },
+      "comparison": {
+        "level1_match": true,
+        "level2_match": true,
+        "leaf_match": true
+      },
+      "ticket": {
+        "ticket_id": "WeComQH20240531105149107161",
+        "ticket_type": "投诉单",
+        "complaint_source": "省内工单",
+        "biz_category": "欠费停机",
+        "line_category": "企信条线",
+        "appeal_biz_type": "39.携转问题",
+        "customer_star": "2星",
+        "repeat_count": 0,
+        "urge_count": 0,
+        "oscillation_count": 0,
+        "satisfaction_score": "满意",
+        "complaint_phenomenon": "服务请求->投诉单->开通及停用类->欠费停机",
+        "biz_content": "18197****86用户的号码公安停机(双停)称昨天已到湟中营业厅申请了复机，但现在还没有复机，用户对此不认可，请核实处理，谢谢!\n注：本机是给孩子上网课办的号卡，职业是农民，现在在湟中使用",
+        "return_reason": "留单原因->移动业务->规则政策->业务管理规则->用户原因->",
+        "process_dept": "万号"
+      }
+    },
+    {
+      "ticket_id": "WeComQH20240521091329931527",
+      "expected": {
+        "ticket_id": "WeComQH20240521091329931527",
+        "expected_level1_code": "MARKETING_SALES",
+        "expected_level2_code": "SALES_PROCESS_AND_ATTITUDE",
+        "expected_leaf_name": "业务办理差错/漏受理",
+        "manual_reason": "办理入网时承诺将旧号携转进套餐但迟迟没办成，核心是办理差错或漏受理。"
+      },
+      "actual": {
+        "summary": "用户投诉在入网时工作人员承诺办理携号转网但未实际操作，要求核查处理。",
+        "level1_code": "MARKETING_SALES",
+        "level2_code": "SALES_PROCESS_AND_ATTITUDE",
+        "leaf_name": "业务办理差错/漏受理",
+        "reason": "工单核心问题是工作人员在用户入网时承诺办理携号转网但实际未受理，属于营销销售环节的业务办理差错或漏受理，与给定分类中的 [MARKETING_SALES] / [SALES_PROCESS_AND_ATTITUDE] / 业务办理差错/漏受理 完全匹配。"
+      },
+      "comparison": {
+        "level1_match": true,
+        "level2_match": true,
+        "leaf_match": true
+      },
+      "ticket": {
+        "ticket_id": "WeComQH20240521091329931527",
+        "ticket_type": "投诉单",
+        "complaint_source": "省内工单",
+        "biz_category": "业务办理差错/漏受理",
+        "line_category": "渠道条线",
+        "appeal_biz_type": "39.携转问题",
+        "repeat_count": 0,
+        "urge_count": 0,
+        "oscillation_count": 0,
+        "satisfaction_score": "满意",
+        "complaint_phenomenon": "服务请求->投诉单->营销服务类->业务办理差错/漏受理",
+        "biz_content": "19197****07用户称本机在2024-05-16日办理入网的时候，工作人员承诺给用户将18597****44的号码携转到19197****07的套餐内，但是至今核查没有办理，已经解释通过远柜携转，用户不认可，用户要求我方核查处理，谢谢，联系电话18597****44",
+        "return_reason": "留单原因->移动业务->携号转网->其他->",
+        "process_dept": "万号"
+      }
+    },
+    {
+      "ticket_id": "WeComQH20240524112207679068",
+      "expected": {
+        "ticket_id": "WeComQH20240524112207679068",
+        "expected_level1_code": "FEE_BILLING",
+        "expected_level2_code": "REFUND_PENALTY_RIGHTS",
+        "expected_leaf_name": "返费/赠费/退款未到账",
+        "manual_reason": "拆机后一直未退费，核心是退款未到账。"
+      },
+      "actual": {
+        "summary": "用户拆机后未收到应退费用，投诉退款未到账。",
+        "level1_code": "FEE_BILLING",
+        "level2_code": "REFUND_PENALTY_RIGHTS",
+        "leaf_name": "返费/赠费/退款未到账",
+        "reason": "工单核心问题是拆机后账户余额退款未到账，属于费用争议中的退款未到账情形，与给定叶子分类中的“返费/赠费/退款未到账”完全匹配。"
+      },
+      "comparison": {
+        "level1_match": true,
+        "level2_match": true,
+        "leaf_match": true
+      },
+      "ticket": {
+        "ticket_id": "WeComQH20240524112207679068",
+        "ticket_type": "投诉单",
+        "complaint_source": "最强工单",
+        "biz_category": "返费/赠费/退款/提现未到账",
+        "line_category": "企信条线",
+        "appeal_biz_type": "35.余额退还问题",
+        "repeat_count": 0,
+        "urge_count": 0,
+        "oscillation_count": 0,
+        "satisfaction_score": "满意",
+        "complaint_phenomenon": "服务请求->投诉单->费用争议类->返费/赠费/退款/提现未到账",
+        "biz_content": "用户称4月7日在东关大街营业厅进行拆机，拆机后一直未退费，联系电话：13389****32",
+        "return_reason": "留单原因->移动业务->规则政策->业务管理规则->账户余额退款管理规则->",
+        "process_dept": "万号"
+      }
+    },
+    {
+      "ticket_id": "WeComQH20240524185814517932",
+      "expected": {
+        "ticket_id": "WeComQH20240524185814517932",
+        "expected_level1_code": "MARKETING_SALES",
+        "expected_level2_code": "EXPLAIN_AND_COMMITMENT",
+        "expected_leaf_name": "宣传/解释不清或误导",
+        "manual_reason": "办理融合套餐时未解释清楚携号转网副卡加入方式，导致后续上网费产生，核心是解释不清。"
+      },
+      "actual": {
+        "summary": "用户投诉办理融合套餐时工作人员未解释清楚携号转网流程，导致移动号码未成功携入并产生额外上网费，要求原办理人员联系解释。",
+        "level1_code": "MARKETING_SALES",
+        "level2_code": "EXPLAIN_AND_COMMITMENT",
+        "leaf_name": "宣传/解释不清或误导",
+        "reason": "工单核心问题是工作人员在营销办理过程中对携号转网及副卡加入规则解释不清，造成用户误解并产生费用，属于营销环节的解释误导问题，符合'MARKETING_SALES / EXPLAIN_AND_COMMITMENT / 宣传/解释不清或误导'分类。"
+      },
+      "comparison": {
+        "level1_match": true,
+        "level2_match": true,
+        "leaf_match": true
+      },
+      "ticket": {
+        "ticket_id": "WeComQH20240524185814517932",
+        "ticket_type": "投诉单",
+        "complaint_source": "省内工单",
+        "biz_category": "解释、说明、宣传不清晰/错误/误导",
+        "line_category": "渠道条线",
+        "repeat_count": 0,
+        "urge_count": 1,
+        "oscillation_count": 0,
+        "satisfaction_score": "满意",
+        "complaint_phenomenon": "服务请求->投诉单->营销服务类->解释、说明、宣传不清晰/错误/误导",
+        "biz_content": "19197****02用户称办理融合套餐时我方工作人员告知将移动的号码携号转网后加入套餐的副卡，现查看移动号码没有办理携号入网，用户称我方工作人员没有解释清楚导致移动号码没有携入产生上网费，用户对此不认可，要求办理的工作人员联系解释，请处理，谢谢！\n联系电话：15709****02，19197****02",
+        "return_reason": "留单原因->移动业务->携号转网->其他->",
+        "process_dept": "万号"
+      }
+    }
+  ]
+}

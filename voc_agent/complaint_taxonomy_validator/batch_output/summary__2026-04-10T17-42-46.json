@@ -1,0 +1,34 @@
+{
+  "timestamp": "2026-04-10T17:42:46",
+  "sample_size": 1,
+  "model_name": "Qwen3-Max",
+  "ticket_ids": [
+    "2024121012035639863059"
+  ],
+  "success_count": 1,
+  "failure_count": 0,
+  "success_rate": 1.0,
+  "failures_by_stage": {},
+  "results": [
+    {
+      "ticket_id": "2024121012035639863059",
+      "status": "success",
+      "stage": "persistence",
+      "duration_ms": 15743,
+      "timestamp": "2026-04-10T17:42:46",
+      "model_name": "Qwen3-Max",
+      "write_summary": {
+        "category_results": 3,
+        "tag_results": 4,
+        "keyword_results": 9,
+        "match_details": 7
+      },
+      "artifact_path": "D:\\project\\FullStack\\voc\\voc_agent\\complaint_taxonomy_validator\\batch_output\\2024121012035639863059__2026-04-10T17-42-46.json"
+    }
+  ],
+  "result_files": [
+    "D:\\project\\FullStack\\voc\\voc_agent\\complaint_taxonomy_validator\\batch_output\\2024121012035639863059__2026-04-10T17-42-46.json"
+  ],
+  "summary_path": "D:\\project\\FullStack\\voc\\voc_agent\\complaint_taxonomy_validator\\batch_output\\summary__2026-04-10T17-42-46.json",
+  "report_path": "D:\\project\\FullStack\\voc\\voc_agent\\complaint_taxonomy_validator\\batch_output\\report__2026-04-10T17-42-46.md"
+}

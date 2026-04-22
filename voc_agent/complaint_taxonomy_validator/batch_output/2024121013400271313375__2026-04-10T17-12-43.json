@@ -1,0 +1,14 @@
+{
+  "ticket_id": "2024121013400271313375",
+  "status": "success",
+  "stage": "persistence",
+  "duration_ms": 17212,
+  "timestamp": "2026-04-10T17:12:43",
+  "model_name": "Qwen3-Max",
+  "write_summary": {
+    "category_results": 3,
+    "tag_results": 5,
+    "keyword_results": 7,
+    "match_details": 8
+  }
+}

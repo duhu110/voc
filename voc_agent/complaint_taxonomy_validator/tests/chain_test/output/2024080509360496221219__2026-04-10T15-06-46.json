@@ -1,0 +1,130 @@
+{
+  "ticket_id": "2024080509360496221219",
+  "status": "success",
+  "stage": "chain",
+  "duration_ms": 16075,
+  "timestamp": "2026-04-10T15:06:46",
+  "model_name": "Qwen3-Max",
+  "result": {
+    "summary": "用户投诉畅享59元融合套餐202406中承诺的110G流量（含60G主套餐+50G西宁大通0元合约流量）未准确生效，认为规则不合理，要求处理但不要求赔偿。",
+    "primary_category": {
+      "code": "RULE_EFFECTIVE_PACKAGE",
+      "full_name": "规则政策争议/生效失效规则争议/套餐生效时间争议",
+      "confidence": 0.92,
+      "reason": "用户核心争议点在于套餐内流量（特别是附加合约流量）未按预期生效，属于业务生效规则问题，且原始工单已明确归类为'业务生效/失效规则争议'。"
+    },
+    "candidate_categories": [
+      {
+        "code": "RULE_USAGE_FLOW_SCOPE",
+        "full_name": "规则政策争议/使用规则争议/流量使用范围争议",
+        "confidence": 0.75,
+        "reason": "涉及50G区域合约流量是否应计入总流量，可能存在使用范围理解差异。"
+      },
+      {
+        "code": "MARKETING_EXPLAIN_UNCLEAR_FEE",
+        "full_name": "营销宣传与销售服务/宣传解释与营销误导/解释宣传不清/资费解释不清",
+        "confidence": 0.7,
+        "reason": "用户称办理时工作人员告知总流量110G，可能存在解释不清或承诺不一致。"
+      }
+    ],
+    "candidate_tags": [
+      {
+        "group_code": "PRODUCT",
+        "code": "FUSION_PACKAGE",
+        "name": "融合套餐",
+        "confidence": 0.8,
+        "reason": "用户投诉畅享59元融合套餐202406中承诺的110G流量（含60G主套餐+50G西宁大通0元合约流量）未准确生效，认为规则不合理，要求处理但不要求赔偿。"
+      },
+      {
+        "group_code": "PRODUCT",
+        "code": "MOBILE",
+        "name": "移动业务",
+        "confidence": 0.8,
+        "reason": "用户投诉畅享59元融合套餐202406中承诺的110G流量（含60G主套餐+50G西宁大通0元合约流量）未准确生效，认为规则不合理，要求处理但不要求赔偿。"
+      },
+      {
+        "group_code": "ROOT_CAUSE",
+        "code": "UNCLEAR_EXPLANATION",
+        "name": "解释不清",
+        "confidence": 0.8,
+        "reason": "用户投诉畅享59元融合套餐202406中承诺的110G流量（含60G主套餐+50G西宁大通0元合约流量）未准确生效，认为规则不合理，要求处理但不要求赔偿。"
+      },
+      {
+        "group_code": "REQUEST",
+        "code": "EXPLAIN",
+        "name": "解释说明",
+        "confidence": 0.8,
+        "reason": "用户投诉畅享59元融合套餐202406中承诺的110G流量（含60G主套餐+50G西宁大通0元合约流量）未准确生效，认为规则不合理，要求处理但不要求赔偿。"
+      },
+      {
+        "group_code": "RESPONSIBILITY",
+        "code": "MARKET",
+        "name": "市场条线",
+        "confidence": 0.8,
+        "reason": "用户投诉畅享59元融合套餐202406中承诺的110G流量（含60G主套餐+50G西宁大通0元合约流量）未准确生效，认为规则不合理，要求处理但不要求赔偿。"
+      },
+      {
+        "group_code": "EMOTION",
+        "code": "UNSATISFIED",
+        "name": "不满",
+        "confidence": 0.8,
+        "reason": "用户投诉畅享59元融合套餐202406中承诺的110G流量（含60G主套餐+50G西宁大通0元合约流量）未准确生效，认为规则不合理，要求处理但不要求赔偿。"
+      }
+    ],
+    "category_keywords": [
+      {
+        "keyword": "业务生效有争议",
+        "reason": "模型识别为与当前判断有关的关键词",
+        "confidence": 0.7
+      },
+      {
+        "keyword": "流量未准确生效",
+        "reason": "模型识别为与当前判断有关的关键词",
+        "confidence": 0.7
+      },
+      {
+        "keyword": "规则不合理",
+        "reason": "模型识别为与当前判断有关的关键词",
+        "confidence": 0.7
+      },
+      {
+        "keyword": "畅享59元融合套餐202406",
+        "reason": "模型识别为与当前判断有关的关键词",
+        "confidence": 0.7
+      },
+      {
+        "keyword": "西宁大通0元50GB流量合约",
+        "reason": "模型识别为与当前判断有关的关键词",
+        "confidence": 0.7
+      }
+    ],
+    "tag_keywords": [
+      {
+        "keyword": "融合套餐",
+        "reason": "模型识别为与当前判断有关的关键词",
+        "confidence": 0.7
+      },
+      {
+        "keyword": "流量",
+        "reason": "模型识别为与当前判断有关的关键词",
+        "confidence": 0.7
+      },
+      {
+        "keyword": "工作人员告知",
+        "reason": "模型识别为与当前判断有关的关键词",
+        "confidence": 0.7
+      },
+      {
+        "keyword": "客服代表解释无效",
+        "reason": "模型识别为与当前判断有关的关键词",
+        "confidence": 0.7
+      },
+      {
+        "keyword": "市场条线",
+        "reason": "模型识别为与当前判断有关的关键词",
+        "confidence": 0.7
+      }
+    ],
+    "risks": []
+  }
+}

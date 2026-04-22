@@ -1,0 +1,28 @@
+{
+  "case_name": "base_deny_order",
+  "model_name": "Doubao1.5-pro-32k",
+  "prompt_path": "D:\\project\\FullStack\\voc\\voc_agent\\complaint_taxonomy_validator\\tests\\model_test\\output\\prompts\\base_deny_order.txt",
+  "status": "success",
+  "error_type": null,
+  "error_message": null,
+  "duration_ms": 15337,
+  "timestamp": "2026-04-10T14:48:56",
+  "response_id": "0217758037371955c847dce3dfef19d8a8a6e4aeb40e68be042f3",
+  "response_text": "{\n    \"summary\": \"用户来电否认订购天翼云盘黄金会员合约包业务，称不知情办理，要求取消业务及赔偿。\",\n    \"primary_category\": {\n        \"code\": \"SUBSCRIBE_DENY_VALUE_ADDED\",\n        \"full_name\": \"订购与退订争议/用户否认订购/否认增值业务订购\",\n        \"confidence\": 0.9,\n        \"reason\": \"工单中明确提到用户对本机办理的天翼云盘黄金会员合约包业务不认可，称不知情办理，该业务属于增值业务，符合‘订购与退订争议/用户否认订购/否认增值业务订购’的分类定义。\"\n    },\n    \"candidate_categories\": [],\n    \"candidate_tags\": [\n        {\n            \"code\": \"[PRODUCT] [VALUE_ADDED]\",\n            \"name\": \"增值业务\"\n        },\n        {\n            \"code\": \"[CHANNEL] [HALL]\",\n            \"name\": \"营业厅\"\n        },\n        {\n            \"code\": \"[ROOT_CAUSE] [DENY_ORDER]\",\n            \"name\": \"用户否认订购\"\n        },\n        {\n            \"code\": \"[REQUEST] [CANCEL]\",\n            \"name\": \"取消业务\"\n        },\n        {\n            \"code\": \"[REQUEST] [COMPENSATE]\",\n            \"name\": \"赔偿补偿\"\n        }\n    ],\n    \"category_keywords\": [\"天翼云盘黄金会员合约包\", \"否认订购\"],\n    \"tag_keywords\": [\"增值业务\", \"营业厅\", \"否认订购\", \"取消业务\", \"赔偿\"],\n    \"risks\": []\n}",
+  "finish_reason": "stop",
+  "usage": {
+    "completion_tokens": 367,
+    "prompt_tokens": 12666,
+    "total_tokens": 13033,
+    "completion_tokens_details": {
+      "accepted_prediction_tokens": null,
+      "audio_tokens": null,
+      "reasoning_tokens": 0,
+      "rejected_prediction_tokens": null
+    },
+    "prompt_tokens_details": {
+      "audio_tokens": null,
+      "cached_tokens": 0
+    }
+  }
+}

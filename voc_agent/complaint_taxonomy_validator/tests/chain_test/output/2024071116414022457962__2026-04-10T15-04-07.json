@@ -1,0 +1,120 @@
+{
+  "ticket_id": "2024071116414022457962",
+  "status": "success",
+  "stage": "chain",
+  "duration_ms": 18015,
+  "timestamp": "2026-04-10T15:04:07",
+  "model_name": "Qwen3-Max",
+  "result": {
+    "summary": "用户对视频彩铃基础会员6-7月产生的13.7元费用不认可，称未使用过该业务，要求核查退费并退订。",
+    "primary_category": {
+      "code": "FEE_UNKNOWN_UNUSED_VAS",
+      "full_name": "资费与收费争议/不明收费争议/未使用收费争议/未使用增值服务却计费",
+      "confidence": 0.95,
+      "reason": "用户明确表示未使用视频彩铃基础会员却被收费，符合‘未使用增值服务却计费’的定义；同时涉及增值业务收费争议，但主诉焦点是‘未使用却被收费’，故优先选择更具体的FEE_UNKNOWN_UNUSED_VAS。"
+    },
+    "candidate_categories": [
+      {
+        "code": "FEE_VALUE_DENY_ORDER",
+        "full_name": "资费与收费争议/增值业务收费争议/用户否认订购收费争议",
+        "confidence": 0.85,
+        "reason": "用户虽未直接说‘否认订购’，但称‘未使用过’，隐含否认主动开通或授权订购。"
+      },
+      {
+        "code": "SUBSCRIBE_DENY_VALUE_ADDED",
+        "full_name": "订购与退订争议/用户否认订购/否认增值业务订购",
+        "confidence": 0.8,
+        "reason": "若聚焦于订购行为本身而非费用，则可归入此类，但工单主诉为费用争议，故次选。"
+      }
+    ],
+    "candidate_tags": [
+      {
+        "group_code": "",
+        "code": "[PRODUCT] [VALUE_ADDED]",
+        "name": "增值业务",
+        "confidence": 0.8,
+        "reason": "用户对视频彩铃基础会员6-7月产生的13.7元费用不认可，称未使用过该业务，要求核查退费并退订。"
+      },
+      {
+        "group_code": "",
+        "code": "[CHANNEL] [APP]",
+        "name": "APP",
+        "confidence": 0.8,
+        "reason": "用户对视频彩铃基础会员6-7月产生的13.7元费用不认可，称未使用过该业务，要求核查退费并退订。"
+      },
+      {
+        "group_code": "",
+        "code": "[ROOT_CAUSE] [DENY_ORDER]",
+        "name": "用户否认订购",
+        "confidence": 0.8,
+        "reason": "用户对视频彩铃基础会员6-7月产生的13.7元费用不认可，称未使用过该业务，要求核查退费并退订。"
+      },
+      {
+        "group_code": "",
+        "code": "[REQUEST] [REFUND]",
+        "name": "退费",
+        "confidence": 0.8,
+        "reason": "用户对视频彩铃基础会员6-7月产生的13.7元费用不认可，称未使用过该业务，要求核查退费并退订。"
+      },
+      {
+        "group_code": "",
+        "code": "[REQUEST] [CANCEL]",
+        "name": "取消业务",
+        "confidence": 0.8,
+        "reason": "用户对视频彩铃基础会员6-7月产生的13.7元费用不认可，称未使用过该业务，要求核查退费并退订。"
+      },
+      {
+        "group_code": "",
+        "code": "[RESPONSIBILITY] [MARKET]",
+        "name": "市场条线",
+        "confidence": 0.8,
+        "reason": "用户对视频彩铃基础会员6-7月产生的13.7元费用不认可，称未使用过该业务，要求核查退费并退订。"
+      }
+    ],
+    "category_keywords": [
+      {
+        "keyword": "未使用过",
+        "reason": "模型识别为与当前判断有关的关键词",
+        "confidence": 0.7
+      },
+      {
+        "keyword": "彩铃费用争议",
+        "reason": "模型识别为与当前判断有关的关键词",
+        "confidence": 0.7
+      },
+      {
+        "keyword": "视频彩铃基础会员",
+        "reason": "模型识别为与当前判断有关的关键词",
+        "confidence": 0.7
+      },
+      {
+        "keyword": "费用不认可",
+        "reason": "模型识别为与当前判断有关的关键词",
+        "confidence": 0.7
+      }
+    ],
+    "tag_keywords": [
+      {
+        "keyword": "爱音乐",
+        "reason": "模型识别为与当前判断有关的关键词",
+        "confidence": 0.7
+      },
+      {
+        "keyword": "退费",
+        "reason": "模型识别为与当前判断有关的关键词",
+        "confidence": 0.7
+      },
+      {
+        "keyword": "退订业务",
+        "reason": "模型识别为与当前判断有关的关键词",
+        "confidence": 0.7
+      },
+      {
+        "keyword": "增值业务",
+        "reason": "模型识别为与当前判断有关的关键词",
+        "confidence": 0.7
+      }
+    ],
+    "risks": []
+  }
+}

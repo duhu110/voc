@@ -1,0 +1,10 @@
+{
+  "case_name": "network_quality_escalation",
+  "model_name": "Baichuan-M2-32B",
+  "prompt_path": "D:\\project\\FullStack\\voc\\voc_agent\\complaint_taxonomy_validator\\tests\\model_test\\output\\prompts\\network_quality_escalation.txt",
+  "status": "failed",
+  "error_type": "RateLimitError",
+  "error_message": "Error code: 429 - {'code': 700002, 'detail': '用户请求TPM超限，请减少tokens后重试', 'message': 'USER_TPM_RATELIMITING', 'error': {'code': '700002', 'message': '用户请求TPM超限，请减少tokens后重试', 'type': 'USER_TPM_RATELIMITING'}}",
+  "duration_ms": 1488,
+  "timestamp": "2026-04-10T15:15:14"
+}

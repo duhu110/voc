@@ -1,7 +1,158 @@
 {
   "ticket_id": "2024121013451359982515",
-  "timestamp": "2026-04-10T10:56:37",
-  "raw_response_text": "{\n",
-  "raw_json_text": "{",
-  "json_decode_error": "Expecting property name enclosed in double quotes: line 1 column 2 (char 1)"
+  "timestamp": "2026-04-10T13:25:58",
+  "raw_response_text": "{\n  \"summary\": \"客户否认订购天翼云盘黄金会员合约包业务，称不知情办理，要求取消业务并赔偿。\",\n  \"primary_category\": {\n    \"code\": \"SUBSCRIBE_DENY_VALUE_ADDED\",\n    \"full_name\": \"订购与退订争议/用户否认订购/否认增值业务订购\",\n    \"confidence\": 0.95,\n    \"reason\": \"工单核心是用户否认订购增值业务‘天翼云盘黄金会员合约包’，符合该分类定义。\"\n  },\n  \"candidate_categories\": [\n    {\n      \"code\": \"FEE_VALUE_DENY_ORDER\",\n      \"full_name\": \"资费与收费争议/增值业务收费争议/用户否认订购收费争议\",\n      \"confidence\": 0.85,\n      \"reason\": \"涉及增值业务收费，且用户否认订购，但工单主诉更偏向订购争议而非单纯收费争议。\"\n    },\n    {\n      \"code\": \"SUBSCRIBE_ORDER_NO_CONSENT\",\n      \"full_name\": \"订购与退订争议/业务订购争议/未明确同意订购\",\n      \"confidence\": 0.8,\n      \"reason\": \"用户称‘不知情办理’，隐含未明确同意订购，但分类清单中有更具体的‘否认增值业务订购’分类。\"\n    }\n  ],\n  \"candidate_tags\": [\n    \"[PRODUCT] [VALUE_ADDED]\",\n    \"[ROOT_CAUSE] [DENY_ORDER]\",\n    \"[REQUEST] [CANCEL]\",\n    \"[REQUEST] [COMPENSATE]\",\n    \"[CHANNEL] [HALL]\"\n  ],\n  \"category_keywords\": [\"否认订购\", \"天翼云盘黄金会员合约包\", \"不知情办理\"],\n  \"tag_keywords\": [\"增值业务\", \"否认订购\", \"取消业务\", \"赔偿\", \"营业厅\"],\n  \"risks\": [\"工单未明确说明用户否认订购的具体原因（如误触、渠道代办、外呼营销等），无法判断更具体的根因。\"]\n}",
+  "raw_json_text": "{\n  \"summary\": \"客户否认订购天翼云盘黄金会员合约包业务，称不知情办理，要求取消业务并赔偿。\",\n  \"primary_category\": {\n    \"code\": \"SUBSCRIBE_DENY_VALUE_ADDED\",\n    \"full_name\": \"订购与退订争议/用户否认订购/否认增值业务订购\",\n    \"confidence\": 0.95,\n    \"reason\": \"工单核心是用户否认订购增值业务‘天翼云盘黄金会员合约包’，符合该分类定义。\"\n  },\n  \"candidate_categories\": [\n    {\n      \"code\": \"FEE_VALUE_DENY_ORDER\",\n      \"full_name\": \"资费与收费争议/增值业务收费争议/用户否认订购收费争议\",\n      \"confidence\": 0.85,\n      \"reason\": \"涉及增值业务收费，且用户否认订购，但工单主诉更偏向订购争议而非单纯收费争议。\"\n    },\n    {\n      \"code\": \"SUBSCRIBE_ORDER_NO_CONSENT\",\n      \"full_name\": \"订购与退订争议/业务订购争议/未明确同意订购\",\n      \"confidence\": 0.8,\n      \"reason\": \"用户称‘不知情办理’，隐含未明确同意订购，但分类清单中有更具体的‘否认增值业务订购’分类。\"\n    }\n  ],\n  \"candidate_tags\": [\n    \"[PRODUCT] [VALUE_ADDED]\",\n    \"[ROOT_CAUSE] [DENY_ORDER]\",\n    \"[REQUEST] [CANCEL]\",\n    \"[REQUEST] [COMPENSATE]\",\n    \"[CHANNEL] [HALL]\"\n  ],\n  \"category_keywords\": [\"否认订购\", \"天翼云盘黄金会员合约包\", \"不知情办理\"],\n  \"tag_keywords\": [\"增值业务\", \"否认订购\", \"取消业务\", \"赔偿\", \"营业厅\"],\n  \"risks\": [\"工单未明确说明用户否认订购的具体原因（如误触、渠道代办、外呼营销等），无法判断更具体的根因。\"]\n}",
+  "raw_data": {
+    "summary": "客户否认订购天翼云盘黄金会员合约包业务，称不知情办理，要求取消业务并赔偿。",
+    "primary_category": {
+      "code": "SUBSCRIBE_DENY_VALUE_ADDED",
+      "full_name": "订购与退订争议/用户否认订购/否认增值业务订购",
+      "confidence": 0.95,
+      "reason": "工单核心是用户否认订购增值业务‘天翼云盘黄金会员合约包’，符合该分类定义。"
+    },
+    "candidate_categories": [
+      {
+        "code": "FEE_VALUE_DENY_ORDER",
+        "full_name": "资费与收费争议/增值业务收费争议/用户否认订购收费争议",
+        "confidence": 0.85,
+        "reason": "涉及增值业务收费，且用户否认订购，但工单主诉更偏向订购争议而非单纯收费争议。"
+      },
+      {
+        "code": "SUBSCRIBE_ORDER_NO_CONSENT",
+        "full_name": "订购与退订争议/业务订购争议/未明确同意订购",
+        "confidence": 0.8,
+        "reason": "用户称‘不知情办理’，隐含未明确同意订购，但分类清单中有更具体的‘否认增值业务订购’分类。"
+      }
+    ],
+    "candidate_tags": [
+      "[PRODUCT] [VALUE_ADDED]",
+      "[ROOT_CAUSE] [DENY_ORDER]",
+      "[REQUEST] [CANCEL]",
+      "[REQUEST] [COMPENSATE]",
+      "[CHANNEL] [HALL]"
+    ],
+    "category_keywords": [
+      "否认订购",
+      "天翼云盘黄金会员合约包",
+      "不知情办理"
+    ],
+    "tag_keywords": [
+      "增值业务",
+      "否认订购",
+      "取消业务",
+      "赔偿",
+      "营业厅"
+    ],
+    "risks": [
+      "工单未明确说明用户否认订购的具体原因（如误触、渠道代办、外呼营销等），无法判断更具体的根因。"
+    ]
+  },
+  "normalized_output": {
+    "summary": "客户否认订购天翼云盘黄金会员合约包业务，称不知情办理，要求取消业务并赔偿。",
+    "primary_category": {
+      "code": "SUBSCRIBE_DENY_VALUE_ADDED",
+      "full_name": "订购与退订争议/用户否认订购/否认增值业务订购",
+      "confidence": 0.95,
+      "reason": "工单核心是用户否认订购增值业务‘天翼云盘黄金会员合约包’，符合该分类定义。"
+    },
+    "candidate_categories": [
+      {
+        "code": "FEE_VALUE_DENY_ORDER",
+        "full_name": "资费与收费争议/增值业务收费争议/用户否认订购收费争议",
+        "confidence": 0.85,
+        "reason": "涉及增值业务收费，且用户否认订购，但工单主诉更偏向订购争议而非单纯收费争议。"
+      },
+      {
+        "code": "SUBSCRIBE_ORDER_NO_CONSENT",
+        "full_name": "订购与退订争议/业务订购争议/未明确同意订购",
+        "confidence": 0.8,
+        "reason": "用户称‘不知情办理’，隐含未明确同意订购，但分类清单中有更具体的‘否认增值业务订购’分类。"
+      }
+    ],
+    "candidate_tags": [
+      {
+        "group_code": "PRODUCT",
+        "code": "VALUE_ADDED",
+        "name": "增值业务",
+        "confidence": 0.8,
+        "reason": "客户否认订购天翼云盘黄金会员合约包业务，称不知情办理，要求取消业务并赔偿。"
+      },
+      {
+        "group_code": "ROOT_CAUSE",
+        "code": "DENY_ORDER",
+        "name": "用户否认订购",
+        "confidence": 0.8,
+        "reason": "客户否认订购天翼云盘黄金会员合约包业务，称不知情办理，要求取消业务并赔偿。"
+      },
+      {
+        "group_code": "REQUEST",
+        "code": "CANCEL",
+        "name": "取消业务",
+        "confidence": 0.8,
+        "reason": "客户否认订购天翼云盘黄金会员合约包业务，称不知情办理，要求取消业务并赔偿。"
+      },
+      {
+        "group_code": "REQUEST",
+        "code": "COMPENSATE",
+        "name": "赔偿补偿",
+        "confidence": 0.8,
+        "reason": "客户否认订购天翼云盘黄金会员合约包业务，称不知情办理，要求取消业务并赔偿。"
+      },
+      {
+        "group_code": "CHANNEL",
+        "code": "HALL",
+        "name": "营业厅",
+        "confidence": 0.8,
+        "reason": "客户否认订购天翼云盘黄金会员合约包业务，称不知情办理，要求取消业务并赔偿。"
+      }
+    ],
+    "category_keywords": [
+      {
+        "keyword": "否认订购",
+        "reason": "模型识别为与当前判断有关的关键词",
+        "confidence": 0.7
+      },
+      {
+        "keyword": "天翼云盘黄金会员合约包",
+        "reason": "模型识别为与当前判断有关的关键词",
+        "confidence": 0.7
+      },
+      {
+        "keyword": "不知情办理",
+        "reason": "模型识别为与当前判断有关的关键词",
+        "confidence": 0.7
+      }
+    ],
+    "tag_keywords": [
+      {
+        "keyword": "增值业务",
+        "reason": "模型识别为与当前判断有关的关键词",
+        "confidence": 0.7
+      },
+      {
+        "keyword": "否认订购",
+        "reason": "模型识别为与当前判断有关的关键词",
+        "confidence": 0.7
+      },
+      {
+        "keyword": "取消业务",
+        "reason": "模型识别为与当前判断有关的关键词",
+        "confidence": 0.7
+      },
+      {
+        "keyword": "赔偿",
+        "reason": "模型识别为与当前判断有关的关键词",
+        "confidence": 0.7
+      },
+      {
+        "keyword": "营业厅",
+        "reason": "模型识别为与当前判断有关的关键词",
+        "confidence": 0.7
+      }
+    ],
+    "risks": [
+      "工单未明确说明用户否认订购的具体原因（如误触、渠道代办、外呼营销等），无法判断更具体的根因。"
+    ]
+  }
 }

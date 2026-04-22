@@ -1,0 +1,20 @@
+{
+  "case_name": "channel_deny_order",
+  "model_name": "Qwen3-Coder-480B-A35B-Instruct",
+  "prompt_path": "D:\\project\\FullStack\\voc\\voc_agent\\complaint_taxonomy_validator\\tests\\model_test\\output\\prompts\\channel_deny_order.txt",
+  "status": "success",
+  "error_type": null,
+  "error_message": null,
+  "duration_ms": 28865,
+  "timestamp": "2026-04-10T15:08:28",
+  "response_id": "chatcmpl-00-35e56114251c02e102e2c8edd4ea6a94-b0336fd576826d8b-01",
+  "response_text": "{\n  \"summary\": \"客户在合作营业厅办理宽带时被未经明确同意搭售天翼云盘黄金会员合约包，要求取消业务、退费并追查责任。\",\n  \"primary_category\": {\n    \"code\": \"SUBSCRIBE_ORDER_NO_CONSENT\",\n    \"full_name\": \"订购与退订争议/业务订购争议/未明确同意订购\",\n    \"confidence\": 0.95,\n    \"reason\": \"客户明确表示未明确同意办理增值业务，属于典型的未明示订购场景。\"\n  },\n  \"candidate_categories\": [\n    {\n      \"code\": \"SUBSCRIBE_DENY_CHANNEL\",\n      \"full_name\": \"订购与退订争议/用户否认订购/否认渠道代办订购\",\n      \"confidence\": 0.85,\n      \"reason\": \"客户否认在渠道办理过程中订购该业务，涉及渠道责任。\"\n    },\n    {\n      \"code\": \"MARKETING_PROCESS_ERROR\",\n      \"full_name\": \"营销宣传与销售服务/办理差错与漏受理/业务办理差错\",\n      \"confidence\": 0.8,\n      \"reason\": \"可能存在营业员未按规定流程办理业务的情况。\"\n    }\n  ],\n  \"candidate_tags\": [\n    {\n      \"code\": \"CHANNEL_HALL\",\n      \"full_name\": \"[CHANNEL][HALL] 营业厅\"\n    },\n    {\n      \"code\": \"PRODUCT_VALUE_ADDED\",\n      \"full_name\": \"[PRODUCT][VALUE_ADDED] 增值业务\"\n    },\n    {\n      \"code\": \"ROOT_CAUSE_DENY_ORDER\",\n      \"full_name\": \"[ROOT_CAUSE][DENY_ORDER] 用户否认订购\"\n    },\n    {\n      \"code\": \"REQUEST_CANCEL\",\n      \"full_name\": \"[REQUEST][CANCEL] 取消业务\"\n    },\n    {\n      \"code\": \"REQUEST_REFUND\",\n      \"full_name\": \"[REQUEST][REFUND] 退费\"\n    },\n    {\n      \"code\": \"REQUEST_PUNISH\",\n      \"full_name\": \"[REQUEST][PUNISH] 追责处罚\"\n    }\n  ],\n /category_keywords\": [\"否认订购\", \"未明确同意\", \"搭售\"],\n  \"tag_keywords\": [\"合作营业厅\", \"天翼云盘黄金会员合约包\", \"退回已扣费用\", \"追查渠道责任\"],\n  \"risks\": []\n}",
+  "finish_reason": "stop",
+  "usage": {
+    "completion_tokens": 500,
+    "prompt_tokens": 12957,
+    "total_tokens": 13457,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  }
+}

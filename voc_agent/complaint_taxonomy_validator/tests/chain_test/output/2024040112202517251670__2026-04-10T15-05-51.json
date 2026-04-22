@@ -1,0 +1,123 @@
+{
+  "ticket_id": "2024040112202517251670",
+  "status": "success",
+  "stage": "chain",
+  "duration_ms": 17025,
+  "timestamp": "2026-04-10T15:05:51",
+  "model_name": "Qwen3-Max",
+  "result": {
+    "summary": "客户在营业厅办理50元手机直降礼包，被告知自付110元，实际支付137元，且本月权益金无法领取，投诉资费解释不清及权益未兑现。",
+    "primary_category": {
+      "code": "MARKETING_EXPLAIN_UNCLEAR_FEE",
+      "full_name": "营销宣传与销售服务/宣传解释与营销误导/解释宣传不清/资费解释不清",
+      "confidence": 0.96,
+      "reason": "客户明确表示营业员告知自付110元，但实际需支付137元，属于资费说明不清；同时涉及权益金无法领取，但主诉焦点是办理时的费用解释不一致，符合‘资费解释不清’子类。"
+    },
+    "candidate_categories": [
+      {
+        "code": "MARKETING_PROMISE_GIFT",
+        "full_name": "营销宣传与销售服务/承诺未兑现/赠品权益未兑现",
+        "confidence": 0.85,
+        "reason": "客户提到‘本月权益金无法领取’，可能涉及承诺权益未兑现，但主因仍是前期资费说明不清导致误解。"
+      },
+      {
+        "code": "FEE_WINGPAY_RIGHTS_UNCLEAR",
+        "full_name": "资费与收费争议/翼支付及权益争议/翼支付权益金争议/权益金收费未充分说明",
+        "confidence": 0.78,
+        "reason": "若该礼包通过翼支付发放权益金，则可能适用，但工单未明确提及翼支付，且问题核心在于营业厅解释不清而非权益金本身收费。"
+      }
+    ],
+    "candidate_tags": [
+      {
+        "group_code": "PRODUCT",
+        "code": "MOBILE",
+        "name": "移动业务",
+        "confidence": 0.8,
+        "reason": "客户在营业厅办理50元手机直降礼包，被告知自付110元，实际支付137元，且本月权益金无法领取，投诉资费解释不清及权益未兑现。"
+      },
+      {
+        "group_code": "CHANNEL",
+        "code": "HALL",
+        "name": "营业厅",
+        "confidence": 0.8,
+        "reason": "客户在营业厅办理50元手机直降礼包，被告知自付110元，实际支付137元，且本月权益金无法领取，投诉资费解释不清及权益未兑现。"
+      },
+      {
+        "group_code": "ROOT_CAUSE",
+        "code": "UNCLEAR_EXPLANATION",
+        "name": "解释不清",
+        "confidence": 0.8,
+        "reason": "客户在营业厅办理50元手机直降礼包，被告知自付110元，实际支付137元，且本月权益金无法领取，投诉资费解释不清及权益未兑现。"
+      },
+      {
+        "group_code": "RESPONSIBILITY",
+        "code": "CHANNEL_MGMT",
+        "name": "渠道管理",
+        "confidence": 0.8,
+        "reason": "客户在营业厅办理50元手机直降礼包，被告知自付110元，实际支付137元，且本月权益金无法领取，投诉资费解释不清及权益未兑现。"
+      },
+      {
+        "group_code": "REQUEST",
+        "code": "EXPLAIN",
+        "name": "解释说明",
+        "confidence": 0.8,
+        "reason": "客户在营业厅办理50元手机直降礼包，被告知自付110元，实际支付137元，且本月权益金无法领取，投诉资费解释不清及权益未兑现。"
+      }
+    ],
+    "category_keywords": [
+      {
+        "keyword": "营业员告知",
+        "reason": "模型识别为与当前判断有关的关键词",
+        "confidence": 0.7
+      },
+      {
+        "keyword": "自己交110元",
+        "reason": "模型识别为与当前判断有关的关键词",
+        "confidence": 0.7
+      },
+      {
+        "keyword": "现查看要交137元",
+        "reason": "模型识别为与当前判断有关的关键词",
+        "confidence": 0.7
+      },
+      {
+        "keyword": "资费告知不清",
+        "reason": "模型识别为与当前判断有关的关键词",
+        "confidence": 0.7
+      },
+      {
+        "keyword": "解释、说明、宣传不清晰",
+        "reason": "模型识别为与当前判断有关的关键词",
+        "confidence": 0.7
+      }
+    ],
+    "tag_keywords": [
+      {
+        "keyword": "中国电信大通营业厅",
+        "reason": "模型识别为与当前判断有关的关键词",
+        "confidence": 0.7
+      },
+      {
+        "keyword": "50元手机直降礼包",
+        "reason": "模型识别为与当前判断有关的关键词",
+        "confidence": 0.7
+      },
+      {
+        "keyword": "权益金无法领取",
+        "reason": "模型识别为与当前判断有关的关键词",
+        "confidence": 0.7
+      },
+      {
+        "keyword": "不需要赔偿",
+        "reason": "模型识别为与当前判断有关的关键词",
+        "confidence": 0.7
+      },
+      {
+        "keyword": "客服代表解释无效",
+        "reason": "模型识别为与当前判断有关的关键词",
+        "confidence": 0.7
+      }
+    ],
+    "risks": []
+  }
+}

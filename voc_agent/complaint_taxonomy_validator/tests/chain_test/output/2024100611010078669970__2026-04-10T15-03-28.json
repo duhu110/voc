@@ -1,0 +1,113 @@
+{
+  "ticket_id": "2024100611010078669970",
+  "status": "success",
+  "stage": "chain",
+  "duration_ms": 22172,
+  "timestamp": "2026-04-10T15:03:28",
+  "model_name": "Qwen3-Max",
+  "result": {
+    "summary": "客户来电要求办理固话拆机业务，但系统显示状态为“开通中”，导致无法完成拆机操作，需协助处理。",
+    "primary_category": {
+      "code": "OPEN_CLOSE_CANCEL_DISMANTLE",
+      "full_name": "开通、停用与销户/拆机销户/拆机销户",
+      "confidence": 0.95,
+      "reason": "客户明确要求办理固话拆机，属于拆机销户类问题，且系统状态异常阻碍了正常拆机流程。"
+    },
+    "candidate_categories": [
+      {
+        "code": "OPEN_CLOSE_CANCEL",
+        "full_name": "开通、停用与销户/拆机销户",
+        "confidence": 0.85,
+        "reason": "上级分类，涵盖拆机销户，但不如 OPEN_CLOSE_CANCEL_DISMANTLE 具体。"
+      },
+      {
+        "code": "MARKETING_PROCESS_STATUS",
+        "full_name": "营销宣传与销售服务/办理差错与漏受理/受理状态异常",
+        "confidence": 0.75,
+        "reason": "系统状态显示异常（应拆机却显示开通中），可能涉及状态同步问题，但主诉是拆机受阻，核心仍属拆机销户范畴。"
+      }
+    ],
+    "candidate_tags": [
+      {
+        "group_code": "",
+        "code": "[PRODUCT] [BROADBAND]",
+        "name": "[PRODUCT] [BROADBAND]",
+        "confidence": 0.8,
+        "reason": "固话通常与宽带同属家庭固网业务，虽未明说是否融合，但固话拆机常关联宽带/IPTV，归入宽带业务较合理。"
+      },
+      {
+        "group_code": "",
+        "code": "[CHANNEL] [CALL_CENTER]",
+        "name": "[CHANNEL] [CALL_CENTER]",
+        "confidence": 0.9,
+        "reason": "客户通过电话（18997****13）来电办理，属于客服热线渠道。"
+      },
+      {
+        "group_code": "",
+        "code": "[ROOT_CAUSE] [SYSTEM_ERROR]",
+        "name": "[ROOT_CAUSE] [SYSTEM_ERROR]",
+        "confidence": 0.92,
+        "reason": "系统错误地显示“开通中”状态，阻碍拆机，属典型系统状态异常。"
+      },
+      {
+        "group_code": "",
+        "code": "[REQUEST] [CANCEL]",
+        "name": "[REQUEST] [CANCEL]",
+        "confidence": 0.98,
+        "reason": "客户明确要求办理“固话拆机”，即取消固话业务。"
+      },
+      {
+        "group_code": "",
+        "code": "[RESPONSIBILITY] [NETWORK_OP]",
+        "name": "[RESPONSIBILITY] [NETWORK_OP]",
+        "confidence": 0.85,
+        "reason": "固话拆机及状态管理通常由网络运营条线负责。"
+      }
+    ],
+    "category_keywords": [
+      {
+        "keyword": "固话拆机",
+        "reason": "模型识别为与当前判断有关的关键词",
+        "confidence": 0.7
+      },
+      {
+        "keyword": "受理失败",
+        "reason": "模型识别为与当前判断有关的关键词",
+        "confidence": 0.7
+      },
+      {
+        "keyword": "开通中",
+        "reason": "模型识别为与当前判断有关的关键词",
+        "confidence": 0.7
+      },
+      {
+        "keyword": "拆机销户",
+        "reason": "模型识别为与当前判断有关的关键词",
+        "confidence": 0.7
+      }
+    ],
+    "tag_keywords": [
+      {
+        "keyword": "固话",
+        "reason": "模型识别为与当前判断有关的关键词",
+        "confidence": 0.7
+      },
+      {
+        "keyword": "系统提示开通中",
+        "reason": "模型识别为与当前判断有关的关键词",
+        "confidence": 0.7
+      },
+      {
+        "keyword": "来电办理",
+        "reason": "模型识别为与当前判断有关的关键词",
+        "confidence": 0.7
+      },
+      {
+        "keyword": "请协助处理",
+        "reason": "模型识别为与当前判断有关的关键词",
+        "confidence": 0.7
+      }
+    ],
+    "risks": []
+  }
+}

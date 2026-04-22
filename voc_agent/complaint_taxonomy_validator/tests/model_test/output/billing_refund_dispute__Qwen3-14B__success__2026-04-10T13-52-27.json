@@ -1,0 +1,20 @@
+{
+  "case_name": "billing_refund_dispute",
+  "model_name": "Qwen3-14B",
+  "prompt_path": "D:\\project\\FullStack\\voc\\voc_agent\\complaint_taxonomy_validator\\tests\\model_test\\output\\prompts\\billing_refund_dispute.txt",
+  "status": "success",
+  "error_type": null,
+  "error_message": null,
+  "duration_ms": 40376,
+  "timestamp": "2026-04-10T13:52:27",
+  "response_id": "chatcmpl-00-9c2588e94274d61998057e474eeb5158-6227e325e7722d5a-01",
+  "response_text": "\n\n{\n  \"summary\": \"客户投诉账单中出现已取消的天翼云盘黄金会员重复扣费，要求核查并退费。\",\n  \"primary_category\": {\n    \"code\": \"BILLING_BILL_AMOUNT\",\n    \"full_name\": \"账单、缴费与发票/账单争议/账单金额异常\",\n    \"confidence\": 0.92,\n    \"reason\": \"客户明确指出账单中存在重复扣费，属于账单金额与预期不符的典型场景，且投诉核心聚焦于账单明细异常。\"\n  },\n  \"candidate_categories\": [\n    \"FEE_VALUE_ADDED\",\n    \"SUBSCRIBE_CANCEL_CONTINUE_FEE\"\n  ],\n  \"candidate_tags\": [\n    \"PRODUCT_VALUE_ADDED\",\n    \"CHANNEL_HALL\",\n    \"REQUEST_REFUND\"\n  ],\n  \"category_keywords\": [\"账单金额异常\", \"重复计费\", \"账单争议\"],\n  \"tag_keywords\": [\"增值业务\", \"营业厅\", \"退费\"],\n  \"risks\": [\n    \"未明确说明客户是否已成功退订天翼云盘黄金会员\",\n    \"未提供账单明细截图或扣费记录作为佐证\"\n  ]\n}",
+  "finish_reason": "stop",
+  "usage": {
+    "completion_tokens": 1682,
+    "prompt_tokens": 12955,
+    "total_tokens": 14637,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  }
+}

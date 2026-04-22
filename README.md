@@ -66,3 +66,18 @@
 - [数据库设计](/Users/duhu/code/voc/docs/db_design.md)
 - [数据库检查清单](/Users/duhu/code/voc/docs/db_checklist.md)
 - [项目建设步骤](/Users/duhu/code/voc/docs/project_steps.md)
+
+## Streamlit 控台
+
+当前仓库已经提供一个简单的运营控制台，支持：
+
+- 设定批次数量并执行投诉验证落库
+- 查看历史批次 summary 和逐条处理结果
+- 浏览待处理工单、结果表和统计表
+- 手动刷新统计并查看当前统计结果
+
+启动命令：
+
+```powershell
+.\.venv\Scripts\python.exe -m streamlit run .\streamlit_app\Home.py
+```

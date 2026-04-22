@@ -1,0 +1,151 @@
+{
+  "ticket_id": "2024071813301405772383",
+  "status": "success",
+  "stage": "chain",
+  "duration_ms": 23261,
+  "timestamp": "2026-04-10T15:07:02",
+  "model_name": "Qwen3-Max",
+  "result": {
+    "summary": "用户于2024-07-14通过大通营业厅预约宽带拆机，但至今无人联系处理，现紧急催促尽快完成拆机。",
+    "primary_category": {
+      "code": "OPEN_CLOSE_CANCEL_DISMANTLE_FUSION",
+      "full_name": "开通、停用与销户/拆机销户/拆机销户/融合业务拆机不及时",
+      "confidence": 0.96,
+      "reason": "工单明确描述为‘宽带预约拆机处理不及时’，涉及融合宽带（含ITV），且用户已预约但未被联系处理，符合‘融合业务拆机不及时’的定义。"
+    },
+    "candidate_categories": [
+      {
+        "code": "INSTALL_TIMELINESS_OVERTIME_REMOVE",
+        "full_name": "装维与交付服务/履约时效问题/超时未完成/拆机超时未完成",
+        "confidence": 0.85,
+        "reason": "拆机属于装维履约范畴，也可归入履约时效问题，但主诉是‘拆机销户’流程未启动，而非装维执行阶段超时，故优先级低于拆机销户类。"
+      },
+      {
+        "code": "OPEN_CLOSE_CANCEL_DISMANTLE_BROADBAND",
+        "full_name": "开通、停用与销户/拆机销户/拆机销户/宽带拆机不及时",
+        "confidence": 0.88,
+        "reason": "虽涉及宽带拆机，但工单明确包含ITV（09712****40itv）和融合宽带，属于融合业务，因此‘融合业务拆机不及时’更精准。"
+      }
+    ],
+    "candidate_tags": [
+      {
+        "group_code": "",
+        "code": "[PRODUCT] [FUSION_PACKAGE]",
+        "name": "融合套餐",
+        "confidence": 0.8,
+        "reason": "用户于2024-07-14通过大通营业厅预约宽带拆机，但至今无人联系处理，现紧急催促尽快完成拆机。"
+      },
+      {
+        "group_code": "",
+        "code": "[PRODUCT] [BROADBAND]",
+        "name": "宽带业务",
+        "confidence": 0.8,
+        "reason": "用户于2024-07-14通过大通营业厅预约宽带拆机，但至今无人联系处理，现紧急催促尽快完成拆机。"
+      },
+      {
+        "group_code": "",
+        "code": "[PRODUCT] [IPTV]",
+        "name": "IPTV业务",
+        "confidence": 0.8,
+        "reason": "用户于2024-07-14通过大通营业厅预约宽带拆机，但至今无人联系处理，现紧急催促尽快完成拆机。"
+      },
+      {
+        "group_code": "",
+        "code": "[CHANNEL] [HALL]",
+        "name": "营业厅",
+        "confidence": 0.8,
+        "reason": "用户于2024-07-14通过大通营业厅预约宽带拆机，但至今无人联系处理，现紧急催促尽快完成拆机。"
+      },
+      {
+        "group_code": "",
+        "code": "[ROOT_CAUSE] [DELAYED_FULFILLMENT]",
+        "name": "履约不及时",
+        "confidence": 0.8,
+        "reason": "用户于2024-07-14通过大通营业厅预约宽带拆机，但至今无人联系处理，现紧急催促尽快完成拆机。"
+      },
+      {
+        "group_code": "",
+        "code": "[REQUEST] [FAST_PROCESS]",
+        "name": "加快处理",
+        "confidence": 0.8,
+        "reason": "用户于2024-07-14通过大通营业厅预约宽带拆机，但至今无人联系处理，现紧急催促尽快完成拆机。"
+      },
+      {
+        "group_code": "",
+        "code": "[REQUEST] [CANCEL]",
+        "name": "取消业务",
+        "confidence": 0.8,
+        "reason": "用户于2024-07-14通过大通营业厅预约宽带拆机，但至今无人联系处理，现紧急催促尽快完成拆机。"
+      },
+      {
+        "group_code": "",
+        "code": "[RESPONSIBILITY] [INSTALL_MAINTAIN]",
+        "name": "装维条线",
+        "confidence": 0.8,
+        "reason": "用户于2024-07-14通过大通营业厅预约宽带拆机，但至今无人联系处理，现紧急催促尽快完成拆机。"
+      },
+      {
+        "group_code": "",
+        "code": "[EMOTION] [UNSATISFIED]",
+        "name": "不满",
+        "confidence": 0.8,
+        "reason": "用户于2024-07-14通过大通营业厅预约宽带拆机，但至今无人联系处理，现紧急催促尽快完成拆机。"
+      }
+    ],
+    "category_keywords": [
+      {
+        "keyword": "预约拆机",
+        "reason": "模型识别为与当前判断有关的关键词",
+        "confidence": 0.7
+      },
+      {
+        "keyword": "无人联系",
+        "reason": "模型识别为与当前判断有关的关键词",
+        "confidence": 0.7
+      },
+      {
+        "keyword": "处理不及时",
+        "reason": "模型识别为与当前判断有关的关键词",
+        "confidence": 0.7
+      },
+      {
+        "keyword": "融合宽带",
+        "reason": "模型识别为与当前判断有关的关键词",
+        "confidence": 0.7
+      },
+      {
+        "keyword": "部分拆机",
+        "reason": "模型识别为与当前判断有关的关键词",
+        "confidence": 0.7
+      }
+    ],
+    "tag_keywords": [
+      {
+        "keyword": "大通营业厅",
+        "reason": "模型识别为与当前判断有关的关键词",
+        "confidence": 0.7
+      },
+      {
+        "keyword": "急催",
+        "reason": "模型识别为与当前判断有关的关键词",
+        "confidence": 0.7
+      },
+      {
+        "keyword": "请马上督促处理",
+        "reason": "模型识别为与当前判断有关的关键词",
+        "confidence": 0.7
+      },
+      {
+        "keyword": "家中无人使用",
+        "reason": "模型识别为与当前判断有关的关键词",
+        "confidence": 0.7
+      },
+      {
+        "keyword": "CRM预约拆机单",
+        "reason": "模型识别为与当前判断有关的关键词",
+        "confidence": 0.7
+      }
+    ],
+    "risks": []
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "case_name": "base_deny_order",
+  "model_name": "Qwen3-8B",
+  "prompt_path": "D:\\project\\FullStack\\voc\\voc_agent\\complaint_taxonomy_validator\\tests\\model_test\\output\\prompts\\base_deny_order.txt",
+  "status": "success",
+  "error_type": null,
+  "error_message": null,
+  "duration_ms": 9149,
+  "timestamp": "2026-04-10T13:53:33",
+  "response_id": "chatcmpl-00-57f2c0aecd201c86623f679bfc23eab7-7e92ba80c46e87a2-01",
+  "response_text": "\n\n{\n  \"summary\": \"用户否认通过营业厅办理天翼云盘黄金会员合约包业务，要求取消订购\",\n  \"primary_category\": {\n    \"code\": \"SUBSCRIBE_DENY_VALUE_ADDED\",\n    \"full_name\": \"订购与退订争议/用户否认订购/否认增值业务订购\",\n    \"confidence\": 0.98,\n    \"reason\": \"客户明确表示不知情办理增值业务，符合否认订购特征，且涉及会员类增值服务\"\n  },\n  \"candidate_categories\": [\n    \"SUBSCRIBE_DENY\",\n    \"SUBSCRIBE_DENY_VALUE_ADDED\"\n  ],\n  \"candidate_tags\": [\n    \"[ROOT_CAUSE] [DENY_ORDER]\",\n    \"[CHANNEL] [HALL]\",\n    \"[REQUEST] [CANCEL]\"\n  ],\n  \"category_keywords\": [\"用户否认订购\", \"黄金会员合约包\", \"营业厅办理\"],\n  \"tag_keywords\": [\"增值业务\", \"渠道办理\", \"取消业务\"],\n  \"risks\": []\n}",
+  "finish_reason": "stop",
+  "usage": {
+    "completion_tokens": 572,
+    "prompt_tokens": 13074,
+    "total_tokens": 13646,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  }
+}

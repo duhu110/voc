@@ -1,0 +1,20 @@
+{
+  "case_name": "billing_refund_dispute",
+  "model_name": "DeepSeek-R1",
+  "prompt_path": "D:\\project\\FullStack\\voc\\voc_agent\\complaint_taxonomy_validator\\tests\\model_test\\output\\prompts\\billing_refund_dispute.txt",
+  "status": "success",
+  "error_type": null,
+  "error_message": null,
+  "duration_ms": 33644,
+  "timestamp": "2026-04-10T15:22:02",
+  "response_id": "chatcmpl-00-7f154158e738db79f0d92970dc28aaf3-fae4e56a26db2a10-01",
+  "response_text": "\n\n```json\n{\n  \"summary\": \"客户反映天翼云盘黄金会员存在重复扣费，要求核查并退费\",\n  \"primary_category\": {\n    \"code\": \"BILLING_BILL_AMOUNT\",\n    \"full_name\": \"账单、缴费与发票/账单争议/账单金额异常\",\n    \"confidence\": 0.95,\n    \"reason\": \"客户明确表示账单出现两笔相同业务的扣费，其中一笔为历史已取消业务，属于账单金额异常的核心争议\"\n  },\n  \"candidate_categories\": [\n    {\n      \"code\": \"FEE_VALUE_ADDED\",\n      \"full_name\": \"资费与收费争议/增值业务收费争议\",\n      \"confidence\": 0.85,\n      \"reason\": \"涉及天翼云盘黄金会员的增值业务扣费争议\"\n    }\n  ],\n  \"candidate_tags\": [\n    \"[PRODUCT] [VALUE_ADDED]\",\n    \"[REQUEST] [REFUND]\",\n    \"[ROOT_CAUSE] [RULE_DISPUTE]\",\n    \"[RESPONSIBILITY] [FINANCE]\"\n  ],\n  \"category_keywords\": [\"重复扣费\", \"已取消业务\", \"账单金额异常\"],\n  \"tag_keywords\": [\"增值业务\", \"退费\", \"规则争议\"],\n  \"risks\": [\n    \"需核实客户是否已正确办理退订流程\",\n    \"需确认系统是否存在业务退订后仍计费的异常\"\n  ]\n}\n```",
+  "finish_reason": "stop",
+  "usage": {
+    "completion_tokens": 831,
+    "prompt_tokens": 13222,
+    "total_tokens": 14053,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  }
+}

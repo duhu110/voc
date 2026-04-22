@@ -1,0 +1,10 @@
+{
+  "case_name": "base_deny_order",
+  "model_name": "TeleChat-12B",
+  "prompt_path": "D:\\project\\FullStack\\voc\\voc_agent\\complaint_taxonomy_validator\\tests\\model_test\\output\\prompts\\base_deny_order.txt",
+  "status": "failed",
+  "error_type": "BadRequestError",
+  "error_message": "Error code: 400 - {'code': 500002, 'detail': 'messages 字段值文本已超过最大上下文', 'message': 'PARAM_ERROR', 'error': {'code': '500002', 'message': 'messages 字段值文本已超过最大上下文', 'type': 'PARAM_ERROR'}}",
+  "duration_ms": 360,
+  "timestamp": "2026-04-10T14:10:07"
+}

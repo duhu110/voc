@@ -210,3 +210,6 @@ __marimo__/
 .langgraph_api/
 .env
 voc_agent/.env
+
+
+deploy/images/

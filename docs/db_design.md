@@ -35,21 +35,15 @@
 - 当前已知主键语义字段为 `ticket_id`
 - 下方 DDL 与字段说明来自历史建表代码和 AI 工作流提示词整理，可作为当前表结构参考
 
+
 DDL：
 
 ```sql
 create table raw_complaint_tickets (
     ticket_id varchar(100) primary key,                 -- 工单流水号
-    process_status varchar(20) default 'pending',      -- n8n处理状态: pending, processing, success, failed
-    error_message text,                                -- AI处理报错信息
+    process_status boolean not null default false,     -- 是否已处理: false=未处理, true=已处理
     created_at timestamp default current_timestamp,    -- 数据入库时间
     updated_at timestamp default current_timestamp,    -- 最后更新时间
-
-    emotion_level integer,                             -- 客户情绪烈度(1-5)
-    core_appeal_category varchar(100),                 -- AI提取的核心诉求分类
-    escalation_risk varchar(20),                       -- 升级风险，高/中/低
-    is_shirking boolean,                               -- 是否存在内部推诿扯皮
-    ai_features jsonb,                                 -- AI动态特征库
 
     is_archived varchar(20),                           -- 是否归档
     ticket_type varchar(100),                          -- 工单类型
@@ -101,14 +95,11 @@ create table raw_complaint_tickets (
 );
 
 create index if not exists idx_ticket_process_status on raw_complaint_tickets(process_status);
-create index if not exists idx_ticket_emotion on raw_complaint_tickets(emotion_level);
-create index if not exists idx_ticket_risk on raw_complaint_tickets(escalation_risk);
 ```
 
 字段分区说明：
 
-- 主键与系统控制字段：`ticket_id`、`process_status`、`error_message`、`created_at`、`updated_at`
-- AI 提取特征区：`emotion_level`、`core_appeal_category`、`escalation_risk`、`is_shirking`、`ai_features`
+- 主键与系统控制字段：`ticket_id`、`process_status`、`created_at`、`updated_at`
 - 原始分类与基础字段：`ticket_type`、`complaint_source`、`biz_category`、`line_category`、`appeal_biz_type`
 - 时间字段：`accept_month`、`accept_time`、`feedback_time`
 - 地域与组织字段：`user_city`、`district`、`fault_city`、`branch_bureau`、`grid`、`area`、`resp_branch_bureau`、`accept_channel`
@@ -120,12 +111,12 @@ create index if not exists idx_ticket_risk on raw_complaint_tickets(escalation_r
 与 AI 处理流程的关系：
 
 - 历史工作流会把这张表的基础字段和 6 个核心文本字段一起输入 AI
-- AI 输出的结构化结果会回写到 `emotion_level`、`core_appeal_category`、`escalation_risk`、`is_shirking`、`ai_features`
+- 当前只使用 `process_status` 标识工单是否已完成首轮处理，失败或待重试场景继续保留为 `false`
 - 这 6 个核心文本字段也是后续分类、标签、关键词抽取和命中解释的主要语料来源
 
 建议补充到数据库注释的字段范围：
 
-- 优先补系统字段、AI 特征字段和 6 个核心文本字段
+- 优先补系统字段和 6 个核心文本字段
 - 其余业务字段建议等源系统口径确认后再补到数据库注释中
 
 ## 2. 主数据层
@@ -376,7 +367,7 @@ DDL：
 ```sql
 create table if not exists complaint_ticket_category_result (
     id                          bigserial primary key,        -- 结果ID
-    ticket_id                   bigint not null,              -- 工单ID
+    ticket_id                   varchar(100) not null,        -- 工单流水号
     category_id                 bigint not null references complaint_category(id) on delete restrict, -- 分类ID
     result_source               varchar(50) not null,         -- 结果来源
     model_version               varchar(100) null,            -- 模型版本
@@ -411,7 +402,7 @@ DDL：
 ```sql
 create table if not exists complaint_ticket_tag_result (
     id                          bigserial primary key,
-    ticket_id                   bigint not null,              -- 工单ID
+    ticket_id                   varchar(100) not null,        -- 工单流水号
     tag_id                      bigint not null references complaint_tag(id) on delete restrict, -- 标签ID
     result_source               varchar(50) not null,
     model_version               varchar(100) null,
@@ -447,7 +438,7 @@ DDL：
 ```sql
 create table if not exists complaint_ticket_keyword_result (
     id                          bigserial primary key,
-    ticket_id                   bigint not null,              -- 工单ID
+    ticket_id                   varchar(100) not null,        -- 工单流水号
     keyword                     varchar(200) not null,        -- 关键词
     keyword_type                varchar(50) not null default 'text', -- 关键词类型
     weight                      numeric(10,4) null,           -- 权重
@@ -473,7 +464,7 @@ DDL：
 ```sql
 create table if not exists complaint_ticket_match_detail (
     id                          bigserial primary key,
-    ticket_id                   bigint not null,              -- 工单ID
+    ticket_id                   varchar(100) not null,        -- 工单流水号
     target_type                 varchar(20) not null check (target_type in ('category', 'tag')), -- 命中目标类型
     target_id                   bigint not null,              -- 目标ID
     rule_type                   varchar(50) not null,         -- 规则类型

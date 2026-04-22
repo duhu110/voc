@@ -1,0 +1,108 @@
+{
+  "ticket_id": "2024080311504206451368",
+  "status": "success",
+  "stage": "chain",
+  "duration_ms": 13807,
+  "timestamp": "2026-04-10T15:06:30",
+  "model_name": "Qwen3-Max",
+  "result": {
+    "summary": "用户否认订购腾讯视频会员权益2GB通用流量包(6个月合约)，称不知情办理，要求取消并退费32.9元。",
+    "primary_category": {
+      "code": "SUBSCRIBE_DENY_VALUE_ADDED",
+      "full_name": "订购与退订争议/用户否认订购/否认增值业务订购",
+      "confidence": 0.98,
+      "reason": "工单明确描述用户否认订购腾讯视频会员权益（属增值业务），且biz_category为'用户否认订购'，投诉现象路径也指向该类问题。"
+    },
+    "candidate_categories": [
+      {
+        "code": "SUBSCRIBE_DENY",
+        "full_name": "订购与退订争议/用户否认订购",
+        "confidence": 0.92,
+        "reason": "一级分类匹配，但存在更具体的子类"
+      },
+      {
+        "code": "FEE_VALUE_DENY_ORDER",
+        "full_name": "资费与收费争议/增值业务收费争议/用户否认订购收费争议",
+        "confidence": 0.85,
+        "reason": "涉及收费争议，但主诉核心是‘否认订购’而非单纯费用异议"
+      }
+    ],
+    "candidate_tags": [
+      {
+        "group_code": "PRODUCT",
+        "code": "VALUE_ADDED",
+        "name": "增值业务",
+        "confidence": 0.8,
+        "reason": "用户否认订购腾讯视频会员权益2GB通用流量包(6个月合约)，称不知情办理，要求取消并退费32.9元。"
+      },
+      {
+        "group_code": "ROOT_CAUSE",
+        "code": "DENY_ORDER",
+        "name": "用户否认订购",
+        "confidence": 0.8,
+        "reason": "用户否认订购腾讯视频会员权益2GB通用流量包(6个月合约)，称不知情办理，要求取消并退费32.9元。"
+      },
+      {
+        "group_code": "REQUEST",
+        "code": "CANCEL",
+        "name": "取消业务",
+        "confidence": 0.8,
+        "reason": "用户否认订购腾讯视频会员权益2GB通用流量包(6个月合约)，称不知情办理，要求取消并退费32.9元。"
+      },
+      {
+        "group_code": "REQUEST",
+        "code": "REFUND",
+        "name": "退费",
+        "confidence": 0.8,
+        "reason": "用户否认订购腾讯视频会员权益2GB通用流量包(6个月合约)，称不知情办理，要求取消并退费32.9元。"
+      },
+      {
+        "group_code": "RESPONSIBILITY",
+        "code": "CHANNEL_MGMT",
+        "name": "渠道管理",
+        "confidence": 0.8,
+        "reason": "用户否认订购腾讯视频会员权益2GB通用流量包(6个月合约)，称不知情办理，要求取消并退费32.9元。"
+      }
+    ],
+    "category_keywords": [
+      {
+        "keyword": "否认订购",
+        "reason": "模型识别为与当前判断有关的关键词",
+        "confidence": 0.7
+      },
+      {
+        "keyword": "不知情办理",
+        "reason": "模型识别为与当前判断有关的关键词",
+        "confidence": 0.7
+      },
+      {
+        "keyword": "腾讯视频会员",
+        "reason": "模型识别为与当前判断有关的关键词",
+        "confidence": 0.7
+      },
+      {
+        "keyword": "流量包",
+        "reason": "模型识别为与当前判断有关的关键词",
+        "confidence": 0.7
+      }
+    ],
+    "tag_keywords": [
+      {
+        "keyword": "增值业务",
+        "reason": "模型识别为与当前判断有关的关键词",
+        "confidence": 0.7
+      },
+      {
+        "keyword": "要求取消并退费",
+        "reason": "模型识别为与当前判断有关的关键词",
+        "confidence": 0.7
+      },
+      {
+        "keyword": "渠道条线",
+        "reason": "模型识别为与当前判断有关的关键词",
+        "confidence": 0.7
+      }
+    ],
+    "risks": []
+  }
+}

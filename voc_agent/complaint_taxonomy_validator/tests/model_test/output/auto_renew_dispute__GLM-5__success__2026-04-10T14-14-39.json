@@ -1,0 +1,23 @@
+{
+  "case_name": "auto_renew_dispute",
+  "model_name": "GLM-5",
+  "prompt_path": "D:\\project\\FullStack\\voc\\voc_agent\\complaint_taxonomy_validator\\tests\\model_test\\output\\prompts\\auto_renew_dispute.txt",
+  "status": "success",
+  "error_type": null,
+  "error_message": null,
+  "duration_ms": 17874,
+  "timestamp": "2026-04-10T14:14:39",
+  "response_id": "chatcmpl-17758016800530240000d48c85f7",
+  "response_text": "{\n  \"summary\": \"客户投诉视频会员试用到期后在未收到明确提醒的情况下自动转为连续包月并扣费，要求取消业务并退费。\",\n  \"primary_category\": {\n    \"code\": \"SUBSCRIBE_RENEW_FREE_TO_PAID\",\n    \"full_name\": \"订购与退订争议/自动续订争议/免费到期转收费争议\",\n    \"confidence\": 0.98,\n    \"reason\": \"工单主诉明确指出“试用到期后自动转为连续包月”，且未收到提醒，完全符合“免费到期转收费争议”的定义。工单原有的biz_category和complaint_phenomenon也映射至此分类。\"\n  },\n  \"candidate_categories\": [\n    {\n      \"code\": \"SUBSCRIBE_CANCEL_DELAY\",\n      \"full_name\": \"订购与退订争议/业务退订争议/退订不及时\",\n      \"confidence\": 0.75,\n      \"reason\": \"客户诉求包含“要求立即取消”，若后续处理滞后可能归为此类，但目前核心争议点在于扣费的合理性而非取消动作的快慢。\"\n    },\n    {\n      \"code\": \"FEE_REFUND_MONEY\",\n      \"full_name\": \"资费与收费争议/返费退款争议/退款未到账\",\n      \"confidence\": 0.60,\n      \"reason\": \"客户提出了退费诉求，但此分类通常用于退款流程已承诺但未到账的情况，当前工单主要处于争议确认阶段，尚未进入退款执行失败环节。\"\n    }\n  ],\n  \"candidate_tags\": [\n    {\n      \"code\": \"PRODUCT\",\n      \"full_name\": \"移动业务\",\n      \"confidence\": 0.90,\n      \"reason\": \"涉及视频会员业务，属于增值业务范畴。\"\n    },\n    {\n      \"code\": \"REQUEST\",\n      \"full_name\": \"退费\",\n      \"confidence\": 0.95,\n      \"reason\": \"客户明确提出了“退回相关费用”的诉求。\"\n    },\n    {\n      \"code\": \"REQUEST\",\n      \"full_name\": \"取消业务\",\n      \"confidence\": 0.95,\n      \"reason\": \"客户明确提出了“要求立即取消”的诉求。\"\n    },\n    {\n      \"code\": \"ROOT_CAUSE\",\n      \"full_name\": \"未充分告知\",\n      \"confidence\": 0.92,\n      \"reason\": \"客户主诉“未收到明确提醒”，属于告知义务履行不到位。\"\n    }\n  ],\n  \"category_keywords\": [\n    \"自动续订\",\n    \"试用到期\",\n    \"连续包月\",\n    \"自动扣费\"\n  ],\n  \"tag_keywords\": [\n    \"未收到明确提醒\",\n    \"要求取消\",\n    \"退回费用\"\n  ],\n  \"risks\": []\n}",
+  "finish_reason": "stop",
+  "usage": {
+    "completion_tokens": 587,
+    "prompt_tokens": 12186,
+    "total_tokens": 12773,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": {
+      "audio_tokens": null,
+      "cached_tokens": 0
+    }
+  }
+}

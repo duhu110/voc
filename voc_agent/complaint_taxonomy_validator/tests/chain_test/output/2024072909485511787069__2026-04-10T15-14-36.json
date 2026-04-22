@@ -1,0 +1,118 @@
+{
+  "ticket_id": "2024072909485511787069",
+  "status": "success",
+  "stage": "chain",
+  "duration_ms": 14115,
+  "timestamp": "2026-04-10T15:14:36",
+  "model_name": "Qwen3-Max",
+  "result": {
+    "summary": "政企客户要求办理单位宽带拆机业务，并指出系统登记的安装地址与实际安装地址不符，要求核查并尽快处理。",
+    "primary_category": {
+      "code": "OPEN_CLOSE_CANCEL_DISMANTLE_BROADBAND",
+      "full_name": "开通、停用与销户/拆机销户/拆机销户/宽带拆机不及时",
+      "confidence": 0.92,
+      "reason": "用户明确要求办理宽带拆机，且强调需核查地址信息后处理，核心诉求属于宽带拆机类问题；虽未明确提及‘不及时’，但要求‘马上处理’隐含时效诉求，且分类体系中最贴近的是该子类。"
+    },
+    "candidate_categories": [
+      {
+        "code": "OPEN_CLOSE_CANCEL",
+        "full_name": "开通、停用与销户/拆机销户",
+        "confidence": 0.85,
+        "reason": "主干分类，涵盖拆机销户问题，但不如子类具体"
+      },
+      {
+        "code": "INSTALL_RESULT",
+        "full_name": "装维与交付服务/交付结果不符",
+        "confidence": 0.65,
+        "reason": "涉及安装地址登记错误，可能关联交付信息不符，但用户主诉是拆机而非交付质量"
+      }
+    ],
+    "candidate_tags": [
+      {
+        "group_code": "PRODUCT",
+        "code": "BROADBAND",
+        "name": "宽带业务",
+        "confidence": 0.8,
+        "reason": "政企客户要求办理单位宽带拆机业务，并指出系统登记的安装地址与实际安装地址不符，要求核查并尽快处理。"
+      },
+      {
+        "group_code": "REQUEST",
+        "code": "CANCEL",
+        "name": "取消业务",
+        "confidence": 0.8,
+        "reason": "政企客户要求办理单位宽带拆机业务，并指出系统登记的安装地址与实际安装地址不符，要求核查并尽快处理。"
+      },
+      {
+        "group_code": "REQUEST",
+        "code": "FAST_PROCESS",
+        "name": "加快处理",
+        "confidence": 0.8,
+        "reason": "政企客户要求办理单位宽带拆机业务，并指出系统登记的安装地址与实际安装地址不符，要求核查并尽快处理。"
+      },
+      {
+        "group_code": "ROOT_CAUSE",
+        "code": "PROCESS_ERROR",
+        "name": "办理差错",
+        "confidence": 0.8,
+        "reason": "政企客户要求办理单位宽带拆机业务，并指出系统登记的安装地址与实际安装地址不符，要求核查并尽快处理。"
+      },
+      {
+        "group_code": "RESPONSIBILITY",
+        "code": "NETWORK_OP",
+        "name": "网运条线",
+        "confidence": 0.8,
+        "reason": "政企客户要求办理单位宽带拆机业务，并指出系统登记的安装地址与实际安装地址不符，要求核查并尽快处理。"
+      }
+    ],
+    "category_keywords": [
+      {
+        "keyword": "宽带拆机",
+        "reason": "模型识别为与当前判断有关的关键词",
+        "confidence": 0.7
+      },
+      {
+        "keyword": "拆机业务",
+        "reason": "模型识别为与当前判断有关的关键词",
+        "confidence": 0.7
+      },
+      {
+        "keyword": "单位宽带",
+        "reason": "模型识别为与当前判断有关的关键词",
+        "confidence": 0.7
+      },
+      {
+        "keyword": "销户",
+        "reason": "模型识别为与当前判断有关的关键词",
+        "confidence": 0.7
+      }
+    ],
+    "tag_keywords": [
+      {
+        "keyword": "宽带",
+        "reason": "模型识别为与当前判断有关的关键词",
+        "confidence": 0.7
+      },
+      {
+        "keyword": "拆机",
+        "reason": "模型识别为与当前判断有关的关键词",
+        "confidence": 0.7
+      },
+      {
+        "keyword": "地址不对",
+        "reason": "模型识别为与当前判断有关的关键词",
+        "confidence": 0.7
+      },
+      {
+        "keyword": "要求马上处理",
+        "reason": "模型识别为与当前判断有关的关键词",
+        "confidence": 0.7
+      },
+      {
+        "keyword": "核查安装地址",
+        "reason": "模型识别为与当前判断有关的关键词",
+        "confidence": 0.7
+      }
+    ],
+    "risks": []
+  }
+}

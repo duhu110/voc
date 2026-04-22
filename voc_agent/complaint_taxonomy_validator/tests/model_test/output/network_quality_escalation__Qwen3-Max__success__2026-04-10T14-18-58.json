@@ -1,0 +1,30 @@
+{
+  "case_name": "network_quality_escalation",
+  "model_name": "Qwen3-Max",
+  "prompt_path": "D:\\project\\FullStack\\voc\\voc_agent\\complaint_taxonomy_validator\\tests\\model_test\\output\\prompts\\network_quality_escalation.txt",
+  "status": "success",
+  "error_type": null,
+  "error_message": null,
+  "duration_ms": 26277,
+  "timestamp": "2026-04-10T14:18:58",
+  "response_id": "chatcmpl-7b1cab40-2297-9157-a9c5-83b7adc93b08",
+  "response_text": "{\n  \"summary\": \"客户反映家庭住宅内近一周5G网络持续无信号或网速极慢，影响工作视频会议，已多次反馈未解决，要求尽快处理并给出解释。\",\n  \"primary_category\": {\n    \"code\": \"NETWORK_SIGNAL_AREA_HOME\",\n    \"full_name\": \"网络与通信质量/信号覆盖问题/特定区域信号差/家庭室内信号差\",\n    \"confidence\": 0.96,\n    \"reason\": \"投诉明确指出‘家庭住宅内’5G‘无信号或网速极慢’，且留单原因为‘信号覆盖问题’，biz_category为‘网络质量问题’，complaint_phenomenon指向‘网速质量问题’，但核心问题是信号缺失导致网速慢，因此优先归入信号覆盖下的家庭室内细分项。\"\n  },\n  \"candidate_categories\": [\n    {\n      \"code\": \"NETWORK_SPEED_MOBILE_INDOOR\",\n      \"full_name\": \"网络与通信质量/网速质量问题/移动上网慢/室内上网慢\",\n      \"confidence\": 0.85,\n      \"reason\": \"客户提到‘网速极慢’，但根本原因是‘无信号或信号弱’，网速慢是结果而非独立质量问题，故次选。\"\n    },\n    {\n      \"code\": \"NETWORK_SIGNAL_NO\",\n      \"full_name\": \"网络与通信质量/信号覆盖问题/无信号\",\n      \"confidence\": 0.82,\n      \"reason\": \"客户描述‘无信号’，但同时提到‘网速极慢’，说明存在部分信号但不稳定，且明确限定在‘家庭住宅内’，因此更适配区域化信号差分类。\"\n    }\n  ],\n  \"candidate_tags\": [\n    {\n      \"code\": \"[PRODUCT] [MOBILE]\",\n      \"name\": \"移动业务\",\n      \"confidence\": 0.98,\n      \"reason\": \"投诉对象为5G移动业务，属于典型移动业务范畴。\"\n    },\n    {\n      \"code\": \"[CHANNEL] [CALL_CENTER]\",\n      \"name\": \"客服热线\",\n      \"confidence\": 0.95,\n      \"reason\": \"accept_channel为‘10000号’，即客服热线渠道。\"\n    },\n    {\n      \"code\": \"[REQUEST] [FAST_PROCESS]\",\n      \"name\": \"加快处理\",\n      \"confidence\": 0.99,\n      \"reason\": \"appeal_biz_type为‘07.要求尽快处理’，明确表达加快处理诉求。\"\n    },\n    {\n      \"code\": \"[REQUEST] [EXPLAIN]\",\n      \"name\": \"解释说明\",\n      \"confidence\": 0.93,\n      \"reason\": \"客户要求‘给出解释’，属于解释说明类诉求。\"\n    },\n    {\n      \"code\": \"[RISK] [REPEATED]\",\n      \"name\": \"重复投诉\",\n      \"confidence\": 0.90,\n      \"reason\": \"客户称‘已多次反馈未解决’，符合重复投诉特征。\"\n    },\n    {\n      \"code\": \"[EMOTION] [UNSATISFIED]\",\n      \"name\": \"不满\",\n      \"confidence\": 0.92,\n      \"reason\": \"客户因问题长期未解决且影响工作，表达明显不满。\"\n    },\n    {\n      \"code\": \"[RESPONSIBILITY] [NETWORK_OP]\",\n      \"name\": \"网运条线\",\n      \"confidence\": 0.97,\n      \"reason\": \"信号覆盖和网络质量属网运条线职责范围。\"\n    }\n  ],\n  \"category_keywords\": [\"家庭住宅\", \"5G网络\", \"无信号\", \"网速极慢\", \"信号覆盖问题\"],\n  \"tag_keywords\": [\"5G移动业务\", \"10000号\", \"尽快处理\", \"给出解释\", \"多次反馈未解决\"],\n  \"risks\": []\n}",
+  "finish_reason": "stop",
+  "usage": {
+    "completion_tokens": 829,
+    "prompt_tokens": 12943,
+    "total_tokens": 13772,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": {
+      "audio_tokens": null,
+      "cached_tokens": 0
+    }
+  },
+  "json_validation": {
+    "is_json_object": true,
+    "required_keys_valid": true,
+    "primary_category_valid": true,
+    "schema_valid": true,
+    "parse_error": null
+  }
+}

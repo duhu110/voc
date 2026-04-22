@@ -1,0 +1,51 @@
+{
+  "version": "v1",
+  "updated_at": "2026-04-11",
+  "source_doc": "D:/project/FullStack/voc/docs/converger_design/README.md",
+  "tag_type": "product_tag",
+  "selection_rule": "必须从下列常量中选 1 个，不允许生成新产品标签。",
+  "source_fields": [
+    "dispute_product_name",
+    "biz_content",
+    "complaint_phenomenon",
+    "return_reason"
+  ],
+  "default_code": null,
+  "items": [
+    {
+      "code": "MOBILE",
+      "name": "移动业务",
+      "desc": "与手机号、手机套餐、流量、语音、短信、停复机、移动基础通信服务相关。"
+    },
+    {
+      "code": "BROADBAND",
+      "name": "宽带业务",
+      "desc": "与家庭宽带、专线宽带、装维、拆机、移机、网络接入相关。"
+    },
+    {
+      "code": "IPTV",
+      "name": "IPTV业务",
+      "desc": "与电视业务、机顶盒、ITV资费、ITV功能异常相关。"
+    },
+    {
+      "code": "FUSION_PACKAGE",
+      "name": "融合套餐",
+      "desc": "同时涉及移动、宽带、ITV 等组合套餐的业务。"
+    },
+    {
+      "code": "VALUE_ADDED",
+      "name": "增值业务",
+      "desc": "与彩铃、会员、名片、通信助理、权益包、流量包、合约包等附加业务相关。"
+    },
+    {
+      "code": "WINGPAY",
+      "name": "翼支付",
+      "desc": "与翼支付账户、权益金、支付、返费、提现等相关。"
+    },
+    {
+      "code": "DEVICE",
+      "name": "终端设备",
+      "desc": "与手机终端、设备销售、直降礼包、硬件本体相关。"
+    }
+  ]
+}

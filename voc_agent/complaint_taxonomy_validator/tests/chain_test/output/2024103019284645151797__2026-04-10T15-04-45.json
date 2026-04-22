@@ -1,0 +1,149 @@
+{
+  "ticket_id": "2024103019284645151797",
+  "status": "success",
+  "stage": "chain",
+  "duration_ms": 16852,
+  "timestamp": "2026-04-10T15:04:45",
+  "model_name": "Qwen3-Max",
+  "result": {
+    "summary": "用户投诉在办理畅享139元套餐终端礼包时，工作人员解释原套餐不变、预存800元可拿手机，但实际不限量套餐被更改，要求恢复原套餐。用户坚决不认可已做解释。",
+    "primary_category": {
+      "code": "MARKETING_EXPLAIN_MISLEADING_PROMISE",
+      "full_name": "营销宣传与销售服务/宣传解释与营销误导/营销误导/承诺与实际不符",
+      "confidence": 0.95,
+      "reason": "客户明确表示工作人员承诺‘原套餐不变’，但实际套餐被更改，属于典型的营销承诺与实际执行不符，构成营销误导。"
+    },
+    "candidate_categories": [
+      {
+        "code": "MARKETING_PROCESS_ERROR_PACKAGE",
+        "full_name": "营销宣传与销售服务/办理差错与漏受理/业务办理差错/办错套餐",
+        "confidence": 0.85,
+        "reason": "也可能是营业厅工作人员操作错误，将原不限量套餐误改为新套餐。"
+      },
+      {
+        "code": "MARKETING_EXPLAIN_UNCLEAR_FEE",
+        "full_name": "营销宣传与销售服务/宣传解释与营销误导/解释宣传不清/资费解释不清",
+        "confidence": 0.75,
+        "reason": "若非故意误导，也可能是对套餐变更规则解释不清导致误解。"
+      }
+    ],
+    "candidate_tags": [
+      {
+        "group_code": "PRODUCT",
+        "code": "MOBILE",
+        "name": "移动业务",
+        "confidence": 0.8,
+        "reason": "用户投诉在办理畅享139元套餐终端礼包时，工作人员解释原套餐不变、预存800元可拿手机，但实际不限量套餐被更改，要求恢复原套餐。用户坚决不认可已做解释。"
+      },
+      {
+        "group_code": "CHANNEL",
+        "code": "HALL",
+        "name": "营业厅",
+        "confidence": 0.8,
+        "reason": "用户投诉在办理畅享139元套餐终端礼包时，工作人员解释原套餐不变、预存800元可拿手机，但实际不限量套餐被更改，要求恢复原套餐。用户坚决不认可已做解释。"
+      },
+      {
+        "group_code": "ROOT_CAUSE",
+        "code": "MISLEADING",
+        "name": "营销误导",
+        "confidence": 0.8,
+        "reason": "用户投诉在办理畅享139元套餐终端礼包时，工作人员解释原套餐不变、预存800元可拿手机，但实际不限量套餐被更改，要求恢复原套餐。用户坚决不认可已做解释。"
+      },
+      {
+        "group_code": "ROOT_CAUSE",
+        "code": "PROCESS_ERROR",
+        "name": "办理差错",
+        "confidence": 0.8,
+        "reason": "用户投诉在办理畅享139元套餐终端礼包时，工作人员解释原套餐不变、预存800元可拿手机，但实际不限量套餐被更改，要求恢复原套餐。用户坚决不认可已做解释。"
+      },
+      {
+        "group_code": "RESPONSIBILITY",
+        "code": "CHANNEL_MGMT",
+        "name": "渠道管理",
+        "confidence": 0.8,
+        "reason": "用户投诉在办理畅享139元套餐终端礼包时，工作人员解释原套餐不变、预存800元可拿手机，但实际不限量套餐被更改，要求恢复原套餐。用户坚决不认可已做解释。"
+      },
+      {
+        "group_code": "REQUEST",
+        "code": "RESTORE",
+        "name": "恢复服务",
+        "confidence": 0.8,
+        "reason": "用户投诉在办理畅享139元套餐终端礼包时，工作人员解释原套餐不变、预存800元可拿手机，但实际不限量套餐被更改，要求恢复原套餐。用户坚决不认可已做解释。"
+      },
+      {
+        "group_code": "RESULT",
+        "code": "NOT_ACCEPTED",
+        "name": "用户不认可",
+        "confidence": 0.8,
+        "reason": "用户投诉在办理畅享139元套餐终端礼包时，工作人员解释原套餐不变、预存800元可拿手机，但实际不限量套餐被更改，要求恢复原套餐。用户坚决不认可已做解释。"
+      },
+      {
+        "group_code": "EMOTION",
+        "code": "UNSATISFIED",
+        "name": "不满",
+        "confidence": 0.8,
+        "reason": "用户投诉在办理畅享139元套餐终端礼包时，工作人员解释原套餐不变、预存800元可拿手机，但实际不限量套餐被更改，要求恢复原套餐。用户坚决不认可已做解释。"
+      }
+    ],
+    "category_keywords": [
+      {
+        "keyword": "原套餐不变",
+        "reason": "模型识别为与当前判断有关的关键词",
+        "confidence": 0.7
+      },
+      {
+        "keyword": "套餐被更改",
+        "reason": "模型识别为与当前判断有关的关键词",
+        "confidence": 0.7
+      },
+      {
+        "keyword": "办理时工作人员解释",
+        "reason": "模型识别为与当前判断有关的关键词",
+        "confidence": 0.7
+      },
+      {
+        "keyword": "不认可",
+        "reason": "模型识别为与当前判断有关的关键词",
+        "confidence": 0.7
+      },
+      {
+        "keyword": "要求恢复原套餐",
+        "reason": "模型识别为与当前判断有关的关键词",
+        "confidence": 0.7
+      }
+    ],
+    "tag_keywords": [
+      {
+        "keyword": "畅享139元套餐终端礼包",
+        "reason": "模型识别为与当前判断有关的关键词",
+        "confidence": 0.7
+      },
+      {
+        "keyword": "城东区紫金城数字化综合网格核心厅",
+        "reason": "模型识别为与当前判断有关的关键词",
+        "confidence": 0.7
+      },
+      {
+        "keyword": "预存800元拿手机",
+        "reason": "模型识别为与当前判断有关的关键词",
+        "confidence": 0.7
+      },
+      {
+        "keyword": "不限量套餐被更改",
+        "reason": "模型识别为与当前判断有关的关键词",
+        "confidence": 0.7
+      },
+      {
+        "keyword": "辛辉",
+        "reason": "模型识别为与当前判断有关的关键词",
+        "confidence": 0.7
+      },
+      {
+        "keyword": "马昌媛",
+        "reason": "模型识别为与当前判断有关的关键词",
+        "confidence": 0.7
+      }
+    ],
+    "risks": []
+  }
+}

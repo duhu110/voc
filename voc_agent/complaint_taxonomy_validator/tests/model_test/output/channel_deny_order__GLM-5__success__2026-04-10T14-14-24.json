@@ -1,0 +1,23 @@
+{
+  "case_name": "channel_deny_order",
+  "model_name": "GLM-5",
+  "prompt_path": "D:\\project\\FullStack\\voc\\voc_agent\\complaint_taxonomy_validator\\tests\\model_test\\output\\prompts\\channel_deny_order.txt",
+  "status": "success",
+  "error_type": null,
+  "error_message": null,
+  "duration_ms": 15026,
+  "timestamp": "2026-04-10T14:14:24",
+  "response_id": "chatcmpl-177580166485341200006ddc6191",
+  "response_text": "{\n  \"summary\": \"用户在合作营业厅办理宽带时，声称未经明确同意被顺带办理天翼云盘黄金会员合约包，要求取消、退费并追责。\",\n  \"primary_category\": {\n    \"code\": \"SUBSCRIBE_DENY_CHANNEL\",\n    \"full_name\": \"订购与退订争议/用户否认订购/否认渠道代办订购\",\n    \"confidence\": 0.95,\n    \"reason\": \"工单明确指出用户在营业厅办理业务时被顺带办理，且用户本人未明确同意，完全符合'否认渠道代办订购'的定义。\"\n  },\n  \"candidate_categories\": [\n    {\n      \"code\": \"SUBSCRIBE_ORDER_MISTAKE\",\n      \"full_name\": \"订购与退订争议/业务订购争议/误办理争议\",\n      \"confidence\": 0.75,\n      \"reason\": \"用户认为被错误办理了业务，属于误办理的一种情况，但'否认代办'更能体现争议的焦点在于渠道违规操作。\"\n    },\n    {\n      \"code\": \"FEE_REFUND_MONEY\",\n      \"full_name\": \"资费与收费争议/返费退款争议/退款未到账\",\n      \"confidence\": 0.50,\n      \"reason\": \"用户诉求包含退回已扣费用，若后续退费未到账可适用此标签，但目前核心争议在于订购行为本身。\"\n    }\n  ],\n  \"candidate_tags\": [\n    {\n      \"code\": \"CHANNEL_AGENT\",\n      \"full_name\": \"代理渠道\",\n      \"confidence\": 0.90,\n      \"reason\": \"事发地点为合作营业厅，属于代理渠道范畴。\"\n    },\n    {\n      \"code\": \"ROOT_CAUSE_DENY_ORDER\",\n      \"full_name\": \"用户否认订购\",\n      \"confidence\": 0.95,\n      \"reason\": \"用户明确表示未同意订购，是典型的否认订购场景。\"\n    },\n    {\n      \"code\": \"REQUEST_CANCEL\",\n      \"full_name\": \"取消业务\",\n      \"confidence\": 0.90,\n      \"reason\": \"工单诉求明确要求立即取消业务。\"\n    },\n    {\n      \"code\": \"REQUEST_REFUND\",\n      \"full_name\": \"退费\",\n      \"confidence\": 0.90,\n      \"reason\": \"工单诉求明确要求退回已扣费用。\"\n    }\n  ],\n  \"category_keywords\": [\n    \"合作营业厅\",\n    \"顺带办理\",\n    \"未明确同意\",\n    \"否认订购\"\n  ],\n  \"tag_keywords\": [\n    \"天翼云盘黄金会员合约包\",\n    \"追查渠道办理责任\"\n  ],\n  \"risks\": []\n}",
+  "finish_reason": "stop",
+  "usage": {
+    "completion_tokens": 568,
+    "prompt_tokens": 12188,
+    "total_tokens": 12756,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": {
+      "audio_tokens": null,
+      "cached_tokens": 0
+    }
+  }
+}

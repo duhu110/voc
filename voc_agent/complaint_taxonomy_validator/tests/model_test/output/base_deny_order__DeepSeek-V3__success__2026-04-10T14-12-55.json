@@ -1,0 +1,20 @@
+{
+  "case_name": "base_deny_order",
+  "model_name": "DeepSeek-V3",
+  "prompt_path": "D:\\project\\FullStack\\voc\\voc_agent\\complaint_taxonomy_validator\\tests\\model_test\\output\\prompts\\base_deny_order.txt",
+  "status": "success",
+  "error_type": null,
+  "error_message": null,
+  "duration_ms": 14944,
+  "timestamp": "2026-04-10T14:12:55",
+  "response_id": "chatcmpl-00-547139a23f2cc213915d6f0d3889a9ef-abb032103da8fc70-01",
+  "response_text": "```json\n{\n  \"summary\": \"客户否认订购天翼云盘黄金会员合约包业务，要求取消业务并赔偿\",\n  \"primary_category\": {\n    \"code\": \"SUBSCRIBE_DENY\",\n    \"full_name\": \"订购与退订争议/用户否认订购\",\n    \"confidence\": 0.95,\n    \"reason\": \"客户明确表示不知情办理该业务，符合用户否认订购的定义\"\n  },\n  \"candidate_categories\": [\n    {\n      \"code\": \"MARKETING_EXPLAIN_MISLEADING\",\n      \"full_name\": \"营销宣传与销售服务/宣传解释与营销误导/营销误导\",\n      \"confidence\": 0.7,\n      \"reason\": \"可能存在营销过程中未明确告知或误导客户的情况\"\n    }\n  ],\n  \"candidate_tags\": [\n    {\n      \"code\": \"PRODUCT\",\n      \"full_name\": \"VALUE_ADDED\",\n      \"confidence\": 0.9,\n      \"reason\": \"天翼云盘黄金会员属于增值业务\"\n    },\n    {\n      \"code\": \"CHANNEL\",\n      \"full_name\": \"HALL\",\n      \"confidence\": 0.8,\n      \"reason\": \"业务受理渠道为营业厅\"\n    },\n    {\n      \"code\": \"ROOT_CAUSE\",\n      \"full_name\": \"DENY_ORDER\",\n      \"confidence\": 0.95,\n      \"reason\": \"客户否认主动订购该业务\"\n    },\n    {\n      \"code\": \"REQUEST\",\n      \"full_name\": \"CANCEL\",\n      \"confidence\": 0.9,\n      \"reason\": \"客户要求取消该业务\"\n    },\n    {\n      \"code\": \"REQUEST\",\n      \"full_name\": \"COMPENSATE\",\n      \"confidence\": 0.8,\n      \"reason\": \"客户有赔偿要求\"\n    }\n  ],\n  \"category_keywords\": [\"天翼云盘黄金会员\", \"不知情办理\", \"否认订购\"],\n  \"tag_keywords\": [\"增值业务\", \"营业厅\", \"否认订购\", \"取消业务\", \"赔偿\"],\n  \"risks\": [\"客户有赔偿要求，需注意处理方式\"]\n}\n```",
+  "finish_reason": "stop",
+  "usage": {
+    "completion_tokens": 466,
+    "prompt_tokens": 13301,
+    "total_tokens": 13767,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  }
+}

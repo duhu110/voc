@@ -1,0 +1,123 @@
+{
+  "ticket_id": "2024072917243747019316",
+  "status": "success",
+  "stage": "chain",
+  "duration_ms": 21544,
+  "timestamp": "2026-04-10T15:13:41",
+  "model_name": "Qwen3-Max",
+  "result": {
+    "summary": "客户对因涉诈被双停的号码要求复机，不认可关停处理，已联系96110但被告知需电信处理。",
+    "primary_category": {
+      "code": "OPEN_CLOSE_SHUTDOWN_RISK_FRAUD",
+      "full_name": "开通、停用与销户/停机关停争议/风险关停不认可/反诈治理关停争议",
+      "confidence": 0.96,
+      "reason": "工单明确指出停机类型为‘核查系统举报号码双停’，属于反诈治理措施下的风险关停，客户对此不认可并要求复机，完全匹配该分类定义。"
+    },
+    "candidate_categories": [
+      {
+        "code": "OPEN_CLOSE_SHUTDOWN_RISK",
+        "full_name": "开通、停用与销户/停机关停争议/风险关停不认可",
+        "confidence": 0.85,
+        "reason": "上层分类，但不如 OPEN_CLOSE_SHUTDOWN_RISK_FRAUD 具体"
+      },
+      {
+        "code": "OPEN_CLOSE_RECOVERY",
+        "full_name": "开通、停用与销户/复机恢复争议",
+        "confidence": 0.75,
+        "reason": "客户要求复机，但根本争议在于关停原因而非复机流程本身"
+      }
+    ],
+    "candidate_tags": [
+      {
+        "group_code": "PRODUCT",
+        "code": "MOBILE",
+        "name": "移动业务",
+        "confidence": 0.98,
+        "reason": "涉及手机号码17797****26的停复机问题"
+      },
+      {
+        "group_code": "REQUEST",
+        "code": "RESTORE",
+        "name": "恢复服务",
+        "confidence": 0.95,
+        "reason": "用户明确要求复机"
+      },
+      {
+        "group_code": "RESPONSIBILITY",
+        "code": "NETWORK_OP",
+        "name": "网运条线",
+        "confidence": 0.9,
+        "reason": "biz_category为‘关停不认可’，line_category为‘网信安条线’，对应网络运营责任"
+      },
+      {
+        "group_code": "ROOT_CAUSE",
+        "code": "RULE_DISPUTE",
+        "name": "规则不认可",
+        "confidence": 0.85,
+        "reason": "客户不认可基于反诈规则的关停决定"
+      },
+      {
+        "group_code": "RESULT",
+        "code": "NOT_ACCEPTED",
+        "name": "用户不认可",
+        "confidence": 0.92,
+        "reason": "经客服代表解释无效，说明用户不接受当前处理"
+      }
+    ],
+    "category_keywords": [
+      {
+        "keyword": "停机不认可",
+        "reason": "模型识别为与当前判断有关的关键词",
+        "confidence": 0.7
+      },
+      {
+        "keyword": "核查系统举报号码双停",
+        "reason": "模型识别为与当前判断有关的关键词",
+        "confidence": 0.7
+      },
+      {
+        "keyword": "涉诈停机",
+        "reason": "模型识别为与当前判断有关的关键词",
+        "confidence": 0.7
+      },
+      {
+        "keyword": "复机",
+        "reason": "模型识别为与当前判断有关的关键词",
+        "confidence": 0.7
+      },
+      {
+        "keyword": "网信安条线",
+        "reason": "模型识别为与当前判断有关的关键词",
+        "confidence": 0.7
+      }
+    ],
+    "tag_keywords": [
+      {
+        "keyword": "17797****26",
+        "reason": "模型识别为与当前判断有关的关键词",
+        "confidence": 0.7
+      },
+      {
+        "keyword": "要求复机",
+        "reason": "模型识别为与当前判断有关的关键词",
+        "confidence": 0.7
+      },
+      {
+        "keyword": "解释无效",
+        "reason": "模型识别为与当前判断有关的关键词",
+        "confidence": 0.7
+      },
+      {
+        "keyword": "联系96110",
+        "reason": "模型识别为与当前判断有关的关键词",
+        "confidence": 0.7
+      },
+      {
+        "keyword": "电信处理",
+        "reason": "模型识别为与当前判断有关的关键词",
+        "confidence": 0.7
+      }
+    ],
+    "risks": []
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "case_name": "billing_refund_dispute",
+  "model_name": "6192ed0cb6334302a2c32735dbbb6ce3",
+  "prompt_path": "D:\\project\\FullStack\\voc\\voc_agent\\complaint_taxonomy_validator\\tests\\model_test\\output\\prompts\\billing_refund_dispute.txt",
+  "status": "failed",
+  "error_type": "BadRequestError",
+  "error_message": "Error code: 400 - {'code': 500002, 'detail': 'prompt_tokens 值应该小于等于 (maxSeqLen - maxIterTimes)', 'message': 'PARAM_ERROR', 'error': {'code': '500002', 'message': 'prompt_tokens 值应该小于等于 (maxSeqLen - maxIterTimes)', 'type': 'PARAM_ERROR'}}",
+  "duration_ms": 460,
+  "timestamp": "2026-04-10T14:21:27"
+}

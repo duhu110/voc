@@ -1,0 +1,33 @@
+{
+  "version": "v1",
+  "updated_at": "2026-04-11",
+  "source_doc": "D:/project/FullStack/voc/docs/converger_design/README.md",
+  "tag_type": "emotion_tag",
+  "selection_rule": "必须从下列常量中选 1 个，不允许生成新情绪标签。",
+  "source_fields": [
+    "biz_content"
+  ],
+  "default_code": "CALM",
+  "items": [
+    {
+      "code": "CALM",
+      "name": "平稳",
+      "desc": "客户表达相对克制，主要在陈述问题、咨询原因、要求处理，没有明显强烈情绪。"
+    },
+    {
+      "code": "UNSATISFIED",
+      "name": "不满",
+      "desc": "客户已明显表达不认可、不接受、不满意，但还没到激烈冲突。"
+    },
+    {
+      "code": "AGITATED",
+      "name": "激动",
+      "desc": "客户情绪明显上升，催促、反复强调、施压、抱怨明显。"
+    },
+    {
+      "code": "ANGRY",
+      "name": "强烈投诉",
+      "desc": "客户进入强烈负面情绪状态，可能伴随指责、威胁升级、投诉监管、公开曝光等表达。"
+    }
+  ]
+}

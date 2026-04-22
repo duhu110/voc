@@ -53,6 +53,7 @@
 主要工作：
 
 - 读取 `raw_complaint_tickets` 历史工单
+- 通过 `raw_complaint_tickets.process_status` 标记已处理与待重试工单
 - 让 AI 基于完整工单信息输出分类与标签
 - 将分类结果写入 `complaint_ticket_category_result`
 - 将标签结果写入 `complaint_ticket_tag_result`
@@ -117,11 +118,13 @@
 - 规则表
 - AI 结果表
 - 关键词和命中明细
+- `raw_complaint_tickets.process_status` 轻量编排
 - `evaluation_status` 轻量评估
 
 当前先不做：
 
 - 原始字段映射规则表
+- 在 `raw_complaint_tickets` 回写复杂 AI 特征字段
 - 复杂人工校验表
 - 过早引入重型统计学习逻辑
 

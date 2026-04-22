@@ -1,0 +1,20 @@
+{
+  "case_name": "base_deny_order",
+  "model_name": "Qwen3-30B-A3B",
+  "prompt_path": "D:\\project\\FullStack\\voc\\voc_agent\\complaint_taxonomy_validator\\tests\\model_test\\output\\prompts\\base_deny_order.txt",
+  "status": "success",
+  "error_type": null,
+  "error_message": null,
+  "duration_ms": 27782,
+  "timestamp": "2026-04-10T15:17:34",
+  "response_id": "chatcmpl-00-7097d09816072f3b43f31eb7c234bcb1-fb971043e94b4c1f-01",
+  "response_text": "\n\n{\n  \"summary\": \"用户否认订购天翼云盘黄金会员合约包业务，称不知情办理，要求取消并赔偿。\",\n  \"primary_category\": {\n    \"code\": \"SUBSCRIBE_DENY_VALUE_ADDED\",\n    \"full_name\": \"订购与退订争议/用户否认订购/否认增值业务订购\",\n    \"confidence\": 0.92,\n    \"reason\": \"客户明确表示对黄金会员合约包业务不知情，属于典型的价值-added业务否认订购场景，符合该分类定义。\"\n  },\n  \"candidate_categories\": [\n    {\"code\": \"SUBSCRIBE_DENY\", \"full_name\": \"订购与退订争议/用户否认订购\", \"confidence\": 0.85},\n    {\"code\": \"MARKETING_EXPLAIN_UNCLEAR\", \"full_name\": \"营销宣传与销售服务/宣传解释与营销误导/解释宣传不清\", \"confidence\": 0.78}\n  ],\n  \"candidate_tags\": [\n    {\"code\": \"DENY_ORDER\", \"full_name\": \"用户否认订购\"},\n    {\"code\": \"CHANNEL_HALL\", \"full_name\": \"营业厅\"},\n    {\"code\": \"REQUEST_COMPENSATE\", \"full_name\": \"赔偿补偿\"}\n  ],\n  \"category_keywords\": [\"否认订购\", \"黄金会员\", \"合约包\"],\n  \"tag_keywords\": [\"营业厅\", \"赔偿要求\", \"不知情办理\"],\n  \"risks\": []\n}",
+  "finish_reason": "stop",
+  "usage": {
+    "completion_tokens": 1129,
+    "prompt_tokens": 13074,
+    "total_tokens": 14203,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  }
+}
