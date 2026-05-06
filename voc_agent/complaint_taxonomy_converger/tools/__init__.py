@@ -1,4 +1,0 @@
-from voc_agent.complaint_taxonomy_converger.tools.fetch_pending_ticket_ids import fetch_pending_ticket_ids
-from voc_agent.complaint_taxonomy_converger.tools.fetch_random_pending_ticket_ids import fetch_random_pending_ticket_ids
-
-__all__ = ['fetch_pending_ticket_ids', 'fetch_random_pending_ticket_ids']
