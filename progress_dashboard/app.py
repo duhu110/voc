@@ -228,10 +228,28 @@ def render_samples() -> None:
     st.dataframe(query_df(RECENT_SAMPLES_SQL), use_container_width=True, hide_index=True)
 
 
+def render_phase_one() -> None:
+    render_overview()
+    tabs = st.tabs(["一致性", "版本", "分类", "标签", "摘要", "处理建议", "样本"])
+    with tabs[0]:
+        render_consistency()
+    with tabs[1]:
+        render_versions()
+    with tabs[2]:
+        render_categories()
+    with tabs[3]:
+        render_tags()
+    with tabs[4]:
+        render_summary_quality()
+    with tabs[5]:
+        render_advice()
+    with tabs[6]:
+        render_samples()
+
+
 def main() -> None:
     st.title("VOC 项目进度统计")
     now = datetime.now(ZoneInfo("Asia/Shanghai")).strftime("%Y-%m-%d %H:%M:%S")
-    st.caption(f"当前页面：第一阶段分类 AGENT 运行结果统计。数据每 60 秒缓存刷新。更新时间：{now}")
 
     with st.sidebar:
         st.header("统计范围")
@@ -240,23 +258,10 @@ def main() -> None:
             st.cache_data.clear()
             st.rerun()
 
+    st.caption(f"数据每 60 秒缓存刷新。更新时间：{now}")
+
     try:
-        render_overview()
-        tabs = st.tabs(["一致性", "版本", "分类", "标签", "摘要", "处理建议", "样本"])
-        with tabs[0]:
-            render_consistency()
-        with tabs[1]:
-            render_versions()
-        with tabs[2]:
-            render_categories()
-        with tabs[3]:
-            render_tags()
-        with tabs[4]:
-            render_summary_quality()
-        with tabs[5]:
-            render_advice()
-        with tabs[6]:
-            render_samples()
+        render_phase_one()
     except Exception as exc:
         st.error("统计查询失败，请检查数据库连接和表结构。")
         st.exception(exc)

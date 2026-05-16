@@ -243,3 +243,178 @@ left join converger_resolution_summary_atomic s on s.source_ticket_id = r.ticket
 order by r.created_at desc
 limit 30;
 """
+
+
+ADVICE_TOTAL_SQL = """
+select
+  count(*) as active_advice_rows,
+  count(distinct primary_leaf_code) as covered_leaf_count,
+  count(distinct primary_leaf_code || '|' || coalesce(product_tag_code,'') || '|' || coalesce(request_tag_code,'')) as covered_scope_count,
+  coalesce(sum(source_summary_count), 0) as source_summary_count,
+  min(created_at) as first_created_at,
+  max(updated_at) as latest_updated_at
+from converger_handling_advice
+where status = 'active';
+"""
+
+
+ADVICE_SUMMARY_SCOPE_COVERAGE_SQL = """
+with summary_scopes as (
+  select
+    primary_leaf_code,
+    product_tag_code,
+    request_tag_code,
+    count(*) as summary_count
+  from converger_resolution_summary_atomic
+  where status = 'active'
+    and resolution_summary is not null
+    and btrim(resolution_summary) <> ''
+  group by primary_leaf_code, product_tag_code, request_tag_code
+),
+advice_scopes as (
+  select distinct
+    primary_leaf_code,
+    product_tag_code,
+    request_tag_code
+  from converger_handling_advice
+  where status = 'active'
+)
+select
+  count(*) as total_summary_scopes,
+  count(*) filter (where a.primary_leaf_code is not null) as covered_scopes,
+  count(*) filter (where a.primary_leaf_code is null) as uncovered_scopes,
+  round(
+    100.0 * count(*) filter (where a.primary_leaf_code is not null) / nullif(count(*), 0),
+    2
+  ) as covered_percent
+from summary_scopes s
+left join advice_scopes a
+  on a.primary_leaf_code = s.primary_leaf_code
+ and coalesce(a.product_tag_code, '') = coalesce(s.product_tag_code, '')
+ and coalesce(a.request_tag_code, '') = coalesce(s.request_tag_code, '');
+"""
+
+
+ADVICE_BUCKET_COVERAGE_SQL = """
+with summary_scopes as (
+  select
+    primary_leaf_code,
+    product_tag_code,
+    request_tag_code,
+    count(*) as summary_count
+  from converger_resolution_summary_atomic
+  where status = 'active'
+    and resolution_summary is not null
+    and btrim(resolution_summary) <> ''
+  group by primary_leaf_code, product_tag_code, request_tag_code
+),
+marked as (
+  select
+    s.*,
+    exists (
+      select 1
+      from converger_handling_advice a
+      where a.status = 'active'
+        and a.primary_leaf_code = s.primary_leaf_code
+        and coalesce(a.product_tag_code, '') = coalesce(s.product_tag_code, '')
+        and coalesce(a.request_tag_code, '') = coalesce(s.request_tag_code, '')
+    ) as has_advice
+  from summary_scopes s
+),
+bucketed as (
+  select
+    case
+      when summary_count >= 200 then '>=200'
+      when summary_count >= 100 then '100-199'
+      when summary_count >= 50 then '50-99'
+      when summary_count >= 20 then '20-49'
+      else '<20'
+    end as bucket,
+    summary_count,
+    has_advice
+  from marked
+)
+select
+  bucket,
+  count(*) as scope_count,
+  count(*) filter (where has_advice) as covered_count,
+  round(100.0 * count(*) filter (where has_advice) / nullif(count(*), 0), 2) as covered_percent,
+  case
+    when max(summary_count) >= 200 then 100
+    when max(summary_count) >= 100 then 95
+    when max(summary_count) >= 50 then 80
+    when max(summary_count) >= 20 then 60
+    else null
+  end as target_percent
+from bucketed
+group by bucket
+order by
+  case bucket
+    when '>=200' then 1
+    when '100-199' then 2
+    when '50-99' then 3
+    when '20-49' then 4
+    else 5
+  end;
+"""
+
+
+ADVICE_UNCOVERED_HIGH_VALUE_SQL = """
+with summary_scopes as (
+  select
+    primary_leaf_code,
+    primary_leaf_name,
+    product_tag_code,
+    product_tag_name,
+    request_tag_code,
+    request_tag_name,
+    count(*) as summary_count
+  from converger_resolution_summary_atomic
+  where status = 'active'
+    and resolution_summary is not null
+    and btrim(resolution_summary) <> ''
+  group by
+    primary_leaf_code,
+    primary_leaf_name,
+    product_tag_code,
+    product_tag_name,
+    request_tag_code,
+    request_tag_name
+)
+select
+  s.primary_leaf_code,
+  s.primary_leaf_name,
+  s.product_tag_code,
+  s.product_tag_name,
+  s.request_tag_code,
+  s.request_tag_name,
+  s.summary_count
+from summary_scopes s
+where not exists (
+  select 1
+  from converger_handling_advice a
+  where a.status = 'active'
+    and a.primary_leaf_code = s.primary_leaf_code
+    and coalesce(a.product_tag_code, '') = coalesce(s.product_tag_code, '')
+    and coalesce(a.request_tag_code, '') = coalesce(s.request_tag_code, '')
+)
+order by s.summary_count desc
+limit 50;
+"""
+
+
+ADVICE_QUALITY_SAMPLE_SQL = """
+select
+  primary_leaf_name,
+  product_tag_name,
+  request_tag_name,
+  source_summary_count,
+  advice_title,
+  left(regexp_replace(advice_content, '\\s+', ' ', 'g'), 360) as advice_preview,
+  left(regexp_replace(applicability_note, '\\s+', ' ', 'g'), 240) as applicability_preview,
+  updated_at
+from converger_handling_advice
+where status = 'active'
+order by source_summary_count desc nulls last, updated_at desc
+limit 50;
+"""

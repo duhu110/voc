@@ -1,83 +1,71 @@
-# 运营商投诉分类治理项目
+# 运营商投诉处理建议 Agent
 
-## 项目要做什么
+本项目面向运营商投诉工单，当前主线不是单纯“自动分类”，而是把历史工单、历史处理摘要、专家处理案例组合起来，为新投诉生成更可执行的处理建议。
 
-这个项目面向运营商历史投诉工单，目标是建设一套可持续优化的投诉治理基础能力，包含：
+## 当前入口
 
-- 稳定的投诉分类体系
-- 多维度的标签体系
-- 支撑 AI 批量分类和打标的数据库结构
-- 从历史工单中沉淀规则、关键词和推荐关系的机制
-- 面向新工单的自动处理建议与后续编排能力
+- [项目地图](docs/project-map.md)：目录结构、几个 Agent 的职责、新工单处理链路。
+- [数据库表说明](docs/database-tables.md)：当前远程库核心表用途、关键字段和表关系。
+- [当前 Agent 架构](docs/current-agent-architecture.md)：三类 Agent 的处理流程、输出结构和验证方法。
+- [系统演进方向](docs/system-evolution-rag-backend.md)：FastAPI 后端、Next.js 前端、RAG 服务和异步任务规划。
+- [Chainlit 工单建议助手](chainlit_app/README.md)：聊天式 UI，本地运行和部署说明。
+- [进度看板](progress_dashboard/README.md)：批处理覆盖、摘要质量、建议库覆盖情况。
 
-当前数据源核心是历史工单表 `raw_complaint_tickets`，主键为 `ticket_id`。
+归档的早期方案、旧 SQL、旧样例入口在 `OLD/`，仅作历史参考。
 
-## 总体流程
+## 当前 Agent 分工
 
-### 第一阶段：数据库与主数据建设
+| Agent | 主要职责 | 主要写入表 | 主要读取表 |
+| --- | --- | --- | --- |
+| `converger_agent` | 历史工单分类、标签、处理摘要提取 | `converger_agent_result`、`converger_resolution_summary_atomic` | `raw_complaint_tickets` |
+| `advice_builder_agent` | 从历史处理摘要归纳可复用建议 | `converger_handling_advice` | `converger_resolution_summary_atomic` |
+| `advice_provider_agent` | 面向新投诉生成最终处理方案 | 不默认写库 | `converger_handling_advice`、`expert_handling_playbook`、历史分类/摘要表 |
 
-先完成数据库基础建设，明确：
+新的正式后端入口位于 `backend_api/`，负责把已验证的 Python Agent、RAG 服务和后续导入/任务能力统一成 API。
 
-- 分类表
-- 标签组与标签表
-- 分类标签基线关系表
-- 分类规则表与标签规则表
-- AI 结果沉淀表
-- 评估与统计相关表
+`advice_provider_agent` 当前输出的主结果是 `final_action_plan`，会把处理建议组织成：
 
-这一步的目标是把“分类是什么、标签是什么、结果怎么存、规则怎么长出来”先定义清楚。
+- 先核实事实
+- 判断规则和责任
+- 执行处理动作
+- 回访和回单要求
+- 必要时补充人工复核重点
 
-### 第二阶段：历史工单批量 AI 标注
+## 核心数据表
 
-让 AI 读取历史工单的完整信息，输出：
+| 表名 | 作用 |
+| --- | --- |
+| `raw_complaint_tickets` | 原始历史投诉工单。 |
+| `converger_agent_result` | 每条工单的分类和标签结果。 |
+| `converger_resolution_summary_atomic` | 从历史处理过程提炼出的处理摘要。 |
+| `converger_handling_advice` | 从历史摘要归纳出的可复用处理建议。 |
+| `expert_handling_playbook` | 人工专家案例沉淀的处理剧本，供新投诉召回。 |
 
-- 分类结果
-- 标签结果
-- 关键词结果
-- 命中依据
+详细字段说明见 [数据库表说明](docs/database-tables.md)。
 
-这一步的目标是验证当前分类和标签体系是否合理，并形成第一批可分析结果。
+## 本地运行
 
-### 第三阶段：评估与反馈优化
-
-基于历史工单标注结果，持续观察：
-
-- 分类命中率
-- 标签命中率
-- 高频关键词
-- 高频分类-标签共现关系
-- 规则有效性
-
-再把这些结果反向沉淀到规则表和基线关系表里，优化分类与标签体系。
-
-### 第四阶段：AI 处理新工单
-
-当体系稳定后，新工单进入时采用混合判定流程：
-
-- AI 判断主分类
-- AI 抽取多标签
-- 结合基线关系和规则做校验或补充
-- 根据分类 + 标签生成处理建议、派单建议和风险提示
-
-最终目标不是只做“自动分类”，而是做一套完整的投诉治理闭环。
-
-## 文档入口
-
-- [数据库设计](/Users/duhu/code/voc/docs/db_design.md)
-- [数据库检查清单](/Users/duhu/code/voc/docs/db_checklist.md)
-- [项目建设步骤](/Users/duhu/code/voc/docs/project_steps.md)
-
-## Streamlit 控台
-
-当前仓库已经提供一个简单的运营控制台，支持：
-
-- 设定批次数量并执行投诉验证落库
-- 查看历史批次 summary 和逐条处理结果
-- 浏览待处理工单、结果表和统计表
-- 手动刷新统计并查看当前统计结果
-
-启动命令：
+运行 `advice_provider_agent` 测试：
 
 ```powershell
-.\.venv\Scripts\python.exe -m streamlit run .\streamlit_app\Home.py
+$env:PYTHONPATH=(Get-Location).Path
+uv run pytest voc_agent/advice_provider_agent/tests/test_provider.py
 ```
+
+运行 Chainlit 工单建议助手：
+
+```powershell
+$env:PYTHONPATH=(Get-Location).Path
+Push-Location .\chainlit_app
+uv run chainlit run .\app.py
+Pop-Location
+```
+
+图片直读需要配置支持 `image_url` 多模态消息的 OpenAI-compatible 模型；未设置 `VOC_VISION_*` 时默认沿用 `VOC_LLM_*`。
+
+## 配置约定
+
+- 根目录 `.env` 保存数据库和模型配置。
+- 不要把真实数据库密码写入 README、docs 或 SQL 脚本。
+- SQL 结构变更脚本放在 `sql_scripts/`。
+- 当前有效文档放在 `docs/` 根目录；旧设计、旧检查表、历史验证材料统一放进 `OLD/`。

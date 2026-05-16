@@ -1,48 +1,25 @@
-天翼云息壤模型列表
-id='DeepSeek-V3.2-Standard', 
-id='Qwen3-32B',
-id='Qwen3-14B', 
-id='Qwen3-8B',
-id='Qwen3-4B',
-id='Qwen2.5-VL-72B-Instruct', 
-id='QwQ-32B', created='', 
-id='DeepSeek-R1-Distill-Llama-70B',
-id='DeepSeek-R1-Distill-Qwen-32B',
-id='BGE-Reranker-Large',
-id='BGE-m3',
-id='TeleChat-12B', 
-id='Baichuan2-Turbo', 
-id='Qwen2.5-72B-Instruct', 
-id='DeepSeek-V3', 
-id='GLM-5', 
-id='Qwen3.5-397B-A17B', 
-id='DeepSeek-V3.1-Terminus', 
-id='2f05789705a64606a552fc2b30326bba', 
-id='Qwen2-7B-Instruct', 
-id='Qwen-VL-Chat', created='', 
-id='6192ed0cb6334302a2c32735dbbb6ce3', 
-id='Llama3-8B-Instruct', 
-id='StableDiffusion-V2.1',
-id='7450fa195778420393542c7fa13c6640', 
-id='Kimi-K2-Instruct', 
-id='DeepSeek-V3.2', 
-id='Kimi-K2-Thinking', 
-id='Doubao-Seed-2.0-pro', 
-id='Qwen3-Max', 
-id='Doubao-Seed-1.8',
-id='Doubao-Seed-1.6-0615', 
-id='Doubao1.5-pro-32k', 
-id='Qwen3-Coder-Plus', 
-id='Qwen3-VL-Plus',
-id='DeepSeek-V3.1', 
-id='DeepSeek-R1-0528', 
-id='Qwen3-235B-A22B-Instruct-2507',
-id='Qwen3-Coder-480B-A35B-Instruct',
-id='bge-reranker-v2-m3',
-id='Qwen-Image',
-id='Qwen3-30B-A3B-Instruct-2507',
-id='DeepSeek-V3-0324',
-id='Baichuan-M2-32B',
-id='Qwen3-235B-A22B',
-id='Qwen3-30B-A3B',
-id='DeepSeek-R1', 
+# voc_agent 模块说明
+
+`voc_agent/` 是投诉处理建议链路的核心代码目录。
+
+## 目录分工
+
+| 路径 | 作用 |
+| --- | --- |
+| `converger_agent/` | 历史工单分类、标签、处理摘要提取。 |
+| `advice_builder_agent/` | 从历史处理摘要归纳可复用建议，写入 `converger_handling_advice`。 |
+| `advice_provider_agent/` | 面向新投诉生成最终处理方案。 |
+| `share/` | 共享读取、映射、工具函数。 |
+| `core/` | 配置、数据库连接、LLM 客户端等公共能力。 |
+
+## advice_provider_agent 当前重点文件
+
+| 文件 | 作用 |
+| --- | --- |
+| `provider.py` | 新工单建议主编排：分类、召回、风险、最终输出。 |
+| `action_plan.py` | 把候选建议整理为四段式 `final_action_plan`。 |
+| `experience_playbooks.py` | 本地兜底经验剧本，覆盖常见高频场景。 |
+| `reply_standards.py` | 回访和回单规范提醒。 |
+| `input_normalizer.py` | Chainlit 输入和截图转写文本的工单字段归一化。 |
+
+更完整的架构说明见 `../docs/current-agent-architecture.md`。

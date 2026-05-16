@@ -1,7 +1,7 @@
 {
   "version": "v1",
   "updated_at": "2026-04-11",
-  "source_doc": "D:/project/FullStack/voc/docs/converger_design/README.md",
+  "source_doc": "D:/project/FullStack/voc/OLD/docs-archive/legacy-2026-04-design/converger_design/README.md",
   "tag_type": "product_tag",
   "selection_rule": "必须从下列常量中选 1 个，不允许生成新产品标签。",
   "source_fields": [

@@ -30,9 +30,14 @@ def normalize_database_url(database_url: str) -> str:
 class Settings:
     repo_root: Path
     database_url: str
+    rag_base_url: str
+    rag_timeout_seconds: float
     llm_base_url: str
     llm_model_name: str
     llm_api_key: str
+    vision_base_url: str
+    vision_model_name: str
+    vision_api_key: str
     llm_temperature: float = 0.0
 
 
@@ -50,11 +55,20 @@ def get_settings() -> Settings:
     if not database_url:
         raise RuntimeError('Missing database URL. Set DATABASEURL or DATABASE_URL in the repository root .env')
     database_url = normalize_database_url(database_url)
+    rag_base_url = (
+        os.getenv('RAG_BASE_URL')
+        or os.getenv('RAG_BASE_URL_PUBLIC')
+        or 'https://xnct.qhduhu.com:8884'
+    ).strip().rstrip('/')
+    rag_timeout_seconds_raw = (os.getenv('RAG_TIMEOUT_SECONDS') or '30').strip()
 
     llm_base_url = (os.getenv('VOC_LLM_BASE_URL') or os.getenv('BASE_URL') or '').strip()
     llm_model_name = (os.getenv('VOC_LLM_MODEL_NAME') or os.getenv('MODEL_NAME') or '').strip()
     llm_api_key = (os.getenv('VOC_LLM_API_KEY') or os.getenv('APP_KEY') or os.getenv('OPENAI_API_KEY') or '').strip()
     llm_temperature_raw = (os.getenv('VOC_LLM_TEMPERATURE') or '0').strip()
+    vision_base_url = (os.getenv('VOC_VISION_BASE_URL') or llm_base_url).strip()
+    vision_model_name = (os.getenv('VOC_VISION_MODEL_NAME') or llm_model_name).strip()
+    vision_api_key = (os.getenv('VOC_VISION_API_KEY') or llm_api_key).strip()
 
     if not llm_base_url:
         raise RuntimeError('Missing LLM base URL. Set VOC_LLM_BASE_URL in voc_agent/.env or environment')
@@ -66,8 +80,13 @@ def get_settings() -> Settings:
     return Settings(
         repo_root=repo_root,
         database_url=database_url,
+        rag_base_url=rag_base_url,
+        rag_timeout_seconds=float(rag_timeout_seconds_raw),
         llm_base_url=llm_base_url,
         llm_model_name=llm_model_name,
         llm_api_key=llm_api_key,
+        vision_base_url=vision_base_url,
+        vision_model_name=vision_model_name,
+        vision_api_key=vision_api_key,
         llm_temperature=float(llm_temperature_raw),
     )

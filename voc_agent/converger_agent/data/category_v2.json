@@ -2,7 +2,7 @@
   "version": "v2-final",
   "updated_at": "2026-04-11",
   "source_of_truth": "D:/project/FullStack/voc/voc_agent/converger_agent/data/category_v2.json",
-  "source_doc": "D:/project/FullStack/voc/docs/converger_design/category_system_v2_final.md",
+  "source_doc": "D:/project/FullStack/voc/OLD/docs-archive/legacy-2026-04-design/converger_design/category_system_v2_final.md",
   "validation_summary_file": "D:/project/FullStack/voc/voc_agent/converger_agent/data/validation_rounds.json",
   "counts": {
     "level1": 9,
