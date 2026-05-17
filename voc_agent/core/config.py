@@ -32,6 +32,8 @@ class Settings:
     database_url: str
     rag_base_url: str
     rag_timeout_seconds: float
+    auth_jwt_secret: str
+    auth_token_expire_minutes: int
     llm_base_url: str
     llm_model_name: str
     llm_api_key: str
@@ -61,6 +63,10 @@ def get_settings() -> Settings:
         or 'https://xnct.qhduhu.com:8884'
     ).strip().rstrip('/')
     rag_timeout_seconds_raw = (os.getenv('RAG_TIMEOUT_SECONDS') or '30').strip()
+    auth_jwt_secret = (os.getenv('VOC_AUTH_JWT_SECRET') or '').strip()
+    if not auth_jwt_secret:
+        raise RuntimeError('Missing auth JWT secret. Set VOC_AUTH_JWT_SECRET in the repository root .env')
+    auth_token_expire_minutes = int((os.getenv('VOC_AUTH_TOKEN_EXPIRE_MINUTES') or '720').strip())
 
     llm_base_url = (os.getenv('VOC_LLM_BASE_URL') or os.getenv('BASE_URL') or '').strip()
     llm_model_name = (os.getenv('VOC_LLM_MODEL_NAME') or os.getenv('MODEL_NAME') or '').strip()
@@ -82,6 +88,8 @@ def get_settings() -> Settings:
         database_url=database_url,
         rag_base_url=rag_base_url,
         rag_timeout_seconds=float(rag_timeout_seconds_raw),
+        auth_jwt_secret=auth_jwt_secret,
+        auth_token_expire_minutes=auth_token_expire_minutes,
         llm_base_url=llm_base_url,
         llm_model_name=llm_model_name,
         llm_api_key=llm_api_key,

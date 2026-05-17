@@ -101,6 +101,32 @@ class RagClient:
             files=files,
         )
 
+    async def upload_document_bytes(
+        self,
+        *,
+        kb_id: str,
+        filename: str,
+        content: bytes,
+        content_type: str = "text/markdown",
+        external_id: str | None = None,
+        title: str | None = None,
+        metadata: Mapping[str, Any] | None = None,
+    ) -> dict[str, Any]:
+        data: dict[str, str] = {}
+        if external_id:
+            data["external_id"] = external_id
+        if title:
+            data["title"] = title
+        if metadata:
+            data["metadata_json"] = json.dumps(dict(metadata), ensure_ascii=False)
+        files = {"file": (filename, content, content_type)}
+        return await self._request(
+            "POST",
+            f"/knowledge-bases/{kb_id}/documents",
+            data=data,
+            files=files,
+        )
+
     async def get_task(self, task_id: str) -> dict[str, Any]:
         return await self._request("GET", f"/tasks/{task_id}")
 
@@ -113,4 +139,3 @@ class RagClient:
             f"/knowledge-bases/{kb_id}/search",
             json={"query": query, "top_k": top_k},
         )
-

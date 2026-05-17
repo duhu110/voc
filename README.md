@@ -69,3 +69,8 @@ Pop-Location
 - 不要把真实数据库密码写入 README、docs 或 SQL 脚本。
 - SQL 结构变更脚本放在 `sql_scripts/`。
 - 当前有效文档放在 `docs/` 根目录；旧设计、旧检查表、历史验证材料统一放进 `OLD/`。
+
+
+
+username: admin
+password: IqUyB0tOqCtFO7ZsizokY4Yu
